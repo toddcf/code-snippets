@@ -1,0 +1,33 @@
+<!-- Context.html -->
+<!-- How Timeout's function with this -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Context</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        // We define a person, and include a method 
+        // that logs his name along with a greeting.
+        var person = {
+            name: "Jeff",
+            sayHi: function() {
+                debugger;
+                console.log("Hi, I'm " + this.name);
+            }
+        };
+
+        // When we run it normally, it works like we intended.
+        person.sayHi();
+        //Hi, I'm Jeff
+
+        // But if we include it in a timeout, we get an undefined value.
+        setTimeout(person.sayHi, 50);
+        // Hi, I'm undefined
+        // This is because the execution context is global and therefore bound to the "Window."  So "this" is set to the Window, not to "person".  So in this case, it would have been wiser to say "person.name" inside the person object.  That way it works outside the object.
+        // A better solution is actually to use binding, but we aren't going to get into that right now.
+    </script>
+</body>
+</html>
