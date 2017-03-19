@@ -27,3 +27,7 @@ var monthNames = [
 	"November",
 	"December"
 ];
+
+// Now, you could print a string of today's month and year as follows:
+monthNames[month] + " " + year;
+// And this will display "March 2017" instead of "2 2017".
