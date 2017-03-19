@@ -22,3 +22,7 @@ Explanation:
 - Math.floor rounds this down to a number between 0 and 5.
 - Adding 1 at the end makes this a number between 1 and 6.
 */
+
+
+Math.abs();
+// Gets the absolute value of a number (won't allow it to be negative).
