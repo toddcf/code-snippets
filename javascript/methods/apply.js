@@ -1,3 +1,8 @@
+// Similar to the "call" method, but accepts the arguments as an array.
+
+// Example:
+// A function adds four ages together:
+
 function addFourAges( a, b, c, d ) {
 	return a + b + c+ d;
 };
