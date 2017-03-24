@@ -1,0 +1,1 @@
+// New for ES6: The for-of loop.
