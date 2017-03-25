@@ -50,3 +50,44 @@ One of the benefits of Object.create is that it allows us to create really compl
 
 BUT . . . the function constructor is more popular.
 */
+
+// Default Parameters:
+
+// Used whenever we want one or more parameters of a function to be preset -- aka have a default value.
+
+// ES5:
+
+function SmithPerson( firstName, yearOfBirth, lastName, nationality ) {
+	// Defaults:
+	// If the lastName is undefined, make it Smith. Otherwise, make it whatever argument was passed in:
+	lastName === undefined ? lastName = "Smith" : lastName = lastName;
+	nationality === undefined ? nationality = "American" : nationality = nationality;
+
+	// Explicit Settings:
+	this.firstName = firstName;
+	this.yearOfBirth = yearOfBirth;
+	this.lastName = lastName;
+	this.nationality = nationality;
+};
+
+var john = new SmithPerson( "John", 1990 );
+// If we only specify a couple of the arguments, JavaScript will set the other parameters to "undefined."
+
+// John's sister has married and moved to Spain:
+var emily = new SmithPerson( "Emily", 1983, "Diaz", "Spanish" );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
