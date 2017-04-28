@@ -1,15 +1,15 @@
-#000000 = black;
-#ffffff = white;
+color: #000000; /*black*/
+color: #ffffff; /*white*/
 
 Primaries (#RRGGBB):
-#ff0000 = red;
-#00ff00 = green;
-#0000ff = blue;
+	#ff0000 = red;
+	#00ff00 = green;
+	#0000ff = blue;
 
 Combinations:
-#ff00ff = violet (red + blue);
-#ffff00 = yellow (red + green);
-#00ffff = turquoise (blue + green);
+	color: #ff00ff; /*violet (red + blue)*/
+	color: #ffff00; /*yellow (red + green)*/
+	color: #00ffff; /*turquoise (blue + green)*/
 
 For each color:
 Min: 0 (hex 0);
@@ -17,8 +17,8 @@ Max: 255 (hex ff);
 
 Greys:
 Just make RR, GG, and BB each have the same value. For example:
-#4d4d4d = dark grey;
-#a2a2a2 = light grey;
+	color: #4d4d4d; /*dark grey*/
+	color: #a2a2a2; /*light grey*/
 
 Efficiency:
 If all six values in a hex code are the same, you can write them in just three digits. For example:
