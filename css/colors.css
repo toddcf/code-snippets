@@ -1,0 +1,28 @@
+#000000 = black;
+#ffffff = white;
+
+Primaries (#RRGGBB):
+#ff0000 = red;
+#00ff00 = green;
+#0000ff = blue;
+
+Combinations:
+#ff00ff = violet (red + blue);
+#ffff00 = yellow (red + green);
+#00ffff = turquoise (blue + green);
+
+For each color:
+Min: 0 (hex 0);
+Max: 255 (hex ff);
+
+Greys:
+Just make RR, GG, and BB each have the same value. For example:
+#4d4d4d = dark grey;
+#a2a2a2 = light grey;
+
+Efficiency:
+If all six values in a hex code are the same, you can write them in just three digits. For example:
+#555555 condenses to #555;
+
+Transparencies (rgba):
+rgba(29, 167, 23, 0.75) = 75% transparency for that color;
