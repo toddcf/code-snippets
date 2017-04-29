@@ -1,6 +1,6 @@
-#Colors
+# Colors
 
-##Color theory
+## Color theory
 
 (See also: https://webdesign.tutsplus.com/articles/an-introduction-to-color-theory-for-web-designers--webdesign-1437)
 
@@ -81,7 +81,7 @@
     - Reliability.
     - Men especially love blue.
 
-##CSS Color Codes
+## CSS Color Codes
 
 color: #000000; /*black*/
 color: #ffffff; /*white*/

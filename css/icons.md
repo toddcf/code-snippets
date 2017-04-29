@@ -1,9 +1,9 @@
-#Icons
+# Icons
 
 - Icons improve the aesthetic of a website.
 - If well-used, icons provide a better user experience. Can cause user confusion if poorly-used.
 
-##Basic Guidelines
+## Basic Guidelines
 
 1. Use icons to show:
   - Features of your website.
@@ -20,7 +20,7 @@
   - Vector Icon Font. USE THESE!
     - Smoother; scale endlessly up and down for any resolution.
 
-##Icon Sources
+## Icon Sources
 
 - http://ionicons.com/
 - http://entypo.com/

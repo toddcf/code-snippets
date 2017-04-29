@@ -1,8 +1,8 @@
-#Spacing and Layout
+# Spacing and Layout
 
-##Whitespace
+## Whitespace
 
-###Overview
+### Overview
 
 - Every piece of good design uses whitespace well.
 - You need a lot of whitespaces in the correct places on your site.
@@ -17,7 +17,7 @@
 - But don't exaggerate. When elements are spaced out too much, they may lose their relationships to one another.
 - Whitespace describes invisible relationships between the elements of your website. Communicates how the pieces of the website relate to one another.
 
-###Placing Whitespace
+### Placing Whitespace
 
 1. Define where you want your audience to look first.
 2. Establish a flow that corresponds to your content's message.

@@ -1,20 +1,20 @@
-#UI (User Interface)
+# UI (User Interface)
 
 The User Interface is the presentation of a product. How it looks and feels.
 
-#UX (User Experience)
+# UX (User Experience)
 
 The overall experience a user has with the product.
 Includes the User Interface, but includes the bigger picture of the entire product.
 
 "It's not just what it looks like and feels like. Design is how it works." - Steve Jobs
 
-##Further Resources
+## Further Resources
 
 - http://thehipperelement.com/post/75476711614/ux-crash-course-31-fundamentals
 - http://www.goodui.org/
 
-#Inspiration
+# Inspiration
 
 - Collect websites you like.
 - Examine what you like about each one.
@@ -26,7 +26,7 @@ Includes the User Interface, but includes the bigger picture of the entire produ
   - When you're starting out, don't worry about being original.
   - As you get better and better, originality will come automatically.
 
-##Further Resources
+## Further Resources
 
 - https://www.siteinspire.com/
 - https://dribbble.com/
