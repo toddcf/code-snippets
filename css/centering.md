@@ -16,7 +16,7 @@ transform: translate(-50%);
 This is 50% of the element's height, so it shifts the element back up by that amount.
 In other words, it "centers the center" of the element instead of centering the top of the element.
 
-This same technique can be used for horizontal centering as well.
+This same technique can be used for horizontal centering as well:
 
 ## Centering a Div Both Horizontally and Vertically
 
@@ -24,5 +24,5 @@ This same technique can be used for horizontal centering as well.
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-50%);
+transform: translate(-50%, -50%);
 ```
