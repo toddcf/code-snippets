@@ -13,3 +13,8 @@ All browsers add some default margins between elements if you don't specify any.
 You can reset these using the * to affect all elements on the page, and then writing your own margin and padding values.
 You can then specify margins for specific elements.
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
