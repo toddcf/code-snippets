@@ -15,7 +15,8 @@ This same technique can be used for horizontal centering as well.
 
 ## Centering a Div Both Horizontally and Vertically
 
-```position: absolute;
+```
+position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%);
