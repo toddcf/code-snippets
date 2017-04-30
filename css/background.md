@@ -1,8 +1,20 @@
 # Background
 
-## Background Image
+## Background Image Link
 
 `background-image: url(../img/food/hero.jpg);`
+
+## Show Entire Image
+
+`background-size: cover;`
+
+## Center Image
+
+`background-position: center;`
+
+## Match Background Height to Viewport Size
+
+`height: 100vh;`
 
 ## Fixed Background
 
