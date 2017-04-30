@@ -19,6 +19,8 @@ Prioritizes speed over legibility and geometric precision.
 Prioritizes legibility over loading speed and geometric precision.
 
 - Enables special kerning and optional ligature information that may be contained in the font file.
+- WARNING: Can increase load times by as much as 30 seconds on mobile devices if there is a lot of text!
+  - To be safe, only use this setting if your page has fewer than 1,000 words.
 
 ## Geometric Precision
 
