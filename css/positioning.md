@@ -7,4 +7,4 @@
 ## Absolute
 
 - These elements can be positioned anywhere we want within their parent elements.
-- The parent element must be a relative-positioned element.
+- The parent element must be "position: relative", or else the browser will not know where to position the absolute element.
