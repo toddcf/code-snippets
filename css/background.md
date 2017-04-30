@@ -7,9 +7,9 @@
 ## Fixed Background
 
 If you don't want the background to move:
-  - background-attachment: fixed;
-Note that this does not work on iOS devices. Use a media query to target smaller devices and set it to:
-  - background-attachment: scroll;
+  - `background-attachment: fixed;`
+  - Note that this does not work on iOS devices. Use a media query to target smaller devices and set it to:
+  - `background-attachment: scroll;`
 
  ## Further Resources
 
