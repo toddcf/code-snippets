@@ -69,10 +69,24 @@ Line spacing is the vertical distance between lines of text.
 
 ## Capitalization
 
-### Capitalize First Letter of Each Word:
+### Capitalize FIRST Letter of Each Word:
 
 `text-transform: capitalize;`
 
-### Capitalize Every Letter of Every Word:
+### Capitalize EVERY Letter of Every Word:
 
 `text-transform: uppercase;`
+
+## Spacing
+
+### Letter Spacing
+
+`letter-spacing: 1px;`
+
+This, for example, will spread out the space between each individual letter just a bit.
+
+### Word Spacing
+
+`word-spacing: 4px;`
+
+This, for example, will spread out the space between each word (but not each individual letter).
