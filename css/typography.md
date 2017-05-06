@@ -21,7 +21,7 @@ html {
 }
 ```
 
-After that, you use PERCENTAGES for your font sizes. (So if you want something to be 40px, you would set it to 200% instead, because 20px default x 200% = 40px.) This keeps your page RESPONSIVE for different-size screens.
+After that, you use PERCENTAGES for your font sizes. (So if you want something to be 40px, you would set it to 200% instead, because 20px default x 200% = 40px.) This keeps your page RESPONSIVE for different-size screens, and makes everything relative to your default.
 
 ## Line Spacing
 
@@ -66,3 +66,13 @@ Line spacing is the vertical distance between lines of text.
 3. Use only that one typeface. If you do need to pair two different fonts:
   - http://fontpair.co/
   - https://femmebot.github.io/google-type/
+
+## Capitalization
+
+### Capitalize First Letter of Each Word:
+
+`text-transform: capitalize;`
+
+### Capitalize Every Letter of Every Word:
+
+`text-transform: uppercase;`
