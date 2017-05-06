@@ -90,3 +90,7 @@ This, for example, will spread out the space between each individual letter just
 `word-spacing: 4px;`
 
 This, for example, will spread out the space between each word (but not each individual letter).
+
+## Text Decoration
+
+To get rid of a link's automatic underlining: `text-decoration: none;`
