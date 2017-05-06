@@ -23,6 +23,10 @@ html {
 
 After that, you use PERCENTAGES for your font sizes. (So if you want something to be 40px, you would set it to 200% instead, because 20px default x 200% = 40px.) This keeps your page RESPONSIVE for different-size screens, and makes everything relative to your default.
 
+## Headings
+
+Each webpage should have only one H1 element, meaning only one main heading.
+
 ## Line Spacing
 
 Line spacing is the vertical distance between lines of text.
