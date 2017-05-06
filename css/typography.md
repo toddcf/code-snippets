@@ -13,6 +13,16 @@ Good typography can make any design look professional.
 2. For headlines and titles, use a font between 32px and 60px. In some cases, you can go up to 90px.
   - When you use a really big headline, you may want to decrease the font-weight of that text. This makes the text look less bulky, and more modern and elegant. It will also not distract from other text on the page.
 
+You set your default font size as such:
+
+```
+html {
+  font-size: 20px;
+}
+```
+
+After that, you use PERCENTAGES for your font sizes. (So if you want something to be 40px, you would set it to 200% instead, because 20px default x 200% = 40px.) This keeps your page RESPONSIVE for different-size screens.
+
 ## Line Spacing
 
 Line spacing is the vertical distance between lines of text.
