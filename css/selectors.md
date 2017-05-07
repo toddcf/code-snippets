@@ -17,3 +17,8 @@ If you have more than one element with the same class name, you can use `first-c
 	
 }
 ```
+
+## Last of Type
+
+`.steps-box:last-of-type`
+

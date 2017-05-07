@@ -45,3 +45,23 @@ However, if you are going to use a background color and want it to be visible, u
   - Used to define some margins and padding.
     - For padding, we can only use px thanks to box-sizing: border-box, which ensures that the box width (defined in %) always stays the same no matter how much padding we add inside of it.
   - Used to define some smaller distances and distances that don't need to change when the screen size changes.
+
+## Sections
+
+To differentiate sections in your website, you can give each one a slightly different background color.
+
+## Margins
+
+All browsers add some default margins between elements if you don't specify any.
+
+You can reset these using the `*` to affect all elements on the page, and then writing your own margin and padding values.
+
+You can then specify margins for specific elements.
+
+```
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```

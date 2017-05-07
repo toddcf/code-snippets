@@ -35,6 +35,10 @@ The gradient "from" and "to" values are both set to the same value in this examp
 
 Note that rgba is used, meaning the first three values are rgb colors (each set to zero, for black), and the fourth value is transparency (set to 70% in this example).
 
- ## Further Resources
+## Sections
 
- - https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+To differentiate sections in your website, you can give each one a slightly different background color.
+
+## Further Resources
+
+- https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
