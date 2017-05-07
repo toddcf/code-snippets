@@ -24,6 +24,12 @@
   - This hierarchy will guide the user from one element to the next.
 3. Use whitespace to build that exact flow.
 
+### Margins vs. Padding
+
+Normally you would use margins to set your whitespace.
+
+However, if you are going to use a background color and want it to be visible, use padding instead.
+
 ## When to use PX vs. %
 
 1. Percentages.

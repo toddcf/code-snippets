@@ -27,7 +27,7 @@ Inline elements don't do any of that. (Examples: images, links, strong, em, u.) 
 
 ### Inline-Block Elements
 
-Like an inline element, but can have padding and margin. Does not for a line break.
+Like an inline element, but can have padding and margin. Does not force a line break.
 
 `display: inline-block;`
 
