@@ -10,6 +10,8 @@ Block elements use the full width of the browser, and force line breaks. (Headin
 
 Inline elements don't do any of that. (Examples: images, links, strong, em, u.) You cannot set their height or width.
 
+`display: inline;`
+
 ## Inline-Block Elements
 
 Like an inline element, but can have padding and margin. Does not force a line break.
