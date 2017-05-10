@@ -14,25 +14,33 @@ For basic starting points, use screen width break points for popular devices suc
 
 But as you get more advanced, set your break points based on where your design starts to look bad as the screen size shrinks.
 
-Start with the smallest screen sizes and work up from there.
+Start with the largest screen sizes and work down from there.
+
+List only the code you want to change. Omit any code that will stay the same.
+
+### Smaller Computer Screens
+
+1024px to 1200px.
+
+```
+@media only screen and (max-width: 1200px) {
+
+}
+```
+
+Anything bigger than this is just the regular formatting of your site.
+
+### Tablet
+
+768px to 1023px.
+
+### Medium Phones
+
+480px to 767px.
 
 ### Small Phones
 
-`if <= 480px`
-
-### Large Phones
-
-`if > 480px && <= 768px`
-
-###
-
-`if > 768px && <= 1024px`
-
-### Tablets
-
-`if > 1024px`
-
-Max may be 1200px, but I suppose that can always change.
+Less than 480px.
 
 ### And / Or
 
@@ -55,3 +63,5 @@ The comma means "or":
 	}
 }
 ```
+
+Drawbacks: You may have to repeat some code, since it won't cascade down from the larger screen size queries.
