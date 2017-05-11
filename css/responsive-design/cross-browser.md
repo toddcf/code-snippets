@@ -78,3 +78,8 @@ Example: `-webkit-border-radius: 25px;`
 1. Go to https://www.jsdelivr.com/
 2. Search for `selectivizr`.
 3. Copy and paste the `<script>` link into the end of your `index.html` file.
+
+## Can I Use? - Reference
+
+1. Go to `https://caniuse.com`.
+2. You can type in a CSS property, and the chart will show you which version of each browser it is compatible with.
