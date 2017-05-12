@@ -71,7 +71,9 @@ In your jQuery file:
 ```
 $( ".js--wp-1" ).waypoint( function( direction ) {
 		$( ".js--wp-1" ).addClass( "animated fadeIn" );
-});
+	}, {
+		offset: "50%"
+	});
 ```
 
 Explanation:
@@ -79,10 +81,16 @@ Explanation:
 - `$( ".js--wp-1" )` selects the `js--wp-1` class.
 - `( direction )` actually doesn't do anything in this example because this function will only get triggered once.
 - `$( ".js--wp-1" ).addClass( "animated fadeIn" );` adds the classes `animated` and `fadeIn` to the element that already has the class of `.js--wp-1`.
+- The `offset` value will be different depending on what you need to accomplish. In this example, we are setting it to kick in halfway up the screen/viewport from the start of the selected element. You would just play around with this to find what looks best for your project.
 
 ### CSS
 
-In order for the element to be able to fade in, it first needs to be made invisible. (Otherwise, it is already there and cannot be faded in.)
+We are also going to use Animate.CSS, so:
+
+1. Go to https://daneden.github.io/animate.css/ and download the file into your appropriate assets folder.
+2. Link to it in your `index.html` file.
+
+Now: In order for the element to be able to fade in, it first needs to be made invisible. (Otherwise, it is already there and cannot be faded in.)
 
 So we set that class's opacity to zero in our CSS file:
 
