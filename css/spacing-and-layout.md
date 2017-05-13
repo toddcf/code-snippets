@@ -40,11 +40,13 @@ However, if you are going to use a background color and want it to be visible, u
     - Margin-right
   - NOT used in vertical distances.
     - Responsive web design works in screen widths (horizontal).
+    - NOTE: To set an element's height to fill the entire screen based on screen size, use `height: 100vh;` instead, which is viewport height.
   - Font sizes are defined in % except for the base font-size defined for the body element. This allows us to easily change font sizes for smaller screens.
 2. PX.
   - Used to define some margins and padding.
-    - For padding, we can only use px thanks to box-sizing: border-box, which ensures that the box width (defined in %) always stays the same no matter how much padding we add inside of it.
+    - For padding, we can only use px thanks to `box-sizing: border-box`, which ensures that the box width (defined in %) always stays the same no matter how much padding we add inside of it.
   - Used to define some smaller distances and distances that don't need to change when the screen size changes.
+  - Used for the base `font-size`, which is defined in the body element. (All other `font-size`s are defined in percentages, which are relative to this base `font-size`.)
 
 ## Sections
 
