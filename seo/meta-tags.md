@@ -16,6 +16,10 @@ For mobile device compatibility:
 
 `<meta name="viewport" content="width=device-width, initial-scale=1">`
 
+## Author
+
+`<meta name="Author" content="Todd Croak-Falen">`
+
 ## Description
 
 This is the short sentence or two that will show up in the Google search results preview.
@@ -25,3 +29,7 @@ This is the short sentence or two that will show up in the Google search results
 This text is not visible to people once they are actually on your website, just when they are doing a search for your site.
 
 **No more than 160 characters!**
+
+## Keywords
+
+`<meta name="keywords" content="Omnifood">`
