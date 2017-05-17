@@ -71,6 +71,10 @@ Line spacing is the vertical distance between lines of text.
   - http://fontpair.co/
   - https://femmebot.github.io/google-type/
 
+## Color
+
+Jonas recommends not going any darker than `color: #333;` for your text.
+
 ## Capitalization
 
 ### Capitalize FIRST Letter of Each Word:
