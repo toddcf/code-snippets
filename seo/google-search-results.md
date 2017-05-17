@@ -12,6 +12,7 @@ Crawl, Cache, Retrieve, Rank, SERP.
 
 1. Crawl.
   - When a search engine robot crawls through your site and discovers your web pages. This is usually initiated when your site is backlinked from another site or mentioned somewhere online.
+  - One way to get discovered by Google is for your site to "hang out" with other similar sites. Google needs to know you are all related to the same keyword phrases. (See Touchgraph.)
 2. Cache.
   - The search engine robot decides what it wants to cache (store in its servers) from your website. It stores a simplified copy of your webpage on its servers.
 3. Retrieve.
