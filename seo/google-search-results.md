@@ -12,6 +12,7 @@ Crawl, Cache, Retrieve, Rank, SERP.
 
 1. Crawl.
   - When a search engine robot crawls through your site and discovers your web pages. This is usually initiated when your site is backlinked from another site or mentioned somewhere online.
+    - However, backlinks are not the most important part of Google's algorithm. An article published six years ago might have been popular at the time and still have thousands of links pointing to it, but it's not necessarily still relevant today. Something published two hours ago that only has three links pointing to it so far might actually be *more* relevant.
   - One way to get discovered by Google is for your site to "hang out" with other similar sites. Google needs to know you are all related to the same keyword phrases. (See Touchgraph.)
   - Google doesn't look at your page visually, it looks at your source code. It looks at your:
     - Title.
@@ -39,3 +40,8 @@ Crawl, Cache, Retrieve, Rank, SERP.
 2. Reciprocal Links.
   - If you and another site are linking to each other, it looks like quid pro quo, and does not help your rank.
   - If another site links to you and you *aren't* linking back to it, this looks like the site altruistically wants to link to you.
+3. Link Farms.
+  - These are sites you can go to to swap links. Google weeds these out of their rankings so as not to reward this behavior.
+4. Doorway Pages.
+  - A page created to show up in one type of search result, but when you click it, it takes you to the page the marketer actually wants you to go to.
+  - In 2006, Google blacklisted BMW for doing this. If you searched "used car" and then went to one of the result links, it would wind up taking you to BMW's site. This was a breach of Google's guidelines, and they reduced BMW's page rank to zero, ensuring that it would not show up in searches. (BMW negotiated its way back in 3 days later, but the message was loud and clear to everyone.)
