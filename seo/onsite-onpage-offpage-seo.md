@@ -56,7 +56,9 @@ No page will get a perfect score of 100, but the higher the better.
 
 ### Mobile-Friendliness
 
+This is another key element of onsite SEO. If people have to pinch and zoom, they are going to give up. The site must be mobile responsive.
 
+To see whether Google considers your site mobile friendly, type your URL into https://search.google.com/search-console/mobile-friendly.
 
 ## Onpage SEO
 

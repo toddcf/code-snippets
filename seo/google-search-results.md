@@ -53,6 +53,8 @@ Since at least 50% of web traffic comes from mobile devices, Google ranks mobile
 
 To see whether Google considers your site mobile friendly, type your URL into https://search.google.com/search-console/mobile-friendly.
 
+Google knows that if a site is not mobile friendly, users will not like the site and will consider the search result to have been a bad recommendation. So they don't want to recommend non-mobile-responsive websites.
+
 ## Guest Blogging
 
 Many people wrote guest blog posts on other people's sites in order to link back to their own sites and gain web traffic. In 2014, Google penalized the site MyBlogGuest for this.
