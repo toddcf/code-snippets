@@ -40,6 +40,22 @@ You can set a rule that after X number of weeks, these elements have to be re-ca
 
 #### Effective Use of CDN (Content Delivery Network)
 
+The farther physical distance a request has to travel between client and server, the longer it will take.
+
+A CDN lets you store certain elements of your webpage (such as images or videos) on different servers around the world in order to speed up load times for those areas. The request to load the web page will still come from the original server, but the heavy elements such as images and videos will come from the more local server.
+
+If your site isn't media heavy, this is not a big deal. But if you have an ecommerce site with lots of images and videos and you're selling to people all over the world, a CDN is very important.
+
+### Google Test Tool
+
+Search Google for "google page speed test" and go to "pagespeed insights."
+
+Paste in your URL and click "analyze."
+
+No page will get a perfect score of 100, but the higher the better.
+
+### Mobile-Friendliness
+
 
 
 ## Onpage SEO
