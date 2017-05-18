@@ -28,6 +28,7 @@ Crawl, Cache, Retrieve, Rank, SERP.
 4. Rank.
   - Once the results are retrieved, they are passed through Google's algorithm, which has over 200 elements that help it decide how to rank each result.
   - Pagerank was the key element in Google's original algorithm. It is how Google's search results were more relevant than other search engines' at the time.
+  - "Domain relevance and authority" means that the higher a website's reputation, the higher a posting on that site will rank. (If Google already trusts the domain, it trusts the new post.)
   - See http://infolab.stanford.edu/~backrub/google.html for the original 1998 thesis, written by the Google founders.
   - Alta Vista originally based its search results on the keywords in websites' meta tags. But this was open to abuse, and people listed keywords that were not relevant to the pages. In 1998, Google improved on this with its backlink formula, figuring that a page was more relevant the more links it had pointing to it.
 5. SERP (Search Engine Results Page).
@@ -45,3 +46,45 @@ Crawl, Cache, Retrieve, Rank, SERP.
 4. Doorway Pages.
   - A page created to show up in one type of search result, but when you click it, it takes you to the page the marketer actually wants you to go to.
   - In 2006, Google blacklisted BMW for doing this. If you searched "used car" and then went to one of the result links, it would wind up taking you to BMW's site. This was a breach of Google's guidelines, and they reduced BMW's page rank to zero, ensuring that it would not show up in searches. (BMW negotiated its way back in 3 days later, but the message was loud and clear to everyone.)
+
+## Mobile-Friendliness
+
+Since at least 50% of web traffic comes from mobile devices, Google ranks mobile-friendly pages higher. So make sure your page is mobile-friendly in order to boost your pagerank!
+
+To see whether Google considers your site mobile friendly, type your URL into https://search.google.com/search-console/mobile-friendly.
+
+## Guest Blogging
+
+Many people wrote guest blog posts on other people's sites in order to link back to their own sites and gain web traffic. In 2014, Google penalized the site MyBlogGuest for this.
+
+So if you are going to attempt this technique, make sure the posts you are writing add real authoritative value to the site you're guest writing on.
+
+BUT, it's safer and better to do things that cause other websites to talk about you and link to you on their own, rather than you trying to generate the backlink yourself.
+
+## Penguin
+
+This is Google's anti-spam detector. Don't use your keywords over and over in your own website, or Google will assume it's a spammy site.
+
+## Panda
+
+Google's quality content assessor.
+
+- Has your content been published anywhere else? (Original content is higher "quality.")
+- Volume of your content.
+- Quality of writing. Google is getting better every day at determining whether your writing is gibberish or actual quality work. It will help if your work has:
+  - Small paragraph spaces.
+  - Headings and ssubheadings.
+  - Different sections.
+  - Use of italics or other emphasis.
+  - Linking out a little bit to other sites.
+  - Some images.
+- So focus on the reader, offer a great experience, and you will have no trouble with Panda.
+
+## Semantic SEO
+
+Context. Google tries to understand why someone is typing in a phrase, not just deliver results based upon those words.
+
+- User location.
+- Whether or not user is signed in.
+- User's search history.
+- The user's device. (Mobile -- and is your website optimized for mobile? If not, your site may not come up in a user's search if they're using their mobile device.)
