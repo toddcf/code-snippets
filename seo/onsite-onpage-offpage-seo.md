@@ -68,6 +68,31 @@ The title of each page should have an appropriate keyword phrase. Use the one ke
 
 Can take months for your site's authority to build up in Google to the point where it is recognized and ranked higher.
 
+### 8 Key Elements of Onpage SEO
+
+1. Keyword Research.
+  - Don't assume you know what your customers refer to your products or services as.
+  - Do research to determine what phraseology your customers are most likely to use.
+  - Incorporate those phrases in places like your page title, meta description, and heading tags.
+  - To figure these phrases out:
+    - Look at your competitors. See what keywords and phrases they are using on their sites.
+    - Type those searches into Google and see what other keyword and phrase suggestions come up. Also, at the bottom of the Google search results page, it will show you a list or related searches.
+    - Use the "google keyword planner" tool. (You need an Adwords account to use this tool, but you don't need to spend any money or input your credit card.) Enter your parameters. Then in the results, click on the "keyword ideas" tab and look at the "average monthly searches column" for those that are searched for between 100 - 1,000 times per month. (Higher than 1,000 is generally too competitive and difficult to rank for organically. Less than 100 is not a popular enough search.) Repeat this process for all the keywords you gathered from your competitor research and Google suggestions. You will wind up with several hundred keyword phrases you could target.
+2. Page Title.
+3. Meta Description.
+4. Heading Tags.
+5. Content Writing.
+  - Write original, great-quality content.
+6. Alt Tags & Images.
+  - Search engines love to incorporate images in their search results.
+  - People are more likely to share your pages if you add images to them.
+7. HTML5 Microdata.
+  - Additional markup that surround items on your page so search engines know what those items are.
+  - For example, if you have a recipe, you can markup around the recipe to tell search engines what it is. They will then be more likely to use that element in their search results.
+  - Another example is an address or telephone number. If you tell search engines specifically that these elements are addresses and phone numbers, they are more confident including them in their search results.
+8. Internal Linking.
+  - If you have a logical flow of linking between the various pages of your site, and you use certain phraseology that makes it clear to the search engine what the page these links point to is likely about, that will assist with your SEO.
+
 ## Offpage SEO
 
 Other websites talking about you and linking to you.
