@@ -117,6 +117,10 @@ Can take months for your site's authority to build up in Google to the point whe
   - If you have a logical flow of linking between the various pages of your site, and you use certain phraseology that makes it clear to the search engine what the page these links point to is likely about, that will assist with your SEO.
   - Linking is not only how Google finds your site as a whole, it's how it finds the other pages within your site.
   - If you have WordPress, you can use YARPP (Yet Another Related Posts Plugin) to automatically link to other related posts on your website each time you post something new.
+  - You want to demonstrate to Google a relationship between all the different pages of your website.
+  - XML Sitemap.
+    - You should also have an XML sitemap. (If you have WordPress, you can get a plugin for this.) It's not for users to read, it's for search engines to read.
+    - Generally, it is located at `www.yourdomainname.com/sitemap.xml`. You can submit this domain to Google Webmaster Tools. Then it's automatically updated whenever you add a new post or page to your site. And all of this makes it more likely for your site to appear in Google search results!
 
 ## Offpage SEO
 
