@@ -97,7 +97,7 @@ Can take months for your site's authority to build up in Google to the point whe
 5. Content Writing.
   - Write original, great-quality content for each page on your site.
   - You need strong user signals to get higher pageranks. User signals are what a user does once they're on your site. Do they . . .
-    - Click the innerlinks and explore the entire site?
+    - Click the internal links and explore the entire site?
     - Click the "back" button and leave the site completely?
     - Stay several minutes on the page they landed on and devour the content?
   - In the WordStream website example, the articles they've had the most user attraction to are 3,000 words long.
@@ -108,12 +108,15 @@ Can take months for your site's authority to build up in Google to the point whe
   - Your `alt` description should relate to what the image is, plus the topic it's related to on the page. Once Google starts to trust the page, it's more likely to rank the page for that.
   - Also has the potential for your image to show up in Google Image searches, with a link back to your site.
 7. HTML5 Microdata.
-  - Additional markup that surround items on your page so search engines know what those items are.
+  - Additional markup that surround items on your page so search engines know what those items are. https://schema.org/ can give you this code.
+    - This is only in your source code. Users viewing the page won't see it.
   - For example, if you have a recipe, you can markup around the recipe to tell search engines what it is. They will then be more likely to use that element in their search results.
     - The search results might also show the rating (how many stars people gave it), how many reviews, how many calories, etc.
   - Another example is an address or telephone number. If you tell search engines specifically that these elements are addresses and phone numbers, they are more confident including them in their search results.
 8. Internal Linking.
   - If you have a logical flow of linking between the various pages of your site, and you use certain phraseology that makes it clear to the search engine what the page these links point to is likely about, that will assist with your SEO.
+  - Linking is not only how Google finds your site as a whole, it's how it finds the other pages within your site.
+  - If you have WordPress, you can use YARPP (Yet Another Related Posts Plugin) to automatically link to other related posts on your website each time you post something new.
 
 ## Offpage SEO
 
