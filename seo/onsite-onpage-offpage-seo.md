@@ -91,9 +91,15 @@ Can take months for your site's authority to build up in Google to the point whe
   - Google does not use this description as part of their crawling. BUT, if your keyword phrases are in the description, they will be in bold when displayed, which enhances your clickthrough rate. And clickthrough rate is part of Google's algorithm.
   - DO NOT have the same meta description on every page of your site. Each one should be unique. It's a ranking opportunity. It's an opportunity for you to pinpoint why your page is different. Have a unique target keyword phrase for each page of your site.
 4. Heading Tags.
-  - `<h1>`, for instance.
+  - `<h1>`, for instance. Is visually seen on the webpage.
+  - Heading tags are a strong indicator to Google as to the purpose of the page. Is the biggest onpage factor when it comes to SEO.
+  - There should only be ONE `<h1>` in a page. Can use `<h2>`s and `<h3>`s, etc. These are subheadings, and can contain keyword phrases to help with SEO, but don't need to. In fact, to reduce rik of getting flagged as spam, just have your keyword phrases in your meta description, page title, `<h1>`, and once in your actual content text.
 5. Content Writing.
-  - Write original, great-quality content.
+  - Write original, great-quality content for each page on your site.
+  - You need strong user signals to get higher pageranks. User signals are what a user does once they're on your site. Do they . . .
+    - Click the innerlinks and explore the entire site?
+    - Click the "back" button and leave the site completely?
+    - Stay several minutes on the page they landed on and devour the content?
 6. Alt Tags & Images.
   - Search engines love to incorporate images in their search results.
   - People are more likely to share your pages if you add images to them.
