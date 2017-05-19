@@ -100,6 +100,8 @@ Can take months for your site's authority to build up in Google to the point whe
     - Click the innerlinks and explore the entire site?
     - Click the "back" button and leave the site completely?
     - Stay several minutes on the page they landed on and devour the content?
+  - In the WordStream website example, the articles they've had the most user attraction to are 3,000 words long.
+  - The more value your content provides, the more likely it is to be shared online.
 6. Alt Tags & Images.
   - Search engines love to incorporate images in their search results.
   - People are more likely to share your pages if you add images to them.
