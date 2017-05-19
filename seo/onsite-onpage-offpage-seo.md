@@ -127,3 +127,5 @@ Can take months for your site's authority to build up in Google to the point whe
 Other websites talking about you and linking to you.
 
 One example is if you make one of your pages about a certain person, you can tell that person about it and hopefully they will link to it from their own website.
+
+Make outstanding quality content that people naturally want to link to without being asked. "Publish great content, share it with people, and if it is indeed great content, chances are that some people will naturally link to it."
