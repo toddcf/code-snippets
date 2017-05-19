@@ -79,8 +79,19 @@ Can take months for your site's authority to build up in Google to the point whe
     - Type those searches into Google and see what other keyword and phrase suggestions come up. Also, at the bottom of the Google search results page, it will show you a list or related searches.
     - Use the "google keyword planner" tool. (You need an Adwords account to use this tool, but you don't need to spend any money or input your credit card.) Enter your parameters. Then in the results, click on the "keyword ideas" tab and look at the "average monthly searches column" for those that are searched for between 100 - 1,000 times per month. (Higher than 1,000 is generally too competitive and difficult to rank for organically. Less than 100 is not a popular enough search.) Repeat this process for all the keywords you gathered from your competitor research and Google suggestions. You will wind up with several hundred keyword phrases you could target.
 2. Page Title.
+  - Max length: about 50 characters (or it will get cut off in search results).
+  - This is not a heading that displays on the webpage itself. It is the text inside your `<title>` tag in your html file.
+  - This text will be made bold when displayed in the search engine results, so it is important.
+  - Go to https://moz.com/learn/seo/title-tag and enter potential titles to test how they would appear in search results.
+  - Each page of your site should have a unique title.
 3. Meta Description.
+  - Max length: Approx. 150 characters, depending on letter size.
+  - In your head: `<meta name="description" content="The world's leading juggling expert."/>`
+  - This description will show up in the search results under your page title.
+  - Google does not use this description as part of their crawling. BUT, if your keyword phrases are in the description, they will be in bold when displayed, which enhances your clickthrough rate. And clickthrough rate is part of Google's algorithm.
+  - DO NOT have the same meta description on every page of your site. Each one should be unique. It's a ranking opportunity. It's an opportunity for you to pinpoint why your page is different. Have a unique target keyword phrase for each page of your site.
 4. Heading Tags.
+  - `<h1>`, for instance.
 5. Content Writing.
   - Write original, great-quality content.
 6. Alt Tags & Images.
