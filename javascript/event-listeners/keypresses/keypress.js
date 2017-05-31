@@ -4,3 +4,14 @@ document.addEventListener( "keypress", function( event ) {
 		console.log( "ENTER key was pressed!" );
 	}
 });
+
+// Event listener for alphabet keys only:
+document.onkeyup = function( event ) {
+
+		if ( ( event.keyCode >= 65 ) && ( event.keyCode <= 90 ) ) {
+			
+			// Your code here
+
+		}
+
+	};

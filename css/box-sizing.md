@@ -11,7 +11,7 @@ All HTML elements can be seen as boxes. From inside to outside:
 
 In the standard box model, you can only define height and width for the content, not for the entire box. This means that padding, border, and margin will be added to the height and width we specify.
 
-But if you set `box-sizing: border-box` in CSS, you can define height and width for an entire box, not just the content.
+But if you set `box-sizing: border-box;` in CSS, you can define height and width for an entire box, not just the content.
 
 ## See Also:
 
