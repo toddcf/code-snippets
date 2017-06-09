@@ -33,7 +33,7 @@ Line spacing is the vertical distance between lines of text.
 
 1. Use line spacing between 120% and 150%.
 
-`line-height: 145%;
+`line-height: 145%;`
 
 ## Characters per Line
 
