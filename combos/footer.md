@@ -16,6 +16,13 @@
 </footer>
 ```
 
+Remember to update the links as necessary.
+
+CSS links:
+
+1. grid.css.
+2. style.css (or whatever your main file is called).
+
 ## CSS
 
 ```
@@ -34,10 +41,12 @@ footer {
 // Pass current year into footer copyright:
 var thisYear = new Date().getFullYear();
 
-if ( thisYear > 2016 ) {
+if ( thisYear > 2017 ) {
 	// Footer (IIFE):
 	var footerInfo = ( function() {
 		$( ".currentYear" ).html( " &ndash; " + thisYear + " " );
 	}) ();
 }
 ```
+
+Adjust 2017 if necessary.
