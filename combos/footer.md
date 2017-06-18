@@ -35,6 +35,24 @@ footer {
 }
 ```
 
+```
+a:link,
+a:visited {
+	color: #fff;
+	text-decoration: none; /* No default underline */
+	border-bottom: 1px solid #fff; /* Our own custom underline */
+	/*padding-bottom: 1px;*/ /* Space for underline */
+	-webkit-transition: border-bottom 0.2s, color 0.2s;
+	transition: border-bottom 0.2s, color 0.2s; /* Transition takes 0.2 seconds. */
+}
+
+a:hover,
+a:active {
+	color: #c0c0c0;
+	border-bottom: 1px solid transparent;
+}
+```
+
 ## JavaScript
 
 ```
