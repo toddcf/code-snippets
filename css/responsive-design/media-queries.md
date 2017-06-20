@@ -2,9 +2,9 @@
 
 ## HTML Head
 
-`<meta name="viewport" content="width=device-width, initial-scale=1">`
-
 Include this in your head. It tells mobile devices not to zoom out too far.
+
+`<meta name="viewport" content="width=device-width, initial-scale=1">`
 
 ## Break Points
 
@@ -36,13 +36,31 @@ Anything bigger than this is just the regular formatting of your site.
 
 768px to 1023px.
 
+```
+@media only screen and (max-width: 1023px) {
+
+}
+```
+
 ### Medium Phones
 
 481px to 767px.
 
+```
+@media only screen and (max-width: 767px) {
+
+}
+```
+
 ### Small Phones
 
-480px or less.
+480px or less (usually 320px min).
+
+```
+@media only screen and (max-width: 480px) {
+
+}
+```
 
 ### And / Or
 

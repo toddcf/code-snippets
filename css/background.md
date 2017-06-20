@@ -40,7 +40,7 @@ If you just want to have a shaded (or lightened) background (as opposed to an im
 
 `div {background: rgba(0, 0, 0, 0.5);}`
 
-This is better than using `opacity`, which would cause the children of that div to inherit the opacity as well -- meaning that your text will be hard to read on top of the background.
+This is better than using `opacity`, which would cause the children of that div to inherit that opacity as well -- meaning that your text will be hard to read on top of the background.
 
 ## Sections
 
