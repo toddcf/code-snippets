@@ -49,6 +49,10 @@
 .main-nav li a:active {
 	border-bottom: 2px solid #e67e22;
 }
+
+.mobile-nav-icon {
+	cursor: pointer;
+}
 ```
 
 ## JavaScript
@@ -91,7 +95,7 @@ $( ".js--nav-icon" ).click( function() {
 	// Open and close the box:
 	nav.slideToggle( 200 );
 
-	if ( icon.hasClass( "ion-navicon-round" )) {
+	if ( icon.hasClass( "ion-navicon-round" ) ) {
 		icon.addClass( "ion-close-round" );
 		icon.removeClass( "ion-navicon-round" );
 	} else {
@@ -99,7 +103,7 @@ $( ".js--nav-icon" ).click( function() {
 		icon.removeClass( "ion-close-round" );
 	}
 	
-});
+} );
 
 // Ensure that .main-nav reappears after mobile nav has been closed and screen size increased again:
 // This works basically like a media query for jQuery, where we can take different actions depending on the screen width
@@ -108,7 +112,7 @@ $( window ).resize( function() {
 	var nav = $( ".js--main-nav" );
 	var icon = $( ".js--nav-icon i" );
 
-			if ( $( window ).width() > 767 ) {
+	if ( $( window ).width() > 767 ) {
 		nav.css( "display", "block" );
 		icon.addClass( "ion-close-round" );
 		icon.removeClass( "ion-navicon-round" );
@@ -118,6 +122,6 @@ $( window ).resize( function() {
 		icon.removeClass( "ion-close-round" );
 	}
 
-});
+} );
 
 ```
