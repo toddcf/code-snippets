@@ -14,7 +14,23 @@
 
 ## Match Background Height to Viewport Size
 
-`height: 100vh;`
+One method is to put the entire page in a container, and then set the height of the container to 100% of the viewport height:
+
+```
+.container {
+	height: 100vh;
+}
+```
+
+However, it can be better to set the background image in `html` as opposed to the `body` or a `div`, as html will always be 100% of the viewport. It resizes automatically and more easily for mobile responsiveness.
+
+```
+html {
+	background-image: url(../img/food/hero.jpg);
+	background-size: cover;
+}
+```
+There are also some webkits for this. See https://css-tricks.com/perfect-full-page-background-image/.
 
 ## Fixed Background
 
