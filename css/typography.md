@@ -27,19 +27,34 @@ After that, you use PERCENTAGES for your font sizes. (So if you want something t
 
 Each webpage should have only one H1 element, meaning only one main heading.
 
-## Line Height
+## Spacing
+
+### Characters per Line
+
+45 to 90 characters per line is ideal.
+
+- Exception: Can be more narrow if you're using columns with text.
+- Too wide makes it hard on our eyes to travel such a long distance from the end of one line to the beginning of the next line while reading.
+
+### Letter Spacing
+
+`letter-spacing: 1px;`
+
+This, for example, will spread out the space between each individual letter just a bit.
+
+### Word Spacing
+
+`word-spacing: 4px;`
+
+This, for example, will spread out the space between each word (but not each individual letter).
+
+### Line Height
 
 Line height is the vertical distance between lines of text.
 
-1. Use line height between 120% and 150%.
+Use line height between 120% and 150%.
 
 `line-height: 145%;`
-
-## Characters per Line
-
-1. 45 to 90 characters per line is ideal.
-  - Exception: Can be more narrow if you're using columns with text.
-  - Too wide makes it hard on our eyes to travel such a long distance from the end of one line to the beginning of the next line while reading.
 
 ## Fonts
 
@@ -86,20 +101,6 @@ Jonas recommends not going any darker than `color: #333;` for your text.
 ### Capitalize EVERY Letter of Every Word:
 
 `text-transform: uppercase;`
-
-## Spacing
-
-### Letter Spacing
-
-`letter-spacing: 1px;`
-
-This, for example, will spread out the space between each individual letter just a bit.
-
-### Word Spacing
-
-`word-spacing: 4px;`
-
-This, for example, will spread out the space between each word (but not each individual letter).
 
 ## Text Decoration
 
