@@ -27,11 +27,11 @@ After that, you use PERCENTAGES for your font sizes. (So if you want something t
 
 Each webpage should have only one H1 element, meaning only one main heading.
 
-## Line Spacing
+## Line Height
 
-Line spacing is the vertical distance between lines of text.
+Line height is the vertical distance between lines of text.
 
-1. Use line spacing between 120% and 150%.
+1. Use line height between 120% and 150%.
 
 `line-height: 145%;`
 
