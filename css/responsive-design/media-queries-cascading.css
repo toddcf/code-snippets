@@ -1,3 +1,39 @@
+/* SMALLER TO LARGER */
+
+/* Below 575px wide */
+@media screen and (max-width : 575px) {
+
+}
+
+/*Above 575px wide */
+@media screen and (min-width : 576px) {
+
+}
+
+/* Above 769px wide */
+@media screen and (min-width : 769px) {
+
+}
+
+/* Above 992px wide */
+@media screen and (min-width : 992px) {
+
+}
+
+/* Above 1200px wide */
+@media screen and (min-width : 1200px) {
+
+}
+
+
+/* EXACT SIZES */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+}
+
+/* LARGER TO SMALLER */
+
 /* Smaller Computer Screens (1024px to 1200px) */
 @media only screen and (max-width: 1200px) {
 
@@ -17,3 +53,12 @@
 @media only screen and (max-width: 480px) {
 
 }
+
+
+
+/*The Standard Bootstrap 4.x Breakpoints*/
+
+@media all and (max-width: 1199px) { ... } 
+@media all and (max-width: 991px) { ... } 
+@media all and (max-width: 768px) { ... } 
+@media all and (max-width: 575px) { ... }
