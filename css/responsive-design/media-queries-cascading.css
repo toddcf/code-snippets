@@ -1,7 +1,7 @@
 /* SMALLER TO LARGER */
 
 /* Below 575px wide */
-@media screen and (max-width : 575px) {
+@media only screen and (max-width : 575px) {
 
 }
 

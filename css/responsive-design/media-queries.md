@@ -14,7 +14,7 @@ For basic starting points, use screen width break points for popular devices suc
 
 But as you get more advanced, set your break points based on where your design starts to look bad as the screen size shrinks.
 
-Start with the largest screen sizes and work down from there.
+The modern method is to start with the smallest screen size (mobile devices) and scale up from there. The older method was to start with the largest screen sizes and work down from there.
 
 When viewing changes in the browser, have your browser width set to the *minimum* px in the range you are working on. (For example, if you are working on the range of 481px to 767px, set your browser width to 481.) Then check it against the high end of the range to be safe (767px, in this example).
 
