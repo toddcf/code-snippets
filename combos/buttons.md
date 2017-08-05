@@ -7,6 +7,8 @@
 <a class="btn btn-ghost js--scroll-to-features" href="#">Show me more</a>
 ```
 
+NOTE: A `<button>` tag cannot be inside an `<a>` tag. Simply forego the `<button>` tag. Use and style only the `<a>` tag.
+
 ## CSS
 
 ```

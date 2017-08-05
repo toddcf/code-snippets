@@ -1,7 +1,7 @@
 /* SMALLER TO LARGER */
 
 /* Below 575px wide */
-@media only screen and (max-width : 575px) {
+@media only screen and (min-width : 1px) {
 
 }
 
@@ -58,7 +58,7 @@
 
 /*The Standard Bootstrap 4.x Breakpoints*/
 
-@media all and (max-width: 1199px) { ... } 
-@media all and (max-width: 991px) { ... } 
-@media all and (max-width: 768px) { ... } 
+@media all and (max-width: 1199px) { ... }
+@media all and (max-width: 991px) { ... }
+@media all and (max-width: 768px) { ... }
 @media all and (max-width: 575px) { ... }
