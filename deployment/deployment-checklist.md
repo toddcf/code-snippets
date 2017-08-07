@@ -22,7 +22,8 @@ Optimize Images For Faster Load Times:
   - Links to fonts that are no longer being used.
   - Clean up comments.
   - CSS:
-    - Reduce any single-rules to one line.
+    - Reduce any single-line rules to one line of code.
+    - Add whitespace padding above and below multiple-line blocks of rules.
 
 ## Browser Compatibility
 
@@ -31,13 +32,31 @@ Optimize Images For Faster Load Times:
     - 
   - Otherwise, here are the links used in the previous project:
     - 
+2. CSS:
+  - Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.)
 
-## Code Verification
+## Code Validation
+
+1. HTML:
+  - https://validator.w3.org/#validate_by_input
+2. CSS:
+  - https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
 
 ## Minify
 
-It is possible to minify CSS and JS files for faster load times. There are sites online that you can use to do this. (Removes comments, whitespace, etc.)
+It is possible to minify CSS and JS files for faster load times. (Remove comments, whitespace, etc.) There are sites online that you can use to do this.
 
 **However, this is only important if you have large amounts of code to compress. Otherwise, you are not saving that much space.**
 
 If you do minify, know that it makes your code very difficult for humans to read, so only do this when you're ready to launch the website.
+
+## Final Test
+
+Now that you've made these changes to your files, test the entire site again:
+
+1. All links.
+2. Every single HTML page, including responsive web design.
+
+## Actual Deployment
+
+You are now ready to go live!
