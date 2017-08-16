@@ -73,3 +73,11 @@ Gives you a field with a `Choose File` button so you can upload from your comput
 `<input type="checkbox">`
 
 Displays a checkbox.
+
+### Name
+
+`<input type="text" name="username">`
+
+If you put a `name` in the input tag, it will appear in the query string of your browser's URL when submitted.
+
+So you would NOT do this for a password. You would use a POST request (not a GET request).
