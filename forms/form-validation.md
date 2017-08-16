@@ -15,3 +15,9 @@ It's simple: type `required` inside the `<input>` tag.
 ```
 
 Note that you DO NOT have to write `required="required"` or `required="true"`. You can simply write `required`.
+
+### Data Type / Format
+
+This will check that the FORMAT of the text entered into a field matches certain criteria for the DATA TYPE that was specified inside the `<input>` tag.
+
+For example, if `<input type="email">`, then it will check that the user's input has an `@` symbol and a `.` domain.
