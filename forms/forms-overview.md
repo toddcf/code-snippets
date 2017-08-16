@@ -13,6 +13,7 @@ Action tells the form what URL to send the data to when submitted:
 
 </form>
 ```
+If you don't specify an action, clicking submit will simply send the data to the page you're on, meaning it will refresh and the fields will clear. Nothing will really happen.
 
 ### Method
 
@@ -27,6 +28,8 @@ Method tells the form what type of HTTP request to send. We could send a `get` r
 
 Searching or retrieving data. A Google search is a GET request.
 
+This is the default. If you don't specify a method on your form, it will be a GET request.
+
 #### POST Request
 
 Sending data that we want to add to a database -- POSTED to a server. Creating an account on Facebook is a POST request because it is adding data to Facebook's servers.
@@ -35,7 +38,11 @@ Sending data that we want to add to a database -- POSTED to a server. Creating a
 
 `<input>`
 
+The input tag creates interactive controls.
+
 ### Type
+
+`<input type="">` specifies what type of input your field will accept. A few examples (many, many more on MDN):
 
 #### Text
 
