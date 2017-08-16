@@ -15,3 +15,7 @@ You MUST give each `<input>` the same `name=""`, or else the radio buttons will 
 	<input type="radio" id="dogs" name="petChoice">
 </form>
 ```
+
+You also want each choice to have a `value`. This is what will be sent in the get/post request:
+
+`<input type="radio" id="cats" name="petChoice" value="cats">`
