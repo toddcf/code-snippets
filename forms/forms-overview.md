@@ -34,6 +34,30 @@ This is the default. If you don't specify a method on your form, it will be a GE
 
 Sending data that we want to add to a database -- POSTED to a server. Creating an account on Facebook is a POST request because it is adding data to Facebook's servers.
 
+## Label
+
+Use a `<label>` tag instead of a `<p>` tag to describe your fields to your user. This is so if someone is visually impaired, their text-reading software will know to read these labels out loud.
+
+You can nest the `<input>` tags INSIDE the `<label>` tags if you wish:
+
+```
+<form>
+	<label>
+		Username:
+		<input type="text" name="username">
+	</label>
+</form>
+```
+
+But it can be neater to do them separately. You just have to include the `for=""` inside the `<label>` tag to ensure it is linked to the proper `<input>` tag. (Again, mainly for helping the visually-impaired.)
+
+```
+<form>
+	<label for="username">Username:</label>
+	<input type="text" name="username">
+</form>
+```
+
 ## Input
 
 `<input>`
