@@ -6,7 +6,9 @@ This will be enforced by the browser, and not every browser does this or does it
 
 ### Required
 
-Just typing `required` inside the `<input>` tag means that field cannot be left blank.
+This is called a "presence" validation. It makes sure that something is there -- the field cannot be left blank.
+
+It's simple: type `required` inside the `<input>` tag.
 
 ```
 <input type="" name="" required>
