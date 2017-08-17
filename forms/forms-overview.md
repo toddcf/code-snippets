@@ -98,6 +98,10 @@ Gives you a field with a `Choose File` button so you can upload from your comput
 
 Displays a checkbox.
 
+Note that you can default a checkbox to "checked" when your page first loads by adding `checked` inside the `<input>` tag as follows:
+
+`<input type="checkbox" checked>`
+
 ### Name
 
 `<input type="text" name="username">`
