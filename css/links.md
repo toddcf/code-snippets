@@ -2,7 +2,13 @@
 
 ## Text Decoration
 
-To get rid of a link's automatic underlining: `text-decoration: none;`
+To get rid of a link's automatic underlining:
+
+```
+a {
+	text-decoration: none;
+}
+```
 
 ```
 a:link,

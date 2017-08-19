@@ -6,6 +6,8 @@ Good typography can make any design look professional.
 
 ## Font Size
 
+### Pixels (px)
+
 1. For standard text, use a font between 15px and 25px. Depends on:
   - the typeface you choose.
   - How much text you have.
@@ -22,6 +24,14 @@ html {
 ```
 
 After that, you use PERCENTAGES for your font sizes. (So if you want something to be 40px, you would set it to 200% instead, because 20px default x 200% = 40px.) This keeps your page RESPONSIVE for different-size screens, and makes everything relative to your default.
+
+### em
+
+An alternative to `px` is `em`, which is a relative size.
+
+### rem
+
+Whereas `em` is relative to its parent size, `rem` bypasses the parent size and is relative only to the root size.
 
 ## Headings
 

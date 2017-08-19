@@ -28,24 +28,24 @@ Optimize Images For Faster Load Times:
 ## Browser Compatibility
 
 1. HTML:
-  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the <script> links into the bottom of each of your HTML files.
+  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the <script> links into the bottom of the `<body>` in each of your HTML files.
     - Search for `respond`. (Older versions of IE.)
     - Search for `html5shiv`. (For pre-HTML5 browsers.)
     - Search for `selectivizr`. (For pre-CSS3 browsers.)
   - If you're confident these are still the latest links, you can just paste each of these:
-    - <script src="https://cdn.jsdelivr.net/g/respond@1.4.2(respond.min.js+respond.matchmedia.addListener.min.js+cross-domain/respond.proxy.js+respond.matchmedia.addListener.src.js+respond.src.js)"></script>
-    - <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
-    - <script src="https://cdn.jsdelivr.net/g/selectivizr@1.0.3b(selectivizr.min.js+selectivizr.js)"></script>
+    <script src="https://cdn.jsdelivr.net/g/respond@1.4.2(respond.min.js+respond.matchmedia.addListener.min.js+cross-domain/respond.proxy.js+respond.matchmedia.addListener.src.js+respond.src.js)"></script>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/selectivizr@1.0.3b(selectivizr.min.js+selectivizr.js)"></script>
 2. CSS:
   - Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.)
   - NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
 
 ## Code Validation
 
-Paste each HTML file's code (one file at a time) into the following links. Make any corrections necessary until the results come back clean.
+Paste each file's code (one file at a time) into the following links. Make any corrections necessary until the results come back clean.
 
-1. HTML: https://validator.w3.org/#validate_by_input
-2. CSS: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
+1. CSS: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
+2. HTML: https://validator.w3.org/#validate_by_input
 
 ## Minify
 
