@@ -27,11 +27,15 @@ After that, you use PERCENTAGES for your font sizes. (So if you want something t
 
 ### em
 
-An alternative to `px` is `em`, which is a relative size.
+An alternative to `px` is `em`, which is a relative size. They are relative to the element they are nested inside of (aka their parent).
+
+`font-size: 2.oem;`
 
 ### rem
 
-Whereas `em` is relative to its parent size, `rem` bypasses the parent size and is relative only to the root size.
+Whereas `em` is relative to its parent size, `rem` bypasses the parent size and is relative only to the root element on the page. A good way to do proportional fonts without worrying about what's nested inside of what.
+
+`font-size: 2.0rem;`
 
 ## Headings
 
