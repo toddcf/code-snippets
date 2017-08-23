@@ -18,10 +18,12 @@ Optimize Images For Faster Load Times:
 
 1. Delete entire files and images that are no longer being used.
 2. Clean up all remaining files:
-  - Links to CSS and JS files that are no longer being used.
-  - Links to fonts that are no longer being used.
-  - Clean up comments.
+  - HTML:
+    - Links to CSS and JS files that are no longer being used.
+    - Links to fonts that are no longer being used.
+    - Clean up comments.
   - CSS:
+    - Clean up comments.
     - Reduce any single-line rules to one line of code.
     - Add whitespace padding above and below multiple-line blocks of rules.
 
