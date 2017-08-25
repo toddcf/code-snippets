@@ -26,18 +26,39 @@ Optimize Images For Faster Load Times:
     - Clean up comments.
     - Reduce any single-line rules to one line of code.
     - Add whitespace padding above and below multiple-line blocks of rules.
+  - ReadMe:
+    - Insure the following categories:
+      - Title
+      - Image
+      - Description
+      - Live Link (to be updated once deployed)
+      - Technology Used
+      - Future Iterations
+    - Update all info.
 
 ## Browser Compatibility
 
 1. HTML:
-  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the <script> links into the bottom of the `<body>` in each of your HTML files.
+  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the <script> links into the bottom of the `<body>` in each of your HTML files -- but before all your other script links.
     - Search for `respond`. (Older versions of IE.)
     - Search for `html5shiv`. (For pre-HTML5 browsers.)
     - Search for `selectivizr`. (For pre-CSS3 browsers.)
   - If you're confident these are still the latest links, you can just paste each of these:
-    <script src="https://cdn.jsdelivr.net/g/respond@1.4.2(respond.min.js+respond.matchmedia.addListener.min.js+cross-domain/respond.proxy.js+respond.matchmedia.addListener.src.js+respond.src.js)"></script>
-    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/g/selectivizr@1.0.3b(selectivizr.min.js+selectivizr.js)"></script>
+
+```
+<!-- Scripts for compatibility with old IE versions -->
+<!-- https://www.jsdelivr.com/ SEARCH FOR "respond" -->
+<script src="https://cdn.jsdelivr.net/g/respond@1.4.2(respond.min.js+respond.matchmedia.addListener.min.js+cross-domain/respond.proxy.js+respond.matchmedia.addListener.src.js+respond.src.js)"></script>
+
+<!-- Script for pre-HTML5 compatibility -->
+<!-- https://www.jsdelivr.com/ SEARCH FOR "html5shiv" -->
+<script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+<!-- Scripts for CSS3 features that won't work with older browsers -->
+<!-- https://www.jsdelivr.com/ SEARCH FOR "selectivizr" -->
+<script src="https://cdn.jsdelivr.net/g/selectivizr@1.0.3b(selectivizr.min.js+selectivizr.js)"></script>
+```
+
 2. CSS:
   - Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.)
   - NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
@@ -67,3 +88,8 @@ Now that you've made these changes to your files, test the entire site again:
 ## Actual Deployment
 
 You are now ready to go live!
+
+## Post-Deployment
+
+1. Add description and URL to GitHub page.
+2. Add live link to README and push it up.
