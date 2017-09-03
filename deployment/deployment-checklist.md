@@ -1,4 +1,11 @@
-# Deployment Checklist
+# Pre-Deployment Checklist
+
+## HTML Pre-Validation
+
+Each HTML individual page must be checked for:
+
+- Add favicon, if you haven't already.
+- Every `<img>` has an `alt=""`.
 
 ## Image Optimization
 
@@ -25,12 +32,12 @@ Optimize Images For Faster Load Times:
   - CSS:
     - Clean up comments.
     - Reduce any single-line rules to one line of code.
-    - Add whitespace padding above and below multiple-line blocks of rules.
+    - Add blank line above and below multiple-line blocks of rules.
   - ReadMe:
-    - Insure the following categories:
+    - Ensure the following categories:
       - Title
-      - Image
       - Description
+      - Image
       - Live Link (to be updated once deployed)
       - Technology Used
       - Future Iterations
@@ -39,6 +46,7 @@ Optimize Images For Faster Load Times:
 ## Browser Compatibility
 
 1. HTML:
+SKIP IF YOU USED BOOTSTRAP!
   - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the <script> links into the bottom of the `<body>` in each of your HTML files -- but before all your other script links.
     - Search for `respond`. (Older versions of IE.)
     - Search for `html5shiv`. (For pre-HTML5 browsers.)
@@ -83,13 +91,15 @@ If you do minify, know that it makes your code very difficult for humans to read
 Now that you've made these changes to your files, test the entire site again:
 
 1. All links.
-2. Every single HTML page, including responsive web design.
+2. Every single HTML page.
+  a. Resize window on each one to check mobile responsiveness.
 
-## Actual Deployment
+## Deployment Checklist
 
 You are now ready to go live!
 
-## Post-Deployment
+## Post-Deployment Checklist
 
 1. Add description and URL to GitHub page.
 2. Add live link to README and push it up.
+3. Add to portfolio if applicable. Redeploy portfolio.
