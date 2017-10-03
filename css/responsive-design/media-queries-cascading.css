@@ -1,36 +1,23 @@
-/*The Standard Bootstrap 4.x Breakpoints*/
+/* The Standard Bootstrap 4.x Breakpoints */
 
-@media all and (max-width: 1199px) { ... }
-@media all and (max-width: 991px) { ... }
-@media all and (max-width: 768px) { ... }
-@media all and (max-width: 575px) { ... }
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query since this is the default in Bootstrap */
 
-/* SMALLER TO LARGER */
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { ... }
 
-/* Below 575px wide */
-@media only screen and (min-width : 1px) {
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { ... }
 
-}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { ... }
 
-/*Above 575px wide */
-@media screen and (min-width : 576px) {
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { ... }
+  
 
-}
 
-/* Above 769px wide */
-@media screen and (min-width : 769px) {
 
-}
-
-/* Above 992px wide */
-@media screen and (min-width : 992px) {
-
-}
-
-/* Above 1200px wide */
-@media screen and (min-width : 1200px) {
-
-}
 
 
 /* EXACT SIZES */

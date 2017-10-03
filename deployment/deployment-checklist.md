@@ -4,7 +4,8 @@
 
 Each HTML individual page must be checked for:
 
-- Add favicon, if you haven't already.
+- Verify each HTML page has a title.
+- Verify each HTML page has a favicon.
 - Every `<img>` has an `alt=""`.
 
 ## Image Optimization
