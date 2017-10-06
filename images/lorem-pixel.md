@@ -8,8 +8,18 @@ http://lorempixel.com
 
 ## How To Use
 
-Instead of inserting an image into your HTML file, create an `<a>` tag and create a link inside like this:
+First, create an `<a>` tag in your HTML file with a link inside like this:
 
-`<a href="http://lorempixel.com/560/560/business/1"></a>`
+	`<a href="http://lorempixel.com/560/560/business/1"></a>`
 
 The numbers are the width and height. Then you can denote a category. And the last number is an ID for the image.
+
+Then, put an `<img>` tag inside the `<a>` tag, like this:
+
+	```
+	<a href="http://lorempixel.com/560/560/business/1">
+		<img src="http://lorempixel.com/400/400/business/1" alt="Business 1">
+	</a>
+	```
+
+NOTE: Why the smaller pixel size in the `<img>` tag, and why is it necessary to basically use the URL twice?
