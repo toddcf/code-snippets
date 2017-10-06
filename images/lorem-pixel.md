@@ -23,3 +23,5 @@ Then, put an `<img>` tag inside the `<a>` tag, like this:
 	```
 
 NOTE: Why the smaller pixel size in the `<img>` tag, and why is it necessary to basically use the URL twice?
+
+When you have more than one image like this in your file, you can simply change the ID on each one in order to get a different image.
