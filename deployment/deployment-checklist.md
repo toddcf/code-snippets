@@ -1,5 +1,9 @@
 # Pre-Deployment Checklist
 
+## HTML Accessibility
+
+- CREATE CHECKLIST FOR ACCESSIBILITY FEATURES.
+
 ## HTML Pre-Validation
 
 Each HTML individual page must be checked for:
