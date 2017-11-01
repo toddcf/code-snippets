@@ -69,18 +69,16 @@ SKIP IF YOU USED BOOTSTRAP!
 ```
 
 2. CSS:
-  - Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.)
-  - NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
+  1. Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.) NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
+  2. Once autoprefix is complete, clean up the file(s) manually. SKIP IF YOU WILL BE MINIFYING.
+	1. Reduce any single-line rules to one line of code.
+	2. Add blank line above and below multiple-line blocks of rules.
 
 ## Code Validation
 
 Paste each file's code (one file at a time) into the following links. Make any corrections necessary until the results come back clean.
 
-1. CSS:
-	1. https://jigsaw.w3.org/css-validator/#validate_by_input+with_options.
-	2. Once validated, clean up the file(s) manually:
-		1. Reduce any single-line rules to one line of code.
-		2. Add blank line above and below multiple-line blocks of rules.
+1. CSS: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options.
 2. HTML: https://validator.w3.org/#validate_by_input
 
 ## Minify
