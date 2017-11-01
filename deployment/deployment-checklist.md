@@ -27,32 +27,32 @@ Optimize Images For Faster Load Times:
 1. Delete entire files and images that are no longer being used.
 2. Clean up all remaining files:
   - HTML:
-    - Links to CSS and JS files that are no longer being used.
-    - Links to fonts that are no longer being used.
-    - Clean up comments.
+	- Links to CSS and JS files that are no longer being used.
+	- Links to fonts that are no longer being used.
+	- Clean up comments.
   - CSS:
-    - Clean up comments.
-    - Reduce any single-line rules to one line of code.
-    - Add blank line above and below multiple-line blocks of rules.
+	- Clean up comments.
+	- DO NOT do any manual formatting until after you've run the code through autoprefixers and validators (later on this list)!
   - ReadMe:
-    - Ensure the following categories:
-      - Title
-      - Description
-      - Image
-      - Live Link (to be updated once deployed)
-      - Technology Used
-      - Future Iterations
-    - Update all info.
+	- Ensure the following categories:
+	  - Title
+	  - Description
+	  - Image
+	  - Live Link (to be updated once deployed)
+	  - Technology Used
+	  - Challenges / What I Learned
+	  - Future Iterations
+	- Update all info.
 
 ## Browser Compatibility
 
 1. HTML:
 SKIP IF YOU USED BOOTSTRAP!
   - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the <script> links into the bottom of the `<body>` in each of your HTML files -- but before all your other script links.
-    - Search for `respond`. (Older versions of IE.)
-    - Search for `html5shiv`. (For pre-HTML5 browsers.)
-    - Search for `selectivizr`. (For pre-CSS3 browsers.)
-  - If you're confident these are still the latest links, you can just paste each of these:
+	- Search for `respond`. (Older versions of IE.)
+	- Search for `html5shiv`. (For pre-HTML5 browsers.)
+	- Search for `selectivizr`. (For pre-CSS3 browsers.)
+  - If you are confident these are still the latest links, you can just paste each of these . . .
 
 ```
 <!-- Scripts for compatibility with old IE versions -->
@@ -76,7 +76,11 @@ SKIP IF YOU USED BOOTSTRAP!
 
 Paste each file's code (one file at a time) into the following links. Make any corrections necessary until the results come back clean.
 
-1. CSS: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
+1. CSS:
+	1. https://jigsaw.w3.org/css-validator/#validate_by_input+with_options.
+	2. Once validated, clean up the file(s) manually:
+		1. Reduce any single-line rules to one line of code.
+		2. Add blank line above and below multiple-line blocks of rules.
 2. HTML: https://validator.w3.org/#validate_by_input
 
 ## Minify
