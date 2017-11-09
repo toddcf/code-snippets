@@ -12,3 +12,6 @@ Pop removes (and `return`s) the last item of an array.
 
 So when you execute `colors.pop();`, it pulls the last element out of the `colors` array and displays it.
 
+## Name Origins
+
+From older programming languages with "stacks" and "queues."
