@@ -45,3 +45,5 @@ var capitalize = function( str ) {
 	return str.charAt(0).toUppercase() + str.slice(1);
 }
 ```
+
+Note that the danger of storing a function inside a variable is that you could potentially change that variable's value later, and your function would be lost.  (For example, `capitalize = 10;`.)
