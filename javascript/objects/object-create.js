@@ -1,4 +1,4 @@
-// Code Snippet Example:
+// (Jonas Schmedtmann explanation):
 
 var personProto = {
 	calculateAge: function() {
