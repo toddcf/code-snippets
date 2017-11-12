@@ -1,6 +1,4 @@
-# JavaScript Object Overview
-
-## To Retrieve Data From An Object
+# To Retrieve Data From An Object
 
 Let's say you have this object:
 
@@ -14,7 +12,7 @@ var person = {
 
 You can retrieve data from it in one of two ways: bracket notation, or dot notation:
 
-### Bracket Notation
+## Bracket Notation
 
 This way is similar to arrays. You use the name of the object, then square brackets, and then the name of the key (in quotes, as a string):
 
@@ -30,9 +28,9 @@ var str = "name";
 someObject[ str ];
 ```
 
-3. Have spaces in the name: `someObject[ "fav color" ];`
+3. Have spaces in the name: `someObject[ "fav color" ];` (Not that it's wise to have spaces in your names, anyway.)
 
-### Dot Notation
+## Dot Notation
 
 Use the name of the object, a dot, and then the name of the key:
 
@@ -48,4 +46,4 @@ var str = "name";
 someObject.str; // Will not work.
 ```
 
-3. Have spaces in the name: `someObject.fav color;`
+3. Have spaces in the name: `someObject.fav color;` (Not that it's wise to have spaces in your names, anyway.)
