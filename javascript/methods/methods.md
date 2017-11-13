@@ -54,3 +54,27 @@ Now, when you call `speak` on each of these objects, you get two different resul
 cats.speak(); // Meow
 dogs.speak(); // Woof
 ```
+
+## Alternate Way
+
+Another way you can achieve the same thing is to create an empty object, and THEN create the methods for it. Like this:
+
+```
+var cats = {};
+var dogs = {};
+
+cats.speak = function() {
+	return "Meow";
+}
+
+dogs.speak = function() {
+	return "Woof";
+}
+```
+
+And now, you can call each one the same way as always:
+
+```
+cats.speak(); // Meow
+dogs.speak(); // Woof
+```
