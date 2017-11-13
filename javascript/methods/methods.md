@@ -4,6 +4,8 @@ Functions can be added to objects as properties, at which point they are called 
 
 A method is a function that is a property inside of an object.
 
+## Example
+
 In the following example, `add` is a method:
 
 ```
@@ -23,3 +25,32 @@ Then, to call `add`, you must attach it to the object it's contained within, lik
 `obj.add( 10, 5 );`
 
 You won't be able to call it on its own, without the object it's inside of.
+
+Speaking of which, consider `console.log();`. `console` is actually an object, and `log` is a method inside that object.
+
+## Purpose
+
+Why would we ever want to store a function inside an object as opposed to making it global?
+
+It helps you keep your code organized by grouping things logically together. For example, you can have the same function inside two disparate objects so that it will perform the appropriate task depending upon which object it's called on. Like this:
+
+```
+var cats = {
+	speak: function() {
+		return "Meow";
+	}
+}
+
+var dogs = {
+	speak: function() {
+		return "Woof";
+	}
+}
+```
+
+Now, when you call `speak` on each of these objects, you get two different results:
+
+```
+cats.speak(); // Meow
+dogs.speak(); // Woof
+```
