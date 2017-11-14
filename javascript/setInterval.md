@@ -48,4 +48,34 @@ Anonymous functions are often used when passing one function into another functi
 
 When setInterval is called, it will return a number in the console. Pass this number into `clearInterval();` to stop `setInterval`.
 
-For example, if you were given number 2, you would stop it by running: `clearInterval( 2 );`
+For example, if you were given number 2, you would stop it by running: `clearInterval( 2 );`.
+
+## Using It For Animations
+
+First, select the element you want to manipulate. In this case, the body of your HTML page:
+
+```
+var body = document.querySelector( "body" );
+var isBlack = false;
+```
+
+Now manipulate it:
+
+```
+setInterval( function() {
+	if ( isBlack ) {
+		body.style.background = "#fff";
+	}
+	else {
+		body.style.background = "#000";
+	}
+	isBlue = !isBlack;
+}, 1000);
+```
+
+The code above will accomplish the following:
+
+1. The first time it runs, `isBlack` is `false`, so it will change the `background` color to `black`.
+2. It then changes the `isBlack` variable to the opposite of whatever it currently is. Which in this case, means it will change it from `false` to `true`.
+3. Note the `1000` after the comma at the very end. This is the interval in milliseconds. So every 1 second, this function will be triggered again.
+4. The next time it is triggered, `isBlack` will be `true`, so the `background` will now be changed to `white`! And `isBlack` will be changed back to `false`.
