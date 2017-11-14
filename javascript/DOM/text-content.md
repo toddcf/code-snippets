@@ -23,3 +23,9 @@ This will retrieve `This is an awesome paragraph.` -- it will not include the `<
 3. Overwrite the textContent just like you would any variable:
 
 `tag.textContent = "Check this out.";`
+
+Note that if you try and pass any HTML tags into `textContent`, they're going to be treated as text. Meaning if you do this . . .
+
+`tag.textContent = "Check <strong>this</strong> out.";`
+
+. . . it will actually print those `<strong>` tags on the screen, which is probably not what you want. If you want to be able to pass HTML tags into it, use `innerHTML` instead of `textContent`.
