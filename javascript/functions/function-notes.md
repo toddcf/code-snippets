@@ -47,3 +47,7 @@ var capitalize = function( str ) {
 ```
 
 Note that the danger of storing a function inside a variable is that you could potentially change that variable's value later, and your function would be lost.  (For example, `capitalize = 10;`.)
+
+## Function Length
+
+Some people believe that if a function is longer than ten lines, you need to split it apart into separate functions.
