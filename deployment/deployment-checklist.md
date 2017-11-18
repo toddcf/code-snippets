@@ -37,6 +37,8 @@ Optimize Images For Faster Load Times:
   - CSS:
 	- Clean up comments.
 	- DO NOT do any manual formatting until after you've run the code through autoprefixers and validators (later on this list)!
+  - JavaScript:
+    - Clean up comments.
   - ReadMe:
 	- Create GIF of the project being used:
 	  - https://showmore.com/
