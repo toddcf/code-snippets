@@ -32,7 +32,7 @@ Optimize Images For Faster Load Times:
 2. Clean up all remaining files:
   - HTML:
 	- Links to CSS and JS files that are no longer being used.
-	- Links to fonts that are no longer being used.
+	- Links to fonts (and font weights) that are no longer being used.
 	- Clean up comments.
   - CSS:
 	- Clean up comments.
@@ -52,7 +52,7 @@ Optimize Images For Faster Load Times:
 
 1. HTML:
 SKIP IF YOU USED BOOTSTRAP!
-  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the <script> links into the bottom of the `<body>` in each of your HTML files -- but before all your other script links.
+  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the `<script>` links into the bottom of the `<body>` in each of your HTML files -- but before all your other script links.
 	- Search for `respond`. (Older versions of IE.)
 	- Search for `html5shiv`. (For pre-HTML5 browsers.)
 	- Search for `selectivizr`. (For pre-CSS3 browsers.)
