@@ -38,10 +38,13 @@ Optimize Images For Faster Load Times:
 	- Clean up comments.
 	- DO NOT do any manual formatting until after you've run the code through autoprefixers and validators (later on this list)!
   - ReadMe:
+	- Create GIF of the project being used:
+	  - https://showmore.com/
+	  - Dimensions: 1350 x 900 (or any x1.5 ratio).
 	- Ensure the following categories:
 	  - Title
 	  - Description
-	  - Image
+	  - Image / GIF: `![Hangman - Robert De Niro Edition](https://github.com/toddcf/hangman-de-niro/blob/master/assets/img/bg1.jpg "Hangman - Robert De Niro Edition")`
 	  - Live Link (to be updated once deployed)
 	  - Technology Used
 	  - Challenges / What I Learned
