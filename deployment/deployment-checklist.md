@@ -55,7 +55,7 @@ Optimize Images For Faster Load Times:
 
 1. HTML:
 SKIP IF YOU USED BOOTSTRAP!
-  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the `<script>` links into the bottom of the `<body>` in each of your HTML files -- but before all your other script links.
+  - Go to https://www.jsdelivr.com/ and do the following searches. For each one, paste the `<script>` links into the bottom of the `<body>` in each of your HTML files -- but BEFORE all your other script links.
 	- Search for `respond`. (Older versions of IE.)
 	- Search for `html5shiv`. (For pre-HTML5 browsers.)
 	- Search for `selectivizr`. (For pre-CSS3 browsers.)
@@ -85,7 +85,7 @@ SKIP IF YOU USED BOOTSTRAP!
 
 Paste each file's code (one file at a time) into the following links. Make any corrections necessary until the results come back clean.
 
-1. CSS: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options.
+1. CSS: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
 2. HTML: https://validator.w3.org/#validate_by_input
 
 ## Minify
@@ -110,6 +110,6 @@ You are now ready to go live!
 
 ## Post-Deployment Checklist
 
-1. Add description and URL to GitHub page.
-2. Add live link to README and push it up.
+1. Add description and live URL to GitHub page.
+2. Add live URL to README and push it up.
 3. Add to portfolio if applicable. Redeploy portfolio.
