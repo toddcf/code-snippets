@@ -19,3 +19,16 @@ jQuery is a DOM manipulation library. Helps us do more with less code.
 - Can unnecessarily slow down performance. If you're only using it for a few things, you're still loading the entire library.
 - Many people are actually moving away from using jQuery!
 - See also: http://youmightnotneedjquery.com/
+
+## Check if jQuery is Linked
+
+In your regular JavaScript file, run this code:
+
+```
+if(jQuery) {
+	alert("jQuery loaded.");
+}
+else {
+	alert("No jQuery.");
+}
+```

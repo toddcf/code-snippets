@@ -62,6 +62,14 @@ input[type=submit] {
 }
 ```
 
+### Remove Blue Border on Click:
+
+```
+button:focus {
+	outline: 0;
+}
+```
+
 ## jQuery
 
 ```
