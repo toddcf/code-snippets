@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQeury Events</title>
+	</head>
+	<body>
+
+		<h1>On()</h1>
+
+		<button id="submit">Submit</button>
+		<button>Other</button>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+			
+		</script>
+
+		<script type="text/javascript">
+			
+			// When an item with the ID "submit" is clicked, display alert:
+			$( "#submit" ).on( "click", function() {
+				alert( "Clicked SUBMIT." );
+			});
+
+			// When ANY button is clicked, display alert:
+			$( "button" ).on( "click", function() {
+				alert( "Button clicked." );
+			});
+
+			// Double Click:
+			$( "button" ).on( "dblclick", function() {
+				alert( "Double clicked!" );
+			});
+
+			// Drag Start Event:
+			$( "a" ).on( "dragstart", function() {
+				alert( "Drag Started!" );
+			});
+
+		</script>
+	</body>
+</html>

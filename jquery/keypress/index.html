@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQeury Events</title>
+	</head>
+	<body>
+
+		<h1>jQuery Events</h1>
+
+		<p>Keypress typically fires BETWEEN keydown and keyup. Also takes into account capitalization.</p>
+
+		<input type="text">
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+			
+		</script>
+
+		<script type="text/javascript">
+			
+			// Listen for any keypress in any text input, and capture it in the variable "event":
+			$( "input[type='text']" ).keypress( function( event ) {
+
+				if ( event.which === 13 ) {
+					alert ( "You hit enter!" );
+				}
+				else {
+
+					alert( "You hit " + event );
+
+				}
+
+			});
+			
+		</script>
+	</body>
+</html>
