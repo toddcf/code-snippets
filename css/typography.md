@@ -70,6 +70,17 @@ Use line height between 120% and 150%.
 
 `line-height: 145%;`
 
+Note that you can use `line-height` to make text *appear* to be vertically centered within a div.
+
+For example, you can set the `line-height` and the element's `height` to be the same value. This will make the line take up the entire height of its parent element, which in turn places the text in the vertical middle.
+
+```
+li {
+  height: 40px;
+  line-height: 40px;
+}
+```
+
 ## Fonts
 
 1. Sans-serif is easier to read.
