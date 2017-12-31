@@ -21,3 +21,10 @@ You can group layers together to make things more manageable.
 1. Inside the layers panel, select all the layers you wish to group by holding `CTRL` and clicking each one, or holding `SHIFT` and clicking the first and then the last elements to select them and everything in between.
 2. Press `CTRL` + `G` to group the selected layers together.
 3. Name the new group that has just been created.
+
+## Un-Grouping
+
+To separate a layer from the group:
+
+1. Click its name in the layers panel.
+2. Drag it outside of the group and drop it elsewhere in the list.
