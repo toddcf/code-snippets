@@ -12,6 +12,8 @@ Across the top. (File, Edit, etc.)
 
 View > Show > Grid
 
+Or `CTRL` + `H`.
+
 ### Pallets
 
 On the right hand side. A collection of colored squares.
