@@ -40,7 +40,7 @@ Optimize Images For Faster Load Times:
   - JavaScript:
     - Clean up comments.
   - ReadMe:
-	- Create GIF of the project being used:
+	- Create GIF video of the project being used:
 	  - https://showmore.com/
 	  - Dimensions: 1350 x 900 (or any x1.5 ratio).
 	- Ensure the following categories:
@@ -113,6 +113,8 @@ You are now ready to go live!
 
 ## Post-Deployment Checklist
 
-1. Add description and live URL to GitHub page.
-2. Add live URL to README and push it up.
-3. Add to portfolio if applicable. Redeploy portfolio.
+1. README:
+  1. Add live URL.
+  2. Add GIF.
+  3. Push up to GitHub.
+3. Add description and live URL to GitHub page.
