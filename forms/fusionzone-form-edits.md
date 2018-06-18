@@ -4,7 +4,7 @@
 
 ```
 <div id="styled-form">
-	<h3>CONTACT US </h3>
+	<h3>Contact Us </h3>
 	<!--[%formWidget?formName=contact%]-->
 </div>
 ```
