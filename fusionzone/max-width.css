@@ -1,0 +1,27 @@
+/* Achieve 100% width: */
+.off-canvas-content >.row:nth-child(3) {
+	max-width:190rem;
+}
+
+/* Revert back to 90% width: */
+.contained,
+.header .row,
+.footer.row,
+.top-banner,
+.ninety {
+	max-width: 90rem;
+	margin: 0 auto;
+}
+
+.ninety-padded {
+  margin: 0 1.5rem;
+}
+
+
+
+
+/* Less-Reliable Code: */
+/*.off-canvas-content .column {
+  padding: 0;
+  max-width: 100%;
+}*/

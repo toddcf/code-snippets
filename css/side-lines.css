@@ -1,0 +1,78 @@
+/* My hybrid solution: */
+.search-price {
+    color: #979595;
+    font-size: 2rem;
+    margin: 3.5rem auto 2.5rem auto !important;
+    line-height: 0.5;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.search-price:before,
+.search-price:after {
+  content: "";
+  position: absolute;
+  height: .2rem;
+  border-top: 2px solid #e1e1e1;
+  top: 50%;
+  width: 70%;
+}
+
+.search-price:before {
+  right: 100%;
+  margin-right: 1.5rem;
+}
+
+.search-price:after {
+  left: 100%;
+  margin-left: 1.5rem;
+}
+
+
+/* From Agnes */
+.line{
+text-align:center;
+font-weight:bold;
+font-size:.85rem;
+}
+.line:before, .line:after{
+border-top:1px solid #000;
+margin-top:.5rem;
+float:left;
+width:30%;
+content:'';
+}
+.line:after{
+float:right;
+}
+
+
+/* From CSS Tricks: https://css-tricks.com/line-on-sides-headers/ */
+
+.fancy {
+  line-height: 0.5;
+  text-align: center;
+}
+.fancy span {
+  display: inline-block;
+  position: relative;  
+}
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  top: 0;
+  width: 600px;
+}
+.fancy span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.fancy span:after {
+  left: 100%;
+  margin-left: 15px;
+}

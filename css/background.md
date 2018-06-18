@@ -38,11 +38,12 @@ If you don't want the background to move:
   - `background-attachment: fixed;`
   - Note that this does not work on iOS devices. Use a media query to target smaller devices and set it to `background-attachment: scroll;`.
 
-## Linear Gradient
+##Darkened Image Background
 
 To make the background image darker:
 
 ```
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))) , url(../img/food/hero.jpg);
 background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) , url(../img/food/hero.jpg);
 ```
 
