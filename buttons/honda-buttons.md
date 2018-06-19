@@ -3,15 +3,15 @@
 ## HTML
 
 ```
-<div class="btn-container">
-  <a href="#" class="button expanded this-btn">This Button </a>
+<div class="honda-btn-container">
+  <a href="#" class="button expanded honda-btn">This Button </a>
 </div>
 ```
 
 ## Inset Box Shadow:
 
 ```
-.this-btn {
+.honda-btn {
   border-radius: 0.5rem;
   border: 3px solid #0e6093;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #0e6093;
@@ -25,9 +25,9 @@
   transition: all .3s;
 }
 
-.this-btn:hover,
-.this-btn:active,
-.this-btn:focus {
+.honda-btn:hover,
+.honda-btn:active,
+.honda-btn:focus {
   border: 3px solid #137ec1;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
           box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
