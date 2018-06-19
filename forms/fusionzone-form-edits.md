@@ -64,7 +64,6 @@
 
 #styled-form input.button {
   width:100%;
-  background:transparent;
   border-radius:5px;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
