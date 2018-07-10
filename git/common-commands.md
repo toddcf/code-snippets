@@ -30,4 +30,15 @@
 
 ## Pushing to Master in Group Projects
 
-1.
+1. Always pull and merge first (see above), so that you are incorporating your team's changes.
+2. Then push to your branch: `git push origin [your branch]`.
+3. Go to GitHub and create a PULL REQUEST from the MASTER branch TO the branch you want to pull changes from.
+
+After that, if you were just trying to get your master branch up to date with your `gh-pages` branch after accidentally making changes to your `gh-pages` branch (for example), also do the following:
+
+4. `git checkout master`.
+5. `git pull`.
+
+## Upload to GH Pages
+
+1. 
