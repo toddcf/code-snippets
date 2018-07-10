@@ -15,7 +15,7 @@
 ## Push to GitHub
 
 1. Confirm that you are in the branch you want to push.
-2. `git add -A`.
+2. `git add -A`. (Tells Git that this file exists.)
 3. `git commit -m`.
 4. `git push origin [branch]`. Branch could be `master` or whichever branch you are working in.
 
@@ -41,4 +41,11 @@ After that, if you were just trying to get your master branch up to date with yo
 
 ## Upload to GH Pages
 
-1. 
+1. `cd` to the directory you want to host. (You must already have a connected GitHub remote.)
+2. `git add -A`.
+3. `git commmit -m`.
+4. `git branch gh-pages`. (Creates a branch called `gh-pages`, which is what will be published to the web.)
+5. `git checkout gh-pages`.
+6. `git push origin gh-pages`. (Pushes this new branch up to GitHub.)
+7. Wait about 15 minutes, then see your live site at http://`username`.github.io/`repository`.
+8. `git checkout [working branch]` to make sure you don't accidentally continue editing on the live site!
