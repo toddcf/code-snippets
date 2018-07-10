@@ -39,6 +39,7 @@ Optimize Images For Faster Load Times:
 	- DO NOT do any manual formatting until after you've run the code through autoprefixers and validators (later on this list)!
   - JavaScript:
     - Clean up comments.
+    - Check console for any errors.
   - ReadMe:
 	- Create GIF video of the project being used:
 	  - https://showmore.com/
