@@ -49,6 +49,7 @@ Your Display Network ads can appear on:
 
 - Text Ads
   - Consists of a descriptive headline, URL, and descriptive text (such as a CTA).
+  - Simplest type of AdWord ad.
   - Can Appear:
     - Search Network
     - Search Partners
@@ -93,3 +94,82 @@ Your Display Network ads can appear on:
   - Animation or other motion that engages viewers.
   - Can Appear:
     - Display Network
+
+### Text Ads
+
+- Required:
+  - Headline
+  - URL
+  - Description
+- Optional:
+  - Path Fields
+
+#### Headline Tips
+
+- People are most likely to notice the headline. Consider including at least one of your keywords in your headline.
+- Two headline fields are available with up to 30 characters each.
+- Consider how longer headlines might text wrap on smaller screens.
+
+#### URL Details
+
+If your final URL is www.example.com/store/us/indoorplants, only www.example.com will display. The rest will be in the Path fields.
+
+#### Path Fields (optional)
+
+There are two optional path fields, which can hold up to 15 characters each.
+
+These come after your URL, and give the user an idea of what part of the site they'll be taken to -- but they are not the actual characters of the path.
+
+For example, www.example.com/store/us/indoorplants might become www.example.com/Indoor-Plants.
+
+#### Description Field
+
+Up to 80 characters. Use to:
+
+- Highlight unique details about your product or service.
+- Include keywords that match probable search terms.
+
+On mobile, where space is limited, AdWords optimizes your ads to show the highest-performing text.
+
+#### Tips for Writing Effective Text Ads
+
+Effective ads are:
+
+- Specific
+- Relevant
+- Actionable
+
+You should:
+
+- Highlight what makes you unique.
+- Use a CTA.
+- Include sales terms. (Make sure customers know if there's a discount, sale, etc.)
+- Include your keywords in the ad.
+- Match your ad to your landing page. (Ensure your ad takes customers to the part of your site where they can act on it. Make the purchase easy for them.)
+- Optimize your headlines. Headlines matter . . . a lot. They are the most likely thing your viewer will read. Also, keep in mind how the text will wrap on smaller screens.
+- On mobile devices, use CTAs that engage mobile users particularly well.
+- Use ad extensions. Including information below your ad, such as additional deep links into your website or business location, has been shown to increase your ad's performance.
+
+#### Tips for Improving Landing Page Experience
+
+The experience users have after they click your ad and visit your landing page URL is just as important as your ad itself. It affects:
+
+- Ad Rank
+- CPC (Cost per Click)
+- Your position in the ad auction
+
+A poor landing page experience can result in your ads showing less often -- or not at all. Here's how to avoid that:
+
+- Offer relevant, useful, original content.
+- Be specific. If a user clicks an ad for a specific sports car, they shouldn't be taken to a landing page for a variety of sports cars.
+- Be general when the user wants more options, such as a comparision page of various camera models instead of one camera model.
+- Be transparent about what your business does.
+- Explain your products or services before asking users to fill out forms.
+- Make it easy to find your contact info.
+- If you request personal info from customers, be clear why you're asking for it and what you'll do with it.
+- Distinguish sponsored links (like ads) from the rest of your website's content.
+- Make mobile and desktop navigation easy.
+- Avoid using pop-ups and other interferences.
+- Show customers what they're looking for "above the fold."
+- Make it quick and easy for customers to purchase whatever they saw in your ad.
+- Keep landing page load times as fast as possible.
