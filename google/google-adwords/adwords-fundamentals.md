@@ -305,3 +305,22 @@ The type of campaign you selected affects which settings are available to you.
   - Advanced Location Options
   - Campaign URL Options
 
+## AdWords Account Structure
+
+Keep your account organized so you can tell which campaigns belong to which accounts, and can quickly see how each is performing.
+
+Organize by product or theme so that you can create ads according to product or theme.
+
+The three layers of organization withing AdWords:
+
+1. Account (Associated with a unique email address, password, and billing information.)
+2. Campaign (Has its own budget and settings that determine where your ads appear.)
+3. Ad Group (Contains a set of similar ads, as well as the keywords and phrases that trigger your ads to display. Separate these by product so you can control bids and budgets for each ad group.)
+
+For example, at the Campaign level, a clothing retailer could set up one campaign per clothing type. (Jackets, Shoes, Bags, etc.) Can also do this for different promotions and regions.
+
+At the Ad Group level, that same retailer could target subsets of each clothing type. (Jackets: Peacoats, Vests, Blazers, Windbreakers. Shoes: Heels, Flats, Boots. Bags: Clutch, Tote.)
+
+The retailer can then assign keywords and bids unique to each Ad Group. They can then where and when ads specific to these types of products should appear. They can also adjust messaging and bids when competition, sales, or seasons strike.
+
+If you are managing multiple AdWords accounts, you can create an AdWords manager account, allowing you to view and manage them all -- including other manager accounts.
