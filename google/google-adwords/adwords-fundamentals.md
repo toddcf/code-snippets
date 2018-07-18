@@ -173,3 +173,135 @@ A poor landing page experience can result in your ads showing less often -- or n
 - Show customers what they're looking for "above the fold."
 - Make it quick and easy for customers to purchase whatever they saw in your ad.
 - Keep landing page load times as fast as possible.
+
+### Ad Extensions
+
+Examples:
+
+- Call buttons
+- Location information
+- Additional links
+- Additional text
+
+And more.
+
+Benefits:
+
+- The additional content gives your ad greater visibility and prominence on the search results page.
+- Often gives you more value for your advertising investment.
+  - Increases total number of clicks. (Average 10-15% increase for each type of extension implemented.)
+  - Gives users interactive ways of contacting you.
+- No cost to adding extensions.
+  - Clicks on your ad are charged as usual. (You're charged when someone calls you from your call extension, or downloads your app from your app extension.)
+
+There is no limit to the number of ad extensions you can add, but a maximum of four can show across an AdWords campaign at any given time.
+  - Exception: Clicks on review extensions and seller ratings are not charged at all.
+
+Specific Types of Extensions:
+
+- Sitelinks. These display 6-8 additional links to specific pages on your site. (Store Hours, Locations, etc.)
+- Callouts. Add additional text to your ad. ("Local flowers, Online ordering, Free delivery.")
+- Structured Snippets. Highlight specific aspects of your products or services. These show underneath your ad as additional headers and lists. (Example: "Destinations," and "Hawaii, Costa Rica, South Africa".)
+- Call Extensions. (Tap or click to call.)
+
+AdWords even appends other extensions to your ads automatically when it predicts they will improve your performance.
+
+In fact, none of your extensions display all the time. They are shown or hidden depending on AdWords' prediction of performance.
+
+Also, you need to hit a minimum Ad Rank for any of your extensions to display at all. (More on this later.)
+
+#### Deciding Which Ad Extensions to Use
+
+ Because AdWords selects which extensions to hide or display based on each individual Google search, it makes sense to make use of all the extensions relevant to your business goals. Here are recommendations based on your goals:
+
+- All Businesses
+  - Sitelink Extensions
+  - Callout Extensions
+  - Structured Snippets
+- Get customers to buy from your business locations.
+  - Location extensions. (Location, call button, and a link to your business details page (hours, photos, directions).)
+- Get customers to contact you.
+  - Call extensions
+  - Message extensions (text messaging). Can be added globally at the campaign level, or at ad group levels.
+- Get customers to convert on your website.
+  - Price Extensions. Allow customers to browse your products right in your ad, showing categories and prices.
+  - Promotion extensions. Show specific sales and promotions across your ads. (30% off roses, etc.)
+- Get people to download your app.
+  - App extensions
+
+## Campaign Types
+
+- Search Network campaign
+  - Appear near Google search results when people search for relevant keywords. Shows your ad to high-potential customers right when they're searching for related products or services.
+  - Drives traffic to your site. Can also be used in tandem with other campaign types. 
+- Display Network campaign
+  - Ads appear throughout the Google Display Network, matching them to websites or mobile apps that contain content related to your business or to your customers' interests.
+  - You can set up targeting to help match your ads to the most relative sites based on topic, interested audiences, demographics, and more.
+  - Useful for raising awareness and targeting customers with specific interests before they even know to search for you specifically.
+  - Helps raise awareness, but is not the best for driving website visits.
+- Search Network campaign with Display opt-in:
+  - When you create a Search campaign, you have the option for "Display opt-in." This will cover both Search and Display networks seamlessly, and you only need to create Search ads.
+- Video campaign
+  - Can run ads on YouTube and other sites across the Google Display Network.
+  - Available formates include:
+    - TrueView in-stream ads
+    - TrueView video discover ads
+    - Bumper ads
+  - Helps raise awareness, but is not the best for driving website visits.
+- Shopping campaign
+  - May display your ads in Google Shopping, next to search results and next to text and responsive ads.
+  - May also display on YouTube and other Google Search partner sites.
+  - Useful for retailers who want to promote online and local inventory, boost traffic to their site or local store, and find better qualified leads.
+- Universal App campaign
+  - For promoting apps.
+  - Can display across Search, Display, and YouTube.
+  - Your ads and bids are automatically adjusted to get the most downloads for your app.
+  - You provide:
+    - Some text
+    - A starting bid and budget
+    - Languages and geographic locations for your ads.
+  - Google's system will test different combinations and show best-performing ads more often.
+
+## Campaign Goals
+
+After you've selected a campaign type, you can select goals based on actions you'd like your customers to take. (Make a purchase, call you, etc.)
+
+Once you choose these goals, AdWords recommends features and settings to help you.
+
+(Adding a goal will not affect the auction or serving.)
+
+## Campaign Settings
+
+Campaign type determine where your ads will show, but you can tailor it further with campaign settings.
+
+The settings you select apply to all ads in that campaign.
+
+The type of campaign you selected affects which settings are available to you.
+
+- Campaign Name
+  - Not visible to customers, but helps you find the campaign you're looking for within your account.
+- Campaign Type
+  - Tailors the setup to your goals.
+- Networks
+  - Choose which networks you want your ads to display in. (Google Search Network, Google Display network, Search Partner sites such as CNN, etc.)
+  - On Google Display Network, your ad is displayed on other sites that partner with Google to show ads.
+- Devices
+  - Campaigns target all types of mobile and desktop devices, but you can customize ads based on which device they're displaying on.
+- Locations and Languages
+  - Choose the language you serve your customers in.
+  - You can also target certain geographic locations.
+- Bidding and Budget
+  - Manually set your bids for clicks on ads.
+  - Or let AdWords do it for you.
+  - Depending on campaign type, you may also see additional bidding options.
+  - Bid Limit: The most you'll pay per click for ads in an ad group.
+  - Budget: The average amount per day you're comfortable spending on your campaign. (Can be adjusted at any time.)
+- Ad Extensions
+  - Covered earlier. Add location, links to your site, interactive contact options, etc.
+- Additional Settings (optional)
+  - Schedule: Set campaign start and end date.
+  - Ad Scheduling: Select specific days or hours to display your ads.
+  - Ad Delivery: By default, AdWords displays your ads when they're more likely to get clicks or conversions. But you can override this to show your ads more evenly throughout the day.
+  - Advanced Location Options
+  - Campaign URL Options
+
