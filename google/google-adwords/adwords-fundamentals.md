@@ -324,3 +324,35 @@ At the Ad Group level, that same retailer could target subsets of each clothing 
 The retailer can then assign keywords and bids unique to each Ad Group. They can then where and when ads specific to these types of products should appear. They can also adjust messaging and bids when competition, sales, or seasons strike.
 
 If you are managing multiple AdWords accounts, you can create an AdWords manager account, allowing you to view and manage them all -- including other manager accounts.
+
+## Targeting
+
+Visualize your target customers:
+
+### Who
+
+#### Remarketing:
+
+Example: You can target customers who abandoned a shopping cart without making a purchase, showing them ads for a discount.
+
+[Use for Piel Canela -- anyone who visits the site should see ads for it later.]
+
+#### Demographic Targeting:
+
+Age ranges, genders, parental status, household income, etc.
+
+[Piel Canela: Only advertise to pregnant women, which also means certain age ranges.]
+
+### Where
+
+Can refer to geographical location, or where a customer is on the internet (contextual or topical targeting).
+
+[Piel Canela: Only advertise to a certain ideal driving radius.]
+
+### What
+
+What is of interest to your audience? You can specify keywords based on what people are searching for, and display your ads alongside those search results.
+
+Example: You can create keywords like `flowers for mom`, and when people search for `flowers for mom`, your ad will display next to their search results.
+
+[Piel Canela: massage, prenatal, etc.]
