@@ -444,3 +444,36 @@ To use, add `[`brackets`]` around the term.
 Prevents ads from showing on unrelated sites.
 
 To use, add `-` sign before the terms that you *don't* want to trigger ads.
+
+## AdWords Auction
+
+Your ad competes with other ads to display, and it's not simply based on the highest bidder. It's about what the most useful ad to the viewer will be. So you want to make your ads as useful as possible for your customers.
+
+"AdWords Auction" calculates this according to:
+
+- Your bid
+- The ad formats you've enabled
+- Your ad's expected click-through rate (CTR)
+- Relevancy
+- The landing page experience when a user clicks through to your site
+
+This decides which ads appear, in what order, and how much the advertiser will need to pay for having the ad appear.
+
+### How it Works
+
+1. User types in a search.
+2. AdWords finds all ads with keywords that match that search.
+3. AdWords eliminates any ads that are irrelevant or ineligible.
+4. AdWords displays only the ads that meet the Ad Rank threshold, in order of most likely to lead to clicks.
+
+## Ad Rank
+
+Here are the factors that determine your Ad Rank:
+
+- Bid Amount. (The max you are willing to pay for a user to click through to your site. Not to be confused with the amount a click on your ad actually costs. But top bids are not a guarantee of ad placement.)
+- Expected CTR (click-through rate). (Prediction of how often your ad will be clicked on for these particular search terms. How has your ad performed in the past?)
+- Landing Page. (Your ad is only useful if it leads to something useful. Your landing page must be relevant, original, easily navigable, and articulate your business clearly.)
+- Relevancy. (Analyzes the language in your ad to determine its relevancy to the search.)
+- Ad Formats. (Using ad extensions such as sitelinks, address, or phone number can bolster your rank.)
+
+[RESUME: THE QUALITY SCORE]
