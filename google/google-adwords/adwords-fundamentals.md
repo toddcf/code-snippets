@@ -327,32 +327,79 @@ If you are managing multiple AdWords accounts, you can create an AdWords manager
 
 ## Targeting
 
-Visualize your target customers:
+### Your Target Customers
 
-### Who
+#### Who
 
-#### Remarketing:
+##### Remarketing:
 
 Example: You can target customers who abandoned a shopping cart without making a purchase, showing them ads for a discount.
 
 [Use for Piel Canela -- anyone who visits the site should see ads for it later.]
 
-#### Demographic Targeting:
+##### Demographic Targeting:
 
 Age ranges, genders, parental status, household income, etc.
 
 [Piel Canela: Only advertise to pregnant women, which also means certain age ranges.]
 
-### Where
+#### Where
 
 Can refer to geographical location, or where a customer is on the internet (contextual or topical targeting).
 
 [Piel Canela: Only advertise to a certain ideal driving radius.]
 
-### What
+#### What
 
 What is of interest to your audience? You can specify keywords based on what people are searching for, and display your ads alongside those search results.
 
 Example: You can create keywords like `flowers for mom`, and when people search for `flowers for mom`, your ad will display next to their search results.
 
 [Piel Canela: massage, prenatal, etc.]
+
+### Keywords
+
+Building a solid keyword list helps you reach only the most interested people.
+
+Example:
+
+- Athletic Shoes
+  - Running Shoes
+  - Basketball Shoes
+  - Soccer Shoes
+  - Soccer Cleats
+
+#### Think like a customer when you create your list
+
+The biggest sources when brainstorming new keywords:
+
+- Your website. (Find any gaps between your site's content and your keyword list.)
+- Your products. (Bid on core product keywords. When your audience is at the end of the buying cycle, they'll be searching for a specific product or service. Product names and models can be great keywords here.)
+- Your brand. (If you deal with multiple products, add keywords that are combinations of your brand name + high-volume products that people often search in the same query.)
+
+#### Organize Keywords into Groups
+
+Organize your keywords into well-defined groupings so you can better manage your account
+
+You can group according to customer journey (upper funnel keywords, lower funnel keywords), product line, brand, geography, etc.
+
+Example: A shoe store could create separate ad groups for athletic shoes and dress shoes. The ad group for athletic shoes could include keywords like "running shoes" and "basketball shoes." The ad group for dress shoes could include keywords like "evening shoes" and "dress shoes." This way customers who search for "evening shoes" don't see the ads for athletic shoes.
+
+#### Specificity
+
+Be specific, but know that if you get too specific, you may not reach many people. Keywords like "men's basketball shoes" would be good, for example.
+
+Being general can be good for reaching more people, but potentially not as useful. "Shoes" may be so broad that you reach a lot of people who aren't related to the type of shoe business you're doing. Also, general keywords tend to cost more.
+
+#### Negative Keywords
+
+Negative keywords can help narrow your focus. For example, if you don't sell shoes with cleats, you could add "cleats" as a negative keyword so you don't waste money advertising to people who are looking for cleats.
+
+#### Quantity
+
+5 - 20 keywords per ad group is recommended. *Your keywords will automatically match common misspellings and pluralizations.*
+
+Choose keywords that relate to the websites or apps your customers see. Example: if you create a keyword list with words relating to boots, your ads would target websites about boots. (You could also use negative keywords such as "ski" and "snowboard" to prevent your ads from appearing on sites about winter sports.)
+
+## Triggering Ads
+
