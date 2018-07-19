@@ -401,5 +401,46 @@ Negative keywords can help narrow your focus. For example, if you don't sell sho
 
 Choose keywords that relate to the websites or apps your customers see. Example: if you create a keyword list with words relating to boots, your ads would target websites about boots. (You could also use negative keywords such as "ski" and "snowboard" to prevent your ads from appearing on sites about winter sports.)
 
+[NOTE: I want to learn how to calibrate this process after it's set up. How do you decide how to alter keywords, etc. if you're not getting the results you want?]
+
+[CUTM: Try targeting high school and college kids in the United States.]
+
 ## Triggering Ads
 
+You can control how closely your keywords match a person's search terms before triggering your ad.
+
+This is done using "keyword match types."
+
+Keywords are *not* case sensitive. Common misspellings and synonyms are automatically included for you.
+
+However, you can use match types to control which variations of keywords trigger your ads, so they don't show to people who are unlikely to become customers.
+
+### Broad Match
+
+Shows your ads based on keywords and close variations like misspellings and synonyms.
+
+This is the default.
+
+### Broad Match Modifier
+
+Excludes synonyms.
+
+To use this, add the `+` sign before terms.
+
+### Phrase Match
+
+Shows your ads based on exact phrases and close variations. This is more targeted.
+
+To use this, add quotes around the terms.
+
+### Exact Match
+
+Exact keywords and close variations. The most narrow.
+
+To use, add `[`brackets`]` around the term.
+
+### Negative Match
+
+Prevents ads from showing on unrelated sites.
+
+To use, add `-` sign before the terms that you *don't* want to trigger ads.
