@@ -476,4 +476,27 @@ Here are the factors that determine your Ad Rank:
 - Relevancy. (Analyzes the language in your ad to determine its relevancy to the search.)
 - Ad Formats. (Using ad extensions such as sitelinks, address, or phone number can bolster your rank.)
 
-[RESUME: THE QUALITY SCORE]
+### Quality Score
+
+Quality Score is the 1-10 rating that is reported for each keyword in your account calculated by estimating the quality of your ads and their associated landing pages.
+
+## Media Cost Models
+
+- CPM: Cost per thousand impressions. (You pay for your ad to display all over the place. You pay a flat rate every time your ad is shown, regardless of its impact on customers.)
+  - vCPM: Viewable cost per thousand impressions. (You only pay when your ads appear in visible areas on the internet. Costs a little more, but increases likelihood that customers will see your ads.)
+- CPC: Cost Per Click. (You pay only when a customer clicks your ad.)
+- CPV: Cost Per View. (Same as CPC, except your ad is a video. You only pay if someone watches your video or clicks around on it.)
+- CPA: Cost Per Acquisition. (You only pay when a customer does something online that you want them to, like making a purchase or signing up for a newsletter after seeing or clicking on your ad. Costs a bit more because the publisher of the ad only gets paid for running your ad if someone clicks on it, but it's meant to drive more promising outcomes.)
+
+### How to Choose a Cost Model
+
+What is your goal with this ad? Customer . . .
+
+- Walks away simply being familiar with your brand? (CPM or vCPM)
+- Clicks through to check out your website? (CPC)
+- Joins your loyalty program and creates an account? (CPA)
+- Purchases something? (CPA)
+- Watches your video? (CPV)
+
+## Bidding Strategy
+
