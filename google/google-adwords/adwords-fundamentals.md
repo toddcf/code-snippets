@@ -1,5 +1,7 @@
 # AdWords Fundamentals
 
+[Test on: Dad's calendar, my books, Piel Canela]
+
 Ads should be clear, relevant, and include a link to your website.
 
 ## Types of Ads
@@ -603,3 +605,20 @@ Good for advertisers who know how much they’re willing to pay for a conversion
 - Avoid frequent changes to bidding options. Try to keep Target CPA goals, ads, and campaign daily budgets fairly steady so the algorithm doesn't have to keep adapting.
 - Review performance and make improvements. Use the bid strategy report to see how well your ads are performing. Make adjustments if necessary.
 
+## Bid Adjustments
+
+Once AdWords metrics show you which keywords, locations, times, and devices are getting better results, you can adjust your bids to favor the better performers.
+
+A bid adjustment allows you to raise or lower your bids in certain scenarios. With bid adjustments, you can bid higher to increase the visibility of your ads. You can even adjust bids for devices your users are on, meaning you can bid different amounts for desktop, tablet, and mobile.
+
+For example, a restaurant may know that people are more likely to come in if they are nearby, so they can tailor their ads to more frequently target people who are nearby, and less frequently people who are farther away. (Maybe they want to bid 75% more for people who are nearby, 40% more for people a few miles away, and -40% for people twenty miles away.)
+
+### Types of Bid Adjustments
+
+- Device. (If you're promoting an app, raise bids for mobile users and decrease bids for desktop.)
+- Location. (See restaurant example above.)
+- Time of Day. (A meal delivery service could increase bids between 5-7pm to increase chances of showing ads to hungry commuters on their way home.)
+- Top Content. (You could raise your bid for popular content, such as the hottest new cat video on YouTube. *Recommended for advanced users.*)
+- Targeting Methods. (If you sell luggage, you could increase bids for travel websites in the Display Network. *Recommended for advanced users.*)
+- Remarketing Lists for Search Ads. (You could increase your bid for people who previously viewed your website in the last 30 days. *Recommended for advanced users.*)
+- Interactions. (You could increase your bid for mobile devices to show call interaction ads more frequently. These influence how often you show call extensions and call-only ads to users.)
