@@ -500,3 +500,106 @@ What is your goal with this ad? Customer . . .
 
 ## Bidding Strategy
 
+You can have AdWords bid higher for ads that serve specific business goals, such as expanding brand awareness, increasing site visits, or increasing sales.
+
+### Factors
+
+Factors to consider when choosing a bidding strategy:
+
+- Your overall budget.
+- Your campaign goals. (Do you want clicks? Impressions? Conversions?)
+- The value of a sale or conversion. (Don't spend $100 for a click if the sale it generates will only be $2 -- but if a sale could generate thousands of dollars, then maybe spending $100 for a click is smart!)
+
+### Manual vs. Automated
+
+There are two ways to manage your AdWords bidding:
+
+1. Manual
+2. Automated
+
+#### Manual Bidding
+
+Lets you manually set bids at the ad group level, for individual keywords, or for ad placements, so you know you're bidding for the clicks that mean the most to you.
+
+#### Automated Bidding
+
+You set up a daily budget and let AdWords automatically adjust your bids to get the most clicks or conversions possible within your budget. (You can add certain keywords to a portfolio and set a target spend.)
+
+You're likely to get better results if you start out manually, only enabling automated bidding once your campaign is getting at least 15 conversions and 15 clicks per month. (This kind of data helps the algorithm work its magic.)
+
+Also, it is recommended that you enable conversion tracking when doing automated bidding.
+
+### Use Your Goals to Determine a Bidding Strategy
+
+- Goal: Build Awareness. (Focusing on impressions may be your best strategy. vCPM or CPV.)
+- Goal: Drive Web Visits. (CPC -- manual or automatic -- is probably best.)
+- Goal: Drive Online Sales. (CPA.)
+
+Automated bidding strategies:
+
+- Goal: Ad Clicks. ("Maximize Clicks" automatically sets your bids to try and get as many clicks as possible within your budget. Can increase site visits and increase clicks on low-traffic terms. Good for advertisers who are just starting out and want to drive customers to their website.)
+- Goal: Ad Revenue. ("Target Return-on-Ad-Spend (ROAS)" bids more where AdWords estimates ads are more likely to get a sale. Good for advertisers who know the exact value of each conversion to their business.)
+- Goal: Ad Conversions. ("Enhanced Cost Per Click (ECPC)," "Maximize Conversions," or "Target Cost Per Acquisition (CPA)." More on these later.)
+
+### Choose Bid Amount
+
+Determine the right bid for you by . . .
+
+- Cost of your keywords.
+- Type of campaign you're running.
+- Your profits.
+
+Most people starting out in AdWords use CPC. You set the max you're willing to pay for each click.
+
+Set your bid by thinking about how much an ad click is worth to you. If you're still unsure, try starting at a max of $1 per click.
+
+There are also tools you can use:
+
+#### Bid Simulator
+
+Runs what-if scenarios such as, "How many more impressions would I have gotten if my bid had been $0.10 higher last week?"
+
+#### Keyword Planner
+
+Shows you how often certain keywords get clicked, and gives you cost estimates at a glance.
+
+#### First-Page Bid Estimates
+
+Helps you see how much you may need to bid to put your ad on the first page of Google results.
+
+[NOTE: `Halloween short stories`]
+
+### Reevaluating
+
+Reevaluate your CPC bids regularly. Once you've set your maximum bids, see how many clicks accrue, and whether those clicks lead to business results on your website.
+
+1. To see which keywords are leading to the most clicks in your ads, go to the "keywords" tab in your account. Try filtering your keywords by click-through rate to see which keywords get you a lot of impressions, but few clicks. If your goal is to generate sales, these are the keywords that are probably not working so well. Adjust your bids accordingly.
+2. Once you’ve identified which keywords, locations, times, and devices are getting good results, you can adjust your bids accordingly. For instance, if a keyword has a low average CPC but each click converts well, you may try increasing its max CPC bid. This could improve the ad’s average position for that keyword, giving your ads more exposure and potentially increasing your ROI.
+
+### Conversion Bidding Types
+
+#### Enhanced Cost Per Click (ECPC)
+
+Semi-automated. Adjusts your bids within your budget to get you as many conversions as possible.
+
+Good for advertisers looking for an incremental increase in conversions while still retaining control over their keyword bids.
+
+#### Maximize Conversions
+
+Automatically sets bids at auction time to get you as much conversion volume as possible within your campaign's budget.
+
+Good for advertisers with a fixed advertising budget already seeing at least 15 conversions and 15 clicks per month, who do not know how much they should be willing to pay for a conversion (no target CPA).
+
+#### Target CPA
+
+Automatically sets bids to help get as many conversions as possible at the target CPA you set (some conversions may cost more or less than your target). Target CPA does not operate within a set budget.
+
+Good for advertisers who know how much they’re willing to pay for a conversion and prioritize maintaining a specific cost per conversion over driving conversion volume.
+
+### Best Practices for Automated Bidding
+
+- Transition from manual to automated bidding. The algorithm needs at least a couple weeks of data to make informed predictions. Keep campaign changes to a minimum during this time while the algorithm is learning.
+- Set up conversion tracking. Required for automated bidding. Allows you to see how effectively your ad clicks lead to valuable customer activity, such as purchases or email sign-ups.
+- Avoid frequent changes to bidding options. Try to keep Target CPA goals, ads, and campaign daily budgets fairly steady so the algorithm doesn't have to keep adapting.
+- Review performance and make improvements. Use the bid strategy report to see how well your ads are performing. Make adjustments if necessary.
+
