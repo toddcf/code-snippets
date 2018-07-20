@@ -1,6 +1,6 @@
 # AdWords Fundamentals
 
-[Test on: Dad's calendar, my books, Piel Canela]
+[Test on: Dad's calendar, my books, Piel Canela, Proofreader (book and cloud)]
 
 Ads should be clear, relevant, and include a link to your website.
 
@@ -622,3 +622,23 @@ For example, a restaurant may know that people are more likely to come in if the
 - Targeting Methods. (If you sell luggage, you could increase bids for travel websites in the Display Network. *Recommended for advanced users.*)
 - Remarketing Lists for Search Ads. (You could increase your bid for people who previously viewed your website in the last 30 days. *Recommended for advanced users.*)
 - Interactions. (You could increase your bid for mobile devices to show call interaction ads more frequently. These influence how often you show call extensions and call-only ads to users.)
+
+## Aligning Your Budget with Your Goals
+
+You set how much you are willing to spend per day in AdWords. Without a daily budget, you can't show your ads. Once your budget is reached for the day, your ads typically stop showing until the next day.
+
+### Determining Your Daily Budget
+
+Some options:
+
+1. Calculate your daily budget based on your monthly budget. (Divide by 30.4 -- the average number of days per month. NOTE: Due to changes in traffic, AdWords allows up to 20% more clicks in a day than the budget specifies. However, in any given month, AdWords never charges more than the average daily budget amount multiplied by 30.4.)
+2. Calculate based on your average cost-per-click (CPC). (If your CPC is $0.10, and you'd like 500 clicks per day, set your daily budget to $50.)
+3. Find your campaign's recommended budget. AdWords shows recommended budgets based on:
+  - Recent campaign performance.
+  - Current campaign budget.
+  - Keyword list.
+  - Campaign targeting setting.
+  - (NOTE: AdWords won't display a recommended daily budget if you rarely meet your daily budget, or if your campaign has limited data. If you don't see a recommended budget, and you know your ads aren't being shown as often as they could because your budget is limited, you might want to consider raising your budget to an amount that you're comfortable with.)
+4. Check your ad delivery method. (When your average daily budget is reached, your ads will typically stop showing for that day. You'll want to consider your campaign's ad delivery method, which determines how quickly your ads are shown and how long your budget lasts during a given day, when setting your daily budget. The "Standard" delivery method is like a slow-burning candle -- it spreads your budget throughout the day. The "Accelerated" delivery method is more like jet fuel -- it uses your budget more quickly. Accelerated delivery is ideal for advertisers who want to show results more quickly.)
+
+RESUME: CHECKPOINT
