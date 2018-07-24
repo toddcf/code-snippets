@@ -17,7 +17,7 @@ The Google Network is made up of two networks:
 1. Search
 2. Display
 
-These are the places your AdWords ads can appear, including: 
+These are the places your AdWords ads can appear:
 
 - Google sites (Google search, Google Shopping, Google Maps, Google Play)
 - Google partner sites
@@ -164,7 +164,7 @@ A poor landing page experience can result in your ads showing less often -- or n
 
 - Offer relevant, useful, original content.
 - Be specific. If a user clicks an ad for a specific sports car, they shouldn't be taken to a landing page for a variety of sports cars.
-- Be general when the user wants more options, such as a comparision page of various camera models instead of one camera model.
+- Be general when the user wants more options, such as a comparison page of various camera models instead of one camera model.
 - Be transparent about what your business does.
 - Explain your products or services before asking users to fill out forms.
 - Make it easy to find your contact info.
