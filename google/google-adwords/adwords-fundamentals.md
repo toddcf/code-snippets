@@ -736,3 +736,40 @@ Small editorial errors are one of the most common reasons ads are prevented from
 - Don't use your phone number in the ad text -- use a Call Extension.
 - Image ads must be clearly branded with things like company name, logo, and display URL.
 
+## Trademark Disapprovals
+
+Your ad can be . . .
+
+1. Approved
+2. Approved (Limited). Allowed to run in certain countries; restricted in others. Your options:
+  - Do nothing. Your ad will run in only the countries it's approved for.
+  - Request authorization from the trademark owner to use the trademark in the countries you desire. (See below.)
+  - Remove the trademark from the ad text. (Fastest resolution.)
+3. Disapproved. Your options:
+  - Remove the trademark from your ad so it can be re-reviewed and start running. (Fastest resolution.)
+  - Revise your ad and landing page to comply.
+  - Request authorization from the trademark owner. (See below.)
+
+### Requesting Authorization from the Trademark Owner
+
+1. Fill out the "3rd Party Authorization Form" to get the trademark owner's contact info -- provided they've updated it in Google's system.
+2. Contact them.
+3. Once the trademark owner submits the authorization form, Google will review it within two business days.
+4. If the trademark use is approved, you'll need to resubmit your ad for approval.
+
+### Reseller and Informational Site Policy
+
+Allows you to use trademarked items without explicit authorization, provided you meet the following requirements:
+
+#### Resellers
+
+To qualify as a reseller:
+
+- You have a dedicated landing page for selling the goods or services (or components, replacement parts, or compatible services) of the corresponding trademark.
+- Your landing page clearly has a way for users to make the purchase.
+- OR, the page clearly displays commercial information such as prices, rates, quotes, etc.
+
+To qualify as an informational site:
+
+- You have a dedicated landing page providing information about goods or services corresponding to the trademark.
+- The page must display informative details about goods or services corresponding to the trademark.
