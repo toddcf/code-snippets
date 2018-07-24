@@ -721,3 +721,18 @@ Profit = $1,200
 ```
 
 See also: ROAS (Return on Ad Spending). Measures only the effectiveness of your ads, NOT taking into account the cost of goods or other business expenses.
+
+## Avoid Editorial Errors
+
+Small editorial errors are one of the most common reasons ads are prevented from running.
+
+- Typos.
+- Extra punctuation marks(!!!)
+- Using `+` instead of `and`.
+- GiMmicKy CAPITALIZATION and spelling.
+- Emojis and emoticons.
+- Poor video quality.
+- Don't use the words "click here" in your ad.
+- Don't use your phone number in the ad text -- use a Call Extension.
+- Image ads must be clearly branded with things like company name, logo, and display URL.
+
