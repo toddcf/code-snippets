@@ -1,6 +1,6 @@
 # AdWords Fundamentals
 
-[Test on: Dad's calendar, my books, Piel Canela, Proofreader (book and cloud)]
+[Test on: Dad's calendar, my books (am I allowed to use Amazon Associates links??), Piel Canela, Proofreader (book and cloud).]
 
 Ads should be clear, relevant, and include a link to your website.
 
@@ -641,4 +641,12 @@ Some options:
   - (NOTE: AdWords won't display a recommended daily budget if you rarely meet your daily budget, or if your campaign has limited data. If you don't see a recommended budget, and you know your ads aren't being shown as often as they could because your budget is limited, you might want to consider raising your budget to an amount that you're comfortable with.)
 4. Check your ad delivery method. (When your average daily budget is reached, your ads will typically stop showing for that day. You'll want to consider your campaign's ad delivery method, which determines how quickly your ads are shown and how long your budget lasts during a given day, when setting your daily budget. The "Standard" delivery method is like a slow-burning candle -- it spreads your budget throughout the day. The "Accelerated" delivery method is more like jet fuel -- it uses your budget more quickly. Accelerated delivery is ideal for advertisers who want to show results more quickly.)
 
-RESUME: CHECKPOINT
+It's ideal to start with a low daily budget, and then as you see results, invest more in the areas that are driving your business.
+
+### Three Stages
+
+1. Build awareness of your business. (Requires a larger budget due to the longer path to conversion, and the scale at which you try to reach people.)
+2. Influence consideration. (Encourage customers to explore your site. Can be accomplished with small, medium, or large budgets -- but with a medium path to conversion, a medium to large budget is wisest so you can reach a wider group of people and begin moving them to action.)
+3. Drive action. (Have customers place orders, contact you, etc. This will be the smallest group of target audience who has made it this far in the sales funnel. You can meet all of your action goals with a small, medium, or large budget.)
+
+The further along a customer gets in these stages, the more likely they are to buy.
