@@ -650,3 +650,74 @@ It's ideal to start with a low daily budget, and then as you see results, invest
 3. Drive action. (Have customers place orders, contact you, etc. This will be the smallest group of target audience who has made it this far in the sales funnel. You can meet all of your action goals with a small, medium, or large budget.)
 
 The further along a customer gets in these stages, the more likely they are to buy.
+
+## Evaluating Campaign Performance
+
+Once your campaign has been running for a while, you'll want to measure its performance. The amount of data in AdWords reports and metrics can be overwhelming at first, so a weekly check-in of a few key performance indicators is a good idea.
+
+Once you know which key indicators you're checking regularly, you can customize the rows and columns for a customized view of the metrics you're interested in.
+
+- Cost Per Acquisition (CPA): Tells you how much you're spending in advertising to get one conversion (purchase, subscription, etc.). Useful for keeping your budget in line.
+- Clickthrough Rate (CTR): Tells you how often people are clicking your ads, but not how often they're making a purchase.
+- Conversion Rate: Tells you what percentage of people who clicked your ads actually wound up purchasing.
+
+### Search Terms Report
+
+The Search terms report lists the searches and terms that people have used before seeing your ad and clicking it. If a term is getting you in front of customers, add it to your keyword list.
+
+### User Locations Report
+
+Shows you the physical locations of users who clicked your ads. Can help you decide to target certain regions that have an interest in your business. (Does *not* tell you what geographical locations your users are *interested* in -- just where they were located.)
+
+### Geographic Report
+
+Tells you what geographic locations users who clicked your ad are interested in. (Not where they are located, but what locations they have searched for or viewed online.) If customers interested in certain locations are finding you, update your campaign to directly offer something they’re looking for.
+
+### Landing Page Experience Report
+
+Estimates the quality of your landing page (which affects your Ad Rank). If you have a weak score, a link is provided with tips to make it better.
+
+### Paid and Organic Report
+
+Tells you how people got to you, comparing Google's free organic search vs. paid AdWords ads. Can help you decide to update your keyword list or create new ad groups to directly target these people.
+
+### Attribution Reports
+
+Shows you the paths customers took to complete a conversion. (Only available with conversion tracking.)
+
+### Auction Insights Report
+
+Lets you see how well your ads are performing in similar auctions. If your competitors' ads are ranking higher than yours on search results pages, you can adjust your keywords.
+
+### Keyword Screen
+
+- Impressions tell you how often your ad was shown on a Search Results Page or site on the Google Network.
+- Clicks CTR tells you how many clicks your ad has received. (Clickthrough Rate (CTR) shows the percentage of people who saw your ad and clicked on it.)
+- Conversions tells you how many people clicked on your ad and then performed an action you valued. (Subscribed, purchased, called you, downloaded something, etc.)
+- Cost Per Acquisition (CPA) or Cost Per Conversion tells you how much each ad conversion cost you.
+- Conversion Rate shows how many conversions on your site resulted from an ad click. (Example: 50 conversions from 1,000 clicks = 5% conversion rate.)
+
+### Return on Investment (ROI) for Your Ads
+
+Tells you if your ad campaign is worth it, or if it needs adjusting.
+
+Formula:
+
+`(profit - cost) / cost = ROI`
+
+Example:
+
+If your ad resulted in $1,200 in sales for a product that costs $600 to make and $200 to advertise, then your ROI is:
+
+```
+Cost = $600 + $200 = $800
+Profit = $1,200
+
+($1,200 - $800) / $800
+
+= $400 / $800
+
+= 50% ROI
+```
+
+See also: ROAS (Return on Ad Spending). Measures only the effectiveness of your ads, NOT taking into account the cost of goods or other business expenses.
