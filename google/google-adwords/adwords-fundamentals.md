@@ -195,9 +195,9 @@ Benefits:
   - Gives users interactive ways of contacting you.
 - No cost to adding extensions.
   - Clicks on your ad are charged as usual. (You're charged when someone calls you from your call extension, or downloads your app from your app extension.)
+  - Exception: Clicks on review extensions and seller ratings are not charged at all.
 
 There is no limit to the number of ad extensions you can add, but a maximum of four can show across an AdWords campaign at any given time.
-  - Exception: Clicks on review extensions and seller ratings are not charged at all.
 
 Specific Types of Extensions:
 
