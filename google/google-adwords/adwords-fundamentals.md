@@ -1,6 +1,6 @@
 # AdWords Fundamentals
 
-[Test on: Dad's calendar, my books, Piel Canela, Proofreader (book and cloud)]
+[Test on: Dad's calendar, my books (am I allowed to use Amazon Associates links??), Piel Canela, Proofreader (book and cloud).]
 
 Ads should be clear, relevant, and include a link to your website.
 
@@ -17,7 +17,7 @@ The Google Network is made up of two networks:
 1. Search
 2. Display
 
-These are the places your AdWords ads can appear, including: 
+These are the places your AdWords ads can appear:
 
 - Google sites (Google search, Google Shopping, Google Maps, Google Play)
 - Google partner sites
@@ -164,7 +164,7 @@ A poor landing page experience can result in your ads showing less often -- or n
 
 - Offer relevant, useful, original content.
 - Be specific. If a user clicks an ad for a specific sports car, they shouldn't be taken to a landing page for a variety of sports cars.
-- Be general when the user wants more options, such as a comparision page of various camera models instead of one camera model.
+- Be general when the user wants more options, such as a comparison page of various camera models instead of one camera model.
 - Be transparent about what your business does.
 - Explain your products or services before asking users to fill out forms.
 - Make it easy to find your contact info.
@@ -195,9 +195,9 @@ Benefits:
   - Gives users interactive ways of contacting you.
 - No cost to adding extensions.
   - Clicks on your ad are charged as usual. (You're charged when someone calls you from your call extension, or downloads your app from your app extension.)
+  - Exception: Clicks on review extensions and seller ratings are not charged at all.
 
 There is no limit to the number of ad extensions you can add, but a maximum of four can show across an AdWords campaign at any given time.
-  - Exception: Clicks on review extensions and seller ratings are not charged at all.
 
 Specific Types of Extensions:
 
@@ -641,4 +641,135 @@ Some options:
   - (NOTE: AdWords won't display a recommended daily budget if you rarely meet your daily budget, or if your campaign has limited data. If you don't see a recommended budget, and you know your ads aren't being shown as often as they could because your budget is limited, you might want to consider raising your budget to an amount that you're comfortable with.)
 4. Check your ad delivery method. (When your average daily budget is reached, your ads will typically stop showing for that day. You'll want to consider your campaign's ad delivery method, which determines how quickly your ads are shown and how long your budget lasts during a given day, when setting your daily budget. The "Standard" delivery method is like a slow-burning candle -- it spreads your budget throughout the day. The "Accelerated" delivery method is more like jet fuel -- it uses your budget more quickly. Accelerated delivery is ideal for advertisers who want to show results more quickly.)
 
-RESUME: CHECKPOINT
+It's ideal to start with a low daily budget, and then as you see results, invest more in the areas that are driving your business.
+
+### Three Stages
+
+1. Build awareness of your business. (Requires a larger budget due to the longer path to conversion, and the scale at which you try to reach people.)
+2. Influence consideration. (Encourage customers to explore your site. Can be accomplished with small, medium, or large budgets -- but with a medium path to conversion, a medium to large budget is wisest so you can reach a wider group of people and begin moving them to action.)
+3. Drive action. (Have customers place orders, contact you, etc. This will be the smallest group of target audience who has made it this far in the sales funnel. You can meet all of your action goals with a small, medium, or large budget.)
+
+The further along a customer gets in these stages, the more likely they are to buy.
+
+## Evaluating Campaign Performance
+
+Once your campaign has been running for a while, you'll want to measure its performance. The amount of data in AdWords reports and metrics can be overwhelming at first, so a weekly check-in of a few key performance indicators is a good idea.
+
+Once you know which key indicators you're checking regularly, you can customize the rows and columns for a customized view of the metrics you're interested in.
+
+- Cost Per Acquisition (CPA): Tells you how much you're spending in advertising to get one conversion (purchase, subscription, etc.). Useful for keeping your budget in line.
+- Clickthrough Rate (CTR): Tells you how often people are clicking your ads, but not how often they're making a purchase.
+- Conversion Rate: Tells you what percentage of people who clicked your ads actually wound up purchasing.
+
+### Search Terms Report
+
+The Search terms report lists the searches and terms that people have used before seeing your ad and clicking it. If a term is getting you in front of customers, add it to your keyword list.
+
+### User Locations Report
+
+Shows you the physical locations of users who clicked your ads. Can help you decide to target certain regions that have an interest in your business. (Does *not* tell you what geographical locations your users are *interested* in -- just where they were located.)
+
+### Geographic Report
+
+Tells you what geographic locations users who clicked your ad are interested in. (Not where they are located, but what locations they have searched for or viewed online.) If customers interested in certain locations are finding you, update your campaign to directly offer something they’re looking for.
+
+### Landing Page Experience Report
+
+Estimates the quality of your landing page (which affects your Ad Rank). If you have a weak score, a link is provided with tips to make it better.
+
+### Paid and Organic Report
+
+Tells you how people got to you, comparing Google's free organic search vs. paid AdWords ads. Can help you decide to update your keyword list or create new ad groups to directly target these people.
+
+### Attribution Reports
+
+Shows you the paths customers took to complete a conversion. (Only available with conversion tracking.)
+
+### Auction Insights Report
+
+Lets you see how well your ads are performing in similar auctions. If your competitors' ads are ranking higher than yours on search results pages, you can adjust your keywords.
+
+### Keyword Screen
+
+- Impressions tell you how often your ad was shown on a Search Results Page or site on the Google Network.
+- Clicks CTR tells you how many clicks your ad has received. (Clickthrough Rate (CTR) shows the percentage of people who saw your ad and clicked on it.)
+- Conversions tells you how many people clicked on your ad and then performed an action you valued. (Subscribed, purchased, called you, downloaded something, etc.)
+- Cost Per Acquisition (CPA) or Cost Per Conversion tells you how much each ad conversion cost you.
+- Conversion Rate shows how many conversions on your site resulted from an ad click. (Example: 50 conversions from 1,000 clicks = 5% conversion rate.)
+
+### Return on Investment (ROI) for Your Ads
+
+Tells you if your ad campaign is worth it, or if it needs adjusting.
+
+Formula:
+
+`(profit - cost) / cost = ROI`
+
+Example:
+
+If your ad resulted in $1,200 in sales for a product that costs $600 to make and $200 to advertise, then your ROI is:
+
+```
+Cost = $600 + $200 = $800
+Profit = $1,200
+
+($1,200 - $800) / $800
+
+= $400 / $800
+
+= 50% ROI
+```
+
+See also: ROAS (Return on Ad Spending). Measures only the effectiveness of your ads, NOT taking into account the cost of goods or other business expenses.
+
+## Avoid Editorial Errors
+
+Small editorial errors are one of the most common reasons ads are prevented from running.
+
+- Typos.
+- Extra punctuation marks(!!!)
+- Using `+` instead of `and`.
+- GiMmicKy CAPITALIZATION and spelling.
+- Emojis and emoticons.
+- Poor video quality.
+- Don't use the words "click here" in your ad.
+- Don't use your phone number in the ad text -- use a Call Extension.
+- Image ads must be clearly branded with things like company name, logo, and display URL.
+
+## Trademark Disapprovals
+
+Your ad can be . . .
+
+1. Approved
+2. Approved (Limited). Allowed to run in certain countries; restricted in others. Your options:
+  - Do nothing. Your ad will run in only the countries it's approved for.
+  - Request authorization from the trademark owner to use the trademark in the countries you desire. (See below.)
+  - Remove the trademark from the ad text. (Fastest resolution.)
+3. Disapproved. Your options:
+  - Remove the trademark from your ad so it can be re-reviewed and start running. (Fastest resolution.)
+  - Revise your ad and landing page to comply.
+  - Request authorization from the trademark owner. (See below.)
+
+### Requesting Authorization from the Trademark Owner
+
+1. Fill out the "3rd Party Authorization Form" to get the trademark owner's contact info -- provided they've updated it in Google's system.
+2. Contact them.
+3. Once the trademark owner submits the authorization form, Google will review it within two business days.
+4. If the trademark use is approved, you'll need to resubmit your ad for approval.
+
+### Reseller and Informational Site Policy
+
+Allows you to use trademarked items without explicit authorization, provided you meet the following requirements:
+
+#### Resellers
+
+To qualify as a reseller:
+
+- You have a dedicated landing page for selling the goods or services (or components, replacement parts, or compatible services) of the corresponding trademark.
+- Your landing page clearly has a way for users to make the purchase.
+- OR, the page clearly displays commercial information such as prices, rates, quotes, etc.
+
+To qualify as an informational site:
+
+- You have a dedicated landing page providing information about goods or services corresponding to the trademark.
+- The page must display informative details about goods or services corresponding to the trademark.
