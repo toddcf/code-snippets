@@ -6,7 +6,7 @@
 
 ```
 <div class="honda-btn-container">
-  <a href="#" class="button expanded honda-btn">This Button </a>
+  <a href="#" class="button expanded honda-btn">Honda Button </a>
 </div>
 ```
 
