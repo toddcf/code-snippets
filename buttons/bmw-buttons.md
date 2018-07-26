@@ -43,11 +43,24 @@ Secondary buttons are gray.
 ### HTML
 
 ```
-
+<div class="bmw-secondary-btn-container">
+  <a href="#" class="button bmw-secondary-btn">BMW Secondary Button </a>
+</div>
 ```
 
 ### CSS
 
 ```
+.bmw-secondary-btn {
+  background: -webkit-gradient(linear, left top, left bottom, from(#666766), to(#979799));
+  background: -webkit-linear-gradient(#666766, #979799);
+  background: -o-linear-gradient(#666766, #979799);
+  background: linear-gradient(#666766, #979799); /* BMW mandate */
+}
 
+.bmw-secondary-btn:hover,
+.bmw-secondary-btn:active,
+.bmw-secondary-btn:focus {
+  background: #b5b5b5; /* BMW mandate */
+}
 ```
