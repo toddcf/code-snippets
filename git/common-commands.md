@@ -38,6 +38,16 @@ This is for when you are either working in a group project, or just want to be a
 2. Then push to your branch: `git push origin [your branch]`.
 3. Go to GitHub and create a `pull request` FROM the branch you just pushed up TO the MASTER branch. It should be able to merge automatically.
 
+The GitHub website may now tell you that `[your branch]` is 1 commit behind `master`. I think this is because after `git merge master`, I have been doing `git add -A` and `git commit -m` before `git push origin [your branch]`, and this is incorrect. It is adding an extra commit to `[your branch]` and causing things to be out of sync before you even run `git push origin [your branch]`. So make sure you just skip straight from `git merge master` to `git push origin [your branch]`. But in case the mistake has already benn made, here is my workaround (which is basically just repeating some of these same steps):
+
+4. `git checkout master`.
+5. `git add -A`.
+6. `git commit -m "Merging with master again so I can push up [your branch]."`.
+7. `git pull`.
+8. `git checkout [your branch]`.
+9. `git merge master`.
+10. `git push origin [your branch]`.
+
 After that, if you were just trying to get your master branch up to date with your `gh-pages` branch after accidentally making changes to your `gh-pages` branch (for example), also do the following:
 
 4. `git checkout master`.
