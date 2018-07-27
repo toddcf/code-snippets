@@ -14,25 +14,29 @@
 
 ## Push to GitHub
 
+This is bare-bones -- working in and saving to your master branch (as opposed to working in multiple branches).
+
 1. Confirm that you are in the branch you want to push.
 2. `git add -A`. (Tells Git that this file exists.)
 3. `git commit -m`.
 4. `git push origin [branch]`. Branch could be `master` or whichever branch you are working in.
 
-## Pulling From / Merging with Master (Typically in Group Projects)
+## Pulling From / Merging with Master
 
-1. `git checkout master`. You're going to pull everyone else's changes -- all the latest code. You may also need to:
-  - `git add -A`.
-  - `git commit -m "Preparing to pull."`.
-2. `git pull`.
-3. `git checkout [the branch you are working on]`.
-4. `git merge master`.
+This is for when you are either working in a group project, or just want to be able to use different branches on different local machines and keep everything in sync.
+
+1. `git checkout master`. You're going to pull everyone else's changes -- all the latest code.
+2. `git add -A`.
+3. `git commit -m "Preparing to pull."`.
+4. `git pull`.
+5. `git checkout [the branch you are working on]`.
+6. `git merge master`.
 
 ## Pushing to Master in Group Projects
 
 1. Always pull and merge first (see above), so that you are incorporating your team's changes.
 2. Then push to your branch: `git push origin [your branch]`.
-3. Go to GitHub and create a PULL REQUEST from the MASTER branch TO the branch you want to pull changes from.
+3. Go to GitHub and create a `pull request` FROM the branch you just pushed up TO the MASTER branch. It should be able to merge automatically.
 
 After that, if you were just trying to get your master branch up to date with your `gh-pages` branch after accidentally making changes to your `gh-pages` branch (for example), also do the following:
 
