@@ -51,7 +51,7 @@ The gradient "from" and "to" values are both set to the same value in this examp
 
 Note that rgba is used, meaning the first three values are rgb colors (each set to zero, for black), and the fourth value is transparency (set to 70% in this example).
 
-### Alternate Method if the Above Doesn't Work
+### Alternate Method if the Above Doesn't Work: `background-blend-mode`
 
 Sometimes the text overlay gets darkened, too, despite the above method. If that happens, try this intead:
 
@@ -78,6 +78,8 @@ Sometimes the text overlay gets darkened, too, despite the above method. If that
 ```
 
 The `background: #00000050` code is what is creating the darkened background. The first six digits are the hex code for black. The last two digits are the percentage of opacity (in this case, 50%).
+
+The specific background category is actually `background-blend-mode: #00000050;`.
 
 ## Background Opacity
 
