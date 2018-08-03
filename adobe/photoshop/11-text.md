@@ -12,6 +12,14 @@ Press `CTRL` + `ENTER` to solidify the text you've been editing.
 
 Don't install too many fonts, or Photoshop will take a long time to load.
 
+You can sync fonts from Adobe Typekit, which will be available across your entire Adobe suite (Photoshop, XD, etc.):
+
+1. Go to https://typekit.com.
+2. Find the font you want.
+3. Click `sync`.
+
+NOTE: If you run out of space, you can unsync fonts you are no longer using.
+
 ## Bounding Box
 
 To create a box to contain your text:
