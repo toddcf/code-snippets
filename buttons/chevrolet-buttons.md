@@ -1,4 +1,45 @@
-# Honda Buttons
+# Chevrolet Buttons
+
+## Standard Yellow Button Styling
+
+### HTML
+
+```
+<div class="chevrolet-btn-container">
+  <a href="#" class="button expanded chevrolet-yellow-btn">Chevrolet Yellow Button </a>
+</div>
+```
+
+### CSS:
+
+```
+.chevrolet-yellow-btn {
+  border-radius: 0.5rem;
+  border: 3px solid #000;
+  -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #e7ab10;
+          box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #e7ab10;
+  background: #f1be39;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.chevrolet-yellow-btn:hover,
+.chevrolet-yellow-btn:active,
+.chevrolet-yellow-btn:focus {
+  border: 3px solid #000;
+  -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
+          box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
+  background: #fff;
+  color: #000;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+```
 
 ## Standard Blue Button Styling
 
@@ -6,14 +47,14 @@
 
 ```
 <div class="chevrolet-btn-container">
-  <a href="#" class="button expanded chevrolet-btn">Chevrolet Button </a>
+  <a href="#" class="button expanded chevrolet-btn">Chevrolet Blue Button </a>
 </div>
 ```
 
 ### CSS:
 
 ```
-.chevrolet-btn {
+.chevrolet-blue-btn {
   border-radius: 0.5rem;
   border: 3px solid #e7ab10;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #e7ab10;
@@ -27,9 +68,9 @@
   transition: all .3s;
 }
 
-.chevrolet-btn:hover,
-.chevrolet-btn:active,
-.chevrolet-btn:focus {
+.chevrolet-blue-btn:hover,
+.chevrolet-blue-btn:active,
+.chevrolet-blue-btn:focus {
   border: 3px solid #f1be39;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
           box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
@@ -41,13 +82,13 @@
 }
 ```
 
-## Inverse White Styling
+## Inverse White Button
 
 ### HTML
 
 ```
 <div class="chevrolet-btn-container">
-  <a href="#" class="button expanded chevrolet-inverse-btn">Chevrolet Inverse Button </a>
+  <a href="#" class="button expanded chevrolet-white-btn">Chevrolet White Button </a>
 </div>
 ```
 
@@ -57,7 +98,7 @@ THIS PART HAS NOT BEEN UPDATED YET:
 
 
 ```
-.chevrolet-inverse-btn {
+.chevrolet-white-btn {
   border-radius: 0.5rem;
   border: 3px solid #137ec1;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
@@ -71,9 +112,9 @@ THIS PART HAS NOT BEEN UPDATED YET:
   transition: all .3s;
 }
 
-.chevrolet-inverse-btn:hover,
-.chevrolet-inverse-btn:active,
-.chevrolet-inverse-btn:focus {
+.chevrolet-white-btn:hover,
+.chevrolet-white-btn:active,
+.chevrolet-white-btn:focus {
   border: 3px solid #0e6093;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #0e6093;
           box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #0e6093;
