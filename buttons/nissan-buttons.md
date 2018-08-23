@@ -89,3 +89,31 @@ Set your button's background color first.
 Then plug its hex code into https://www.beautycolorcode.com. (Add `/` and the hex code without the hash after that URL.)
 
 Then choose the monochrome color that is two squares darker than your original hex and use that for the box shadow inset color.
+
+## Version 2
+
+### HTML
+
+```
+<div class="nissan-btn-v2-container">
+  <a href="/contact-us" class="button expanded nissan-btn-v2">Contact Us </a>
+</div>
+```
+
+### CSS
+
+```
+.nissan-btn-v2 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border: 2px solid #c51b37;
+  border-radius: 0.5rem;
+}
+
+.nissan-btn-v2:hover,
+.nissan-btn-v2:active,
+.nissan-btn-v2:focus {
+  color: #c51b37;
+  background: #eee;
+}
+```
