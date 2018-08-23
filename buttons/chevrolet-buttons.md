@@ -15,7 +15,7 @@
 ```
 .chevrolet-yellow-btn {
   border-radius: 0.5rem;
-  border: 3px solid #000;
+  border: 2px solid #000;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #e7ab10;
           box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #e7ab10;
   background: #f1be39;
@@ -30,7 +30,7 @@
 .chevrolet-yellow-btn:hover,
 .chevrolet-yellow-btn:active,
 .chevrolet-yellow-btn:focus {
-  border: 3px solid #000;
+  border: 2px solid #000;
   -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
           box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
   background: #fff;
@@ -76,6 +76,47 @@
           box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
   background: #fff;
   color: #f1be39;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+```
+
+## Light Blue Button Styling
+
+### HTML
+
+```
+<div class="chevrolet-btn-container">
+  <a href="#" class="button expanded chevrolet-btn-lt-blue">Chevrolet Blue Button </a>
+</div>
+```
+
+### CSS:
+
+```
+.chevrolet-btn-lt-blue {
+  border-radius: 0.5rem;
+  border: 3px solid #3882ad;
+  -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #3882ad;
+          box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem #3882ad;
+  background: #519cc7;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.chevrolet-btn-lt-blue:hover,
+.chevrolet-btn-lt-blue:active,
+.chevrolet-btn-lt-blue:focus {
+  border: 3px solid #519cc7;
+  -webkit-box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
+          box-shadow: inset 0.1rem 0.1rem 1.5rem 0.3rem silver;
+  background: #fff;
+  color: #519cc7;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
