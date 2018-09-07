@@ -4,9 +4,9 @@ Note that all font sizes will probably only work on large screens, and will prob
 
 *All font colors must be either black or white, unless otherwise notes.*
 
-## Marquee
+## Marquee Image
 
-### Marquee Image
+## Text
 
 ### Marquee Headline (Typically H1)
 
@@ -18,6 +18,7 @@ Note that all font sizes will probably only work on large screens, and will prob
   font-size: 59px; /* BMW mandate (44pt = 59px). Typically need to use smaller font-size on smaller screen sizes */
 }
 ```
+Color can be `#fff` or `#000`.
 
 ### Marquee Content
 
@@ -31,6 +32,30 @@ This may or may not be part of the H1:
   line-height: 1.25;
 }
 ```
+Color can be `#fff` or `#000`.
+
+### Promos Headline
+
+```
+.promos-headline {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.22;
+}
+```
+Color can be `#fff` or `#000`.
+
+### Promos Content
+
+```
+.promos-content {
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 1.43;
+}
+```
+Color can be `#fff` or `#000`.
 
 ### Section Titles
 
@@ -38,8 +63,33 @@ This may or may not be part of the H1:
 .section-title {
   text-transform: uppercase;
   font-weight: lighter;
+  font-size: 48px;
+  line-height: 1.11;
 }
 ```
+Color can be `#fff` or `#000`.
+
+### Body Copy
+
+```
+.body-copy {
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 1.43;
+}
+```
+Color can be `#fff` or `#000`.
+
+## Legal Content
+
+```
+.legal-content {
+  color: #666766;
+  font-size: 13px;
+  line-height: 1.6;
+}
+```
+Font-size can go as low as `11px`.
 
 ## Buttons
 
