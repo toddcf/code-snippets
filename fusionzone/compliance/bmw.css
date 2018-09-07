@@ -1,0 +1,59 @@
+/* These font-sizes sometimes need to be reduced on medium and small screens, but should be coded to spec for large screens */
+
+#marquee-headline {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 59px;
+  /*color: #fff;
+  color: #000;*/
+}
+
+.marquee-content {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 1.25;
+  /*color: #fff;
+  color: #000;*/
+}
+
+.promos-headline {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.22;
+  /*color: #fff;
+  color: #000;*/
+}
+
+.promos-content {
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 1.43;
+  /*color: #fff;
+  color: #000;*/
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 48px;
+  line-height: 1.11;
+  /*color: #fff;
+  color: #000;*/
+}
+
+.body-copy {
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 1.43;
+  /*color: #fff;
+  color: #000;*/
+}
+
+.legal-content {
+  color: #666766;
+  font-size: 13px; /* Can shrink to 11px if necessary */
+  line-height: 1.6;
+}
