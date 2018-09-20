@@ -57,3 +57,37 @@
   font-size: 13px; /* Can shrink to 11px if necessary */
   line-height: 1.6;
 }
+
+/* BUTTONS */
+.bmw-primary-btn {
+  width: 191px; /* BMW mandate */
+  height: 51px; /* BMW mandate */
+  font-size: 14px; /* BMW mandate */
+  text-transform: uppercase; /* BMW mandate */
+  color: #fff; /* BMW mandate */
+  background: -webkit-gradient(linear, left top, left bottom, from(#1c62c5), to(#1f72e4));
+  background: -webkit-linear-gradient(#1c62c5, #1f72e4);
+  background: -o-linear-gradient(#1c62c5, #1f72e4);
+  background: linear-gradient(#1c62c5, #1f72e4); /* BMW mandate */
+  font-weight: bold;
+  line-height: 1.9; /* Vertically-center text */
+}
+
+.bmw-primary-btn:hover,
+.bmw-primary-btn:active,
+.bmw-primary-btn:focus {
+  background: #1c69d3; /* BMW mandate */
+}
+
+.bmw-secondary-btn {
+  background: -webkit-gradient(linear, left top, left bottom, from(#666766), to(#979799));
+  background: -webkit-linear-gradient(#666766, #979799);
+  background: -o-linear-gradient(#666766, #979799);
+  background: linear-gradient(#666766, #979799); /* BMW mandate */
+}
+
+.bmw-secondary-btn:hover,
+.bmw-secondary-btn:active,
+.bmw-secondary-btn:focus {
+  background: #b5b5b5; /* BMW mandate */
+}

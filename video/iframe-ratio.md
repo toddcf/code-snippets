@@ -27,3 +27,35 @@
   height: 100%;
 }
 ```
+
+## Placeholder Code
+
+```
+<div class="video-container">
+  <p>Video will go here once it has been provided by dealer</p>
+</div>
+```
+
+```
+.video-container {
+  background: #555;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin-bottom: 1rem;
+}
+
+.video-container p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  width: 90%;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+```
