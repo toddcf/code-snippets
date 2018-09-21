@@ -1,10 +1,8 @@
-/* These font-sizes sometimes need to be reduced on medium and small screens, but should be coded to spec for large screens */
-
 #marquee-headline {
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 59px; /* Can be reduced for smaller screens */
   line-height: 1;
-  font-size: 59px;
   /*color: #fff;
   color: #000;*/
 }
@@ -12,7 +10,7 @@
 .marquee-content {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 27px;
+  font-size: 27px; /* Can be reduced for smaller screens */
   line-height: 1.25;
   /*color: #fff;
   color: #000;*/
@@ -21,7 +19,7 @@
 .promos-headline {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 24px; /* Can be reduced for smaller screens */
   line-height: 1.22;
   /*color: #fff;
   color: #000;*/
@@ -29,7 +27,7 @@
 
 .promos-content {
   font-weight: normal;
-  font-size: 19px;
+  font-size: 19px; /* Can be reduced for smaller screens */
   line-height: 1.43;
   /*color: #fff;
   color: #000;*/
@@ -38,7 +36,7 @@
 .section-title {
   text-transform: uppercase;
   font-weight: lighter;
-  font-size: 48px;
+  font-size: 48px; /* Can be reduced for smaller screens */
   line-height: 1.11;
   /*color: #fff;
   color: #000;*/
@@ -46,7 +44,7 @@
 
 .body-copy {
   font-weight: normal;
-  font-size: 19px;
+  font-size: 19px; /* Can be reduced for smaller screens */
   line-height: 1.43;
   /*color: #fff;
   color: #000;*/
@@ -91,3 +89,53 @@
 .bmw-secondary-btn:focus {
   background: #b5b5b5; /* BMW mandate */
 }
+
+
+
+
+/* Foundation Breakpoints */
+
+/* Small only (below 640px) */
+@media screen and (max-width: 39.9375em) {}
+
+/* Medium and up (above 640px) */
+@media screen and (min-width: 40em) {}
+
+/* Medium only (between 640px and 1024px) */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+/* Large and up (above 1024px) */
+@media screen and (min-width: 64em) {
+
+  #marquee-headline {
+    font-size: 59px; /* Fallback in case size was reduced on smaller screens */
+  }
+
+  .marquee-content {
+    font-size: 27px; /* Fallback in case size was reduced on smaller screens */
+  }
+
+  .promos-headline {
+    font-size: 24px; /* Fallback in case size was reduced on smaller screens */
+  }
+
+  .promos-content {
+    font-size: 19px; /* Fallback in case size was reduced on smaller screens */
+  }
+
+  .section-title {
+    font-size: 48px; /* Fallback in case size was reduced on smaller screens */
+  }
+
+  .body-copy {
+    font-size: 19px; /* Fallback in case size was reduced on smaller screens */
+  }
+
+  .legal-content {
+    font-size: 13px; /* Can shrink to 11px if necessary */
+  }
+
+}
+
+/* Large only (between 1024px and 1200px) */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}

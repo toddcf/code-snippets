@@ -1,3 +1,7 @@
+body {
+  background: gray;
+}
+
 .btn-wrapper {
   text-align: left;
   margin-bottom: 23px;
@@ -23,9 +27,20 @@
   transition: all .3s ease;
 }
 
+.acr-cta-r-trans-w:hover {
+  background-color: transparent;
+  background-position: left bottom;
+  color: #fff;
+}
+
 .cta-click {
   color: #fff;
   text-align: center;
+}
+
+a {
+  background-color: transparent;
+  color: #fff;
 }
 
 a,
@@ -39,28 +54,7 @@ a:hover {
   outline: 0;
 }
 
-a {
-  background-color: transparent;
-}
 
 
 
-/* Experiment from To-Do List */
-span {
-  background: #e74c3c;
-  color: #fff;
-  height: 40px;
-  margin-right: 20px;
-  text-align: center;
-  width: 0; /* Hidden until li is hovered over. */
-  display: inline-block;
-  -webkit-transition: 0.2s linear;
-  -o-transition: 0.2s linear;
-  transition: 0.2s linear; /* Linear means the animation moves at a constant speed. */
-  opacity: 0; /* So you don't see icon when NOT hovering. */
-}
 
-li:hover span {
-  width: 40px;
-  opacity: 1.0;
-}
