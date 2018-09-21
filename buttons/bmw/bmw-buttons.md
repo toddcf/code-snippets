@@ -7,32 +7,41 @@ Primary buttons are blue, and are to be used sparingly throughout the page.
 ### HTML
 
 ```
-<div class="bmw-primary-btn-container">
-  <a href="/new-bmw-for-sale" class="button bmw-primary-btn">New Vehicle Specials </a>
+<div class="btn-wrapper">
+  <a href="#" class="bmw-primary-btn">Primary</a>
 </div>
 ```
 
 ### CSS
 
 ```
-.bmw-primary-btn {
+.btn-wrapper {
+  position: relative;
   width: 191px; /* BMW mandate */
   height: 51px; /* BMW mandate */
+  background: linear-gradient(to bottom, rgba(28,98,197,1) 0%, rgba(28,105,211,1) 50%, rgba(28,105,211,1) 100%, rgba(255,255,255,1) 100%); /* BMW mandate */
+  background-position: left top;
+  background-size: 100% 200%;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.bmw-primary-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-weight: bold;
   font-size: 14px; /* BMW mandate */
   text-transform: uppercase; /* BMW mandate */
   color: #fff; /* BMW mandate */
-  background: -webkit-gradient(linear, left top, left bottom, from(#1c62c5), to(#1f72e4));
-  background: -webkit-linear-gradient(#1c62c5, #1f72e4);
-  background: -o-linear-gradient(#1c62c5, #1f72e4);
-  background: linear-gradient(#1c62c5, #1f72e4); /* BMW mandate */
-  font-weight: bold;
-  line-height: 1.9; /* Vertically-center text */
 }
 
-.bmw-primary-btn:hover,
-.bmw-primary-btn:active,
-.bmw-primary-btn:focus {
-  background: #1c69d3; /* BMW mandate */
+.btn-wrapper:hover,
+.btn-wrapper:active,
+.btn-wrapper:focus {
+  background-color: transparent;
+  background-position: left bottom;
 }
 ```
 
