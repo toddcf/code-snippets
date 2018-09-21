@@ -1,3 +1,7 @@
+* {
+  font-family: Helvetica, Arial, Sans-Serif;
+}
+
 #marquee-headline {
   text-transform: uppercase;
   font-weight: bold;
@@ -56,6 +60,22 @@
   line-height: 1.6;
 }
 
+a {
+  background-color: transparent;
+  color: #fff;
+}
+
+a,
+a:active {
+  text-decoration: none;
+  transition: .3s;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
 /* BUTTONS */
 .bmw-primary-btn-wrapper {
   position: relative;
@@ -105,6 +125,70 @@
 .bmw-secondary-btn:focus {
   background: #b5b5b5; /* BMW mandate */
 }
+
+/* ACURA */
+
+/*body {
+  background: gray;
+}
+
+.btn-wrapper {
+  text-align: left;
+  margin-bottom: 23px;
+  position: relative;
+}
+
+.acr-cta-r-trans-w {
+  display: inline-block;
+  min-width: 190px;
+  max-width: 290px;
+  border: 2px solid #e82c2a;
+  background: linear-gradient(to right, #e82c2a 50%, transparent 0);
+  background-position: right bottom;
+  background-size: 200% 100%;
+  padding: 1.4rem 3.1rem 1rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.4rem;
+  letter-spacing: .07rem;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.acr-cta-r-trans-w:hover {
+  background-color: transparent;
+  background-position: left bottom;
+  color: #fff;
+}
+
+.cta-click {
+  color: #fff;
+  text-align: center;
+}
+
+a {
+  background-color: transparent;
+  color: #fff;
+}
+
+a,
+a:active {
+  text-decoration: none;
+  transition: .2s;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}*/
+
+
+
+
+
+
 
 
 
