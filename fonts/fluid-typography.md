@@ -167,3 +167,5 @@ Since we code from small to large screen sizes, let's start with the ratio for s
 
 }
 ```
+
+You can always change where this breakpoint is if it's not working well for your project.
