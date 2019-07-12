@@ -145,25 +145,7 @@ Since we code from small to large screen sizes, let's start with the ratio for s
 ```
 @media (min-width: 800px) {
 
-  .h5 {
-    font-size: 1.333em;
-  }
-
-  .h4 {
-    font-size: 1.777em;
-  }
-
-  .h3 {
-    font-size: 2.369em;
-  }
-
-  .h2 {
-    font-size: 3.157em;
-  }
-
-  .h1 {
-    font-size: 4.209em;
-  }
+  /* The above code goes here */
 
 }
 ```

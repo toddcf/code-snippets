@@ -38,24 +38,36 @@
 
 ```
 .video-container {
-  background: #555;
-  position: relative;
-  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#00264d), to(#004d99));
+  background-image: -webkit-linear-gradient(top left, #00264d, #004d99);
+  background-image: -o-linear-gradient(top left, #00264d, #004d99);
+  background-image: linear-gradient(to bottom right, #00264d, #004d99);
   height: 0;
   padding-bottom: 56.25%;
-  margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
 }
 
 .video-container p {
-  position: absolute;
-  top: 50%;
+  color: #fff;
+  font-size: 16px;
   left: 50%;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  margin: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
   width: 90%;
-  text-align: center;
-  color: #fff;
-  font-weight: bold;
 }
 ```
