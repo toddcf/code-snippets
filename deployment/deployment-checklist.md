@@ -31,28 +31,27 @@ Optimize Images For Faster Load Times:
 1. Delete entire files and images that are no longer being used.
 2. Clean up all remaining files:
   - HTML:
-	- Links to CSS and JS files that are no longer being used.
-	- Links to fonts (and font weights) that are no longer being used.
-	- Clean up comments.
+  	- Links to CSS and JS files that are no longer being used.
+  	- Links to fonts (and font weights) that are no longer being used.
+  	- Clean up comments.
   - CSS:
-	- Clean up comments.
-	- DO NOT do any manual formatting until after you've run the code through autoprefixers and validators (later on this list)!
+    - Clean up comments.
   - JavaScript:
     - Clean up comments.
     - Check console for any errors.
   - ReadMe:
-	- Create GIF video of the project being used:
-	  - https://showmore.com/
-	  - Dimensions: 1350 x 900 (or any x1.5 ratio).
-	- Ensure the following categories:
-	  - Title
-	  - Description
-	  - Image / GIF: `![Hangman - Robert De Niro Edition](https://github.com/toddcf/hangman-de-niro/blob/master/assets/img/bg1.jpg "Hangman - Robert De Niro Edition")`
-	  - Live Link (to be updated once deployed)
-	  - Technology Used
-	  - Challenges / What I Learned
-	  - Future Iterations
-	- Update all info.
+  	- Create GIF video of the project being used:
+  	  - https://showmore.com/
+  	  - Dimensions: 1350 x 900 (or any x1.5 ratio).
+  	- Ensure the following categories:
+  	  - Title
+  	  - Description
+  	  - Image / GIF: `![Hangman - Robert De Niro Edition](https://github.com/toddcf/hangman-de-niro/blob/master/assets/img/bg1.jpg "Hangman - Robert De Niro Edition")`
+  	  - Live Link (to be updated once deployed)
+  	  - Technology Used
+  	  - Challenges / What I Learned
+  	  - Future Iterations
+  	- Update all info.
 
 ## Browser Compatibility
 
@@ -81,9 +80,6 @@ SKIP IF YOU USED BOOTSTRAP!
 2. CSS Autoprefixing:
   1. Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.) NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
   2. Save all files and refresh your browser to check that nothing broke.
-  3. Once autoprefix is complete, clean up the file(s) manually. SKIP IF YOU WILL BE MINIFYING.
-	1. Reduce any single-line rules to one line of code.
-	2. Add blank line above and below multiple-line blocks of rules.
 
 ## Code Validation
 
