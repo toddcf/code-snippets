@@ -103,3 +103,10 @@ function logNums(el, i, arr) {
 ```
 
 Notice how in the second example we don't invoke `logNums` when passing it into `forEach`? We simply pass in the function name. We don't need to invoke the `logNums` function, `forEach` does that for us. In fact, it invokes the function multiple times, once for every element inside of the array.
+
+
+## When Would You Use forEach?
+
+Examples:
+
+- To delete all the checked items in your email inbox. (Checking the box next to an email could add that email to an array. Then, clicking "Delete all selected" would iterate over that array and delete each item.)
