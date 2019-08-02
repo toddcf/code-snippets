@@ -1,10 +1,10 @@
 # ForEach
 
-JavaScript has a built-in method for iterating over a loop, called `forEach();`. It is more concise than writing out an entire for loop. It takes a function (typically an anonymous function) as an argument, like this:
+JavaScript has a built-in method for iterating over a loop, called `forEach();`. It is more concise than writing out an entire for loop, and less prone to typos or other mistakes. It takes a function (typically an anonymous function) as an argument, like this:
 
 `arr.forEach( someFunction() {});`
 
-That function is then called for every single element in the array.
+That function is then called for every single element in the array. It is therefore referred to as an "iterator function."
 
 ## Example with Anonymous Function:
 
@@ -18,7 +18,9 @@ colors.forEach( function( color ) {
 
 Note that `color` is a placeholder -- call it whatever you want, but the standard is to use the singular form of the name of the array. The result will be that each element is passed into the anonymous function one at a time. First, `color` will be `"red"`, then `"orange"`, then `"yellow"`, etc. So each of these strings will be printed to the console one after another.
 
-## Example with Non-Anonymous Function:
+## Examples with Non-Anonymous Function:
+
+### Example 1
 
 First, write the function you are going to pass into `forEach();`:
 
@@ -33,6 +35,32 @@ Okay, now write your `forEach();` as usual, except pass in your `printColor` fun
 `colors.forEach( printColor );`
 
 IMPORTANT: You DO NOT put parentheses after `printColor`. This is because any time JavaScript sees parentheses following the name of a function, it executes that function right then and there. In this case, that would trigger our function before we want it to run.
+
+### Example 2
+
+In this example, we'll add all the numbers in the array and print their sum.
+
+```
+var numbers = [1, 2, 3, 4, 5];
+var sum = 0;
+
+function adder(number) {
+  sum += number;
+}
+
+numbers.forEach(adder);
+
+sum;
+```
+
+So, first we created our array. Then we created a variable for sum and set it to zero to start with.
+
+Then we wrote our function.
+
+Then we used forEach to call that function in each iteration over the array.
+
+At the end, we printed the sum.
+
 
 ## Getting the Index Number of an Element Using the ForEach Loop
 
