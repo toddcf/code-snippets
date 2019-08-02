@@ -2,7 +2,7 @@
 
 JavaScript has a built-in method for iterating over a loop, called `forEach();`. It is more concise than writing out an entire for loop. It takes a function (typically an anonymous function) as an argument, like this:
 
-`arr.forEach( someFunction );`
+`arr.forEach( someFunction() {});`
 
 That function is then called for every single element in the array.
 
@@ -16,7 +16,7 @@ colors.forEach( function( color ) {
 });
 ```
 
-Note that `color` is a placeholder -- call it whatever you want. The result will be that each element is passed into the anonymous function one at a time. First, `color` will be `"red"`, then `"orange"`, then `"yellow"`, etc. So each of these strings will be printed to the console one after another.
+Note that `color` is a placeholder -- call it whatever you want, but the standard is to use the singular form of the name of the array. The result will be that each element is passed into the anonymous function one at a time. First, `color` will be `"red"`, then `"orange"`, then `"yellow"`, etc. So each of these strings will be printed to the console one after another.
 
 ## Example with Non-Anonymous Function:
 
