@@ -1,6 +1,6 @@
 # Every
 
-Condense everything in an array down into a single value.
+Condense everything in an array down into a single value -- a true or false. You are basically asking, "Do ALL the records match my criteria?"
 
 *NOTE: This is a close cousin of "some."*
 
