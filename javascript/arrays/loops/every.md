@@ -2,6 +2,8 @@
 
 Condense everything in an array down into a single value.
 
+*NOTE: This is a close cousin of "some."*
+
 
 ## Example: Find all Computers with at Least 16GB of RAM
 
@@ -40,4 +42,13 @@ for (var i = 0; i < computers.length; i++) {
     onlySomeComputersCanRunProgram = true;
   }
 }
+```
+
+
+### The BETTER every Way:
+
+```
+computers.every(function(computer) {
+  return computer.ram >= 16;
+});
 ```
