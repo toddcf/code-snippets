@@ -52,3 +52,10 @@ computers.every(function(computer) {
   return computer.ram >= 16;
 });
 ```
+
+In this case, the function returns `true` if ALL computers are compatible, and `false` if some or none of the computers are compatible.
+
+
+## When to Use every
+
+In all-or-nothing situations where you just want to know whether a condition applies to everything or not.
