@@ -58,4 +58,6 @@ In this case, the function returns `true` if ALL computers are compatible, and `
 
 ## When to Use every
 
-In all-or-nothing situations where you just want to know whether a condition applies to everything or not.
+In all-or-nothing situations where you just want to know whether a condition applies to everything or not. You are basically asking, "Do ALL the records match my criteria?"
+
+It is the equivalent of checking all the conditions with `&&`. (By contrast, the `some` helper is the equivalent of checking all the conditions with `||`.)
