@@ -92,4 +92,4 @@ getPercentages: function() {
 
 ## Where Would You Use Map?
 
-For rendering lists of data. Facebook, Instagram, blogs, etc. are all lists of posts. So each post might be an object in the backend. You can use map to pull the posts you want to display and then generate some HTML in order to display them.
+For rendering lists of data. Facebook, Instagram, blogs, etc. are all lists of posts. So each post might be an object in the backend. You can use map to pull the posts you want to display and then generate some HTML in order to display them. (And you do all this without altering the master array.)

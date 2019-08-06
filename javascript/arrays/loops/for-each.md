@@ -107,6 +107,6 @@ Notice how in the second example we don't invoke `logNums` when passing it into 
 
 ## When Would You Use forEach?
 
-Examples:
+Instead of a for loop. For example:
 
-- To delete all the checked items in your email inbox. (Checking the box next to an email could add that email to an array. Then, clicking "Delete all selected" would iterate over that array and delete each item.)
+To delete all the checked items in your email inbox. (Checking the box next to an email could add that email to an array. Then, clicking "Delete all selected" would iterate over that array and delete each item.)
