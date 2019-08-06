@@ -56,6 +56,25 @@ computers.some(function(computer) {
 In this case, the function returns `true` if ALL computers are compatible, and `false` if some or none of the computers are compatible.
 
 
+## Example: Names with Length of Greater Than Four Characters
+
+Do ANY of the names in this array have a length of more than four characters?
+
+```
+var names = [
+  'Alexandria',
+  'Matthew',
+  'Joe'
+];
+
+names.some(function(name) {
+  return name.length > 4;
+});
+```
+
+Yes. This will return `true`, because AT LEAST ONE of the names has more than four characters.
+
+
 ## When to Use some
 
 You are basically asking, "Do ANY the records match my criteria?"

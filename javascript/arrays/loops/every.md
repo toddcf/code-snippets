@@ -56,6 +56,25 @@ computers.every(function(computer) {
 In this case, the function returns `true` if ALL computers are compatible, and `false` if some or none of the computers are compatible.
 
 
+## Example: Names with Length of Greater Than Four Characters
+
+Do ALL of the names in this array have a length of more than four characters?
+
+```
+var names = [
+  'Alexandria',
+  'Matthew',
+  'Joe'
+];
+
+names.every(function(name) {
+  return name.length > 4;
+});
+```
+
+No. This will return `false`, because ONE of the names has less than four characters.
+
+
 ## When to Use every
 
 In all-or-nothing situations where you just want to know whether a condition applies to everything or not. You are basically asking, "Do ALL the records match my criteria?"
