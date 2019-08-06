@@ -80,3 +80,5 @@ No. This will return `false`, because ONE of the names has less than four charac
 In all-or-nothing situations where you just want to know whether a condition applies to everything or not. You are basically asking, "Do ALL the records match my criteria?"
 
 It is the equivalent of checking all the conditions with `&&`. (By contrast, the `some` helper is the equivalent of checking all the conditions with `||`.)
+
+You could use this to validate a sign-in form: Does EVERY field have a value with a length greater than zero? (This is easier than having to write code to check every single individual field by name -- and having to update that code if the field names are ever changed, or fields are added or removed.)
