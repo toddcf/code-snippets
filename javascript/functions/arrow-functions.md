@@ -35,10 +35,30 @@ add(1, 2);
 
 This will still give us an "implicit return" of the function -- even without the keyword, JavaScript knows what to do. (But if you have the curly braces, you NEED the "return" keyword.)
 
+Furthermore, if you also have a *single argument*, you can omit the parentheses around it. And if you do that, you ALSO remove the semicolon at the end. So if you had this:
+
+```
+const double = (number) => number * 2;
+
+double(8);
+```
+
+It could become:
+
+```
+const double = number => number * 2
+
+double(8);
+```
+
+Note that this is ONLY good for single arguments. Not if you have ZERO arguments `()` or multiple arguments.
+
 
 ## Where Should You Use Arrow Functions?
 
 You can absolutely keep writing out functions the old way. But the arrow function syntax saves time and characters.
+
+They also solve issues with the `this` keyword by using what's called "lexical this."
 
 
 
