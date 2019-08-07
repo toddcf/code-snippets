@@ -95,4 +95,62 @@ primaryColors.reduce(function(previous, primaryColor) {
 }, []);
 ```
 
+
+## Example: Balance Parens
+
+A whiteboard challenge might be to write a function that determines whether or not the parentheses in this string are balanced:
+
+```
+var parens1 = '()()()()'; // Should return true
+var parens2 = '(((()))'; // Should return true
+var parens3 = '())))'; // Should return false
+var parens4 = ')('; // Should return false
+var parens5 = ')()('; // Should return false
+```
+
+We'll write a function to take in the string as an argument, but we're going to have to convert this string to an array (using `split`) before we can use the reduce helper on it.
+
+`char` is going to represent a single character -- such as a single parentheses.
+
+0 is passed in after the function. This is because we are going to create a counter: every time we see an opening parentheses, we will increment by one. Every time we see a closing parentheses, we will decrease by one. That way, at the end, if we have a counter anything other than 0, our parentheses must be unbalanced.
+
+We still return `previous` outside of the if statements so that the function still operates even if someone passes characters besides parentheses into it.
+
+We also put a `!` before the whole thing, which will cause JavaScript to convert it all into a truthy or falsy result.
+
+And in order to prevent a scenario such as `)(` from returning `true`, we add this at the beginning of the function:
+
+```
+if (previous < 0 ) {
+  return previous;
+}
+```
+
+This way, if the first parentheses it hits is a closing parentheses, it does NOT decrement the counter, it leaves it at zero.
+
+```
+function balancedParens(string) {
+  return !string.split('').reduce(function(previous, char) {
+    if (previous < 0 ) {
+      return previous;
+    }
+    if (char === '(') {
+      return ++previous;
+    }
+    if (char === ')') {
+      return --previous;
+    }
+    return previous;
+  }, 0);
+}
+
+balancedParens(parens1);
+balancedParens(parens2);
+balancedParens(parens3);
+balancedParens(parens4);
+balancedParens(parens5);
+```
+
+
+
 Note that reduce *will* mutate the original array. In this case it's fine, but don't use this in cases where it isn't going to be fine to do this.
