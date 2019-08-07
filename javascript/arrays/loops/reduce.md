@@ -95,6 +95,8 @@ primaryColors.reduce(function(previous, primaryColor) {
 }, []);
 ```
 
+This will return just the strings: `['red', 'yellow', 'blue']`
+
 
 ## Example: Balance Parens
 
