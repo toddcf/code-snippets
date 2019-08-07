@@ -1,5 +1,52 @@
 # Arrow Functions
 
+STEPHEN GRIDER'S EXPLANATION
+
+## Old Way
+
+```
+const add = function(a, b) {
+  return a + b;
+}
+
+add(1, 2);
+```
+
+
+## Arrow Way
+
+Remove the word "function," and on the other side of the arguments, add the "fat arrow": `=>`.
+
+```
+const add = (a, b) => {
+  return a + b;
+}
+
+add(1, 2);
+```
+
+If you have a single expression in your function, you can streamline the syntax even further by putting everything on one line, removing the curly braces, and removing the "return" keyword:
+
+```
+const add = (a, b) => a + b;
+
+add(1, 2);
+```
+
+This will still give us an "implicit return" of the function -- even without the keyword, JavaScript knows what to do. (But if you have the curly braces, you NEED the "return" keyword.)
+
+
+## Where Should You Use Arrow Functions?
+
+You can absolutely keep writing out functions the old way. But the arrow function syntax saves time and characters.
+
+
+
+
+
+JONAS'S EXPLANATION
+
+
 ```
 const years = [ 1990, 1965, 1982, 1937 ];
 ```
