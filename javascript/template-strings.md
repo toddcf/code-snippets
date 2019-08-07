@@ -33,3 +33,8 @@ In fact, any valid JavaScript expression could go inside the curly braces:
 ```
 `The year is ${new Date().getFullYear()}`;
 ```
+
+
+## Benefits of Using Template Strings
+
+Easier for humans to read and edit.
