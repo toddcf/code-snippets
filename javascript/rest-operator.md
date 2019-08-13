@@ -4,6 +4,7 @@ The Rest Operator (`...`) will accept any quantity of arguments and put them int
 
 The purpose of the Rest Operator is to allow you to write less code.
 
+
 ## Example: Get Sum of an Array
 
 Standard way:
@@ -43,6 +44,7 @@ function addNumbers(...numbers) {
 
 addNumbers(1, 2, 3, 4, 5);
 ```
+
 
 ## Rest vs. Spread Operators
 

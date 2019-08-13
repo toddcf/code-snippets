@@ -1,6 +1,8 @@
 # Spread Operator
 
-`...`
+The Spread Operator (`...`) is similar to the Rest Operator.
+
+It is pretty much the same as the `concat` operator, except that it's easier for humans to read and understand when they're looking at the code -- especially when you're combining tons and tons of arrays into one.
 
 
 ## Example: Color Arrays
@@ -37,6 +39,19 @@ This will create a new array and output:
 ```
 ['red', 'green', 'orange', 'yellow'];
 ```
+
+Another benefit of using the Spread Operator is that you can easily add individual elements to your new array with no problem:
+
+```
+[ 'blue', ...defaultColors, ...userFavoriteColors ];
+```
+
+Which would return:
+
+```
+['blue', red', 'green', 'orange', 'yellow'];
+```
+
 
 
 ## Spread vs. Rest Operators
