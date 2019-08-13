@@ -91,7 +91,7 @@ If you want to pull properties from that second argument as well, you need to do
 
 ```
 function fileSummary({ name, extension, size }, { color }) {
-  
+  return `${color} The file ${name}${extension} is of size ${size}.`;
 }
 ```
 
