@@ -1,5 +1,9 @@
 # Destructuring
 
+## Destructuring Objects
+
+Destructuring objects is all about pulling out properties.
+
 Let's say you have an object for expenses:
 
 ```
@@ -11,14 +15,14 @@ var expense = {
 
 If you want to access the values inside that object, you would do so as follows:
 
-## ES5 Version
+### ES5 Version
 
 ```
 var type = expense.type;
 var amount = expense.amount;
 ```
 
-## ES6 Version
+### ES6 Version
 
 ```
 const { type } = expense;
@@ -29,7 +33,7 @@ This is essentially saying, "I want to create a new variable called 'type,' and 
 
 Note that we are NOT creating an object by putting curly braces to the left of the equals sign.
 
-### Destructuring
+#### Destructuring
 
 These can be "destructured" into a single line, since they are both referencing `expense`:
 
@@ -98,3 +102,36 @@ function fileSummary({ name, extension, size }, { color }) {
 
 ## Destructuring Arrays
 
+Destructuring of arrays is all about pulling out individual elements.
+
+```
+const companies = [
+  'Google',
+  'Facebook',
+  'Uber'
+];
+```
+
+Note that unlike destructuring an object, where you put the variable name inside the curly braces of an object, when you are destructuring an array, the variable name goes inside square brackets:
+
+```
+const [ name ] = companies;
+```
+
+However, even though `{ name }` will return `undefined` because there is no property called `name`, you *can* pull other properties that *do* exist, such as `{ length }` -- because an array has a length.
+
+The order we place the elements in the array is the order in which we'll get them back. For example, in the above snippet, `name` would return `Google`. To get the other names:
+
+```
+const [name, name2, name3];
+```
+
+`name` would return `Google`.
+`name2` would return `Facebook`.
+`name3` would return `Uber`.
+
+Note that using destructuring to get the first element of an array is cleaner syntax than...
+
+```
+const firstCompany = companies[0];
+```
