@@ -256,3 +256,65 @@ function signup( { username, password, email, dob, city } ) {
 ```
 
 You are now pulling all of those properties off the `user` object. You no longer have to worry about the order of arguments that you are passing into the function! Whenever you destructure properties, the order no longer matters.
+
+
+### Example: Changing the Format of Data
+
+Let's say you have an array containing more arrays, which are data points of `x` and `y` coordinates:
+
+```
+const points = [
+  [4, 5],
+  [10, 1],
+  [0, 40]
+];
+```
+
+And let's say you want to convert those into objects with key/value pairs instead, like this:
+
+```
+const points = [
+  {x: 4, y: 5},
+  {x: 10, y: 1},
+  {x: 0, y: 40}
+];
+```
+
+Rather than use a for loop, you can use map:
+
+```
+points.map(pair => {
+  const x = pair[0];
+  const y = pair[1];
+});
+```
+
+Which can be destructured as follows:
+
+```
+points.map(pair => {
+  const [ x, y ] = pair;
+});
+```
+
+In fact, you can destructure in the argument rather than inside the function -- and inside the function you can return the object format you desire:
+
+```
+points.map(([ x, y ]) => {
+  return { x: x, y: y }
+});
+```
+
+AND, because your keys and values are identical to each other, they can be further reduced in ES6:
+
+```
+points.map(([x, y]) => {
+  return { x, y };
+});
+```
+
+This will return:
+
+```
+[{"x":4,"y":5},{"x":10,"y":1},{"x":0,"y":40}]
+```
