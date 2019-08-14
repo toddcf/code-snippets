@@ -162,6 +162,8 @@ const [ name, name2, ...rest ] = companies;
 
 ## Destructuring Arrays and Objects Simultaneously
 
+### Example: Get location of first company
+
 This time, let's say we have an array of companies -- but they are stored as objects:
 
 ```
@@ -179,3 +181,78 @@ const [ { location } ] = companies;
 
 location;
 ```
+
+This is utelizing two sets of destructuring, and it works from the outside in -- in this case, that means square brackets, then curly braces.
+
+
+### Example: Get first location of a company
+
+This time, let's say we have an array of several of Google's office locations:
+
+```
+const google = {
+  locations: ['Mountain View', 'New York', 'London']
+};
+```
+
+And let's say you want to access 'Mountain View':
+
+```
+const { locations: [ location ] } = google;
+
+location;
+```
+
+Which will return:
+
+```
+Mountain View
+```
+
+This is tricky. You're basically saying, "Get the `locations` property. It's going to return an array. Then pull the first element out that array."
+
+
+## When to Use Destructuring
+
+
+### Example: Allowing a Function to Accept a Multitude of Arguments in Any Order
+
+Let's say you write a function that takes in new user signup info:
+
+```
+function signup(username, password, email, dob, city) {
+
+}
+
+signup('Todd', 'password12345', 'todd@example.com', '1/1/1990', 'Los Angeles');
+```
+
+As you can see, there are quite a few arguments. And the more there are, the easier it is to screw up their order. What if you accidentally pass in the dob before the email address?
+
+Instead of passing a list of strings, you can pass in an object that contains all these properties:
+
+```
+const user = {
+  username: 'Todd',
+  password: 'password12345',
+  email: 'todd@example.com',
+  dob: '1/1/1990',
+  city: 'Los Angeles'
+}
+```
+
+Now, instead of passing in a list of strings, you can just pass in the whole object:
+
+```
+signup( user );
+```
+
+NOW, you can destructure all of the properties off of the function's first argument. You can do this just by wrapping them in curly braces:
+
+```
+function signup( { username, password, email, dob, city } ) {
+
+}
+```
+
+You are now pulling all of those properties off the `user` object. You no longer have to worry about the order of arguments that you are passing into the function! Whenever you destructure properties, the order no longer matters.
