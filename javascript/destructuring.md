@@ -135,3 +135,28 @@ Note that using destructuring to get the first element of an array is cleaner sy
 ```
 const firstCompany = companies[0];
 ```
+
+### Destructuring Arrays and Using a Spread Operator
+
+```
+const [ name, ...rest ] = companies;
+```
+
+Now if you view `rest;`, you will get the other two companies:
+
+```
+['Facebook', 'Uber']
+```
+
+To take this even further, if you keep adding variables (such as `name2`)...
+
+```
+const [ name, name2, ...rest ] = companies;
+```
+
+...there will be fewer companies remaining when you view `rest;`:
+
+```
+['Uber']
+```
+
