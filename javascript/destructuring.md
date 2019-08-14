@@ -160,3 +160,22 @@ const [ name, name2, ...rest ] = companies;
 ['Uber']
 ```
 
+## Destructuring Arrays and Objects Simultaneously
+
+This time, let's say we have an array of companies -- but they are stored as objects:
+
+```
+const companies = [
+  { name: 'Google', location: 'Mountain View' },
+  { name: 'Facebook', location: 'Menlo Park' },
+  { name: 'Uber', location: 'San Francisco' }
+];
+```
+
+Here's how you would access Google's location:
+
+```
+const [ { location } ] = companies;
+
+location;
+```
