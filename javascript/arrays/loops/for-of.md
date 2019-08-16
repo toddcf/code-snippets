@@ -32,6 +32,8 @@ for (let number of numbers) {
 }
 ```
 
+This will give you an output of `10`.
+
 
 ## When to Use For Of Loops
 
