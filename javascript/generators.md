@@ -93,3 +93,30 @@ gen.next('clean clothes');
 ```
 
 You can use multiple yield statements to exit the generator multiple times.
+
+
+### Example: Colors
+
+```
+function* colors() {
+  yield 'red';
+  yield 'blue';
+  yield 'green';
+}
+
+const gen = colors();
+
+gen.next();
+gen.next();
+gen.next();
+gen.next();
+```
+
+Notice that you call `gen.next();` four times. These will return:
+
+```
+{"value":"red","done":"false"}
+{"value":"blue","done":"false"}
+{"value":"green","done":"false"}
+{"done":"true"}
+```
