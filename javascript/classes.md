@@ -170,3 +170,4 @@ By doing this, we are saying we want `Toyota` to have access to all the methods 
 
 ## When to Use Classes
 
+Much easier than using the old `prototype` method. And very helpful when using React.
