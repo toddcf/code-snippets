@@ -190,3 +190,89 @@ for (let name of teamIterator(engineeringTeam)) {
 Now when you print `names;`, you get just `["Jill","Alex","Dave"]`.
 
 Note that this code is reusable. So if you had another team besides the Engineering Team (let's say SEO Team), you could pass that into the for of loop as well: `for (let team of teamIterator(seoTeam)) {}`
+
+
+## Delegation of Generators
+
+Let's say you have the same engineering team as before.
+
+But within the engineering team, you also want to have a testing team (consisting of a Lead and a Tester):
+
+```
+const testingTeam = {
+  lead: 'Amanda',
+  tester: 'Bill'
+};
+```
+
+Now you're going to add the testingTeam inside the engineeringTeam object, *making sure to declare your testingTeam BEFORE you declare your engineeringTeam*:
+
+```
+const testingTeam = {
+  lead: 'Amanda',
+  tester: 'Bill'
+};
+
+const engineeringTeam = {
+  size: 3,
+  department: 'Engineering',
+  lead: 'Jill',
+  manager: 'Alex',
+  engineer: 'Dave',
+  testingTeam: testingTeam
+};
+```
+
+And some quick ES6 cleanup: Because your key/value pair of `testingTeam: testingTeam` is identical text, you can reduce it to just `testingTeam`. And then, to follow good conventions, you should move any duplicate key/value pairs to the top of the object, like so:
+
+```
+const testingTeam = {
+  lead: 'Amanda',
+  tester: 'Bill'
+};
+
+const engineeringTeam = {
+  testingTeam,
+  size: 3,
+  department: 'Engineering',
+  lead: 'Jill',
+  manager: 'Alex',
+  engineer: 'Dave'
+};
+```
+
+If you want to iterate through one object PLUS an object inside of that object, that is called "generator delegation."
+
+Now create an iterator for just the testingTeam:
+
+```
+function* testingTeamIterator(team) {
+  yield team.lead;
+  yield team.tester;
+}
+```
+
+And then inside `teamIterator(team)`, add a `const` called `testingTeamGenerator` to the engineeringTeam, make it call the testingTeamIterator, and pass `team.testingTeam` into it:
+
+```
+function* teamIterator(team) {
+  yield team.lead;
+  yield team.manager;
+  yield team.engineer;
+  const testingTeamGenerator = testingTeamIterator(team.testingTeam);
+}
+```
+
+Furthermore, you will also add a `yield*` that makes sure that testingTeamGenerator gets iterated:
+
+```
+function* teamIterator(team) {
+  yield team.lead;
+  yield team.manager;
+  yield team.engineer;
+  const testingTeamGenerator = testingTeamIterator(team.testingTeam);
+  yield* testingTeamGenerator;
+}
+```
+
+Finally! Your result is now: `["Jill", "Alex", "Dave", "Amanda", "Bill"]`.
