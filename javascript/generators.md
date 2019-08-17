@@ -276,3 +276,79 @@ function* teamIterator(team) {
 ```
 
 Finally! Your result is now: `["Jill", "Alex", "Dave", "Amanda", "Bill"]`.
+
+
+## Symbol Iterator
+
+A symbol iterator is a tool that teaches objects how to respond to the `for of` loop.
+
+If we condense the above example into one block of code, we'll see that our iterator functions are separate from the objects that represent our teams:
+
+```
+const testingTeam = {
+  lead: 'Amanda',
+  tester: 'Bill'
+};
+
+const engineeringTeam = {
+  testingTeam,
+  size: 3,
+  department: 'Engineering',
+  lead: 'Jill',
+  manager: 'Alex',
+  engineer: 'Dave',
+};
+
+function* teamIterator(team) {
+  yield team.lead;
+  yield team.manager;
+  yield team.engineer;
+  const testingTeamGenerator = testingTeamIterator(team.testingTeam);
+  yield* testingTeamGenerator;
+}
+
+function* testingTeamIterator(team) {
+  yield team.lead;
+  yield team.tester;
+}
+
+const names = [];
+
+for (let name of teamIterator(engineeringTeam)) {
+  names.push(name);
+}
+
+names;
+```
+
+The symbol iterator will help us merge our iterator object into our team object.
+
+Let's begin with `testingTeam`. We'll add our symbol iterator, and inside of that we'll put our generator function.
+
+```
+const testingTeam = {
+  lead: 'Amanda',
+  tester: 'Bill',
+  [Symbol.iterator]: function* () {
+    yield this.lead;
+    yield this.tester;
+  }
+};
+```
+
+And inside of our `teamIterator`:
+
+```
+function* teamIterator(team) {
+  yield team.lead;
+  yield team.manager;
+  yield team.engineer;
+  yield* team.testingTeam;
+}
+```
+
+We can now DELETE THE `testingTeamIterator` COMPLETELY.
+
+When we say `yield* team.testingTeam;`, we are telling the for of loop to do its best to iterate over `testingTeam`. The for of loop is then going to go to `testingTeam` and look for a key of `[Symbol.iterator]`. And if it finds one, it will use the generator that it's pointing at for iteration.
+
+With ES6, we can use "key interpolation." If we want to have a dynamically generated key, we can wrap it with braces.
