@@ -282,6 +282,8 @@ Finally! Your result is now: `["Jill", "Alex", "Dave", "Amanda", "Bill"]`.
 
 A symbol iterator is a tool that teaches objects how to respond to the `for of` loop.
 
+An array can be iterated over automatically. But if you have a custom object, you can use the symbol iterator to tell the for of loop how to iterate over that custom object.
+
 If we condense the above example into one block of code, we'll see that our iterator functions are separate from the objects that represent our teams:
 
 ```
@@ -352,3 +354,38 @@ We can now DELETE THE `testingTeamIterator` COMPLETELY.
 When we say `yield* team.testingTeam;`, we are telling the for of loop to do its best to iterate over `testingTeam`. The for of loop is then going to go to `testingTeam` and look for a key of `[Symbol.iterator]`. And if it finds one, it will use the generator that it's pointing at for iteration.
 
 With ES6, we can use "key interpolation." If we want to have a dynamically generated key, we can wrap it with braces.
+
+We can now also refactor the `engineeringTeam` object to use the `[Symbol.iterator]`, which will allow us to delete `function* teamIterator(team)` completely.
+
+```
+const engineeringTeam = {
+  testingTeam,
+  size: 3,
+  department: 'Engineering',
+  lead: 'Jill',
+  manager: 'Alex',
+  engineer: 'Dave',
+  [Symbol.iterator]: function* () {
+    yield this.lead; /* Jill */
+    yield this.manager; /* Alex */
+    yield this.engineer;  /* Dave */
+    yield* this.testingTeam;  /* delegate to iterate over testingTeam as well */
+  }
+};
+```
+
+We can now delete `function* teamIterator(team)` and iterate directly over the `engineeringTeam`:
+
+```
+for (let name of engineeringTeam) {
+  names.push(name);
+}
+```
+
+The way it works is that when the symbol iterator hits a `yield`, the value to its right (such as `this.lead`) will pop up as a value in the for of loop (such as `name`).
+
+And if it hits another generator function (such as `yield*`), it knows to stop and iterate through that object, as well.
+
+
+## Generators with Recursion
+
