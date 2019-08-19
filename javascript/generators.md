@@ -8,6 +8,8 @@ With generators, we can run some code, return a value, and then go right back in
 
 Stephen Grider calls generators "the mother lode of ES6, by far the most brain-bending feature."
 
+NOTE: ARRAY HELPERS SUCH AS MAP AND FOREACH DO NOT WORK WITH GENERATORS.
+
 
 ## Syntax
 
@@ -389,3 +391,66 @@ And if it hits another generator function (such as `yield*`), it knows to stop a
 
 ## Generators with Recursion
 
+Let's create a tree:
+
+```
+class Comment {
+  constructor(content, children) {
+    this.content = content;
+    this.children = children;
+  }
+}
+
+const children = [
+  new Comment('good comment', []),
+  new Comment('bad comment', []),
+  new Comment('meh', [])
+];
+
+const tree = new Comment('Great post', children);
+```
+
+Now if you print `tree;`, you get:
+
+```
+{"content":"Great post","children":[{"content":"good comment","children":[]},{"content":"bad comment","children":[]},{"content":"meh","children":[]}]}
+```
+
+Now for the symbol iterator. Since we're working with a class this time, the syntax is a little different. And remember, array helpers do not work inside of generators. So we're going to use the `for of` loop.
+
+We are going to tell the computer to iterate through the parent node, plus its children.
+
+```
+class Comment {
+  
+  constructor(content, children) {
+    this.content = content;
+    this.children = children;
+  }
+
+  *[Symbol.iterator]() {
+    yield this.content;
+    for (let child of this.children) {
+      yield* child;
+    }
+  }
+
+}
+```
+
+Now we'll create a `for of` loop to iterate over the `tree` variable, and for every node inside, we want to collect all the values:
+
+```
+const values = [];
+
+for (let value of tree) {
+  values.push(value);
+}
+```
+
+Now when you print `values;`, you get:
+
+```
+4
+["Great post","good comment","bad comment","meh"]
+```
