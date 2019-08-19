@@ -89,14 +89,44 @@ The result will be that `Finally finished!` is printed to the console.
 You can even chain on another `then()` like so:
 
 ```
-promise.then(() => {
-  console.log('Finally finished!');
-}).then(() => {
-  console.log('Second THEN in the chain has also been run.');
-});
+promise
+  .then(() => {
+    console.log('Finally finished!');
+  })
+  .then(() => {
+    console.log('Second THEN in the chain has also been run.');
+  });
 ```
 
 The result will be that both `Finally finished!` and `Second THEN in the chain has also been run.` will be printed to the console.
+
+
+### Catch
+
+Just like `.then()`, you have access to the `.catch()` handler as well, and you need to use both. You are telling the system what to do whether the promise is resolved or rejected.
+
+```
+promise
+  .then(() => {
+    console.log('Finally finished!');
+  })
+  .then(() => {
+    console.log('Second THEN in the chain has also been run.');
+  })
+  .catch(() => {
+    console.log('Something went wrong.');
+  });
+```
+
+Now if you call...
+
+```
+let promise = new Promise(resolve, reject) {
+  reject();
+}
+```
+
+...the console will print `Something went wrong.`. No error message will be thrown this time, because you've built in your graceful degradation.
 
 
 ## When to Use Promises
