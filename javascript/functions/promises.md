@@ -14,11 +14,90 @@ A `promise` is a way to prevent a block of code from executing until after the p
 
 Once the promise comes back either resolved or rejected, it runs the appropriate callback function: `then` if resolved, or `catch` if rejected.
 
-## Example
+## Syntax
+
+Thanks to the native implementation of promises in ES6, the keyword `Promise()` is available inside of the browser (as long as your browser supports it):
 
 ```
-const promise = new Promise();
+let promise = new Promise();
 ```
+
+NOTE: This will not work with `const`; you must use `let`.
+
+Continuing on, put a function inside the promise. And inside the arguments, pass in two more functions: resolve, and reject:
+
+```
+let promise = new Promise((resolve, reject) => {
+
+});
+```
+
+This will result in a `pending` status in the console, which is the same as "unresolved."
+
+Now you can actually invoke either function inside your promise like so:
+
+```
+let promise = new Promise((resolve, reject) => {
+  resolve();
+});
+```
+
+This will change the promise's status to "resolved" in the console.
+
+Likewise...
+
+```
+let promise = new Promise((resolve, reject) => {
+  reject();
+});
+```
+
+...will change the promise's status to "rejected" in the console. Note that only doing this will still throw an error in the console because you need to do more than change the status to "rejected" -- you need to have more graceful degradation.
+
+
+## Then and Catch
+
+Whenever you create a promise and assign it to a variable, that promise object has two properties on it:
+
+```
+promise.then();
+```
+
+And:
+
+```
+promise.catch();
+```
+
+
+### Then
+
+Let's begin by working with `then`. Call `resolve();` in your promise. And write a `promise.then();` that tells the system what to do when the promise is resolved.
+
+```
+let promise = new Promise((resolve, reject) => {
+  resolve();
+});
+
+promise.then(() => {
+  console.log('Finally finished!');
+});
+```
+
+The result will be that `Finally finished!` is printed to the console.
+
+You can even chain on another `then()` like so:
+
+```
+promise.then(() => {
+  console.log('Finally finished!');
+}).then(() => {
+  console.log('Second THEN in the chain has also been run.');
+});
+```
+
+The result will be that both `Finally finished!` and `Second THEN in the chain has also been run.` will be printed to the console.
+
 
 ## When to Use Promises
 
