@@ -129,6 +129,11 @@ let promise = new Promise(resolve, reject) {
 ...the console will print `Something went wrong.`. No error message will be thrown this time, because you've built in your graceful degradation.
 
 
+## See also: Fetch
+
+Also see the "fetch" file.
+
+
 ## When to Use Promises
 
 The vast majority of promises are used with AJAX requests. (The two go hand in hand, but you can make one without the other.)
