@@ -53,5 +53,10 @@ This will mean things went okay.
 If the server throws an error, you will see a status value of `300` or above. A common one:
 
 ```
+ok: false
 status: 404
 ```
+
+But a problem with using fetch is that even if you get back a status code of 300 or higher, it does *not* enter the catch case. The only time your `catch` will run is if the network request flat out failed to be made. This is counterintuitive and a very major drawback. No other AJAX library has this anomoly. With any other library, if the request fails for any reason, the promise will enter the rejected state.
+
+Stephen Grider actually recommends skipping fetch and making use of libraries such as Axios, SuperAgent, or even jQuery if you have to. Otherwise, you're going to have to reinvent the wheel and write a lot of boilerplate code around fetch to make it behave the way that you'd expect.
