@@ -2,11 +2,11 @@
 
 ## Unshift
 
-ADDS to the *beginning* of an array. (To add to the *end* of an array, see `push`.)
+ADDS an item to the *beginning* of an array. (To add an item to the *end* of an array, see `push`.)
 
 ## Shift
 
-REMOVES from the *front* of an array. (To remove from the *end* of an array, see `pop`.)
+REMOVES (and `return`s) the *first* item of an array. (To remove the *last* item of an array, see `pop`.)
 
 `colors.shift();` will remove the first element from the `colors` array.
 
