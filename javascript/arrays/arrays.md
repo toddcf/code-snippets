@@ -56,7 +56,7 @@ names[7] = 'Toad';
 
 ## Almost Anything Can Be Stored Inside an Array
 
-You can store strings, numbers, variables, objects, and even other arrays inside an array:
+You can store strings, numbers, variables, objects, functions, and even other arrays inside an array:
 
 ```
 let x = 'This is X';
@@ -70,4 +70,20 @@ let stuff = [
 ];
 ```
 
-And to access an array item inside an array: `stuff[3][0]` would give you `inner array item 1`.
+### Accessing Inner Arrays
+
+To access an array item inside an array: `stuff[3][0]` in the above example would give you `inner array item 1`.
+
+### Accessing Functions Inside Arrays
+
+```
+const stuff = [
+  'first item',
+  function() { alert('Hi'); },
+  'last item'
+];
+```
+
+To run this function:
+
+`stuff[1]();`
