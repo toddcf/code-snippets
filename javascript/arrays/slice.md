@@ -1,6 +1,6 @@
 # Slice
 
-`slice();` is used to copy different portions of an array.
+`slice()` takes a section of an array, like taking a slice of pizza takes a section of pizza out of the whole pie.
 
 Let's say you have an array of fruits:
 
