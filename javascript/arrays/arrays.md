@@ -6,6 +6,16 @@
 
 Note that running `array.length` will count the number of items inside the array -- meaning it will start counting at 1 instead of 0. So it is different than the index.
 
+You can also edit the max length of an array by doing this:
+
+```
+const names = ['Bowser', 'Mario', 'Luigi'];
+
+names.length = 2;
+```
+
+In this case, Luigi will be omitted from the array.
+
 ## Add a Value to an Array
 
 Similar to declaring a variable, just add an index that doesn't exist yet. For example, if the array doesn't have a fourth index yet:
@@ -22,3 +32,20 @@ You can change the value of an array index the same way you would a variable, li
 
 `friends[1] = "Charlie";`
 
+This works even if an array value doesn't exist yet:
+
+```
+const names = ['Bowser', 'Mario', 'Luigi'];
+
+names[3] = 'Donkey Kong';
+```
+
+This will result in `names = ['Bowser', 'Mario', 'Luigi', 'Donkey Kong'].`
+
+You can even add a value further down the array, and empty slots will be added in between:
+
+```
+names[7] = 'Toad';
+```
+
+...will result in: `names = ['Bowser', 'Mario', 'Luigi', 'Donkey Kong', empty = 3, 'Toad']`.
