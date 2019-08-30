@@ -1,6 +1,6 @@
 # Splice
 
-`Splice` is used to remove elements from an array.
+`Splice` is used to add or remove elements from anywhere in an array.
 
 The following code will remove `"orange"` from the `fruits` array:
 
