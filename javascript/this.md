@@ -4,6 +4,7 @@ One of the quirkier parts of JavaScript, the `this` keyword can mean different t
 
 `this` refers to the object that contains it. Think of it as a shortcut to having to write out an entire filepath just to get back to the object you're already inside of.
 
+
 ## Using `this` in a Method
 
 If you have a method (function) inside an object, you could use `this` to refer to the object that that method is inside of.
@@ -40,3 +41,8 @@ var car = {
 car.drive();
 car.driveFaster();
 ```
+
+
+## Using `this` in a Function That is *Not* a Method
+
+If a function doesn't belong to any object you've defined, then it automatically belongs to the `window` object. Therefore, the value of `this` will become `window`.
