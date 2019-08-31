@@ -12,6 +12,7 @@ var person = {
 
 You can retrieve data from it in one of two ways: bracket notation, or dot notation:
 
+
 ## Bracket Notation
 
 This way is similar to arrays. You use the name of the object, then square brackets, and then the name of the key (in quotes, as a string):
@@ -29,6 +30,22 @@ someObject[ str ];
 ```
 
 3. Have spaces in the name: `someObject[ "fav color" ];` (Not that it's wise to have spaces in your names, anyway.)
+
+One example where bracket notation is useful is if you need to use a variable that will change depending on what language you want to display. Rather than doing a bunch of if statements like "if English," "if Spanish," "if French," etc., you can do something like this:
+
+```
+let language = 'English';
+
+const greeting = {
+  English: 'Hi',
+  Spanish: 'Hola'
+};
+
+console.log(greeting[language]); // Hi
+```
+
+Now you can simply swap out the language variable for Spanish and you'll automatically get "Hola."
+
 
 ## Dot Notation
 
