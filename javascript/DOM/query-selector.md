@@ -1,6 +1,6 @@
 # Query Selector
 
-`querySelector` selects the *first* element of your document that matches the CSS selector of your choice.
+`querySelector` selects the *first* element of your document that matches the CSS selector of your choice. (To select *all* elements that match your CSS selector, see `querySelectorAll`.)
 
 ```
 document.querySelector('.hondaBtn').style.color = 'blue';
