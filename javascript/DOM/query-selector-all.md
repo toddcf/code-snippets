@@ -18,3 +18,11 @@ for ( let i = 0; i < hondaButtons.length; i++ ) {
   hondaButtons[i].style.color = 'blue';
 }
 ```
+
+NOTE: Always store your query selector results in a variable so you can reuse them. You don't want to slow down your page by asking the system to keep searching the entire document just to make multiple changes to the same elements.
+
+You could also speed things up by searching only for everything inside a specific container:
+
+```
+const mySpans = document.getElementById('myDiv').querySelectorAll('span');
+```
