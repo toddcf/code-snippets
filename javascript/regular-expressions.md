@@ -66,3 +66,38 @@ console.log( result );
 ```
 
 This will print `BYE, here's some text. BYE again. Also, BYE.` to the console.
+
+
+## Example: Replace (including conditions)
+
+Just like the above example, except that `replace` allows you to run a function on each value that matches the pattern:
+
+```
+const str = 'Hi, here\'s some text. Hi again. Also, hi.';
+
+let result = str.replace(/hi/gi, function(currentValue) {
+  if (currentValue === 'Hi') {
+    return 'Bye';
+  }
+  else {
+    return 'bye';
+  }
+});
+
+console.log(result);
+```
+
+
+## Example: Words with Five or More Characters
+
+You could also use a regular expression to find all the words with five or more characters:
+
+```
+const str = 'Hi, here\'s some text. Hi again. Also, hi.';
+
+let result = str.match(/\w{5,}/ig);
+
+console.log(result);
+```
+
+This would return `["again"]`.
