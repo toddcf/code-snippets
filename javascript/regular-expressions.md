@@ -27,7 +27,7 @@ The `modifiers` are things you can add to modify how the matches happen.
 The order *does not* matter,  `/hello/ig/` is the same as `/hello/gi/`.
 
 
-## Example
+## Example: Match
 
 Used with `match`:
 
@@ -53,3 +53,16 @@ else {
   console.log('We did not find it.');
 }
 ```
+
+
+## Example: Replace
+
+```
+const str = 'Hi, here\'s some text. Hi again. Also, hi.';
+
+let result = str.replace(/hi/ig, 'BYE');
+
+console.log( result );
+```
+
+This will print `BYE, here's some text. BYE again. Also, BYE.` to the console.
