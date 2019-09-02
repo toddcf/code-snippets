@@ -1,5 +1,17 @@
 # Form
 
+According to Simple Steps JavaScript, you should put your `<input>` *inside* of your `<label>`. This allows the user to click on the entire label rather than just the tiny checkbox:
+
+```
+<label>
+	<input type="checkbox">
+	Check This
+</label>
+```
+
+
+## A Different Example
+
 ```
 <form method="post" action="#" class="contact-form">
 				
