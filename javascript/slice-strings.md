@@ -26,7 +26,7 @@ This will print `ere is` in the console. (Remember that `0` is the first positio
 
 ## Start
 
-SUPPOSEDLY, you can also use `slice( start )` and it will give you everything from the starting position to the end of the whole string. BUT THIS DID NOT WORK FOR ME, so I used `slice( 0 )` instead.
+If you just enter a starting point (`slice( 3 )`), it will give you everything from that starting position to the end of the whole string.
 
 
 ## Last Characters of a String
