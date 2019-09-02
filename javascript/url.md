@@ -32,6 +32,5 @@ https://www.google.com/analytics/?whatever
 You can find the pathname of any page you're on by typing the following into your console:
 
 ```
-let path = window.location.pathname;
-console.log(path);
+window.location.pathname;
 ```
