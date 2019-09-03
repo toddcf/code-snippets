@@ -53,7 +53,7 @@ Note that even if the decimal is greater than `.5`, it will still round down:
 
 ## Math.random
 
-`Math.random()` generates a random number between 0 and 1.
+`Math.random()` generates a random number between 0 and 1 (but *not* including 1).
 
 
 ## Math.round
