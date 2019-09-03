@@ -19,3 +19,8 @@ The following code will print "Hi!" to the console every 2 seconds:
 ```
 setInterval( function() { console.log('Hi!'); }, 2000 );
 ```
+
+
+## Stopping a setInterval
+
+See `clearInterval();`
