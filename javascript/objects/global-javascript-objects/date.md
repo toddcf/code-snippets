@@ -43,4 +43,7 @@ Once you've either retrieved or set the date, you can get certain parts of it:
 let now = new Date();
 ```
 
-`now.getDay();` will give you a number `0` (Sunday) thru `6` (Saturday).
+`now.getDay()` will give you a number `0` (Sunday) thru `6` (Saturday).
+`now.getDate()` will give you a number between `1` and `31`.
+`now.getMonth()` will give you a number between `0` (January) and `11` (December).
+`now.getFullYear()` will give you the 4-digit year.
