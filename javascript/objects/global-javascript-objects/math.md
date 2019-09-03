@@ -2,7 +2,9 @@
 
 The Math object is a collection of methods that let you do various operations besides arithmetic.
 
-In alphabetical order:
+Full list: https://www.w3schools.com/jsref/jsref_obj_math.asp
+
+Common usages here, in alphabetical order:
 
 
 ## Math.abs
