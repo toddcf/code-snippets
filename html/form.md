@@ -1,5 +1,7 @@
 # Form
 
+## Labels
+
 According to Simple Steps JavaScript, you should put your `<input>` *inside* of your `<label>`. This allows the user to click on the entire label rather than just the tiny checkbox:
 
 ```
@@ -8,6 +10,17 @@ According to Simple Steps JavaScript, you should put your `<input>` *inside* of 
 	Check This
 </label>
 ```
+
+
+## Autocomplete
+
+```
+<form autocomplete="off">
+
+</form>
+```
+
+Setting autocomplete to "off" means that the same boxes *won't* be checked if you refresh the page. You can put this setting in each individueal checkbox, or you can put it in the `<form>` tag to have it apply to everything.
 
 
 ## A Different Example

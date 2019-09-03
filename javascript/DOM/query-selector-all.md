@@ -26,3 +26,20 @@ You could also speed things up by searching only for everything inside a specifi
 ```
 const mySpans = document.getElementById('myDiv').querySelectorAll('span');
 ```
+
+
+## Select All Radio Buttons or Checkboxes
+
+Use the `:checked` pseudo-class selector from CSS to get all inputs that are checked:
+
+```
+let checked = document.querySelectorAll('input:checked');
+```
+
+Or you could get all checked radio buttons inside the `#myQuiz` element:
+
+```
+let checked = document.querySelectorAll('#myQuiz input[type=radio]:checked');
+```
+
+More info: https://developer.mozilla.org/en-US/docs/Web/CSS/:checked
