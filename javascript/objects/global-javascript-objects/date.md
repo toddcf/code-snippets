@@ -82,6 +82,23 @@ let now = new Date();
 console.log( months[now.getMonth()] );
 ```
 
+Same for days of the week:
+
+```
+const days = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+];
+
+let now = new Date();
+console.log( days[now.getDay()] );
+```
+
 
 ## getTime()
 
