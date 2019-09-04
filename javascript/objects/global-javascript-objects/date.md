@@ -59,3 +59,39 @@ let now = new Date();
 `now.getDate()` will give you a number between `1` and `31`.
 `now.getMonth()` will give you a number between `0` (January) and `11` (December).
 `now.getFullYear()` will give you the 4-digit year.
+
+Note that because `getMonth()` returns a number, if you want to get the names of the months, you would need to create an array with values corresponding to these numbers:
+
+```
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+let now = new Date();
+console.log( months[now.getMonth()] );
+```
+
+
+## getTime()
+
+Doing math with dates can be tricky because of leap years, different months having a different number of days, time zones, am vs pm, etc.
+
+Instead, JavaScript has a `getTime()` function that breaks it all down to milliseconds, counting up from January 1, 1970 to now. (January 1, 1970 is the standard zero date for computers, decided upon due to the limitations of early computers and the size of the numbers they could deal with.)
+
+In short, `getTime()` converts the current date from an unwieldy object into a single (but long) number that is easier to do calculations with.
+
+```
+let now = new Date();
+console.log( now.getTime() );
+```
