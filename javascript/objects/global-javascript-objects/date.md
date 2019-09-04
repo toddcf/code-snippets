@@ -34,6 +34,18 @@ You can also set the date as such:
 let christmas = new Date( 'december 25 2019' );
 ```
 
+### setDate()
+
+You can also use the `setDate()` function to set the date -- but this is only setting the date of the month. For example, `setDate(3)` would set the date to the third day of the month.
+
+You can also use `setDate()` to do calculations. For example, you might want to set the date to 90 days from now. You would get the current date and then add 90 to it, and set the date to that result:
+
+```
+let now = new Date();
+
+now.setDate( now.getDate() + 90 );
+```
+
 
 ## Isolating Specific Parts of the Date
 
