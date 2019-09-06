@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Subscriptions</h1>
+
+  <form id="subscriptionsForm">
+
+    <label>
+      <input id="amazon" type="checkbox" name="" value="12.99" data-company="Amazon">
+      Amazon: $12.99
+    </label>
+
+    <label>
+      <input id="disney" type="checkbox" name="" value="6.99" data-company="Disney">
+      Disney: $6.99
+    </label>
+
+    <label>
+      <input id="hbo" type="checkbox" name="" value="15" data-company="HBO">
+      HBO: $15.00
+    </label>
+
+    <label>
+      <input id="hulu" type="checkbox" name="" value="11.99" data-company="Hulu">
+      Hulu: $11.99
+    </label>
+
+    <label>
+      <input id="netflix" type="checkbox" name="" value="15.99" data-company="Netflix">
+      Netflix: $15.99
+    </label>
+
+  </form>
+
+  <h2>Subscriptions Selected:</h2>
+  <div id="subscriptionsSelectedDisplay"></div>
+
+  <h2>Total: $<span id="priceDisplay"></span></h2>
+
+<script type="text/javascript">
+
+  let price = 0;
+  const priceDisplay = document.getElementById('priceDisplay');
+  priceDisplay.innerHTML = price.toFixed(2);
+
+  function showSelectedSubscriptions() {
+    let subscriptionsSelectedList = [];
+    const subscriptionsSelected = document.getElementById('subscriptionsForm').querySelectorAll('input[type=checkbox]:checked');
+    for ( let i =0; i < subscriptionsSelected.length; i++ ) {
+      let selectedItem = subscriptionsSelected[i].getAttribute('data-company');
+      subscriptionsSelectedList.push(selectedItem);
+    }
+    subscriptionsSelectedDisplay.innerHTML = subscriptionsSelectedList.join('<br>');
+  }
+
+  function updatePrice() {
+    let itemPrice = Number(this.value);
+    if (this.checked) {
+      price += itemPrice;
+    }
+    else {
+      price -= itemPrice;
+    }
+    showSelectedSubscriptions();
+    priceDisplay.innerHTML = price.toFixed(2);
+  }
+
+  const checkboxes = document.getElementById('subscriptionsForm').querySelectorAll('input[type=checkbox]');
+
+  for ( let i = 0; i < checkboxes.length; i++ ) {
+    checkboxes[i].onclick = updatePrice;
+  }
+
+</script>
+
+</body>
+</html>

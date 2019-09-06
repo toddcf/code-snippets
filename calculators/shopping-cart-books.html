@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Items for Sale</h1>
+
+  <form id="saleForm">
+
+    <label>
+      <input type="checkbox" name="" value="9.99" data-title="Catch Up To Myself">
+      Catch Up To Myself: $9.99
+    </label>
+
+    <label>
+      <input type="checkbox" name="" value="0.99" data-title="The Druggist">
+      The Druggist: $0.99
+    </label>
+
+    <label>
+      <input type="checkbox" name="" value="9.99" data-title="Insulation">
+      Insulation: $9.99
+    </label>
+
+    <label>
+      <input type="checkbox" name="" value="9.99" data-title="The Retail Offensive">
+      The Retail Offensive: $9.99
+    </label>
+
+    <label>
+      <input type="checkbox" name="" value="9.99" data-title="Operation Paintball">
+      Operation Paintball: $9.99
+    </label>
+
+    <label>
+      <input type="checkbox" name="" value="9.99" data-title="Sobriquet: The Forging of a Special Liaison">
+      Sobriquet: The Forging of a Special Liaison: $9.99
+    </label>
+    
+  </form>
+
+  <h2>Shopping Cart</h2>
+  <div id="shoppingCart"></div>
+
+  <h2>Total: $<span id="priceDisplay"></span></h2>
+
+<script type="text/javascript">
+
+  let price = 0;
+  const priceDisplay = document.getElementById('priceDisplay');
+  const shoppingCart = document.getElementById('shoppingCart');
+  priceDisplay.innerHTML = price.toFixed(2);
+
+  function updateCart() {
+    let itemsInCart = [];
+    let itemAttr = document.getElementById('saleForm').querySelectorAll('input[type=checkbox]:checked');
+    for ( let i = 0; i < itemAttr.length; i++ ) {
+      let title = itemAttr[i].getAttribute('data-title');
+      itemsInCart.push(title);
+    }
+    shoppingCart.innerHTML = itemsInCart.join('<br>');
+  }
+
+  function updatePrice() {
+    let value = Number(this.value);
+    if (this.checked) {
+      price += value;
+    }
+    else {
+      price -= value;
+    }
+    updateCart();
+    priceDisplay.innerHTML = price.toFixed(2);
+  }
+
+  const checkboxes = document.getElementById('saleForm').querySelectorAll('input[type=checkbox]');
+
+  for ( let i = 0; i < checkboxes.length; i++ ) {
+    checkboxes[i].onclick = updatePrice;
+  }
+
+</script>
+
+</body>
+</html>
