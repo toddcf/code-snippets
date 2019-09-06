@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    label {
+      display: block;
+    }
+    #submitBtn {
+      border: 4px solid #000;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+      padding: .5% 2%;
+      text-transform: uppercase;
+      transition: 250ms;
+      width: max-content;
+    }
+    #submitBtn:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quiz</h1>
+
+  <form id="quizForm">
+    
+    <h2>What coast is Los Angeles on?</h2>
+
+    <label>
+      <input type="radio" name="q1" data-correct="false">
+      North
+    </label>
+
+    <label>
+      <input type="radio" name="q1" data-correct="false">
+      South
+    </label>
+
+    <label>
+      <input type="radio" name="q1" data-correct="false">
+      East
+    </label>
+
+    <label>
+      <input type="radio" name="q1" data-correct="true">
+      West
+    </label>
+
+    <h2>What coast is New York on?</h2>
+
+    <label>
+      <input type="radio" name="q2" data-correct="false">
+      North
+    </label>
+
+    <label>
+      <input type="radio" name="q2" data-correct="false">
+      South
+    </label>
+
+    <label>
+      <input type="radio" name="q2" data-correct="true">
+      East
+    </label>
+
+    <label>
+      <input type="radio" name="q2" data-correct="false">
+      West
+    </label>
+
+    <div id="submitBtn">Submit</div>
+
+    <h2>Number of Correct Answers: <span id="displayCorrect"></span></h2>
+
+  </form>
+
+<script type="text/javascript">
+
+  let totalCorrect = 0;
+  const displayCorrect = document.getElementById('displayCorrect');
+  displayCorrect.innerHTML = totalCorrect;
+
+
+  function checkAnswers() {
+    totalCorrect = 0;
+    const answers = document.getElementById('quizForm').querySelectorAll('input[type=radio]:checked');
+    for ( let i = 0; i < answers.length; i++ ) {
+      let dataCorrectAttribute = answers[i].getAttribute('data-correct');
+      if ( dataCorrectAttribute === "true" ) {
+        totalCorrect++;
+      }
+    }
+    displayCorrect.innerHTML = totalCorrect;
+  }
+
+  document.getElementById('submitBtn').onclick = checkAnswers;
+
+</script>
+
+</body>
+</html>
