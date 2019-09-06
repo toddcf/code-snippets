@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    label {
+      display: block;
+    }
+    .errorMessage {
+      color: #000;
+    }
+    #submitBtn {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="infoForm">
+    
+    <label>
+      Name
+      <input id="nameInput" type="text" name="">
+      <p id="nameInputError" class="errorMessage">Name must have at least two characters.</p>
+    </label>
+
+    <label>
+      Email
+      <input id="emailInput" type="email" name="">
+      <p id="emailInputError" class="errorMessage">Email address must include @ and . symbols.</p>
+    </label>
+
+    <label>
+      Age
+      <input id="ageInput" type="number" name="">
+      <p id="ageInputError" class="errorMessage">Must be at least 13 years old.</p>
+    </label>
+
+    <div id="submitBtn">Submit</div>
+    <!-- NOTE: Making this an actual <button> causes problems. -->
+
+  </form>
+
+<script type="text/javascript">
+
+  function checkName() {
+    const name = document.getElementById('nameInput').value;
+    const nameInputError = document.getElementById('nameInputError');
+    if ( !name.match(/\w{2,}/) ) {
+      nameInputError.style.color = 'red';
+    }
+    else {
+      nameInputError.style.color = '#000';
+    }
+  }
+
+  function checkEmail() {
+    const email = document.getElementById('emailInput').value;
+    const emailInputError = document.getElementById('emailInputError');
+    if ( !email.match(/\w{2,}@\w{2,}.\w{2,}/) ) {
+      emailInputError.style.color = 'red';
+    }
+    else {
+      emailInputError.style.color = '#000';
+    }
+  }
+
+  function checkAge() {
+    const age = Number(document.getElementById('ageInput').value);
+    const ageInputError = document.getElementById('ageInputError');
+    if ( age < 13 ) {
+      ageInputError.style.color = 'red';
+    }
+    else {
+      ageInputError.style.color = '#000';
+    }
+  }
+
+  document.getElementById('submitBtn').onclick = function() {
+    checkName();
+    checkEmail();
+    checkAge();
+  };
+
+</script>
+
+</body>
+</html>
