@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    
+  </style>
+</head>
+<body>
+
+  <input id="textInput" type="text" name="">
+  <div id="textDisplay"></div>
+
+<script type="text/javascript">
+
+  const textInput = document.getElementById('textInput');
+  const textDisplay = document.getElementById('textDisplay');
+
+  textInput.onkeyup = function() {
+    let taht = textInput.value.replace(/taht/ig, function(currentValue) {
+      if ( currentValue == `taht` ) {
+        return `that`;
+      }
+      else if ( currentValue == `Taht` ) {
+        return `That`;
+      }
+    });
+    textInput.value = taht;
+    textDisplay.innerHTML = textInput.value;
+  };
+
+</script>
+
+</body>
+</html>
