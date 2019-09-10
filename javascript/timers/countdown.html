@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    #countdownDisplay {
+      font-size: 4em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="countdownDisplay">
+    <span id="minutesDisplay"></span>:<span id="secondsDisplay"></span>
+  </div>
+
+<script type="text/javascript">
+
+  let timeRemaining = 600000; /* 10 minutes */
+  const countdownDisplay = document.getElementById('countdownDisplay');
+
+  const minutesDisplay = document.getElementById('minutesDisplay');
+  let minutesRemaining = Math.floor(timeRemaining / 60 / 1000).toFixed(0);
+  (minutesRemaining < 10) ? minutesDisplay.innerHTML = '0' + minutesRemaining : minutesDisplay.innerHTML = minutesRemaining;
+  
+  const secondsDisplay = document.getElementById('secondsDisplay');
+  let secondsRemaining = Math.floor(timeRemaining - (minutesRemaining * 60 * 1000)).toFixed(0) / 1000;
+  (secondsRemaining < 10) ? secondsDisplay.innerHTML = '0' + secondsRemaining : secondsDisplay.innerHTML = secondsRemaining;
+
+  let countdown = setInterval( function() {
+    timeRemaining -= 1000;
+
+    minutesRemaining = Math.floor(timeRemaining / 60 / 1000).toFixed(0);
+    (minutesRemaining < 10) ? minutesDisplay.innerHTML = '0' + minutesRemaining : minutesDisplay.innerHTML = minutesRemaining;
+
+    secondsRemaining = Math.floor(timeRemaining - (minutesRemaining * 60 * 1000)).toFixed(0) / 1000;
+    (secondsRemaining < 10) ? secondsDisplay.innerHTML = '0' + secondsRemaining : secondsDisplay.innerHTML = secondsRemaining;
+    
+    if (timeRemaining == 0) {
+      clearInterval(countdown);
+    }
+  }, 1000 );
+
+</script>
+
+</body>
+</html>
