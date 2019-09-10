@@ -19,10 +19,10 @@
 
   textInput.onkeyup = function() {
     let taht = textInput.value.replace(/taht/ig, function(currentValue) {
-      if ( currentValue == `taht` ) {
+      if ( ( currentValue == `taht` ) || ( currentValue == `tAht` ) || ( currentValue == `taHt`) || ( currentValue == `tahT`) || ( currentValue == `tAHt`) || ( currentValue == `tAhT`) || ( currentValue == `tAHT`) || ( currentValue == `taHT`) ) {
         return `that`;
       }
-      else if ( currentValue == `Taht` ) {
+      else if ( ( currentValue == `Taht` ) || ( currentValue == `TAht`) || ( currentValue == `TAHt`) || ( currentValue == `TAHT`) || ( currentValue == `TAhT`) || ( currentValue == `TaHT`) || ( currentValue == `TahT` ) || ( currentValue == `TaHt`) ) {
         return `That`;
       }
     });
