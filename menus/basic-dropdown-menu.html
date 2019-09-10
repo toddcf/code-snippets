@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    .fas {
+      cursor: pointer;
+      font-size: 3em;
+    }
+    #navDropdown {
+      background-color: orange;
+      display: block;
+      list-style: none;
+      overflow: hidden;
+      padding-inline-start: 0;
+      width: max-content;
+    }
+    .hiddenIcon {
+      display: none !important;
+    }
+    .displayedIcon {
+      display: block !important;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/1525eb346f.js"></script>
+</head>
+<body>
+  
+  <nav>
+    <div id="navIconContainer">
+      <i id="navIconBars" class="fas fa-bars displayedIcon"></i>
+      <i id="navIconX" class="fas fa-times hiddenIcon"></i>
+    </div>
+    <ul id="navDropdown">
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+      <li>Option 4</li>
+      <li>Option 5</li>
+    </ul>  
+  </nav>
+  
+
+<script type="text/javascript">
+
+  // Gets height of dropdown and uses it for the CSS transition when icons are clicked.
+  // Icons are swapped when dropdown is opened or closed.
+  // Clicking anywhere besides the icons will close the dropdown.
+
+  const navDropdown = document.getElementById('navDropdown');
+  const offNav = !document.getElementById('navDropdown');
+  const navIconBars = document.getElementById('navIconBars');
+  const navIconX = document.getElementById('navIconX');
+
+  const navDropdownFullHeight = navDropdown.offsetHeight;
+
+  const closeNavDropdown = () => {
+    // Hide the navDropdown:
+    navDropdown.style.height = 0;
+    navDropdown.style.transition = `all 200ms`;
+
+    // Switch to the Bars icon:
+    navIconX.classList.remove('displayedIcon');
+    navIconX.classList.add('hiddenIcon');
+    navIconBars.classList.remove('hiddenIcon');
+    navIconBars.classList.add('displayedIcon');
+  };
+
+  closeNavDropdown();
+
+  const openNavDropdown = () => {
+    // Display the navDropdown:
+    navDropdown.style.height = `${navDropdownFullHeight}px`;
+    navDropdown.style.transition = `all 500ms`;
+
+    // Switch to the X icon:
+    navIconBars.classList.remove('displayedIcon');
+    navIconBars.classList.add('hiddenIcon');
+    navIconX.classList.remove('hiddenIcon');
+    navIconX.classList.add('displayedIcon');
+  };
+
+
+
+  navIconBars.onclick = () => {
+    openNavDropdown();
+  };
+
+  navIconX.onclick = () => {
+    closeNavDropdown();
+  }
+
+  // Close the dropdown if user clicks outside of it:
+  document.addEventListener( 'click', ( evt ) => {
+    let targetElement = evt.target;
+    if ( ( targetElement.id != navIconBars.id ) && ( targetElement.id != navIconX.id ) ) {
+      closeNavDropdown();
+    }
+  });
+
+</script>
+
+</body>
+</html>
