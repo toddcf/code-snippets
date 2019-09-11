@@ -34,5 +34,29 @@ Which means that every `Car` object will now get access to `showCarInfo`.
 Let's create a bunch of cars before we test it out:
 
 ```
-const myCar = new Car( 'red', 200);
+const myCar = new Car( 'red', 200) ;
+const yourCar = new Car( 'blue', 150 );
+const otherCar = new Car( 'green', 180 );
+const anotherCar = new Car( 'gold' , 240 );
 ```
+
+Now if you console.log `myCar`, you won't see `showCarInfo` (unless you click into the prototype):
+
+```
+console.log( `myCar:` );
+console.log( myCar );
+```
+
+However, you can still call `showCarInfo` on `myCar` like this:
+
+```
+console.log( `showCarInfo:` );
+yourCar.showCarInfo();
+```
+
+
+## Advantages to Prototypes
+
+1. You can update just the prototype, and all your objects automatically receive the update.
+2. Less clutter. Each object references one prototype object rather than having that info in every single object.
+3. Saves space. It's better for memory when you're storing a function in one prototype object instead of putting it inside of each individual object.
