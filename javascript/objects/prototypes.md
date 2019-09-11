@@ -55,6 +55,21 @@ yourCar.showCarInfo();
 ```
 
 
+## The Prototype Chain
+
+When you call an object's property, the browser first checks to see if it's inside that object. If not, it checks the prototype. Then it checks the prototype's prototype, and keeps going until there's nothing left to check.
+
+Maybe you have three prototypes:
+
+1. Animal
+2. Dog
+3. Poodle
+
+`Poodle` inherits from `Dog`, which inherits from `Animal`. This is called the prototype chain.
+
+For the sake of maintainability, don't go too many levels deep.
+
+
 ## Advantages to Prototypes
 
 1. You can update just the prototype, and all your objects automatically receive the update.
