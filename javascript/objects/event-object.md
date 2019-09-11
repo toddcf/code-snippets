@@ -40,6 +40,8 @@ window.onkeydown = (e) => {
 
 Now press any key on the keyboard and check the console. You will see the keycode for the key you pressed.
 
+NOTE: There have been a lot of changes to how key presses are handled, so check compatibility when you're using this in a project.
+
 
 ## Uses
 
