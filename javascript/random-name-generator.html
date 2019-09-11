@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    #inputNames {
+      margin-bottom: 2%;
+    }
+    #randomBtn {
+      background-color: #fff;
+      border: 4px solid #000;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+      padding: .5% 2%;
+      text-transform: uppercase;
+      transition: 300ms;
+      width: max-content;
+    }
+    #randomBtn:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enter List of Names:</h1>
+  <h2>(Separate by comma)</h2>
+  <input id="inputNames" type="text" name="">
+  <div id="randomBtn">Select Random Name</div>
+  <div id="displayRandomName"></div>
+
+<script type="text/javascript">
+
+  let namesArr = [];
+  const inputNames = document.getElementById('inputNames');
+  const displayRandomName = document.getElementById('displayRandomName');
+
+  function randomNamePicker() {
+    // Take in the string from the textarea value
+    const namesStr = inputNames.value;
+    // Convert to array
+    namesArr = namesStr.split(',');
+    // Select random number between 0 and array.length
+    let randomIndex = Math.floor( Math.random() * namesArr.length );
+    // Display the name at that index
+    displayRandomName.innerHTML = namesArr[randomIndex];
+  }
+
+  document.getElementById('randomBtn').onclick = randomNamePicker;
+
+</script>
+
+</body>
+</html>
