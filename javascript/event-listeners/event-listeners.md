@@ -41,3 +41,48 @@ btn.addEventListener( 'click', doOtherThing );
 ```
 
 In other words, `addEventListener` does not overwrite other `addEventListener`s.
+
+
+## Hovering
+
+```
+btn.addEventListener( 'mouseover', doThing);
+```
+
+
+## Using with Event Objects
+
+You can also pass an event into the function that is called when the event listener is triggered:
+
+```
+const doThing = (e) => { console.log(e); };
+```
+
+This will print the event object to the console.
+
+
+## Window Event Listener
+
+You can add an event listener to the entire window:
+
+```
+const showMouseLocation = (e) => { console.log( `x = ${e.clientX}, y = ${e.clientY}` ); };
+
+window.addEventListener( 'mousemove', showMouseLocation );
+```
+
+
+## Using with Anonymous Functions
+
+```
+btn.addEventListener( 'click', function() {
+  console.log(`Anonymous function triggered.`);
+});
+```
+
+
+## Capturing and Bubbling
+
+If you want to register a click on one element but NOT its parent container, look up capturing and bubbling:
+
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
