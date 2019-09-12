@@ -100,3 +100,5 @@ const respondOnlyOnce = () => {
 
 btn.addEventListener( 'click', respondOnlyOnce );
 ```
+
+NOTE: `removeEventListener` cannot be used on an anonymous function -- it needs to know which function to remove.
