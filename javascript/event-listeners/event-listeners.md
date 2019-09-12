@@ -16,6 +16,9 @@ btn.addEventListener( 'click', doThing );
 
 This will print `Thing` to the console.
 
+
+### addEventListener vs. onclick
+
 This is similar to using `element.onclick`, except that it allows you to assign more than one reaction to the event if you want.
 
 For example...
@@ -41,6 +44,8 @@ btn.addEventListener( 'click', doOtherThing );
 ```
 
 In other words, `addEventListener` does not overwrite other `addEventListener`s.
+
+One other difference is compatibility. `onclick` is older and therefore compatible with older browsers. But this is less and less of a problem as time goes by. `addEventListener` is safe to use.
 
 
 ## Hovering
