@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/1525eb346f.js"></script>
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+    #orangeBox {
+      background-color: orange;
+      height: 100px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: all 300ms;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="orangeBox"></div>
+
+<script type="text/javascript">
+
+  const orangeBox = document.getElementById('orangeBox');
+  let leftPosition = 0;
+  let topPosition = 0;
+
+  window.onkeydown = (e) => {
+    let buttonPressed = e.keyCode;
+    console.log(buttonPressed);
+    // Up:
+    if ( ( buttonPressed == 38 ) && ( topPosition > 19 ) ) {
+      topPosition -= 20;
+      orangeBox.style.top = `${topPosition}px`;
+    }
+    // Down:
+    else if ( buttonPressed == 40 ) {
+      topPosition += 20;
+      orangeBox.style.top = `${topPosition}px`;
+    }
+    // Left:
+    else if ( ( buttonPressed == 37 ) && ( leftPosition > 19 ) ) {
+      leftPosition -= 20;
+      orangeBox.style.left = `${leftPosition}px`;
+    }
+    // Right:
+    else if ( buttonPressed == 39 ) {
+      leftPosition += 20;
+      orangeBox.style.left = `${leftPosition}px`;
+    }
+  };
+
+</script>
+
+</body>
+</html>
