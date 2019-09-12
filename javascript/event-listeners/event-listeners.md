@@ -86,3 +86,17 @@ btn.addEventListener( 'click', function() {
 If you want to register a click on one element but NOT its parent container, look up capturing and bubbling:
 
 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+
+## Removing Event Listeners
+
+Suppose you want something to be clickable only once. You can attach an event listener to it, but set it to remove itself after it has been clicked:
+
+```
+const respondOnlyOnce = () => {
+  console.log(`Response`);
+  btn.removeEventListner( 'click', respondOnlyOnce );
+};
+
+btn.addEventListener( 'click', respondOnlyOnce );
+```
