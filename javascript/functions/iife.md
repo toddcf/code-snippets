@@ -32,3 +32,14 @@ In the above code, the `message` variable is not accessible anywhere else.
 
 IIFEs also allow you to use parameters:
 
+```
+(function(a,b) {
+  console.log(a+b);
+})(2,3);
+```
+
+The above code would print `5`.
+
+One common use for parameters in IIFEs is to store frequently used globals such as `window` and `document`. This can help for brevity (long names can be shortened) and performance (the browser doesn't have to look far to find the variables).
+
+NOTE: This only speeds up the code that's inside the IIFE, since it's not accessible outside the IIFE.
