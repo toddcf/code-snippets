@@ -26,4 +26,4 @@ var nums = [ 1, 2, 3 ];
 var duplicateNums = nums.slice();
 ```
 
-Now both `nums` and `duplicateNums` are `[ 1, 2,, 3 ]`.
+Now both `nums` and `duplicateNums` are `[ 1, 2, 3 ]`.

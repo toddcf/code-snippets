@@ -19,13 +19,12 @@ var computers = [
 
 Just by eyeballing it, you can see that the Apple and Acer will fit the criteria, and the Compaq will not.
 
-Using `filter` would return a list of the computers with at least 16GB of RAM. But maybe you don't want that much info returned -- maybe you just want to know whether you have ANY computers that fit this criteria.
+Using `filter` would return a list of the computers with at least 16GB of RAM. But maybe you don't want that much info returned -- maybe you just want to know whether or not EVERY computer fits this criteria.
 
-So create two boolean variables: one for whether or not ALL computers can run the program, and one for whether SOME can. We'll assume they all can by default, and will only change that to false if we find any that can't.
+So we'll create a boolean variable that tells whether or not ALL computers can run the program. We'll assume they all can by default, and will only change that to false if we find any that can't.
 
 ```
 var allComputersCanRunProgram = true;
-var onlySomeComputersCanRunProgram = false;
 ```
 
 ### The OLD for loop Way:
@@ -39,7 +38,7 @@ for (var i = 0; i < computers.length; i++) {
     allComputersCanRunProgram = false;
   }
   else {
-    onlySomeComputersCanRunProgram = true;
+    allComputersCanRunProgram = true;
   }
 }
 ```

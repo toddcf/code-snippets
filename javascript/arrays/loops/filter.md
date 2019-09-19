@@ -2,7 +2,9 @@
 
 Filter is more complex than the other array helpers. It lets you pull only array items that meet your desired criteria.
 
-## Example: Filter by Type of Vegetable
+## Example: Filter by Type of Food
+
+Let's say you want to find all the fruits in your array of foods:
 
 ```
 var products = [
