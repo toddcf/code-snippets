@@ -150,3 +150,40 @@ var anonymous = function() {
 . . . it is a function *expression*. The difference being that during the execution phase, this results in a value. That value is a function object that gets created and stored in a variable.
 
 In the previous example where a function called `greet` is declared, nothing happens yet during the execution phase because it has not been invoked. Therefore, nothing is returned.
+
+Note that declaring an anonymous function and storing it in a variable means that you can't invoke that function before it is declared. Only the variable declaration will have been hoisted; the function object will not have been created and assigned to that variable yet.
+
+
+## Passing a Function Into Another Function on the Fly
+
+You can create a function on the fly when passing it into another function:
+
+```
+function log(a) {
+  console.log(a);
+}
+
+log(function() {
+  console.log('Hi');
+});
+```
+
+This will console log . . .
+
+```
+() {
+  console.log('Hi');
+}
+```
+
+If you instead wanted to *run* that inner function, change the outer function's code to invoke whatever is passed into it instead of just console logging it:
+
+```
+function log(a) {
+  a();
+}
+```
+
+This will result in `Hi` being printed to the console.
+
+Being able to pass functions into other functions is called "functional programming."
