@@ -61,4 +61,29 @@ Functions are objects. In JavaScript, they are considered "first class functions
 - Pass them around.
 - Create them on the fly.
 
+
+## Special Properties of Functions
+
 Functions have all the features of normal objects, plus some special properties. *You can attach properties and methods to a function.*
+
+Some of the special properties are:
+
+- Name (optional -- can be anonymous)
+- Code (This is where the actual lines of code you've written sit. It's not that the code you write *is* the function itself, it is a property *of* the function. What's special about the "code" property is that it's *invokable*, meaning that you can run it. Having the code be its own property of a function allows it to be moved around or copied to other areas in your code.)
+
+
+### Attaching Properties to Functions
+
+You can attach a property to a function just like you can any object:
+
+```
+function greet() {
+  console.log('Hi');
+}
+
+greet.language = 'English';
+
+console.log(greet.language);
+```
+
+The above will print `English` to the console.
