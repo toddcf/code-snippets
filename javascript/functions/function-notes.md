@@ -87,3 +87,66 @@ console.log(greet.language);
 ```
 
 The above will print `English` to the console.
+
+
+## Function Statements vs. Function Expressions
+
+An `expression` is a unit of code that results in a value. It does not have to save to a variable.
+
+A function `statement` simply does work.
+
+### Example of a Function Expression
+
+```
+a = 3;
+```
+
+The `=` operator is a function that returns a value. If you run the above code in the console, it will return `3`.
+
+Similarly, running `1 + 2` in the console will return `3`. The `+` sign is an operator that performs a function.
+
+This works the same if you store an object in a variable:
+
+```
+a = { greeting: 'Hi' };
+```
+
+If you run the above code in the console, it will return `{greeting: 'Hi'}`.
+
+### Example of a Statement
+
+```
+var a;
+
+if ( a === 3 ) {
+
+}
+```
+
+The above code contains both. `( a === 3 )` is an expression because it evaluates to either `true` or `false`. But the `if` statement itself is a statement because it *doesn't* return a value.
+
+For example, you couldn't store the if statement inside a variable because there is no value being returned.
+
+### Example of a *Function* Statement
+
+```
+function greet() {
+  console.log('Hi');
+}
+```
+
+This is a function *statement* because it performs work but does not evaluate to anything. It does not *return* anything.
+
+### Example of a Function Expression
+
+If you declare an anonymous function and store it in a variable, like this . . .
+
+```
+var anonymous = function() {
+  console.log('Hi');
+};
+```
+
+. . . it is a function *expression*. The difference being that during the execution phase, this results in a value. That value is a function object that gets created and stored in a variable.
+
+In the previous example where a function called `greet` is declared, nothing happens yet during the execution phase because it has not been invoked. Therefore, nothing is returned.
