@@ -51,3 +51,14 @@ Note that the danger of storing a function inside a variable is that you could p
 ## Function Length
 
 Some people believe that if a function is longer than ten lines, you need to split it apart into separate functions.
+
+
+## First Class Functions
+
+Functions are objects. In JavaScript, they are considered "first class functions," which is a fancy way of saying that everything you can do with other data types, you can do with functions. You can . . .
+
+- Assign them to variables.
+- Pass them around.
+- Create them on the fly.
+
+Functions have all the features of normal objects, plus some special properties. *You can attach properties and methods to a function.*
