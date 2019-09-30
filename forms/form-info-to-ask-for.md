@@ -84,6 +84,6 @@ You can put this in a vertical sidebar, or a horizontal graph across the top.
 
 ## Confirmation Page
 
-Once a user submits a form, you must confirm that you received their information.
+Once a user submits a form, you must confirm that you received their information. You can also let them know what to expect next. (An email receipt, etc.)
 
 Have a good confirmation page. Don't just refresh the page, or direct the user back to the homepage.
