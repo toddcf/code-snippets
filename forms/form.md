@@ -159,10 +159,44 @@ When you're in any of those areas separated by a `/`, you will get a stepper tha
 
 You also get a little `X` that will let you clear your entries.
 
-Clicking the arrow on the end will display a calendar!
+Clicking the arrow on the end will display a calendar! However, this cannot be styled with CSS, so if you want to do that, you need to create your own calendar with JavaScript.
+
+On mobile, the `date` input will provide the user with spinners.
+
+NOTE: Not many browsers support `date` yet, so check caniuse.com.
+
+
+#### Date Min and Max
+
+The format here is year, month, and day.
+
+So if you want to restrict the date to 2017:
+
+```
+<input type="date" min="2017-01-01" max="2017-12-31">
+```
+
+In this example, the date field will now have `2017` pre-filled for the user.
 
 
 ### Time
+
+```
+<input type="time">
+```
+
+The format here is hours, minutes, and then am/pm.
+
+
+#### Step (Time)
+
+You can add step intervals for time, as well. These are in seconds. Therefore . . .
+
+```
+<input type="time" step="1800">
+```
+
+. . . would be half an hour, because there are 1800 seconds in half an hour.
 
 
 ### Submit
