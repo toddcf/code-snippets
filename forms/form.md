@@ -88,6 +88,46 @@ Advantages:
 1. The browser may have built-in validation for email input types (`@` symbol, etc.). (If the browser does not support this, it will simply convert the `email` type to a `text` type.) You'll still want to do server-side email address validation, but browser-side validation is faster. Note that any browser messages can't be edited by CSS.
 2. On mobile devices, you get a slightly different keyboard that is geared toward the characters used in email addresses.
 
+#### Multiple
+
+Adding the `multiple` attribute will allow the `<email>` field to accept more than one email address:
+
+```
+<input type="email" multiple>
+```
+
+The email addresses should be separated by a comma when entered into the field.
+
+
+### URL
+
+```
+<input type="url">
+```
+Advantages:
+
+1. Similar to `type="email"`, this does some basic browser-side validation to ensure that the user has entered something that could be a website address. (If the browser does not support this, it will simply convert the `url` type to a `text` type.)
+2. On mobile devices, you get a slightly different keyboard that is geared toward the characters used in website addresses.
+
+
+### Number
+
+```
+<input type="number">
+```
+
+This is used to collect positive or negative integers, including decimals.
+
+Will prevent user from entering anything other than a digit `0-9`, `+` sign, `-` sign, or a single `.` decimal.
+
+Also includes a "stepper" at the right end of the field -- little up and down arrows that the user can click on to increase or decrease the value in the field to the next whole number.
+
+On mobile devices, you get a slightly different keyboard that is geared toward numeric characters.
+
+If the browser does not support `type="number"`, it will convert this field to `type="text"`.
+
+NOTE: Not everything that looks like a number should actually *be* a number. For example, zip codes. Some zip codes start with `0`, which can get stripped out by the database because it thinks it's just a regular number. (Instead, you can use a pattern attribute to use a text field, but only allow the user to enter digits.)
+
 
 ### Submit
 
