@@ -120,13 +120,49 @@ This is used to collect positive or negative integers, including decimals.
 
 Will prevent user from entering anything other than a digit `0-9`, `+` sign, `-` sign, or a single `.` decimal.
 
-Also includes a "stepper" at the right end of the field -- little up and down arrows that the user can click on to increase or decrease the value in the field to the next whole number.
-
 On mobile devices, you get a slightly different keyboard that is geared toward numeric characters.
 
 If the browser does not support `type="number"`, it will convert this field to `type="text"`.
 
 NOTE: Not everything that looks like a number should actually *be* a number. For example, zip codes. Some zip codes start with `0`, which can get stripped out by the database because it thinks it's just a regular number. (Instead, you can use a pattern attribute to use a text field, but only allow the user to enter digits.)
+
+
+#### Step
+
+`<input type="number">` includes a "stepper" at the right end of the field -- little up and down arrows that the user can click on to increase or decrease the value in the field to the next whole number.
+
+If you want to change the increment, use `step`, like this:
+
+```
+<input type="number" step="2">
+```
+
+But keep in mind that this will *not* allow you to submit numbers in between those intervals. In Chrome, the default value is one, so it will only accept whole numbers. You can get around this by using `step="any"`.
+
+
+#### Number Range
+
+```
+<input type="number" min="-4" max="12">
+```
+
+
+### Date
+
+```
+<input type="date">
+```
+
+This will include a `mm/dd/yyyy` placeholder in the field.
+
+When you're in any of those areas separated by a `/`, you will get a stepper that lets you increment up and down.
+
+You also get a little `X` that will let you clear your entries.
+
+Clicking the arrow on the end will display a calendar!
+
+
+### Time
 
 
 ### Submit
