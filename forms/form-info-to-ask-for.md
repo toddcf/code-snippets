@@ -63,11 +63,27 @@ Make sure the fields are in a logical order. (Don't ask for last name before fir
 If you will be requesting a lot of information, consider spreading it out across multiple pages. For example, the first page can simply be creating a username and password. The next page can collect contact info, etc.
 
 
-## Multi-Tier Forms
+### Multi-Tier Forms
+
+Choosing a username can be one of the most stressful parts of the process. Not a lot of options may still be available, and the user may need to keep trying different options and variations. So keep this part of the process separate from the rest of the form.
 
 AirBNB has you fill out the city you want first. Only after you've submitted that does it let you filter the results by date, price, etc. This makes for a better user experience.
 
 
-## Gradual Engagement
+### Gradual Engagement
 
 Start off slow, so as to not scare the user off. After they fill out a small part of the form, they feel more confident about continuing on to fill out more info on the additional pages.
+
+
+### Progress Updates
+
+Although splitting a form up across multiple pages is helpful, you must also let the user see their progress at all times so it doesn't feel never-ending as a new page keeps getting revealed each time they finish the current one.
+
+You can put this in a vertical sidebar, or a horizontal graph across the top.
+
+
+## Confirmation Page
+
+Once a user submits a form, you must confirm that you received their information.
+
+Have a good confirmation page. Don't just refresh the page, or direct the user back to the homepage.
