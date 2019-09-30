@@ -1,5 +1,11 @@
 # Form
 
+## Form Tag
+
+The `<form>` element is the only element that every form is required to have.
+
+You can have more than one `<form>` element on a page, but they cannot be nested within each other.
+
 ## Labels
 
 According to Simple Steps JavaScript, you should put your `<input>` *inside* of your `<label>`. This allows the user to click on the entire label rather than just the tiny checkbox:
@@ -10,6 +16,95 @@ According to Simple Steps JavaScript, you should put your `<input>` *inside* of 
 	Check This
 </label>
 ```
+
+
+## Method
+
+Tells the form what to do when the user hits `submit`. Method is typically `get` or `post`.
+
+```
+<form method="get">
+```
+
+```
+<form method="post">
+```
+
+
+## Action
+
+Tells the form what to do when the user hits `submit`. Action tells the form what URL the data is being sent to.
+
+```
+<form action="url">
+```
+
+
+## Label
+
+```
+<label>What is your favorite color?</label>
+```
+
+Should come above or to the left of the `<input>` field.
+
+You can put the `<label>` *before* the `<input>` field in HTML, like this . . .
+
+```
+<label>What is your favorite color?</label>
+<input type="text">
+```
+
+. . . or you can wrap the `<label>` tags *around* the `<input>` field, like this:
+
+```
+<label>What is your favorite color?
+	<input>
+</label>
+```
+
+### For Attribute
+
+The `for` attribute is for accessibility. It matches the `<label>` to the id of the `<input>` field.
+
+
+## Input
+
+The `<input>` element is an "empty element" -- you don't need a closing tag.
+
+### Type Attribute
+
+`<input type="text">` is for plain text entry.
+
+`<input type="submit">` is the most basic way to code the submit button, but there are other ways, as well. This will send data to the server.
+
+
+### Name Attribute
+
+The name attribute labels the data when it is sent to the server. (This is not shown to the user.)
+
+If you were asking the user their favorite color you might use:
+
+```
+<input name="favcolor">
+```
+
+
+### ID Attribute
+
+The id attribute is used to associate each input field with the correct label. It should be unique on the page, and descriptive. It is often the same as the `name` attribute.
+
+```
+<input id="favcolor">
+```
+
+(You will use the `for` attribute in the `<label>` tag to match that label to this `<input>`.)
+
+
+## Select
+
+
+## Textarea
 
 
 ## Autocomplete
