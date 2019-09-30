@@ -74,7 +74,22 @@ The `<input>` element is an "empty element" -- you don't need a closing tag.
 
 ### Type Attribute
 
-`<input type="text">` is for plain text entry.
+
+### Text
+
+`<input type="text">` is for plain text entry. Only accepts single-line entry; the browser will strip out any line breaks. (To accept data with line breaks, see the `<textarea>` element.)
+
+### Email
+
+`<input type="email">`
+
+Advantages:
+
+1. The browser may have built-in validation for email input types (`@` symbol, etc.). (If the browser does not support this, it will simply convert the `email` type to a `text` type.) You'll still want to do server-side email address validation, but browser-side validation is faster. Note that any browser messages can't be edited by CSS.
+2. On mobile devices, you get a slightly different keyboard that is geared toward the characters used in email addresses.
+
+
+### Submit
 
 `<input type="submit">` is the most basic way to code the submit button, but there are other ways, as well. This will send data to the server.
 
