@@ -277,6 +277,43 @@ Masks the characters that are entered into the field.
 SECURITY NOTE: This does not provide encryption.
 
 
+### Hidden
+
+```
+<input type="hidden">
+```
+
+Contains data that is passed to the server, but not shown to the user. (Tracking codes, etc.)
+
+```
+<input type="hidden" value="1234" name="tracking">
+```
+
+(Does not need a label or id, since the user doesn't see it.)
+
+
+### Range
+
+```
+<input type="range" min="value" max="value" step="value">
+```
+
+Allows user to choose from a range of values on a slider. You do ned the min, max, and step in order to set the range of the values on the slider, as well as the increments.
+
+Drawback: It won't show the user what the exact numbers are. You'll need to use JavaScript to add that.
+
+
+### Search
+
+```
+<input type="search">
+```
+
+Allows the user to enter a search term.
+
+Will give you a gray `X` at the end once you begin typing, which allows you to clear the field.
+
+
 ### Submit
 
 `<input type="submit">` is the most basic way to code the submit button, but there are other ways, as well. This will send data to the server.
