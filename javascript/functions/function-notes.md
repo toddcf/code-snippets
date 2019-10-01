@@ -2,15 +2,21 @@
 
 Functions are sort of like a variable for lines of code. They are reusable packages of code.
 
+
 ## Declaring a Function
 
 Declaring a function means to write the block of code.
 
-## Calling a Function
 
-Calling a function means to execute that block of code you wrote. You can call it multiple times, since it is reusable.
+## Calling / Invoking a Function
+
+Calling (aka invoking) a function means to execute that block of code you wrote. You can call it multiple times, since it is reusable.
+
+When a function is invoked, it creates a "variable environment," meaning a space for any variables that get declared inside that function to exist.
+
 
 ## Define a Function WITHOUT Arguments
+
 
 ## Define a Function WITH Arguments
 
@@ -26,6 +32,7 @@ Now when you call `square()`, you include an "argument" inside the parentheses. 
 
 `square(10);` would print `100`. It's like saying `var num = 10;`
 
+
 ## Function Declarations
 
 The most basic way.
@@ -35,6 +42,7 @@ function capitalize( str ) {
 	return str.charAt(0).toUppercase() + str.slice(1);
 }
 ```
+
 
 ## Function Expressions
 
@@ -47,6 +55,7 @@ var capitalize = function( str ) {
 ```
 
 Note that the danger of storing a function inside a variable is that you could potentially change that variable's value later, and your function would be lost.  (For example, `capitalize = 10;`.)
+
 
 ## Function Length
 
@@ -95,13 +104,14 @@ An `expression` is a unit of code that results in a value. It does not have to s
 
 A function `statement` simply does work.
 
+
 ### Example of a Function Expression
 
 ```
 a = 3;
 ```
 
-The `=` operator is a function that returns a value. If you run the above code in the console, it will return `3`.
+The `=` operator is a function that *returns* a value. If you run the above code in the console, it will return `3`.
 
 Similarly, running `1 + 2` in the console will return `3`. The `+` sign is an operator that performs a function.
 
@@ -112,6 +122,7 @@ a = { greeting: 'Hi' };
 ```
 
 If you run the above code in the console, it will return `{greeting: 'Hi'}`.
+
 
 ### Example of a Statement
 
@@ -127,6 +138,7 @@ The above code contains both. `( a === 3 )` is an expression because it evaluate
 
 For example, you couldn't store the if statement inside a variable because there is no value being returned.
 
+
 ### Example of a *Function* Statement
 
 ```
@@ -136,6 +148,7 @@ function greet() {
 ```
 
 This is a function *statement* because it performs work but does not evaluate to anything. It does not *return* anything.
+
 
 ### Example of a Function Expression
 

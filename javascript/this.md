@@ -9,9 +9,12 @@ By default (on a blank file), `this` refers to the `window` object. More on this
 
 ## Using `this` in a Method
 
-If you have a method (function) inside an object, you could use `this` to refer to the object that that method is inside of.
+If you have a method (a function inside of an object), you could use `this` to refer to the object that that method is inside of.
 
-Remember that if the value inside the object is a primitive, it's called a property. If the value is a function, it's called a method.
+(Remember that if the value inside the object is a primitive, it's called a property. If the value is a function, it's called a method.)
+
+
+### Example 1: Car Object
 
 ```
 var car = {
@@ -27,7 +30,7 @@ car.drive();
 
 This is a pretty simple example in which `this` simply means `car`.
 
-Now let's add a method that adds another 10 m.p.h. to the car's speed:
+Now let's add a second method that adds another 10 m.p.h. to the car's speed:
 
 ```
 var car = {
@@ -46,7 +49,10 @@ car.drive();
 car.driveFaster();
 ```
 
-Another example:
+This will result in a console log of `40`.
+
+
+### Example 2: Where `this` Points
 
 Create an object with a method (aka function) inside it.
 
@@ -112,7 +118,7 @@ b();
 
 Same thing: the `window` object.
 
-*Whenever you create a function (whether it's an expression or a statement) in the global scope, `this` will point to the `window` because the scope is global.*
+*Whenever you create a function (whether it's an expression or a statement) in the global scope, `this` will point to the `window` because the scope is global.* In other words, what object is the function inside of? The global object. So that's where `this` points.
 
 Because of this, you can actually create new variables inside the function using `this`, and they will get attached to the global object and be accessible even after the function has been invoked and is off the execution stack. (But only AFTER the function has been invoked.)
 
@@ -125,7 +131,7 @@ console.log(newVariable); // will throw an error and stop your code, because a()
 
 a();
 
-console.log(newVariable); // will print 'Hello' to the console.
+console.log(newVariable); // will print 'Hello' to the console because it happens after a() has been invoked.
 ```
 
 So for functions in the global scope, you are NOT attaching `this` to the function, you are attaching it to the global object. "When you are just invoking the function, it points to the global variable."
