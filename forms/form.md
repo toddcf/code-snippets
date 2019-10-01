@@ -101,6 +101,39 @@ The `for` attribute is for accessibility. It matches the `<label>` to the id of 
 `for` should be included on every `<label>` element.
 
 
+### "Value" Attribute
+
+Has a few different uses:
+
+To set a default value for an entry field:
+
+```
+<input type="text" value="defaultValue">
+```
+
+To set the value for radio buttons, checkboxes, and option elements:
+
+```
+<input type="radio" value="optionValue">
+```
+
+```
+<input type="checkbox" value="optionValue">
+```
+
+```
+<option value-"optionValue">
+```
+
+To set the text that is displayed on a button:
+
+```
+<input type="submit" value="Button Text">
+```
+
+
+
+
 ## Input Types
 
 The `<input>` element is an "empty element" -- you don't need a closing tag.
