@@ -75,4 +75,38 @@ If you add the `multiple` attribute, it allows the user to select more than one 
 <select name="name" id="idname" multiple>
 ```
 
-But this will cause it to display all at once rather than dropping down.
+But this will multiple options to display all at once rather than dropping down.
+
+
+### Size
+
+Determines how many options display at a time without scrolling.
+
+```
+<select name="name" id="idname" multiple size="7">
+```
+
+Note that in this example, if you have fewer than 7 options, the box will still be large enough to fit 7, with white space at the bottom.
+
+
+### Optgroup
+
+Adds category labels to the list of options. Short for "option group."
+
+```
+<label for="pizza">What is your favorite pizza topping?</label>
+<br>
+<select name="pizza" id="pizza" multiple size="7">
+  <optgroup label="vegetables">
+    <option value="mushroom">Mushroom</option>
+    <option value="olives">Olives</option>
+    <option value="peppers">Peppers</option>
+  </optgroup>
+  <optgroup label="meats">
+    <option value="sausage">Sausage</option>
+    <option value="pepperoni">Pepperoni</option>
+  </optgroup>
+</select>
+```
+
+The user will be able to click on each option, but not the optgroup title.

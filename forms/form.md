@@ -246,6 +246,12 @@ See `select-tag.md` in `forms` directory.
 
 ## Textarea
 
+Can collect multiple lines of text.
+
+Can be resized on the fly by the user by clicking and dragging the bottom corner (although most users don't know this).
+
+Can also be resized by the coder using CSS.
+
 
 ## Autocomplete
 

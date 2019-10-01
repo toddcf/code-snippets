@@ -76,14 +76,23 @@
 
     <label for="pizza">What is your favorite pizza topping?</label>
     <br>
-    <select name="pizza" id="pizza" multiple>
-      <option value="mushroom">Mushroom</option>
-      <option value="sausage">Sausage</option>
-      <option value="olives">Olives</option>
-      <option value="peppers">Peppers</option>
-      <option value="pepperoni">Pepperoni</option>
+    <select name="pizza" id="pizza">
+      <optgroup label="vegetables">
+        <option value="mushroom">Mushroom</option>
+        <option value="olives">Olives</option>
+        <option value="peppers">Peppers</option>
+      </optgroup>
+      <optgroup label="meats">
+        <option value="sausage">Sausage</option>
+        <option value="pepperoni">Pepperoni</option>
+      </optgroup>      
     </select>
 
+    <br>
+
+    <label for="poem">Write a poem</label>
+    <br>
+    <textarea id="poem" name="poem"></textarea>
     <br>
 
     <input type="submit" name="">
