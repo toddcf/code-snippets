@@ -199,6 +199,17 @@ You can add step intervals for time, as well. These are in seconds. Therefore . 
 . . . would be half an hour, because there are 1800 seconds in half an hour.
 
 
+### Telephone
+
+```
+<input type="tel">
+```
+
+The `tel` field on desktop will allow you to enter anything you want. This is because in different locations, phone numbers are formatted with different symbols (and may even include letters).
+
+On mobile, however, you will get a phone keyboard with bigger keys to allow the user to enter their phone number faster.
+
+
 ### Submit
 
 `<input type="submit">` is the most basic way to code the submit button, but there are other ways, as well. This will send data to the server.
