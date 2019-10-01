@@ -25,13 +25,37 @@ According to Simple Steps JavaScript, you should put your `<input>` *inside* of 
 
 Tells the form what to do when the user hits `submit`. Method is typically `get` or `post`.
 
+
+### Get
+
 ```
 <form method="get">
 ```
 
+(The `get` method is less common than the `post` method.)
+
+`get` means the browser is sending an HTTP request for a resource with an empty body in the request. This means that the data from the form is included in the URL that is sent to the server or sent to a different page. It will look something like this:
+
+```
+https://www.example.com/?color=blue&design=striped
+```
+
+Servers may limit the length of the URL, and therefore limit the amount of data that can be sent.
+
+SECURITY NOTE: Do not use this method for transferring sensitive data, as it can be intercepted from the URL.
+
+
+### Post
+
 ```
 <form method="post">
 ```
+
+The browser sends an HTTP request, with the data in the body of the request rather than in the URL.
+
+This is the preferred method, as it is much more secure. All the user will see is the URL their data is being sent to; their data will not be visible.
+
+After the server receives the request, it responds by sending data back to the user's computer. It may simply tell the browser to display a confirmation page. Or it may return data based on the form entries (such as search results).
 
 
 ## Action
@@ -41,6 +65,18 @@ Tells the form what to do when the user hits `submit`. Action tells the form wha
 ```
 <form action="url">
 ```
+
+The `action` attribute is not required, and if you don't have one, the default is the current page.
+
+It's important to know whether the sending and receiving pages have HTTPS. This provides encryption, but not all websites have it.
+
+If both the sending and receiving pages have HTTPS, everything is encrypted as it's sent. This is the best way to go.
+
+If both pages are HTTP, then nothing is secure or encrypted. Definitely don't use this for sending passwords and other sensitive data.
+
+If you send from an HTTP page to an HTTPS page, then the data *is* encrypted.
+
+If you send from HTTPS to HTTP, the data is *not* encrypted, and the browser will probably display a warning.
 
 
 ## Label
