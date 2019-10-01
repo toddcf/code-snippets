@@ -239,6 +239,10 @@ The id attribute is used to associate each input field with the correct label. I
 
 ## Select
 
+Also known as a dropdown menu. Less preferable to radio or checkbox buttons because you often cannot see all the options at the same time, and you wind up having to click twice to choose an option.
+
+See `select-tag.md` in `forms` directory.
+
 
 ## Textarea
 
@@ -334,3 +338,8 @@ Setting autocomplete to "off" means that the same boxes *won't* be checked if yo
 
 </form>
 ```
+
+
+## Radio Buttons
+
+See `radio-buttons.md` in `forms` and `buttons` directories.

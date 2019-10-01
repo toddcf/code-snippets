@@ -37,10 +37,55 @@
       <input type="time" name="time" id="time" step="1800">
     </label>
     <br>
-    <label for="phone">
+    <label for="phone">Telephone
       <input type="tel" name="phone" id="phone">
     </label>
     <br>
+
+    <fieldset>
+      <legend>What is your favorite color?</legend>
+      <label for="blue">
+        <input type="radio" name="favcolor" value="blue" id="blue">Blue
+      </label>
+      <br>
+      <label for="red">
+        <input type="radio" name="favcolor" value="red" id="blue">Red
+      </label>
+      <br>
+      <label for="black">
+        <input type="radio" name="favcolor" value="black" id="black" checked>Black
+      </label>
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>What are you doing here?</legend>
+      <label for="nothing">
+        <input type="checkbox" name="doing" value="nothing" id="nothing">Nothing
+      </label>
+      <br>
+      <label for="none">
+        <input type="checkbox" name="doing" value="none" id="none">None of your business
+      </label>
+      <br>
+      <label for="everything">
+        <input type="checkbox" name="doing" value="everything" id="everything">Everything
+      </label>
+    </fieldset>
+    <br>
+
+    <label for="pizza">What is your favorite pizza topping?</label>
+    <br>
+    <select name="pizza" id="pizza" multiple>
+      <option value="mushroom">Mushroom</option>
+      <option value="sausage">Sausage</option>
+      <option value="olives">Olives</option>
+      <option value="peppers">Peppers</option>
+      <option value="pepperoni">Pepperoni</option>
+    </select>
+
+    <br>
+
     <input type="submit" name="">
     
   </form>
