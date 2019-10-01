@@ -63,9 +63,42 @@ You can put the `<label>` *before* the `<input>` field in HTML, like this . . .
 </label>
 ```
 
-### For Attribute
+## Attributes
+
+Attributes are used to add additional information and browser instructions to an element in HTML.
+
+
+### "Type" Attribute
+
+```
+<input type="text">
+```
+
+
+### "Name" Attribute
+
+```
+<input name="name">
+```
+
+Must go on every input, select, or textarea element. It labels the data when it is sent to the server or database.
+
+Each name in a form should be unique.
+
+The user does not see these names.
+
+
+### "For" Attribute
 
 The `for` attribute is for accessibility. It matches the `<label>` to the id of the `<input>` field.
+
+```
+<label for="animal">Animal
+	<input type="text" id="animal">
+</label>
+```
+
+`for` should be included on every `<label>` element.
 
 
 ## Input Types
@@ -324,6 +357,14 @@ This is the most basic way to code the submit button, but there are other ways, 
 
 `value` is the text you want displayed on the button. Be descriptive. (Add to Cart, Donate, Check Out, etc.)
 
+You can also create a button with a "type" of "submit":
+
+```
+<button type="submit">Submit</button>
+```
+
+This example would work exactly the same as `<input type="submit">`. It's just not a self-closing element. (There is text between the opening and closing `<button>` tags instead of in a `value` attribute.) Using `<button>` gives you more styling options with CSS.
+
 
 ### Reset
 
@@ -331,9 +372,20 @@ This is the most basic way to code the submit button, but there are other ways, 
 <input type="reset" value="Reset">
 ```
 
-Allows the user to clear (reset) the entire form. MOST FORMS DON'T NEED THIS, AND YOU DON'T WANT USERS CLEARING THE ENTIRE FORM ACCIDENTALLY.
+Allows the user to clear (reset) the entire form. MOST FORMS DON'T NEED THIS, AND YOU DON'T WANT USERS CLEARING THE ENTIRE FORM ACCIDENTALLY. If you do have both a `Submit` and `Reset` button on a form, make sure it's clear that the `Submit` button is the primary action.
 
 `value` is the text you want displayed on the button.
+
+
+### Button
+
+```
+<input type="button" value="value">
+```
+
+The input type "button" is used for a button that has no action associated with it. Nothing will happen when you click it. However, you can add customized behavior to it with JavaScript.
+
+As mentioned in the `submit` type above, you can also create an actual `<button>` tag with a type of `submit`.
 
 
 ### Name Attribute
