@@ -1,4 +1,4 @@
-# JavaScript THIS Keyword
+# JavaScript `this` Keyword
 
 One of the quirkier parts of JavaScript, the `this` keyword can mean different things in different scenarios.
 
@@ -48,7 +48,7 @@ car.driveFaster();
 
 Another example:
 
-Create an object with a method (aka function) inside it. Then call that method:
+Create an object with a method (aka function) inside it.
 
 ```
 var c = {
@@ -57,13 +57,29 @@ var c = {
     console.log(this);
   }
 };
+```
 
+Then call that method:
+
+```
 c.log();
 ```
 
 The result is that `The c object` will be printed to the console, because `this` points to the object that the method is sitting inside of.
 
 
+### Quirk: The `this` Keyword Inside a Method Points to the Window Object
+
+Building on the example above, let's say you add a function *inside* the method. Like this:
+
+```
+var c = {
+  name: 'The c object',
+  log: function() {
+    console.log(this); // IN PROGRESS
+  }
+}
+```
 
 
 ## Using `this` in a Function That is *Not* a Method
@@ -96,7 +112,7 @@ b();
 
 Same thing: the `window` object.
 
-Whenever you create a function (whether it's an expression or a statement) in the global scope, `this` will point to the `window` because the scope is global.
+*Whenever you create a function (whether it's an expression or a statement) in the global scope, `this` will point to the `window` because the scope is global.*
 
 Because of this, you can actually create new variables inside the function using `this`, and they will get attached to the global object and be accessible even after the function has been invoked and is off the execution stack. (But only AFTER the function has been invoked.)
 
