@@ -20,6 +20,10 @@ According to Simple Steps JavaScript, you should put your `<input>` *inside* of 
 </label>
 ```
 
+Avoid using questions as your labels, as they make the labels longer and more difficult for the user to scan. (People like to scan ahead and see what info they're going to need to fill out.) Instead of `What is your name?`, just say `Name`.
+
+In CSS, `vertical-align: middle;` will make the text line up with the middle of its adjacent field.
+
 
 ## Method
 
@@ -175,11 +179,13 @@ To set the text that is displayed on a button:
 
 ### "Placeholder" Attribute
 
-Allows you to display a sample entry to give users an idea of what you're asking them for. (But this should not replace labels.)
+Allows you to display a sample entry to give users an idea of what you're asking them for. (But this should not replace labels, and placeholders in general are unnecessary. If something needs more explanation, it's better to put this information in the label.)
 
 ```
 <input placeholder="Placeholder text">
 ```
+
+DRAWBACKS: If a user is scanning through the form, they may mistakenly think the field is already filled in. The user's eye tends to jump to the next empty field.
 
 
 ### Maxlength
@@ -440,6 +446,8 @@ You can also allow the user to upload multiple files:
 ```
 <input type="file" multiple>
 ```
+
+CSS NOTE: Most browsers do not let you change the styling of the upload file button for security reasons. They want to make sure it is recognizable as genuine.
 
 
 #### Accept Attribute
