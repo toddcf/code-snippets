@@ -316,7 +316,24 @@ Will give you a gray `X` at the end once you begin typing, which allows you to c
 
 ### Submit
 
-`<input type="submit">` is the most basic way to code the submit button, but there are other ways, as well. This will send data to the server.
+```
+<input type="submit" value="submit">
+```
+
+This is the most basic way to code the submit button, but there are other ways, as well. This will send data to the server.
+
+`value` is the text you want displayed on the button. Be descriptive. (Add to Cart, Donate, Check Out, etc.)
+
+
+### Reset
+
+```
+<input type="reset" value="Reset">
+```
+
+Allows the user to clear (reset) the entire form. MOST FORMS DON'T NEED THIS, AND YOU DON'T WANT USERS CLEARING THE ENTIRE FORM ACCIDENTALLY.
+
+`value` is the text you want displayed on the button.
 
 
 ### Name Attribute
