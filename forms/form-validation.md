@@ -26,6 +26,15 @@ You can do inline validation with CSS, but it's fairly limited. You can use `:va
 
 Another drawback to doing inline validation with CSS, is that it will be marking a field invalid while the user is still typing, which makes them want to yell at the computer, "But I'm not done yet!"
 
+A better solution is to use JavaScript instead of CSS.
+
+
+## Error Messages
+
+- Make them clear and descriptive.
+- Put them next to each field that needs fixing, rather than in one list at the top or bottom of the page.
+- Make them stand out easily.
+
 
 ### Required
 
