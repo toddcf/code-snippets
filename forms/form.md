@@ -68,16 +68,15 @@ You can put the `<label>` *before* the `<input>` field in HTML, like this . . .
 The `for` attribute is for accessibility. It matches the `<label>` to the id of the `<input>` field.
 
 
-## Input
+## Input Types
 
 The `<input>` element is an "empty element" -- you don't need a closing tag.
-
-### Type Attribute
 
 
 ### Text
 
 `<input type="text">` is for plain text entry. Only accepts single-line entry; the browser will strip out any line breaks. (To accept data with line breaks, see the `<textarea>` element.)
+
 
 ### Email
 
@@ -87,6 +86,7 @@ Advantages:
 
 1. The browser may have built-in validation for email input types (`@` symbol, etc.). (If the browser does not support this, it will simply convert the `email` type to a `text` type.) You'll still want to do server-side email address validation, but browser-side validation is faster. Note that any browser messages can't be edited by CSS.
 2. On mobile devices, you get a slightly different keyboard that is geared toward the characters used in email addresses.
+
 
 #### Multiple
 
@@ -210,6 +210,73 @@ The `tel` field on desktop will allow you to enter anything you want. This is be
 On mobile, however, you will get a phone keyboard with bigger keys to allow the user to enter their phone number faster.
 
 
+### Textarea
+
+Can collect multiple lines of text.
+
+Can be resized on the fly by the user by clicking and dragging the bottom corner (although most users don't know this).
+
+Can also be resized by the coder using CSS.
+
+
+### Color
+
+Not supported in all browsers.
+
+```
+<input type="color">
+```
+
+And if you click on that, you'll see the color chooser that comes with your operating system.
+
+
+### File
+
+Allows the user to upload a file.
+
+```
+<input type="file">
+```
+
+```
+<label for="resume">Upload Your Résumé</label>
+<br>
+<input type="file">
+```
+
+You can also allow the user to upload multiple files:
+
+```
+<input type="file" multiple>
+```
+
+
+#### Accept Attribute
+
+The `accept` attribute allows you to specify which file types are allowed.
+
+For example . . .
+
+```
+<input type="file" accept="image/*">
+```
+
+. . . will tell the browser to accept any type of image (jpg, png, etc.) -- but no file types that are not an image.
+
+SECURITY NOTE: This is hackable, so don't count on it to prevent users from uploading executable files, viruses, etc. Make sure you protect against this on the server side, as well.
+
+
+### Password
+
+```
+<input type="password">
+```
+
+Masks the characters that are entered into the field.
+
+SECURITY NOTE: This does not provide encryption.
+
+
 ### Submit
 
 `<input type="submit">` is the most basic way to code the submit button, but there are other ways, as well. This will send data to the server.
@@ -242,61 +309,6 @@ The id attribute is used to associate each input field with the correct label. I
 Also known as a dropdown menu. Less preferable to radio or checkbox buttons because you often cannot see all the options at the same time, and you wind up having to click twice to choose an option.
 
 See `select-tag.md` in `forms` directory.
-
-
-## Textarea
-
-Can collect multiple lines of text.
-
-Can be resized on the fly by the user by clicking and dragging the bottom corner (although most users don't know this).
-
-Can also be resized by the coder using CSS.
-
-
-## Color
-
-Not supported in all browsers.
-
-```
-<input type="color">
-```
-
-And if you click on that, you'll see the color chooser that comes with your operating system.
-
-
-## File
-
-Allows the user to upload a file.
-
-```
-<input type="file">
-```
-
-```
-<label for="resume">Upload Your Résumé</label>
-<br>
-<input type="file">
-```
-
-You can also allow the user to upload multiple files:
-
-```
-<input type="file" multiple>
-```
-
-
-### Accept Attribute
-
-The `accept` attribute allows you to specify which file types are allowed.
-
-For example . . .
-
-```
-<input type="file" accept="image/*">
-```
-
-. . . will tell the browser to accept any type of image (jpg, png, etc.) -- but no file types that are not an image.
-
 
 
 ## Autocomplete
