@@ -6,6 +6,9 @@ The `<form>` element is the only element that every form is required to have.
 
 You can have more than one `<form>` element on a page, but they cannot be nested within each other.
 
+Input elements can go outside the `<form>` element on the same page if you link them to the `<form>` element, but not all browsers support this.
+
+
 ## Labels
 
 According to Simple Steps JavaScript, you should put your `<input>` *inside* of your `<label>`. This allows the user to click on the entire label rather than just the tiny checkbox:
@@ -122,7 +125,7 @@ To set the value for radio buttons, checkboxes, and option elements:
 ```
 
 ```
-<option value-"optionValue">
+<option value="optionValue">
 ```
 
 To set the text that is displayed on a button:
@@ -134,6 +137,90 @@ To set the text that is displayed on a button:
 `value` is optional on buttons. If you don't set one, the button will just display the default text.
 
 
+### "Placeholder" Attribute
+
+Allows you to display a sample entry to give users an idea of what you're asking them for. (But this should not replace labels.)
+
+```
+<input placeholder="Placeholder text">
+```
+
+
+### Maxlength
+
+```
+<input type="text" maxlength="40">
+```
+
+Sets the maximum number of characters that can be entered in a field.
+
+If you use this, it is a good idea to note this on the page so that users are warned in advance.
+
+Also, be careful not to set limits that prevent people from entering longer data than you predicted.
+
+
+### Pattern
+
+```
+<input type="text" pattern="[A-Za-z]{3}">
+```
+
+Sets the requirement for the exact characters that can be entered in a field.
+
+In the above example, letters A-Z, uppercase and lowercase, can be entered. The `{3}` means that exactly three characters must be entered.
+
+Same idea as *regular expressions*.
+
+
+### Required
+
+```
+<input type="text" required>
+```
+
+Will not allow the form to submit unless this field is filled in properly.
+
+Indicate on the page that a field is required. It should not be a surprise to the user when they try to submit the form.
+
+Can be used on most fields. Is not used on "hidden" or "button" where it doesn't apply.
+
+
+### Aria-Required
+
+```
+<input type="text" required aria-required="true">
+```
+
+This tells screen readers that a field is required, in case they don't support the `required` attribute. (Most screen readers will, but always use this as a backup.)
+
+
+### Disabled
+
+```
+<input type="text" disabled>
+```
+
+With this attribute, no data can be entered and no data will be submitted from this field. It will be grayed out on the page.
+
+Can be applied to each individual field, or to an entire fieldset, where it's inherited.
+
+
+### Readonly
+
+```
+<input type="url" readonly value="value">
+```
+
+Similar to `disabled`. No data can be entered, but the value *will* be submitted to the database. (Maybe you're going to tell the user you've collected their IP address. You can show them the address without allowing them to edit it.)
+
+
+### "Hidden" Attribute
+
+```
+<input type="text" hidden value="value">
+```
+
+Similar to `readonly`, except that it does not show up on the page at all. It is still submitted, however. (Maybe you want to submit a tracking code.)
 
 
 ## Input Types
@@ -221,7 +308,7 @@ But keep in mind that this will *not* allow you to submit numbers in between tho
 <input type="date">
 ```
 
-This will include a `mm/dd/yyyy` placeholder in the field.
+This will include a `mm/dd/yyyy` placeholder in the field. HOWEVER, it may be in a different order (such as yyyy/mm/dd) depending on the user's operating system's localization settings.
 
 When you're in any of those areas separated by a `/`, you will get a stepper that lets you increment up and down.
 
