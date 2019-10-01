@@ -253,6 +253,52 @@ Can be resized on the fly by the user by clicking and dragging the bottom corner
 Can also be resized by the coder using CSS.
 
 
+## Color
+
+Not supported in all browsers.
+
+```
+<input type="color">
+```
+
+And if you click on that, you'll see the color chooser that comes with your operating system.
+
+
+## File
+
+Allows the user to upload a file.
+
+```
+<input type="file">
+```
+
+```
+<label for="resume">Upload Your Résumé</label>
+<br>
+<input type="file">
+```
+
+You can also allow the user to upload multiple files:
+
+```
+<input type="file" multiple>
+```
+
+
+### Accept Attribute
+
+The `accept` attribute allows you to specify which file types are allowed.
+
+For example . . .
+
+```
+<input type="file" accept="image/*">
+```
+
+. . . will tell the browser to accept any type of image (jpg, png, etc.) -- but no file types that are not an image.
+
+
+
 ## Autocomplete
 
 ```
