@@ -131,6 +131,8 @@ To set the text that is displayed on a button:
 <input type="submit" value="Button Text">
 ```
 
+`value` is optional on buttons. If you don't set one, the button will just display the default text.
+
 
 
 

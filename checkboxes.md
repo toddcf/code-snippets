@@ -19,6 +19,16 @@ Same as radio buttons, except the user is allowed to select more than one answer
 </fieldset>
 ```
 
+
+## Checked
+
+The `checked` attribute selects one of the checkboxes by default when the page is loaded.
+
+```
+<input type="checkbox" checked>Default Selection
+```
+
+
 ## Animated high checkboxes
 
 https://tympanus.net/Development/AnimatedCheckboxes/

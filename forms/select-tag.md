@@ -50,6 +50,16 @@ You must also add a NAME to the `select` tag in order to have the choice submitt
 
 The browser takes whatever the text is inside the selected `<option>` and sends that as the value under the NAME inside the `<select>` tag. So in this example, it would send `color="Black"` if black was selected.
 
+
+### Selected
+
+Adding `selected` to one of the options makes it selected by default when the page is loaded.
+
+```
+<option selected>Black</option>
+```
+
+
 ### Value
 
 But maybe you don't want the text from the option sent as the submission. In this case, you can specify a different VALUE for each option inside the `<option>` tag:
