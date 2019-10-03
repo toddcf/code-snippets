@@ -12,7 +12,11 @@ Declaring a function means to write the block of code.
 
 Calling (aka invoking) a function means to execute that block of code you wrote. You can call it multiple times, since it is reusable.
 
-When a function is invoked, it creates a "variable environment," meaning a space for any variables that get declared inside that function to exist.
+When a function is invoked, it runs the code in the `code` property of the function object. This creates an "excution context." Each execution context has:
+
+1. A "variable environment," meaning a space for any variables that get declared inside that function to exist.
+2. A reference to its "outer environment," which tells it how to look down the scope chain.
+3. A variable called `this` for that execution context. `this` will point to a different object, *depending on how the function is invoked*.
 
 
 ## Define a Function WITHOUT Arguments

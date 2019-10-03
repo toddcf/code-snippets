@@ -7,6 +7,13 @@ One of the quirkier parts of JavaScript, the `this` keyword can mean different t
 By default (on a blank file), `this` refers to the `window` object. More on this later.
 
 
+## Creation of `this` Variable
+
+When a function is invoked, a variable called `this` is automatically created for that execution context.
+
+`this` points to a different object, depending on where the function is and *how it is invoked* . . . which can cause a lot of confusion.
+
+
 ## Using `this` in a Method
 
 If you have a method (a function inside of an object), you could use `this` to refer to the object that that method is inside of.
@@ -60,7 +67,7 @@ Create an object with a method (aka function) inside it.
 var c = {
   name: 'The c object',
   log: function() {
-    console.log(this);
+    console.log(this.name);
   }
 };
 ```
@@ -73,19 +80,62 @@ c.log();
 
 The result is that `The c object` will be printed to the console, because `this` points to the object that the method is sitting inside of.
 
-
-### Quirk: The `this` Keyword Inside a Method Points to the Window Object
-
-Building on the example above, let's say you add a function *inside* the method. Like this:
+You can also *mutate* the object, which simply means to change it. In the following code block, we've added a line to the method that changes the name of the c object:
 
 ```
 var c = {
   name: 'The c object',
   log: function() {
-    console.log(this); // IN PROGRESS
+    this.name = 'Updated c object';
+    console.log(this.name);
   }
 }
 ```
+
+Now when you call `c.log();`, `Updated c object` is what gets printed to the console.
+
+
+### Quirk: The `this` Keyword Inside a Method Points to the Window Object
+
+Building on the example above, let's say you add a function *inside* the method that updates `this.name` once again. Like this:
+
+```
+var c = {
+  name: 'The c object',
+  log: function() {
+    this.name = 'Updated c object';
+    var setname = function(newname) {
+      this.name = newname;
+    }
+    setname('Updated the c object again!');
+    console.log(this.name);
+  }
+}
+```
+
+Here's the quirk: `c`'s name will remain `Updated c object`. But if you console.log `window.name`, you will see `Updated the c object again!`. `this` is now pointing to the global object once again, even though it is in a function inside a method.
+
+
+#### The Workaround
+
+Thankfully, there is a workaround. In the very first line of your object method, you can store `this` in a variable (we'll call it `self`), and then replace `this` with `self` throughout the rest of the function:
+
+```
+var c = {
+  name: 'The c object',
+  log: function() {
+    var self = this;
+    self.name = 'Updated c object';
+    var setname = function(newname) {
+      self.name = newname;
+    }
+    setname('Updated c object again!');
+    console.log(self.name);
+  }
+}
+```
+
+This works because when you create a variable, it is an object. Objects are set by reference. `self` will now be pointing to the same location in memory as the `this` keyword. And at the moment you're storing it in the `self` variable, `this` is pointing to the `c` object.
 
 
 ## Using `this` in a Function That is *Not* a Method
