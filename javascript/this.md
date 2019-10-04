@@ -137,6 +137,8 @@ var c = {
 
 This works because when you create a variable, it is an object. Objects are set by reference. `self` will now be pointing to the same location in memory as the `this` keyword. And at the moment you're storing it in the `self` variable, `this` is pointing to the `c` object.
 
+NOTE: The `let` keyword is intended to clear up some of these quirks.
+
 
 ## Using `this` in a Function That is *Not* a Method
 
