@@ -39,7 +39,7 @@ user;
 ### The BETTER Find Way:
 
 ```
-users.find(function(user) {
+const alex = users.find(function(user) {
   return user.name === 'Alex';
 });
 ```

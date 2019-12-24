@@ -32,7 +32,7 @@ filteredProducts;
 The BETTER filter way:
 
 ```
-products.filter(function(product) {
+const fruits = products.filter(function(product) {
   return product.type === 'fruit';
 });
 ```
@@ -58,7 +58,7 @@ var products = [
 And this time, we want to search for *vegetables* that are in stock (*quantity > 0*), and that cost less than 10.
 
 ```
-products.filter(function(product) {
+const vegInStockUnder10 = products.filter(function(product) {
   return product.type === 'vegetable' && product.quantity > 0 && product.price < 10;
 });
 ```

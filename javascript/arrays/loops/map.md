@@ -2,6 +2,8 @@
 
 Loops through an array and returns a brand new array (which is something forEach does not do). The advantage is that you do not alter your original array and create problems in the codebase.
 
+*Note that the array returned by Map will always be the same length as the original array.*
+
 This is the most widely used array helper.
 
 ## Example: Double Each Number in an Array and Push Each One into a New Array

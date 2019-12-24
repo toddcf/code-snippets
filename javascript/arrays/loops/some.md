@@ -1,6 +1,6 @@
 # Some
 
-Condense everything in an array down into a single value -- a true or false. You are basically asking, "Do ANY the records match my criteria?"
+Condense everything in an array down into a single value -- a true or false. You are basically asking, "Do ANY the records match my criteria?" Or, "Does AT LEAST ONE thing in this array match my criteria?"
 
 *NOTE: This is a close cousin of "every."*
 
