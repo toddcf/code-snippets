@@ -1,8 +1,10 @@
 # Reduce
 
-Use "reduce" to loop through an array and accumulate all the values into a single value.
+Use "reduce" to loop through an array and "reduce" all the values into a single value.
 
 Useful when calculating averages, etc.
+
+Note that reduce *will* mutate the original array.
 
 
 ## Example: Add all the values of an array
@@ -154,5 +156,10 @@ balancedParens(parens5);
 ```
 
 
+## Example: Inventory
 
-Note that reduce *will* mutate the original array. In this case it's fine, but don't use this in cases where it isn't going to be fine to do this.
+
+
+
+
+Remember that reduce *will* mutate the original array. In this case it's fine, but don't use this in cases where this would cause problems.
