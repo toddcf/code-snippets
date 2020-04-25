@@ -112,3 +112,37 @@ In short, `getTime()` converts the current date from an unwieldy object into a s
 let now = new Date();
 console.log( now.getTime() );
 ```
+
+## Doing Calculations with Dates
+
+Here are some examples of working with dates, particularly calculating the number of days between two dates.
+
+```
+var sailDate = new Date ('08/19/2021');
+```
+
+sailDate is `Thu Aug 19 2021 00:00:00 GMT-0700 (Pacific Daylight Time)`
+
+Or a more reliable approach is to break date into an series of properties. This is helpful because some browsers do not support certain date strings. Plus hours, minutes, seconds, and even timezones, can be added when needed.
+
+```
+var sailDateStr = '08/19/2021';
+var sailDateArr = sailDateStr.split('/');
+var sailDate = new Date(parseInt(sailDateArr[2]), parseInt(sailDateArr[0])-1, parseInt(sailDateArr[1]), 23, 59, 59); // same as new Date(YYYY, MM, DD, H, Min, Sec)
+```
+
+sailDate object is `Thu Aug 19 2021 23:59:59 GMT-0700 (Pacific Daylight Time)`
+
+Date objects can be compared:
+
+```
+var sailDate = new Date ('08/19/2021');
+var currentDate = new Date();
+var timeDiff = (sailDate - currentDate) / (1000 * 60 * 60 * 24);
+```
+
+`sailDate` - `currentDate` will return a unix timestamp (number of milliseconds) of the time between the two dates. 
+
+`1000 * 60 * 60 * 24` is the number of milliseconds in a 24 hour period.
+
+`timeDiff` is `481.5399631712963` days (or whatever the math works out to be with today's current date and time).
