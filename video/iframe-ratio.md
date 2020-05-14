@@ -1,5 +1,6 @@
 # iFrame Ratio
 
+
 ## HTML
 
 ```
@@ -9,24 +10,26 @@
 </div>
 ```
 
+
 ## CSS
 
 ```
 .iframe-container {
-  position: relative;
   height: 0;
-  padding-bottom: 56.25%;
   overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
 }
 
 .iframe-container iframe {
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
 }
 ```
+
 
 ## Placeholder Code
 

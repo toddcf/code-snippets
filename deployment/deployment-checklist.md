@@ -104,6 +104,56 @@ Now that you've made these changes to your files, test the entire site again:
 2. Every single HTML page.
   a. Resize window on each one to check mobile responsiveness.
 
+
+## Remove .html Extension from URL
+
+1. Use this code snippet in the `.htaccess` file:
+
+```
+# Global Settings:
+
+RewriteEngine On
+
+
+# Remove filename extensions from URL:
+
+# If the folder exists on the server, don't run the rule:
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# If an HTML file doesn't exist, don't run the rule:
+RewriteCond %{REQUEST_FILENAME}\.html -f
+
+# Show the page that has the .html extension:
+RewriteRule ^(.*)$ $1.html [NC,L]
+```
+
+2. Place the `.htaccess` file in the root directory.
+3. Remove `.html` extension from all internal links on the site. (This is done at the end, after link testing is complete on your local machine -- they won't work after this.)
+
+
+## HTTPS
+
+Force the site to HTTPS, even if the user types in HTTP:
+
+1. Add SSL Certificate to site via Dreamhost: https://help.dreamhost.com/hc/en-us/articles/215089118-Adding-an-SSL-certificate-overview
+2. In FileZilla, confirm that host key matches (if you see the warning pop-up): https://help.dreamhost.com/hc/en-us/articles/360004634231-The-server-s-host-key-is-unknown
+3. Use htaccess file to force the site to HTTPS even if user types in HTTP: https://help.dreamhost.com/hc/en-us/articles/215747758-Force-your-site-to-load-securely-with-an-htaccess-file
+
+```
+# Global Settings:
+
+RewriteEngine On
+
+
+# Force HTTPS:
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+```
+
+NOTE: This plus Cloudflare can cause a “too many redirects” error that won’t let the site load.  Log into Cloudflare and set SSL/TLS to “strict.”  See https://help.dreamhost.com/hc/en-us/articles/216475197 for more details.
+
+
 ## Deployment Checklist
 
 You are now ready to go live!
