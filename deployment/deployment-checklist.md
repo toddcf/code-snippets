@@ -169,6 +169,18 @@ NOTE: This plus Cloudflare can cause a “too many redirects” error that won�
 
 You are now ready to go live!
 
+
+### GH Pages
+
+For basic portfolio and sample projects, deploy to GH Pages.  (Link to those instructions here.)
+
+
+### Private Hosting (Dreamhost)
+
+- Upload via SFTP (FileZilla).
+- Only upload the minified CSS and JS files -- not the original edits.
+
+
 ## Post-Deployment Checklist
 
 1. README:
