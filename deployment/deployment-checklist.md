@@ -1,10 +1,14 @@
-# Pre-Deployment Checklist
+# Deployment Checklist
 
-## HTML Accessibility
+## Pre-Deployment Checklist
+
+
+### HTML Accessibility
 
 - CREATE CHECKLIST FOR ACCESSIBILITY FEATURES.
 
-## HTML Pre-Validation
+
+### HTML Pre-Validation
 
 Each HTML individual page must be checked for:
 
@@ -12,7 +16,8 @@ Each HTML individual page must be checked for:
 - Verify each HTML page has a favicon.
 - Every `<img>` has an `alt=""`.
 
-## Image Optimization
+
+### Image Optimization
 
 Optimize Images For Faster Load Times:
 
@@ -26,7 +31,8 @@ Optimize Images For Faster Load Times:
 2. Compress images using Optimizilla.com.
   - After swapping out the new images, make sure to update their file names in your HTML and CSS files.
 
-## Cleanup
+
+### Cleanup
 
 1. Delete entire files and images that are no longer being used.
 2. Clean up all remaining files:
@@ -53,7 +59,8 @@ Optimize Images For Faster Load Times:
   	  - Future Iterations
   	- Update all info.
 
-## Browser Compatibility
+
+### Browser Compatibility
 
 1. HTML:
 SKIP IF YOU USED BOOTSTRAP!
@@ -81,22 +88,24 @@ SKIP IF YOU USED BOOTSTRAP!
   1. Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.) NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
   2. Save all files and refresh your browser to check that nothing broke.
 
-## Code Validation
+
+### Code Validation
 
 Paste each file's code (one file at a time) into the following links. Make any corrections necessary until the results come back clean.
 
 1. CSS: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
 2. HTML: https://validator.w3.org/#validate_by_input
 
-## Minify
 
-It is possible to minify CSS and JS files for faster load times. (Remove comments, whitespace, etc.) There are sites online that you can use to do this.
+### Minify
 
-**However, this is only important if you have large amounts of code to compress. Otherwise, you are not saving that much space.**
+1. Use online sites to minify CSS and JavaScript files. (Remove comments, whitespace, etc.  It only makes a noticeable different with larger files, but every ms counts, so do it regardless.)
+2. Save the minified code to a version of each file with `-min` at the end.
+3. Update the links in the HTML files to point to the `-min` files instead.
+4. Keep the non-minified versions of all files for future editing (and GitHub viewing), but don't upload them to the server when you deploy.
 
-If you do minify, know that it makes your code very difficult for humans to read, so only do this when you're ready to launch the website.
 
-## Final Test
+### Final Test
 
 Now that you've made these changes to your files, test the entire site again:
 
@@ -105,9 +114,12 @@ Now that you've made these changes to your files, test the entire site again:
   a. Resize window on each one to check mobile responsiveness.
 
 
-## Remove .html Extension from URL
+### Remove .html Extension from URL
 
-1. Use this code snippet in the `.htaccess` file:
+Do this *after* all link testing is complete, as it will no longer work the same on your local machine.
+
+1. Create an `.htaccess` file in your site's root directory.
+2. Use this code snippet in the `.htaccess` file:
 
 ```
 # Global Settings:
@@ -127,11 +139,10 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 ```
 
-2. Place the `.htaccess` file in the root directory.
-3. Remove `.html` extension from all internal links on the site. (This is done at the end, after link testing is complete on your local machine -- they won't work after this.)
+3. Delete `.html` extension from all internal links on the site.
 
 
-## HTTPS
+### HTTPS
 
 Force the site to HTTPS, even if the user types in HTTP:
 
@@ -164,4 +175,5 @@ You are now ready to go live!
   1. Add live URL.
   2. Add GIF.
   3. Push up to GitHub.
-3. Add description and live URL to GitHub page.
+2. Add description and live URL to GitHub page.
+3. Announce your new site.
