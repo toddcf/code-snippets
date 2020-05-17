@@ -44,7 +44,7 @@ Optimize Images For Faster Load Times:
     - Clean up comments.
   - JavaScript:
     - Clean up comments.
-    - Check console for any errors.
+    - Check console for any warnings or errors.
   - ReadMe:
   	- Create GIF video of the project being used:
   	  - https://showmore.com/
@@ -100,6 +100,7 @@ Paste each file's code (one file at a time) into the following links. Make any c
 ### Minify
 
 1. Use online sites to minify CSS and JavaScript files. (Remove comments, whitespace, etc.  It only makes a noticeable different with larger files, but every ms counts, so do it regardless.)
+  - CSS: https://cssminifier.com/
 2. Save the minified code to a version of each file with `-min` at the end.
 3. Update the links in the HTML files to point to the `-min` files instead.
 4. Keep the non-minified versions of all files for future editing (and GitHub viewing), but don't upload them to the server when you deploy.
@@ -179,6 +180,8 @@ For basic portfolio and sample projects, deploy to GH Pages.  (Link to those ins
 
 - Upload via SFTP (FileZilla).
 - Only upload the minified CSS and JS files -- not the original edits.
+- Clear Cloudflare cache and test the live site.
+- Run Google Page Speed Insights and record the results.
 
 
 ## Post-Deployment Checklist
