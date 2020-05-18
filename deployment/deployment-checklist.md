@@ -177,7 +177,7 @@ NOTE: This plus Cloudflare can cause a “too many redirects” error that won�
 
 ### Minify HTML (last)
 
-Minify HTML only after CSS and JavaScript have been minimized, as you will need to update the links to those stylesheets and scripts first.
+Minify HTML only after CSS and JavaScript have been minified, as you will need to update the links to those stylesheets and scripts first.
 
 1. Copy and paste HTML from your working `-nonminified.html` files into https://kangax.github.io/html-minifier/
 2. Then copy it back out of that site and paste it into each `.html` file for your site.
