@@ -97,15 +97,6 @@ Paste each file's code (one file at a time) into the following links. Make any c
 2. HTML: https://validator.w3.org/#validate_by_input
 
 
-### Minify
-
-1. Use online sites to minify CSS and JavaScript files. (Remove comments, whitespace, etc.  It only makes a noticeable different with larger files, but every ms counts, so do it regardless.)
-  - CSS: https://cssminifier.com/
-2. Save the minified code to a version of each file with `-min` at the end.
-3. Update the links in the HTML files to point to the `-min` files instead.
-4. Keep the non-minified versions of all files for future editing (and GitHub viewing), but don't upload them to the server when you deploy.
-
-
 ### Final Test
 
 Now that you've made these changes to your files, test the entire site again:
@@ -164,6 +155,33 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 ```
 
 NOTE: This plus Cloudflare can cause a “too many redirects” error that won’t let the site load.  Log into Cloudflare and set SSL/TLS to “strict.”  See https://help.dreamhost.com/hc/en-us/articles/216475197 for more details.
+
+
+### Minify JavaScript
+
+1. Copy and paste JavaScript from your working files into https://javascript-minifier.com/
+2. Save the minified code to a version of each file with `-min` at the end.
+3. Update the links in the HTML files to point to the `-min` files instead.
+4. Keep the non-minified versions of all files for future editing (and GitHub viewing), but don't upload them to the server when you deploy.
+5. Test the local file in the browser to make sure everything still works.
+
+
+### Minify CSS
+
+1. Copy and paste CSS from your working files into https://cssminifier.com/
+2. Save the minified code to a version of each file with `-min` at the end.
+3. Update the links in the HTML files to point to the `-min` files instead.
+4. Keep the non-minified versions of all files for future editing (and GitHub viewing), but don't upload them to the server when you deploy.
+5. Test the local file in the browser to make sure everything still works.
+
+
+### Minify HTML (last)
+
+Minify HTML only after CSS and JavaScript have been minimized, as you will need to update the links to those stylesheets and scripts first.
+
+1. Copy and paste HTML from your working `-nonminified.html` files into https://kangax.github.io/html-minifier/
+2. Then copy it back out of that site and paste it into each `.html` file for your site.
+3. Test the local file in the browser to make sure everything still works.
 
 
 ## Deployment Checklist
