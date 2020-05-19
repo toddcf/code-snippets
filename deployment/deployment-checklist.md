@@ -180,6 +180,7 @@ NOTE: This plus Cloudflare can cause a “too many redirects” error that won�
 Minify HTML only after CSS and JavaScript have been minified, as you will need to update the links to those stylesheets and scripts first.
 
 1. Copy and paste HTML from your working `-nonminified.html` files into https://kangax.github.io/html-minifier/
+  - NOTE: IS THERE A SETTING THAT WILL *NOT* TRIM THE WHITESPACE BEFORE A LINK THAT IS IN THE MIDDLE OF TEXT?
 2. Then copy it back out of that site and paste it into each `.html` file for your site.
 3. Test the local file in the browser to make sure everything still works.
 
@@ -191,7 +192,7 @@ You are now ready to go live!
 
 ### GH Pages
 
-For basic portfolio and sample projects, deploy to GH Pages.  (Link to those instructions here.)
+Deploy to GH Pages first as a "preprod" test.  (Link to those instructions here.)
 
 
 ### Private Hosting (Dreamhost)
