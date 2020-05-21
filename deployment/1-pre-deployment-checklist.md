@@ -63,8 +63,8 @@ SKIP IF YOU USED BOOTSTRAP OR FOUNDATION
 ```
 
 2. CSS Autoprefixing:
-  1. Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.) NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
-  2. Save all files and refresh your browser to check that nothing broke.
+  - Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.) NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
+  - Save all files and refresh your browser to check that nothing broke.
 3. Testing:
   - Test in Chrome
   - Test in Firefox

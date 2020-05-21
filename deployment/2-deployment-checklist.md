@@ -7,6 +7,8 @@ Once the Pre-Deployment Checklist is complete, you are ready to go live:
 
 Deploy to GH Pages first as a "preprod" test.  (Link to those instructions here.)
 
+- Check console for warnings or errors on every single page.
+
 
 ## Private Hosting (Dreamhost)
 
