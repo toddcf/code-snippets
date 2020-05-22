@@ -6,8 +6,9 @@
 1. Create a container to hold the iframe.  (In this example, it is called `.iframe-container`.)
 2. Paste the YouTube embed code inside.
 3. Add `class="iframe-container__iframe"` to the iframe tag itself.
-4. Delete `frameborder="0"` from the iframe tag. (This will be handled by CSS.)
-5. If you do not want recommended videos to appear when your video stops playing, add `?rel=0` to the end of the video's URL.
+4. Delete `frameborder="0"` from the iframe tag. (This will be handled by CSS `border: none`.)
+5. Delete `scrolling="no"`. (This will be handled by CSS `overflow: hidden`.)
+6. If you do not want recommended videos to appear when your video stops playing, add `?rel=0` to the end of the video's URL.
 
 ```
 <div class="iframe-container">
@@ -22,7 +23,6 @@
 ```
 .iframe-container {
   height: 0;
-  overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
 }
@@ -31,6 +31,7 @@
   border: none;
   height: 100%;
   left: 0;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100%;
