@@ -1,0 +1,56 @@
+/* ROOT FONT SIZES */
+
+/* Set the MINIMUM root font size */
+html {
+  font-size: 16px;
+}
+
+/* Set the FLUID root font size */
+@media (min-width: 800px) {
+  html {
+    font-size: 2vw;
+  }
+}
+
+/* Set the MAXIMUM root font size -- choose only one of the following based on the max-width of your center content column */
+@media (min-width: 1140px) {
+  html {
+    font-size: 22.8px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 28.8px;
+  }
+}
+
+
+/* FONT TIER RATIOS */
+.body-text {
+  font-size: 16px;
+}
+
+.font-size-1 {
+  font-size: 1em;
+}
+
+.font-size-2 {
+  font-size: 1.067em;
+}
+
+.font-size-3 {
+  font-size: 1.138em;
+}
+
+.font-size-4 {
+  font-size: 1.215em;
+}
+
+.font-size-5 {
+  font-size: 1.296em;
+}
+
+.font-size-6 {
+  font-size: 1.383em;
+}

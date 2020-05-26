@@ -26,9 +26,13 @@ The browser default font-size will be `16px`. We don't want the `html` font-size
 3. 16px / 0.02 = (screen width)
 4. `800px = (screen width)`
 
-Therefore, we are going to put our `html` font-size inside of a media query for 800px and above:
+Therefore, we are going to put our fluid `html` font-size inside of a media query for 800px and above:
 
 ```
+html {
+  font-size: 16px;
+}
+
 @media (min-width: 800px) {
   html {
     font-size: 2vw;
