@@ -25,32 +25,32 @@ html {
   }
 }
 
-
-/* FONT TIER RATIOS */
 .body-text {
   font-size: 16px;
 }
 
-.font-size-1 {
+
+/* FONT TIER RATIOS */
+.font_size_1 {
   font-size: 1em;
 }
 
-.font-size-2 {
+.font_size_2 {
   font-size: 1.067em;
 }
 
-.font-size-3 {
+.font_size_3 {
   font-size: 1.138em;
 }
 
-.font-size-4 {
+.font_size_4 {
   font-size: 1.215em;
 }
 
-.font-size-5 {
+.font_size_5 {
   font-size: 1.296em;
 }
 
-.font-size-6 {
+.font_size_6 {
   font-size: 1.383em;
 }

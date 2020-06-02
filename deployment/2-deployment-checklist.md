@@ -14,3 +14,7 @@ Once the Pre-Deployment Checklist is complete, you are ready to go live:
 - Upload via SFTP (FileZilla):
   - Only the changed files.
   - Only the minified files -- not the non-minified working files.
+
+## Post-Deployment Checklist
+
+https://github.com/toddcf/code-snippets/blob/master/deployment/3-post-deployment-checklist.md
