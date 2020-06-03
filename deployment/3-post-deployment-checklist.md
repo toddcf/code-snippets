@@ -3,7 +3,7 @@
 1. Clear Cloudflare cache and test the live site.
 2. Test all links.
 3. Test all pages on Screenfly for all devices.
-4. Run Google Page Speed Insights and record the results.
+4. Run Google Page Speed Insights and record the results: https://developers.google.com/speed/pagespeed/insights/
 5. README:
   - Create GIF video of the project being used:
     - https://showmore.com/
