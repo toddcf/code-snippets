@@ -1,5 +1,3 @@
-*NOTE: Combine CSS prep into one block, JS prep, and then HTML prep.*
-
 # Pre-Deployment Checklist
 
 ## HTML Accessibility
@@ -56,7 +54,7 @@
 
 ### CSS Validation
 
-1. Paste each file's code (one file at a time) into https://jigsaw.w3.org/css-validator/#validate_by_input+with_options.
+1. Paste each file's code (one file at a time) into https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
 2. Make any corrections necessary until the results come back clean.
 
 
