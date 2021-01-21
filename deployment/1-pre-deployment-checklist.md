@@ -25,7 +25,7 @@
 
 ### Linting
 
-1. Copy and paste JavaScript into an online linter.
+1. Copy and paste JavaScript into an online linter.  https://esprima.org/demo/validate.html
 2. Fix any errors or warnings.
 3. Paste back into your working file.
 
@@ -83,7 +83,7 @@
 
 ### Validate HTML
 
-1. Paste each file's code (one file at a time) into https://validator.w3.org/#validate_by_input.
+1. Paste each file's code (one file at a time) into: https://validator.w3.org/#validate_by_input
 2. Make any corrections necessary until the results come back clean.
 
 
