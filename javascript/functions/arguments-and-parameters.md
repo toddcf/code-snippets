@@ -2,7 +2,7 @@
 
 NOTE: ES6 uses `spread` instead of arguments. (See separate documentation.)
 
-Parameters and arguments are very similar. You can remember "parameters" as "placeholders" that are passed into a function, like this:
+Parameters and arguments are very similar. You can remember "parameters" as "placeholders" that are passed into a function when you *declare* it, like this:
 
 ```
 function example(parameter1, parameter2) {
@@ -12,7 +12,7 @@ function example(parameter1, parameter2) {
 
 Now if you call `example(1, 2);`, it will return `3` (as in 1 + 2). `parameter1` and `parameter2` are just *placeholders* for whatever numbers you might decide to pass into the function.
 
-. . . And you can remember that "arguments" are the *actual values* that you pass into the function (in this case, `1` and `2`).
+. . . And you can remember that "arguments" are the *actual values* that you pass into the function when you *call* it (in this case, `1` and `2`).
 
 Also: `arguments` is a special keyword or variable that is set up automatically by JavaScript in the execution context of a function. `arguments` contains a list of all the values of all the parameters that you pass to a function.
 
@@ -66,9 +66,9 @@ function yell(name = 'Silly Goose') {
 }
 ```
 
-This way, if someone calls `yell();`, it will return `HEY, SILLY GOOSE!`.
+This way, if someone calls `yell();` without passing an argument into it, it will return `HEY, SILLY GOOSE!`.
 
-But if they pass an argument into the function, it will overwrite the default and run as usual:
+But if they do pass an argument into the function, it will overwrite the default and run as usual:
 
 `yell('Todd');` still returns `HEY, TODD!`.
 
