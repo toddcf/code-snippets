@@ -97,3 +97,8 @@ billCalculator(50, undefined, .1);
 ```
 
 NOTE: This is *not* a truthy/falsy scenario. You cannot pass `true`, `false`, `0`, `null`, etc. in order to fall back to the default. Doing so will overwrite the default instead of falling back to it.
+
+
+### Best Practice: Always Put Default Parameters Last
+
+According to the [Airbnb Style Guide](https://github.com/airbnb/javascript#functions--defaults-last), default parameters should always go last.

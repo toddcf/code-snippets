@@ -3,7 +3,7 @@
 Functions are sort of like a variable for lines of code. They are reusable packages of code.
 
 
-## Declaring a Function
+## Declaring / Defining a Function
 
 Declaring a function means to write the block of code.
 
@@ -12,45 +12,49 @@ Declaring a function means to write the block of code.
 
 Calling (aka invoking) a function means to execute that block of code you wrote. You can call it multiple times, since it is reusable.
 
-When a function is invoked, it runs the code in the `code` property of the function object. This creates an "excution context." Each execution context has:
+When a function is invoked, it runs the code in the `code` property of the function object. This creates an "execution context." Each execution context has:
 
 1. A "variable environment," meaning a space for any variables that get declared inside that function to exist.
 2. A reference to its "outer environment," which tells it how to look down the scope chain.
-3. A variable called `this` for that execution context. `this` will point to a different object, *depending on how the function is invoked*.
+3. A variable called `this` for that execution context. `this` will point to a different object *depending on how the function is invoked*.
 
 
-## Define a Function WITHOUT Arguments
+## Ways to Declare / Define a Function
+
+1. Anonymous Function
+2. Function Statement
+3. Function Expression
 
 
-## Define a Function WITH Arguments
+### Anonymous Function
 
-
+A function with no name. The following is actually NOT valid, and will throw an error:
 
 ```
-function square( num ) {
-	console.log( num * num );
+function(firstName) {
+  return firstName;
 }
 ```
 
-Now when you call `square()`, you include an "argument" inside the parentheses. It's like a variable that the function plugs into its code.
-
-`square(10);` would print `100`. It's like saying `var num = 10;`
+But you can use anonymous functions in IIFEs (Immediately-Invoked Function Expressions) and callbacks.
 
 
-## Function Declarations
+### Function Statement
 
-The most basic way.
+The most basic way: Write the word "function," then the name of the function, then your parentheses, and then the curly braces that contain your code block. Like this:
 
 ```
-function capitalize( str ) {
+function capitalize(str) {
 	return str.charAt(0).toUppercase() + str.slice(1);
 }
 ```
 
+Functions declared with the `function` keyword will be hoisted in their entirety. Which means you could invoke a function before it has been defined in your code. This is different than function expressions (anonymous functions stored in a variable), as described in that section.
 
-## Function Expressions
 
-A function stored inside a variable.
+### Function Expressions
+
+An anonymous function stored inside a variable:
 
 ```
 var capitalize = function( str ) {
@@ -58,7 +62,89 @@ var capitalize = function( str ) {
 }
 ```
 
-Note that the danger of storing a function inside a variable is that you could potentially change that variable's value later, and your function would be lost.  (For example, `capitalize = 10;`.)
+Note that the danger of storing a function inside a variable is that you could potentially change that variable's value later, and your function would be lost. (For example, `capitalize = 10;`.) However, this is not a risk if you store it in a `const` in ES6:
+
+```
+const capitalize = function( str ) {
+	return str.charAt(0).toUppercase() + str.slice(1);
+}
+```
+
+Note that declaring an anonymous function and storing it in a variable means that you can't invoke that function before it is declared. Only the *variable* declaration will have been hoisted; the function object will not have been created and assigned to that variable yet.
+
+
+### Function Statements vs. Function Expressions
+
+An `expression` is a unit of code that results in a value. It does not have to save to a variable.
+
+A function `statement` simply does work.
+
+
+#### Example of a Function Expression
+
+```
+a = 3;
+```
+
+The `=` operator *is a function* that *returns* a value. If you run the above code in the console, it will return `3`. So it results in a value, which means it's an expression.
+
+Similarly, running `1 + 2` in the console will return `3`. The `+` sign is an operator that performs a function.
+
+This works the same if you store an object in a variable:
+
+```
+a = { greeting: 'Hi' };
+```
+
+If you run the above code in the console, it will return `{greeting: 'Hi'}`.
+
+So if you declare an anonymous function and store it in a variable, like this . . .
+
+```
+var anonymous = function() {
+  console.log('Hi');
+};
+```
+
+. . . it is a function *expression*. The difference being that during the execution phase, this results in a value. That value is a function object that gets created and stored in a variable.
+
+In the previous example where a function called `greet` is declared, nothing happens yet during the execution phase because it has not been invoked. Therefore, nothing is returned.
+
+Note that declaring an anonymous function and storing it in a variable means that you can't invoke that function before it is declared. Only the *variable* declaration will have been hoisted; the function object will not have been created and assigned to that variable yet.
+
+
+#### Example of a *Statement*
+
+```
+var a;
+
+if ( a === 3 ) {
+
+}
+```
+
+The above code contains both. `( a === 3 )` is an expression because it evaluates to either `true` or `false`. But the `if` statement itself is a statement because it *doesn't* return a value.
+
+For example, you couldn't store the if statement inside a variable because there is no value being returned.
+
+
+#### Example of a *Function* Statement
+
+```
+function greet() {
+  console.log('Hi');
+}
+```
+
+This is a function *statement* because it performs work but does not evaluate to anything. It does not *return* anything.
+
+
+### Declare / Define a Function WITHOUT Parameters
+
+
+### Declare / Define a Function WITH Parameters
+
+See full detail in the "Arguments and Parameters" document.
 
 
 ## Function Length
@@ -68,10 +154,10 @@ Some people believe that if a function is longer than ten lines, you need to spl
 
 ## First Class Functions
 
-Functions are objects. In JavaScript, they are considered "first class functions," which is a fancy way of saying that everything you can do with other data types, you can do with functions. You can . . .
+Functions are objects. In JavaScript, they are considered "first class functions," which means you can treat them like any other variable. Everything you can do with other data types, you can do with functions. You can . . .
 
 - Assign them to variables.
-- Pass them around.
+- Pass them around (into other functions, for example).
 - Create them on the fly.
 
 
@@ -82,7 +168,7 @@ Functions have all the features of normal objects, plus some special properties.
 Some of the special properties are:
 
 - Name (optional -- can be anonymous)
-- Code (This is where the actual lines of code you've written sit. It's not that the code you write *is* the function itself, it is a property *of* the function. What's special about the "code" property is that it's *invokable*, meaning that you can run it. Having the code be its own property of a function allows it to be moved around or copied to other areas in your code.)
+- Code (This is where the actual lines of code you've written sit. The code you write *is not* the function itself, it is a property *of* the function. What's special about the "code" property is that it's *invokable*, meaning that you can run it. Having the code be its own property of a function allows it to be moved around or copied to other areas in your code.)
 
 
 ### Attaching Properties to Functions
@@ -100,75 +186,6 @@ console.log(greet.language);
 ```
 
 The above will print `English` to the console.
-
-
-## Function Statements vs. Function Expressions
-
-An `expression` is a unit of code that results in a value. It does not have to save to a variable.
-
-A function `statement` simply does work.
-
-
-### Example of a Function Expression
-
-```
-a = 3;
-```
-
-The `=` operator is a function that *returns* a value. If you run the above code in the console, it will return `3`.
-
-Similarly, running `1 + 2` in the console will return `3`. The `+` sign is an operator that performs a function.
-
-This works the same if you store an object in a variable:
-
-```
-a = { greeting: 'Hi' };
-```
-
-If you run the above code in the console, it will return `{greeting: 'Hi'}`.
-
-
-### Example of a Statement
-
-```
-var a;
-
-if ( a === 3 ) {
-
-}
-```
-
-The above code contains both. `( a === 3 )` is an expression because it evaluates to either `true` or `false`. But the `if` statement itself is a statement because it *doesn't* return a value.
-
-For example, you couldn't store the if statement inside a variable because there is no value being returned.
-
-
-### Example of a *Function* Statement
-
-```
-function greet() {
-  console.log('Hi');
-}
-```
-
-This is a function *statement* because it performs work but does not evaluate to anything. It does not *return* anything.
-
-
-### Example of a Function Expression
-
-If you declare an anonymous function and store it in a variable, like this . . .
-
-```
-var anonymous = function() {
-  console.log('Hi');
-};
-```
-
-. . . it is a function *expression*. The difference being that during the execution phase, this results in a value. That value is a function object that gets created and stored in a variable.
-
-In the previous example where a function called `greet` is declared, nothing happens yet during the execution phase because it has not been invoked. Therefore, nothing is returned.
-
-Note that declaring an anonymous function and storing it in a variable means that you can't invoke that function before it is declared. Only the variable declaration will have been hoisted; the function object will not have been created and assigned to that variable yet.
 
 
 ## Passing a Function Into Another Function on the Fly
