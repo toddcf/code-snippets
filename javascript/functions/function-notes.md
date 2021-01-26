@@ -156,7 +156,79 @@ Arrow functions are anonymous functions, meaning you must store them in a variab
 
 ## IIFE (Immediately-Invoked Function Expression)
 
-See also: separate document.
+See separate document.
+
+
+## Methods
+
+A method is a function that lives inside of an object.
+
+The `log` in `console.log()` is a method, because `console` is actually an object, and `log` is one of many functions contained inside of it.
+
+
+### Full Method Syntax
+
+```
+const wes = {
+  name: 'Wes Bos',
+  sayHi: function() {
+    return 'Hey, Wes';
+  }
+}
+```
+
+You would then invoke this by writing: `wes.sayHi();`.
+
+
+### Shortened Method Syntax
+
+There is also a shorter syntax you can use where you skip the colon and the `function` keyword of the method:
+
+```
+const wes = {
+  name: 'Wes Bos',
+  sayHi() {
+    return 'Hey, Wes';
+  }
+}
+```
+
+Invoking it is the same: `wes.sayHi();`.
+
+
+### Arrow Function Method Syntax
+
+```
+const wes = {
+  name: 'Wes Bos',
+  sayHi: () => {
+    return 'Hey, Wes';
+  }
+}
+```
+
+This, too, is invoked the same way: `wes.sayHi()`.
+
+NOTE: Keep in mind that if you use the arrow function, you won't be able to use the `this` keyword for this object.  Arrow functions take the parent scope instead.
+
+
+### Arrow Function Method Shortened Syntax
+
+And the arrow function could of course be shortened to:
+
+```
+const wes = {
+  name: 'Wes Bos',
+  sayHi: () => 'Hey, Wes'
+}
+```
+
+This, too, is invoked the same way: `wes.sayHi()`.
+
+
+## Callback Functions
+
+
 
 
 ## Function Length
