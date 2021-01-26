@@ -54,11 +54,35 @@ double(8);
 Note that this is ONLY good for single arguments. Not if you have ZERO arguments `()` or multiple arguments.
 
 
+### Implicit-Returning an Object
+
+[From Wes Bos: Beginner JavaScript]
+
+Maybe instead of a number, your arrow function returns an entire object. Let's say the standard-function version of what you want to do would have looked like this:
+
+```
+function makeBaby(firstName, lastName) {
+  return {
+    name: `${firstName} ${lastName}`,
+    age: 0
+  }
+}
+```
+
+You can still get everything onto one line and remove the `return` keyword to leverage the implicit return. However, once you do this, the `{}` around the object will cause JavaScript to get confused about the `:` after `name`.  (It will think it's the bracket for the function code block, not the object.)  To get around this, you'll also need to wrap the entire object in parentheses. Like this:
+
+```
+const makeBaby = (firstName, lastName) => ({name: `${firstName} ${lastName}`, age: 0});
+```
+
+Please note that just because you can do this doesn't mean you *should*.  Keeping an object broken out onto separate lines is much more readable for the human developer, even if it is more code for the computer.
+
+
 ## Where Should You Use Arrow Functions?
 
 You can absolutely keep writing out functions the old way. But the arrow function syntax saves time and characters.
 
-They also solve issues with the `this` keyword by using what's called "lexical this."
+They also solve issues with the `this` keyword by using what's called "lexical this." (Explained later in this document.)
 
 
 

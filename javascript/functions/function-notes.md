@@ -147,6 +147,18 @@ This is a function *statement* because it performs work but does not evaluate to
 See full detail in the "Arguments and Parameters" document.
 
 
+## Arrow Functions
+
+See also: separate document.
+
+Arrow functions are anonymous functions, meaning you must store them in a variable.
+
+
+## IIFE (Immediately-Invoked Function Expression)
+
+See also: separate document.
+
+
 ## Function Length
 
 Some people believe that if a function is longer than ten lines, you need to split it apart into separate functions.
