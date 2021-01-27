@@ -165,6 +165,8 @@ A method is a function that lives inside of an object.
 
 The `log` in `console.log()` is a method, because `console` is actually an object, and `log` is one of many functions contained inside of it.
 
+See also: Separate document in the Objects directory dedicated to `console`.
+
 
 ### Full Method Syntax
 
