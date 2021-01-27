@@ -228,7 +228,59 @@ This, too, is invoked the same way: `wes.sayHi()`.
 
 ## Callback Functions
 
+A function that is invoked when something is done.  (When somebody clicks something, or when a certain amount of time has passed.)  It can also be described as a function that is passed into another function.  Here are examples of each:
 
+
+### "Click" Callback
+
+Let's say you have a "Submit" button. And every time it's clicked, you want to console.log "Submit Button Clicked."
+
+```
+function submitter() {
+  console.log('Submit Button Clicked.');
+}
+const submitBtn = document.querySelector('.submitBtn');
+submitBtn.addEventListener('click', submitter);
+```
+
+In this example, `submitter` (on the last line of code) is a callback function.  It is not actually being executed when the code runs (notice it does not have `()` after it).  It is being executed only if the button is clicked.
+
+You can also pass an anonymous function into the event listener as opposed to declaring it outside the event listener:
+
+```
+const submitBtn = document.querySelector('.submitBtn');
+submitBtn.addEventListener('click', function() {
+  console.log('Submit Button Clicked.');
+});
+```
+
+
+### "Timer" Function
+
+One example of a callback function that is invoked after a certain amount of time has passed is a `setTimout();`.  It takes in the function you want to run, followed by the number of milliseconds you want it to wait before executing it.
+
+```
+function waiting() {
+  console.log('I have waited for three seconds.');
+}
+setTimout(waiting, 3000);
+```
+
+Like in the previous example, you can also pass in an anonymous function:
+
+```
+setTimeout(function() {
+  console.log('I have waited for three seconds.');
+}, 3000);
+```
+
+You can also pass arrow functions:
+
+```
+setTimeout(() => {
+  console.log('I have waited three seconds.');
+}, 3000);
+```
 
 
 ## Function Length
