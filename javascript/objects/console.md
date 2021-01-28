@@ -64,5 +64,50 @@ function counter() {
 Each time you invoke `counter();`, it will print `Iteration: 1`, `Iteration: 2`, `Iteration 3`, etc. to the console.  Much easier than having to write out that syntax yourself in a console.log.
 
 
-### console.group
+### console.group & console.groupEnd & console.groupCollapsed
 
+Helpful if you have many things to print to the console and you want to print them out as one group instead of individually.
+
+```
+function doALotOfStuff() {
+  console.group('Doing some stuff'); // The start of the group.
+  console.log('Just letting you know.')';
+  console.warn('Look out.');
+  console.error('Too late!');
+  console.groupEnd('Doing some stuff'); // End of the group -- pass the same string you used to start the group.
+}
+```
+
+These will all print to the console inside of one collapsable message.
+
+One use case for this:
+
+```
+const people = [
+  {name: 'Wes', cool: true, country: 'Canada'},
+  {name: 'Scott', cool: true, country: 'Murrica'},
+  {name: 'Snickers', cool: false, country: 'Dog Country'}
+];
+
+people.forEach((person, index) => {
+  console.group(`${person.name}`);
+  console.log(person.country);
+  console.log(person.cool);
+  console.log(`Done!`);
+  console.groupEnd(`${person.name}`);
+});
+```
+
+This will print the name of each person as a group, and nested inside each one will be their respective country, coolness, and the word "Done!"
+
+When you have a lot of data and you want to default these outputs to the collapsed state, you can replace `console.group` with `console.groupCollapsed`:
+
+```
+people.forEach((person, index) => {
+  console.group(`${person.name}`);
+  console.log(person.country);
+  console.log(person.cool);
+  console.log(`Done!`);
+  console.groupEnd(`${person.name}`);
+});
+```
