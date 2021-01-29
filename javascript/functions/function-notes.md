@@ -359,3 +359,10 @@ function log(a) {
 This will result in `Hi` being printed to the console.
 
 Being able to pass functions into other functions is called "functional programming."
+
+
+## Call Stack / Stack Trace
+
+The call stack will tell you what function called what function called what function.  If you have a chain of functions calling each other, this will help you trace errors back to their source.
+
+When you see an error in the console, it will tell you the function name, and the file name it's in, and even the line of code it's on.  If there are a chain of functions calling each other, it will show a stack of them.  Reading them from top to bottom will tell you "Function 1 was called by Function 2, which was called by Function 3," and so on down to the originator.
