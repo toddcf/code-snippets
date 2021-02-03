@@ -7,17 +7,21 @@
 
 `var` variables are function-scoped.
 
+(See the "Scope" document for full explanation.)
+
 
 ## Const
 
 "Constant" variable -- cannot be overwritten. Good to use by default so that your variables do not accidentally get overwritten and lead to bugs.
 
-Block-scoped.
+Block-scoped.  (See the "Scope" document for full explanation.)
 
 
 ## Let
 
 Similar to `var` in that it can be overwritten, but it is block-scoped.
+
+(See the "Scope" document for full explanation.)
 
 
 ## Strict
