@@ -150,3 +150,18 @@ This time, running `go()` will result in "Rufus" being console logged.
 
 ## Function Scoping
 
+You can declare functions inside of functions, and each one is scoped to the function block it is inside of (its parent function).  You won't be able to invoke a function from outside its containing function.  For example:
+
+```
+function sayHi(name) {
+  function yell() {
+    console.log(name.toUppercase());
+  }
+}
+```
+
+In this instance, if you invoke `sayHi('Wes');`, it will print `WES` to the console.
+
+But if you try to invoke `yell('Wes');`, it will throw an error, as if that function doesn't exist.
+
+However, nesting functions like this is not a common practice.
