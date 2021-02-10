@@ -40,3 +40,21 @@ The "document" object sits inside the "window" object.  The window object is con
 ## The Navigator Object
 
 The "navigator" object is even higher-level than the window.  This includes information about the user's device.
+
+
+## Controlling When Your JavaScript Runs
+
+If you try to run JavaScript before your DOM has loaded, it will probably throw an error because it will be looking for elements that aren't on the page yet.
+
+Two solutions:
+
+1. (Easy) Move your script tag to the bottom of the HTML file so that it is read *after* the HTML has been read.
+2. (More Work) In your JavaScript file, wrap your JavaScript code inside a function that only gets fired after the DOM Content has been loaded.  Like this:
+
+```
+function init() {
+  // JavaScript code here.
+}
+
+document.addEventListener('DOMContentLoaded', init);
+```
