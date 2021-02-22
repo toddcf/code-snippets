@@ -23,7 +23,7 @@ You can also store them in a variable:
 var paragraph = document.querySelector('p');
 ```
 
-This will return a `<p>` element.
+This will return what appears to be a `<p>` element.  HOWEVER, it is in fact be an object with a lot of properties and methods attached to it.  You can call `console.dir(paragraph)` to see all of these object properties.  (Some of the most useful will probably be `parentElement`, `parentNode`, `textContent`, `innerText`, `innerHTML`, `outerHTML`, etc.)
 
 
 ## Query Selector All

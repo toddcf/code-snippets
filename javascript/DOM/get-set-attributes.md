@@ -27,6 +27,15 @@ img.getAttribute( "src" );
 
 This will get the link to `www.google.com` and the image `logo.png`.
 
+NOTE: If you have *data attributes* and you want to get them all, you can use `dataset`, like this:
+
+```
+img.dataset;
+```
+
+This will return an object containing all the property values.
+
+
 ## setAttribute()
 
 Now you can change each one using `setAttribute()`:
@@ -64,3 +73,6 @@ for ( var i = 0; i < links.length; i++ ) {
 ```
 
 Now if you console.log `links`, you'll see that every single one points to Bing.com.
+
+
+##

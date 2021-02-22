@@ -58,3 +58,10 @@ function init() {
 
 document.addEventListener('DOMContentLoaded', init);
 ```
+
+
+## Elements vs. Nodes
+
+An element is anything that is wrapped inside a tag.  (`<p>`, `<h1>`, etc.)
+
+A node can be an element, but it can also be the individual items inside the element.  For example, if you use JavaScript to add more text inside a `<p>` tag, each of those separate strings inside the `<p>` tag is a node.  (Basically, everything on the page is a node.)
