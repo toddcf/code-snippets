@@ -7,7 +7,9 @@ Git is an open source program that keeps track of changes in your files.  It was
 
 "Version control" and "source control" are the same thing.
 
-Git is a "DVCS," which stands for "Distributed Version Control System."
+Version control allows multiple versions of a codebase to exist.  New versions can be experimented with without breaking existing versions, and multiple developers can work on separate parts of the codebase without overwriting each others' work.
+
+Git is a "DVCS," which stands for "Distributed Version Control System."  This means that the entire codebase -- including its full version history -- is mirrored on every developer's computer.
 
 Although Git is mandatory for working on collaborative projects, it is also highly recommended that you use it on solo projects, too.
 
@@ -71,3 +73,35 @@ A pull is a combined fetch & merge.  It fetches the latest version of the code f
 ### Push
 
 Once you have made your changes, and pulled (fetched & merged) the latest remote version, you are ready to push your merged changes up to the remote repository.  Once you do this, other team members can access your changes.
+
+
+## Advantages of Git (or version control in general)
+
+- Branching and merging can happen automatically and quickly.
+- Developers have the ability to work offline.
+- Developers can experiment freely, without interfering with other developers' code.
+- Multiple copies of the code eliminates reliance on a single backup. (But the drawbacks of having code on every developer's local machine are security and compliance risks. And a better solution for backups is to have a single source of truth that is backed up, rather than resuming work off of someone else's copy of the code.)
+- Allows changes to be rolled back to previous versions if problems are discovered.
+
+
+## Commands
+
+### Add
+
+`git add <filename>` adds one or more files to the staging (index).
+
+You can also use `git add -A` to automatically add only files that are new or edited.  Using this method, you do not need to list out each file specifically, and any files that are unchanged will be ignored.
+
+
+### Commit
+
+A commit records changes to the repository.
+
+To add a descriptive message so that you have a record of what changes are being made with each commit, use `git commit -m <message here>`.
+
+More info: https://git-scm.com/docs/git-commit
+
+
+### Status
+
+`git status` allows you to see which files you've changed, and which you still need to add or commit.
