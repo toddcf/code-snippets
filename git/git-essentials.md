@@ -151,6 +151,13 @@ More info: https://git-scm.com/docs/git-commit
 `git log` will show a list of the commits you've made (with their messages), in descending order.
 
 
+TROUBLESHOOTING:
+
+Sometimes running `git log` takes a long time, and you are unable to run other commands while you wait.  If you want to cancel the process, it is best to use `q` (as opposed to `CTRL + C`).
+
+If you have already used `CTRL + C`, sometimes GitBash will have a bug where you can type but it won't display.  If this happens, type `reset` and hit `Enter`.
+
+
 ### Status
 
 `git status` allows you to see which files you've changed, and which you still need to add or commit.
