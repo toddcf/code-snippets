@@ -146,6 +146,11 @@ NOTE: Files must be added before they are committed.
 More info: https://git-scm.com/docs/git-commit
 
 
+### Log
+
+`git log` will show a list of the commits you've made (with their messages), in descending order.
+
+
 ### Status
 
 `git status` allows you to see which files you've changed, and which you still need to add or commit.
@@ -239,3 +244,7 @@ Best Practices:
 - Always add a clear, concise commit message.  These messages will show up as the title of each commit, providing you and other people an easy way to see the chronological progress of the project.
 - Commit messages should be in the present tense.  ("Add skeleton files for web page," not "Added skeleton files for web page.")
 - Commit often.  Each time you complete a section of your project, commit it.
+
+You can type `git log` in the terminal to see a list of the commits you've made (with messages) in descending order.
+
+NOTE: If you see `(HEAD -> master)` in your log, `HEAD` is a special type of reference that is going to point to another reference: whatever branch you are currently on.  In this example, it points to the master branch.
