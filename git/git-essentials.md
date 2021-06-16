@@ -22,7 +22,7 @@ Full Git documentation: https://git-scm.com/doc
 
 ### Repository
 
-A repository is your entire project, consisting of all of its files, and all of the different branches (versions) of those files.
+A repository is your entire project, consisting of all of its directories (folders), files, and all of the different branches (versions) of those files.
 
 
 ### Branch
@@ -142,3 +142,42 @@ More info: https://git-scm.com/docs/git-commit
 ### pwd
 
 "Print Working Directory."  Will tell you where you are.
+
+
+### cd
+
+`cd` navigates you to a different directory.
+
+`cd <directory name>` will move you into the child directory of your choice.
+
+`cd ..` moves you up one directory level.  (In other words, into the parent folder of the folder you were just in.)
+
+
+### mkdir
+
+Creates a directory (folder).
+
+For example, `mkdir project-name` creates a folder called `project-name`.
+
+
+### touch
+
+Creates a file.  Needs to include the filetype extension.
+
+For example, `touch git-essentials.md` was used to create this markdown (.md) file.
+
+
+### Deleting Files and Directories
+
+Remove, or `rm` is used to delete *files* (not directories).
+
+For example, `rm git-essentials.md` would delete this file.
+
+Remove Directory, or `rmdir`, is used to delete entire *directories* (as opposed to individual files).
+
+
+### ls
+
+`ls` lists all the child directories and files inside your current directory location.
+
+Useful for seeing your options to navigate to or delete, or to confirm that the `mkdir` or `touch` you just ran created the directory or file you wanted.
