@@ -27,9 +27,15 @@ A repository is your entire project, consisting of all of its directories (folde
 
 ### Branch
 
-A branch is a version of your repository.  You start off with a master branch, and can create more branches off of that.  When you create a new branch, it starts off as a mirror image of the branch it was created from.  As you make changes on the new branch, it will differ from its originating branch.
+A branch represents and independent line of development.  It is a version of your repository.  You start off with a master branch, and can create more branches off of that.  When you create a new branch, it starts off as a mirror image of the branch it was created from.  As you make changes on the new branch, it will differ from its originating branch.
 
 This is useful because you can experiment and make mistakes on the new branch without breaking your original branch.  (Non-destructive editing.)  Then, when you are finished, you can merge the changes from the new branch into the original branch.
+
+Here is one common branch configuration:
+
+1. A permanent "master" branch that production runs on.  (Development work is not done on the master branch.)
+2. A branch for development.
+3. A branch for bug fixes.
 
 
 ### Checkout
@@ -120,16 +126,22 @@ Then run the check again to confirm that it has been set.
 
 ### Add
 
-`git add <filename>` adds one or more files to the staging (index).
+`git add <filename>` adds one or more files to the staging (index).  This means that this file will now be tracked by Git.
 
-You can also use `git add -A` to automatically add only files that are new or edited.  Using this method, you do not need to list out each file specifically, and any files that are unchanged will be ignored.
+You can also use `git add -A` to automatically add only files that are new or edited.  Using this method, you do not need to list out each file specifically, and any files that are unchanged will be ignored.  ALSO: Any files that have been removed from the working directory will now be removed from the local repository.
+
+Or you can use `git add .` to begin tracking all of the untracked files.
+
+NOTE: Files must be added before they are committed.
 
 
 ### Commit
 
 A commit records changes to the repository.
 
-To add a descriptive message so that you have a record of what changes are being made with each commit, use `git commit -m <message here>`.
+To add a descriptive message so that you have a record of what changes are being made with each commit, use `git commit -m <message here>`.  *This is a very important best practice.*  Keep these messages clear and concise, and write them in the present tense.  They will show up as the title of each commit, and will provide you with an easy-to-read chronological list of the changes that have been made to the repository over time.  You want other people -- not just you -- to be able to see what has been done.
+
+NOTE: Files must be added before they are committed.
 
 More info: https://git-scm.com/docs/git-commit
 
@@ -217,6 +229,13 @@ Running `git status` will show you the state of the working directory in the sta
 
 Committing is a two-step process:
 
-1. First the "staging."
-2. Then the actual committing.
+1. First the "staging" (`add`).
+2. Then the actual committing (`commit`).
 
+`git commit` records the changes to the repository.  It's taking a new snapshot of your repository.
+
+Best Practices:
+
+- Always add a clear, concise commit message.  These messages will show up as the title of each commit, providing you and other people an easy way to see the chronological progress of the project.
+- Commit messages should be in the present tense.  ("Add skeleton files for web page," not "Added skeleton files for web page.")
+- Commit often.  Each time you complete a section of your project, commit it.
