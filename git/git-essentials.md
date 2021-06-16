@@ -255,3 +255,21 @@ Best Practices:
 You can type `git log` in the terminal to see a list of the commits you've made (with messages) in descending order.
 
 NOTE: If you see `(HEAD -> master)` in your log, `HEAD` is a special type of reference that is going to point to another reference: whatever branch you are currently on.  In this example, it points to the master branch.
+
+
+## Branching
+
+`git branch` will list all of your existing branches.  The branch you are currently on will have an asterisk next to it.
+
+`git branch <branch name>` will create a new branch with the name that you type in.  For example, `git branch user-authentication` will create a new branch called `user-authentication`.
+
+After creating your new branch, you can switch to using it by typing `git checkout <branch name>`.  (Now if you run `git branch` again, you will see `master` and the new branch listed, with an asterisk next to the new branch.)
+
+
+## Tracked/Untracked, Staged/Unstaged
+
+Here is an example of a workflow that could happen:
+
+1. `index.html` already exists, but you make a change to it in your working directory and save it.
+2. You also create a new file called `auth.js`.
+3. Now if you run `git status`, it will show `index.html` as having changes not staged for commit, and `auth.js` as untracked.
