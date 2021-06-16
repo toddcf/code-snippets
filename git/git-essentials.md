@@ -15,6 +15,8 @@ Although Git is mandatory for working on collaborative projects, it is also high
 
 Even with Git, a single source file should not be edited by more than one person at a time because this will lead to merge conflicts.
 
+Full Git documentation: https://git-scm.com/doc
+
 
 ## Glossary
 
@@ -84,6 +86,36 @@ Once you have made your changes, and pulled (fetched & merged) the latest remote
 - Allows changes to be rolled back to previous versions if problems are discovered.
 
 
+## Setup
+
+### Username
+
+Check if your username is set correctly:
+
+`git config user.name`
+
+If this does not output your name, set it as follows:
+
+`git config -- global user.name "Todd Croak-Falen"` (with your name in the quotes).
+
+Then run the check again to confirm that it has been set.
+
+
+### Email
+
+Check if your email is set correctly:
+
+`git config user.email`
+
+IMPORTANT: if you are going to use Git with Bitbucket, this must be the same email address you use to sign into Bitbucket.
+
+If this does not output your email, set it as follows:
+
+`git config -- global user.email "test@test.com"` (with your name in the quotes).
+
+Then run the check again to confirm that it has been set.
+
+
 ## Commands
 
 ### Add
@@ -105,3 +137,8 @@ More info: https://git-scm.com/docs/git-commit
 ### Status
 
 `git status` allows you to see which files you've changed, and which you still need to add or commit.
+
+
+### pwd
+
+"Print Working Directory."  Will tell you where you are.
