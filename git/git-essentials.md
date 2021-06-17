@@ -24,6 +24,8 @@ Full Git documentation: https://git-scm.com/doc
 
 A repository is your entire project, consisting of all of its directories (folders), files, and all of the different branches (versions) of those files.
 
+There are "remote" and "local" repositories (see definitions farther down in this list).
+
 
 ### Branch
 
@@ -49,10 +51,16 @@ Once you have multiple branches, Checkout is how you switch between them.  Check
 
 Remote refers to the files on the website's server (as opposed to the files on your individual computer).
 
+NOTE: A remote repository does *not* have a working directory associated with it, while the local repository does.  It will only consist of the `.git` subdirectory.
+
+NOTE: A remote repository is sometimes also called a "central" repository.  They are the same thing.
+
 
 ### Local
 
 Local refers to the individual computer you are working on.  You download files from the remote to your local machine, make your changes on your local, and then push them back up to the remote.
+
+NOTE: The local repository has a working directory associated with it, while the remote repository does not.
 
 
 ### Clone
@@ -72,7 +80,7 @@ A merge is when you combine your local code with the remote code.  Merging takes
 
 ### Pull Request
 
-A pull request can be thought of as a request to merge changes from one branch into another.  If there are no conflicting changes, a pull request can automatically merge the two branches.
+A pull request can be thought of as a request to merge changes from one branch into another.  Often a change needs to be reviewed before being integrated into the official project.  But depending on your settings, if there are no conflicting changes a pull request can automatically merge the two branches.
 
 
 ### Pull
