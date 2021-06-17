@@ -430,3 +430,8 @@ NOTE: `v1.0.0` is the proper annotation structure, as it allows automated tools 
 This tag will point to the current commit.
 
 If you want to view all of the local repository tags, type `git tag`.  (NOTE: I am not seeing the annotation, just the version number when I do this.)
+
+
+## Using Git with Bitbucket
+
+See [Bitbucket notes](https://github.com/toddcf/code-snippets/blob/master/bitbucket/bitbucket.md).
