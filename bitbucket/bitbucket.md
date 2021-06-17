@@ -39,7 +39,7 @@ NOTE: The cloning process took forever, and no status bar or percentage was disp
 
 ### SSH Cloning
 
-To create an SSH key, see 
+To create an SSH key, see [SSH notes](https://github.com/toddcf/code-snippets/blob/master/ssh/ssh.md).
 
 
 ## Pushing to Bitbucket
