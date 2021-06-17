@@ -52,3 +52,11 @@ NOTE: If other team members have also contributed to the project, you will see t
 ## Source
 
 Clicking "Source" in the left side panel will show you all the source files for the branch you're currently looking at.  (Use the dropdown to view other branches.)
+
+
+## Adding a File via Bitbucket
+
+1. While on the "Source" tab, click "New File" at the top right corner of the screen.
+2. Create your file via the Bitbucket UI.  (For example, create a Markdown file and add some text to it.)
+3. Save the new file.
+4. In your terminal, pull the new file down to your local machine by running `git pull`.  This automatically fetches all of the files from the remote repository and merges them into your local repository.
