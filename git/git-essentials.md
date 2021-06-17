@@ -332,3 +332,15 @@ Or, instead of listing each file individually, you can tell Git to ignore any fi
 NOTE: You can safely add the `.gitignore` file itself to be tracked, like this:
 
 `git add .gitignore`
+
+
+## Merging
+
+To merge, check out the branch you want to merge *into*.  For example, if you are merging your changes from a secondary branch called `changed-branch` into `master`:
+
+1. Run `git checkout master` (the branch you are merging *into*).
+2. Run `git merge changed-branch` (the branch you are merging *from*).
+
+The changed branch has now been merged into the master branch -- that's it!
+
+And if you run `git log`, you will see that all of the commits from your changed branch have now transferred over to your master branch.
