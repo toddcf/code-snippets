@@ -39,7 +39,27 @@ NOTE: The cloning process took forever, and no status bar or percentage was disp
 
 ### SSH Cloning
 
-To create an SSH key, see [SSH notes](https://github.com/toddcf/code-snippets/blob/master/ssh/ssh.md).
+To generate an SSH key, see [SSH notes](https://github.com/toddcf/code-snippets/blob/master/ssh/ssh.md).  Once you have your public and private key pair, resume here:
+
+1. If you have just created your key in the command line, copy it to your clipboard by typing:
+  a. Windows: `clip < ~/.ssh/id_rsa.pub`
+  b. Mac: `pbcopy < ~/.ssh/id_rsa.pub`
+  c. Linux: `cat < ~/.ssh/id_rsa.pub`
+2. In Bitbucket, click `Settings` > `Bitbucket Settings` > `SSH Keys` > `Add Key`
+3. Paste your public key here.
+4. The label can be anything you want.  NOTE: Once a key has been saved to Bitbucket, you can update the label name, but not the key itself.  (If you do need to modify it, delete the entire key and re-add it.)
+5. Click "Add Key."  Bitbucket will send you a confirmation email.
+6. Confirm your configuration by going back to the terminal and typing `ssh -T git@bitbucket.org`.  (And type `yes` when prompted to continue.)
+
+Once you have an SSH key is configured with Bitbucket, you can copy the SSH link instead of the HTTPS link when cloning:
+
+1. Click the `+` icon.
+2. Click "Clone This Repository."
+3. Select SSH (as opposed to HTTPS) from the dropdown.
+4. Copy the SSH string from Bitbucket.
+5. In your terminal, navigate to the directory you want to clone the repository to in your local machine.
+6. Paste the code you copied from Bitbucket and hit Enter.
+7. If you previously set SSH to require a passphrase, you will be prompted for it here.  (It will not show while you are typing.)
 
 
 ## Pushing to Bitbucket
