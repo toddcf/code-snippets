@@ -37,6 +37,8 @@ Here is one common branch configuration:
 2. A branch for development.
 3. A branch for bug fixes.
 
+When you want to make changes, you would create a branch off of either the development or bug-fix branch, make your changes on that branch, then merge it back into that branch.  You would not branch directly off of the master branch.
+
 
 ### Checkout
 
@@ -311,6 +313,8 @@ NOTE: You can also type `git diff` without the file name.  But this will show mu
 You may have files in your directory that you do not want to upload to Git.  (For example, a video file that is too large and will get rejected due to file size every time.  Or a file with sensitive information that you do not want to post publicly on Git.)  You can tell Git to ignore these files and only track the remaining files.
 
 You create a file called `.gitignore`.
+
+NOTE: `.gitignore` will be a hidden file.  Typing `ls` will not show it.  You will have to use `ls -a` instead to confirm that it has been created.
 
 Inside this file, you can list each file (on its own line) you want Git to ignore, like this:
 
