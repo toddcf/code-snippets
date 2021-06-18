@@ -35,14 +35,15 @@ This is useful because you can experiment and make mistakes on the new branch wi
 
 Here is one common branch configuration:
 
-1. A permanent "master" branch that production runs on.  (Development work is not done on the master branch.)
-2. A branch for development.  (Create additional branches off of this branch to create new features.)
-3. A branch for bug fixes / hotfixes.
-4. A "release" branch.
+1. A permanent `master` branch that production runs on.  (Development work is not done on the master branch.)
+2. A `release` branch.
+3. A `develop` branch, created off of the `master` branch.  (Create additional branches off of this branch to create new features.)
+4. Individual `feature` branches, created off of the `develop` branch.
+5. A `hotfix` branch, created off of the `master` branch.  (Changes from this branch can be incorporated into both the `master` and `develop` branch.)
 
-When you want to make changes, you would create a branch off of either the development or bug-fix branch, make your changes on that branch, then merge it back into that branch.  You would not branch directly off of the master branch.
+When you want to make changes, you would create a branch off of either the `develop` or `hotfix` branch, make your changes on that branch, then merge it back into that branch.  You would not branch directly off of the master branch.
 
-More detail and best practices: https://nvie.com/posts/a-successful-git-branching-model/
+More detail, visuals, and best practices: https://nvie.com/posts/a-successful-git-branching-model/
 
 
 ### Checkout
