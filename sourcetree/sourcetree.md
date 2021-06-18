@@ -92,3 +92,14 @@ To simulate one for practice, continuing from the previous example:
 5. Back in Sourcetree, you will see your fix in the Unstaged file.  If everything looks correct, stage and commit these `master` changes using the usual process.
 6. Then, keeping the `master` branch checked out, right-click on the other branch you want to merge into it, and select "Merge into current branch."
 7. This time, everything should go smoothly.  In the UI, you will see the graphic visualization of the secondary branch being merged back into `master`.
+
+
+## Adding Tags via Sourcetree
+
+After successfully merging into `master`, add a tag.
+
+1. Right-click on the commit you want to add the tag to.
+2. Select "Tag."
+3. Type in the version name: `v1.0.0`, etc.
+4. Select "Working Copy Parent."
+5. Click "Add Tag."
