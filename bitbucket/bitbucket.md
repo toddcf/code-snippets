@@ -1,6 +1,11 @@
 # Bitbucket
 
 
+## Commits (Left-Hand UI Panel)
+
+This allows you to see all of the commits by every team member who has published changes to this repository.
+
+
 ## Creating a Repository in Bitbucket
 
 1. Click the `+` icon in the left side panel.
@@ -96,18 +101,9 @@ Clicking "Source" in the left side panel will show you all the source files for 
 
 ## Pushing to Bitbucket via Sourcetree
 
-<!-- See [Sourcetree notes](https://github.com/toddcf/code-snippets/blob/master/sourcetree/sourcetree.md). -->
-
-Ultimately, this is the equivalent of `git push`.
-
-1. In Bitbucket, follow the Cloning process to copy the command for the command line.  (`git remote add origin`, etc.)
-2. As a shortcut, go to Sourcetree, and from the branch you want to be in, click "Terminal" in the top right of the UI.  This will open your terminal to the exact pathname you want to be in.
-3. Paste the command into the terminal and hit Enter.
-4. Now go to Sourcetree to push up the changes.  Select "Push" icon in the top toolbar.
-5. In the window that pops up, select the `origin` repository, and check all the branches.  Also select "Push all tags."  Push "OK."
-6. Now go back to Bitbucket and click the "Commits" tab to confirm that all your commits are now listed.
+See [Sourcetree notes](https://github.com/toddcf/code-snippets/blob/master/sourcetree/sourcetree.md).
 
 
-## Commits (Left-Hand UI Panel)
+## Pulling to Bitbucket via Sourcetree
 
-This allows you to see all of the commits by every team member who has published changes to this repository.
+See [Sourcetree notes](https://github.com/toddcf/code-snippets/blob/master/sourcetree/sourcetree.md).

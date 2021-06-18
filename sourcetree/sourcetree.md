@@ -107,7 +107,29 @@ After successfully merging into `master`, add a tag.
 
 ## Pushing to Bitbucket via Sourcetree
 
-See [Bitbucket notes](https://github.com/toddcf/code-snippets/blob/master/bitbucket/bitbucket.md).
+<!-- See [Bitbucket notes](https://github.com/toddcf/code-snippets/blob/master/bitbucket/bitbucket.md). -->
+
+Ultimately, this is the equivalent of `git push`.
+
+1. In Bitbucket, follow the Cloning process to copy the command for the command line.  (`git remote add origin`, etc.)
+2. As a shortcut, go to Sourcetree, and from the branch you want to be in, click "Terminal" in the top right of the UI.  This will open your terminal to the exact pathname you want to be in.
+3. Paste the command into the terminal and hit Enter.
+4. Now go to Sourcetree and click the "Push" icon in the top toolbar.
+5. In the window that pops up, select the `origin` repository, and check all the branches.  Also select "Push all tags."  Push "OK."
+6. Now go back to Bitbucket and click the "Commits" tab to confirm that all your commits are now listed.
+
+
+## Pulling to Bitbucket via Sourcetree
+
+<!-- See [Bitbucket notes](https://github.com/toddcf/code-snippets/blob/master/bitbucket/bitbucket.md). -->
+
+NOTE: If there are commits to be pulled (aka "ahead" of you), Sourcetree will show you a notification to let you know you are "behind" by X number of commits.  A "fast-forward" merge is when you merge a branch that is ahead of your checked-out branch.  Look up "rebasing" for more info.  (Merging and Rebasing are the two main ways to integrate changes from one branch to another.)
+
+1. In Sourcetree, click the "Pull" icon in the toolbar.
+2. In the popup, select "Pull from repository `origin`, and remote branch `master`.
+3. Click "OK."
+
+You should no longer see any notifications about being behind by any number of commits.  You are up to date with all of your changes, which is the best state to be in.
 
 
 ## Accessing the Terminal from Sourcetree
