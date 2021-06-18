@@ -68,3 +68,27 @@ Now let's say you want to create another new branch (this time called `search-us
 4. Make and save your file changes in the text editor.
 5. Back in Sourcetree, you will now see your changes reflected in the UI.  If you click on a changed file, it will show you the specific differences.  (Again, green highlights are additions, red highlights are deletions.)
 6. Run through the same staging and committing process described under "Creating Files via Sourcetree."
+
+
+## Merging Branches via Sourcetree
+
+If we continue from the previous examples, switching to the `develop` branch in Sourcetree will now show a highlighted commit from the changes we've made.
+
+1. Right-click the other branch that you want to merge into the `develop` branch.  (In this case `search-users`.)
+2. Select "Merge search-users into current branch."
+3. Confirm your settings and click "Okay."
+
+
+## Handling Merge Conflicts via Sourcetree
+
+Let's say you have a merge conflict.
+
+To simulate one for practice, continuing from the previous example:
+
+1. Checkout `master` branch.
+2. Make a change to one of the files you've committed in another branch, except this time make the change in `master`.
+3. Now when you attempt to commit, it will give you an error message, and show you the conflict in your text editor so you can make the corrections yourself.  (Similar to when you see this in the command line, there will be a `=========` divider.  Everything above this divider is the branch you are merging *into*.  Everything below this divider is the branch you are merging *from*.)
+4. The text editor will probably have options you can click to tell it which change you want to keep.  Click the one you want and save the file.
+5. Back in Sourcetree, you will see your fix in the Unstaged file.  If everything looks correct, stage and commit these `master` changes using the usual process.
+6. Then, keeping the `master` branch checked out, right-click on the other branch you want to merge into it, and select "Merge into current branch."
+7. This time, everything should go smoothly.  In the UI, you will see the graphic visualization of the secondary branch being merged back into `master`.
