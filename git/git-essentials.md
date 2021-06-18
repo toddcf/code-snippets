@@ -36,10 +36,13 @@ This is useful because you can experiment and make mistakes on the new branch wi
 Here is one common branch configuration:
 
 1. A permanent "master" branch that production runs on.  (Development work is not done on the master branch.)
-2. A branch for development.
-3. A branch for bug fixes.
+2. A branch for development.  (Create additional branches off of this branch to create new features.)
+3. A branch for bug fixes / hotfixes.
+4. A "release" branch.
 
 When you want to make changes, you would create a branch off of either the development or bug-fix branch, make your changes on that branch, then merge it back into that branch.  You would not branch directly off of the master branch.
+
+More detail and best practices: https://nvie.com/posts/a-successful-git-branching-model/
 
 
 ### Checkout
@@ -287,6 +290,8 @@ NOTE: If you see `(HEAD -> master)` in your log, `HEAD` is a special type of ref
 
 After creating your new branch, you can switch to using it by typing `git checkout <branch name>`.  (Now if you run `git branch` again, you will see `master` and the new branch listed, with an asterisk next to the new branch.)
 
+NOTE: To do this via the Sourcetree UI instead of the command line, see [Sourcetree notes](https://github.com/toddcf/code-snippets/blob/master/sourcetree/sourcetree.md).
+
 
 ## Tracked/Untracked, Staged/Unstaged
 
@@ -352,6 +357,8 @@ To merge, check out the branch you want to merge *into*.  For example, if you ar
 The changed branch has now been merged into the master branch -- that's it!
 
 And if you run `git log`, you will see that all of the commits from your changed branch have now transferred over to your master branch.
+
+NOTE: If you are not ready to add a tag to the master branch with a new version number of your app, you should not be merging into the master branch.  (See section on Tagging.)
 
 
 ### Merge Conflicts
@@ -426,6 +433,8 @@ Let's say it's the first version.  You'll add a `v` number and a message (just l
 - `git tag -a v1.0.0 -m "Version 1.0.0 release."`
 
 NOTE: `v1.0.0` is the proper annotation structure, as it allows automated tools to inspect your package and know the release versions.
+
+NOTE: If you are not ready to add a tag to the master branch with a new version number of your app, you should not be merging into the master branch.
 
 This tag will point to the current commit.
 

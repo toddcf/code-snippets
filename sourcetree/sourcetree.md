@@ -21,3 +21,8 @@ While the "History" tab is selected, click any commit in the list.  Another pane
 Larger projects are too difficult to search through visually.  Use the "Search" tab and type in what you are looking for.  You can also edit the dropdown to filter for the type of search you are doing.  For example, you can search within commit messages, branches, users, etc.
 
 Then, you can click on each search result to see the changes made in each one displayed in the panel below.
+
+
+## Selecting Projects
+
+The buttons along the top of the Sourcetree UI will let you create a new repository, or locate an existing remote or local repository / working directory.
