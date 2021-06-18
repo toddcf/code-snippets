@@ -28,7 +28,7 @@ Then, you can click on each search result to see the changes made in each one di
 The buttons along the top of the Sourcetree UI will let you create a new repository, or locate an existing remote or local repository / working directory.
 
 
-## Branching in Sourcetree
+## Branching via Sourcetree
 
 To create a new branch via Sourcetree (as opposed to using the command line):
 
@@ -46,3 +46,25 @@ Now let's say you want to create another new branch (this time called `search-us
 2. Click the "Branches" button.
 3. Confirm that you are on the `develop` branch, then name the new branch `search-users`.
 4. Click "Create Branch."
+
+
+## Creating Files via Sourcetree
+
+1. Click the "Explorer" button at the top right of the Sourcetree UI.  This will open your current location in your computer's explorer.
+2. Create the new files you want in the explorer.
+3. From the explorer, open the new file(s) in your text editor of choice.  Make a couple changes and save the file(s).
+4. Back in Sourcetree, you should see a message telling you that you have "uncommitted changes."  This is like running `git status` in the command line.
+5. To stage: At the bottom of the screen, you will see a panel listing all the Unstaged Files.  If you click a file in this panel, you will see the panel to the right of that add a button called "Stage hunk."  Clicking this will move the selected file up to the "Staged" panel.  This is like running `git add`.
+6. To UN-stage: In the event you need to move a file back down to the Unstaged area, click on it, then click "Unstage Selected."  (This is much easier than using the command line.)
+7. To commit: Once your files are in the "Staged" area, click the "Commit" button in the top left of Sourcetree's UI header.  This will show you a confirmation screen, where you can click each file to view its changes, and add a commit message.  This is like running `git commit -m`.
+8. Click the "Commit" button at the bottom right.  Your Sourcetree UI should change to reflect the updates.
+
+
+## Editing Existing Files via Sourcetree
+
+1. Make sure you are in the branch you want to be in.
+2. Click the "Explorer" button at the top right of the Sourcetree UI.  This will open your current location in your computer's explorer.
+3. From the explorer, open the file(s) you want to edit in your text editor of choice.
+4. Make and save your file changes in the text editor.
+5. Back in Sourcetree, you will now see your changes reflected in the UI.  If you click on a changed file, it will show you the specific differences.  (Again, green highlights are additions, red highlights are deletions.)
+6. Run through the same staging and committing process described under "Creating Files via Sourcetree."
