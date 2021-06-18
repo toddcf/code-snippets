@@ -103,3 +103,13 @@ After successfully merging into `master`, add a tag.
 3. Type in the version name: `v1.0.0`, etc.
 4. Select "Working Copy Parent."
 5. Click "Add Tag."
+
+
+## Pushing to Bitbucket via Sourcetree
+
+See [Bitbucket notes](https://github.com/toddcf/code-snippets/blob/master/bitbucket/bitbucket.md).
+
+
+## Accessing the Terminal from Sourcetree
+
+Clicking the "Terminal" button in the top right of the Sourcetree UI will open your terminal in the exact filepath you're already in in Sourcetree.

@@ -1,15 +1,22 @@
 # Bitbucket
 
-## Commits (Left-Hand UI Panel)
 
-This allows you to see all of the commits by every team member who has published changes to this repository.
+## Creating a Repository in Bitbucket
+
+1. Click the `+` icon in the left side panel.
+2. Choose "Repository."
+3. Type in the name for your repository.
+4. Select "Git" for version control.
+5. Click "Create Repository."
+
+After this, to clone this repository to your local, see the cloning instructions below.
 
 
 ## Cloning
 
-The `git clone` in the terminal command copies an existing Git repository to your local machine.
+The `git clone` in the terminal command copies an existing Git repository to your local machine.  To clone in Bitbucket:
 
-To clone in Bitbucket, click the `+` icon, then "Clone This Repository."
+1. Click the `+` icon, then "Clone This Repository."
 
 
 ### HTTPS vs. SSH
@@ -29,12 +36,12 @@ Once you have an existing repository in Bitbucket:
 1. Click the `+` icon.
 2. Click "Clone This Repository."
 3. Select HTTPS (as opposed to SSH) from the dropdown.
-4. Copy the HTTPS string from Bitbucket.
+4. Copy the HTTPS string from Bitbucket.  (Will probably say `git remote add origin`, followed by the link.  Setting this remote now means you don't have to keep entering the link every time you push to the remote in the future.)
 5. In your terminal, navigate to the directory you want to clone the repository to in your local machine.
 6. Paste the code you copied from Bitbucket and hit Enter.
 7. You will be prompted to enter your password.  (It will not show while you are typing.)
 
-NOTE: The cloning process took forever, and no status bar or percentage was displayed.
+NOTE: The cloning process took forever (literally never finished), and no status bar or percentage was displayed.
 
 
 ### SSH Cloning
@@ -85,3 +92,22 @@ Clicking "Source" in the left side panel will show you all the source files for 
 2. Create your file via the Bitbucket UI.  (For example, create a Markdown file and add some text to it.)
 3. Save the new file.
 4. In your terminal, pull the new file down to your local machine by running `git pull`.  This automatically fetches all of the files from the remote repository and merges them into your local repository.
+
+
+## Pushing to Bitbucket via Sourcetree
+
+<!-- See [Sourcetree notes](https://github.com/toddcf/code-snippets/blob/master/sourcetree/sourcetree.md). -->
+
+Ultimately, this is the equivalent of `git push`.
+
+1. In Bitbucket, follow the Cloning process to copy the command for the command line.  (`git remote add origin`, etc.)
+2. As a shortcut, go to Sourcetree, and from the branch you want to be in, click "Terminal" in the top right of the UI.  This will open your terminal to the exact pathname you want to be in.
+3. Paste the command into the terminal and hit Enter.
+4. Now go to Sourcetree to push up the changes.  Select "Push" icon in the top toolbar.
+5. In the window that pops up, select the `origin` repository, and check all the branches.  Also select "Push all tags."  Push "OK."
+6. Now go back to Bitbucket and click the "Commits" tab to confirm that all your commits are now listed.
+
+
+## Commits (Left-Hand UI Panel)
+
+This allows you to see all of the commits by every team member who has published changes to this repository.
