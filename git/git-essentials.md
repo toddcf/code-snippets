@@ -405,7 +405,15 @@ Instead of fixing the conflict, you can also run `git merge --abort` to exit the
 
 #### Resetting
 
-`git reset` can be used during a merge conflict to reset conflicted files to a known good state.
+`git reset` can be used during a merge conflict to reset conflicted files to a known good state.  There are three main types of resets:
+
+1. `git reset --soft`
+2. `git reset --mixed`
+3. `git reset --hard`
+
+`git reset <file name>` removes the file from the staging area, but leaves the working directory unchanged.  (This unstages the file without overwriting any changes.)
+
+More info: https://levelup.gitconnected.com/confused-with-the-difference-between-git-reset-soft-mixed-hard-3285e8b5cd0f
 
 
 #### Resources

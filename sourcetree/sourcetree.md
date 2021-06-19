@@ -135,3 +135,8 @@ You should no longer see any notifications about being behind by any number of c
 ## Accessing the Terminal from Sourcetree
 
 Clicking the "Terminal" button in the top right of the Sourcetree UI will open your terminal in the exact filepath you're already in in Sourcetree.
+
+## Practice
+
+- Do the exercises in #50 of the Git Essentials course.
+- Do the Atlassian Advanced Git Tutorials that are linked to in #58 of the Git Essentials course.
