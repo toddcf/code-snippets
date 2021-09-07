@@ -152,4 +152,4 @@ Pretty simple.
 
 However, if you create an element, add it to the DOM, and then remove it . . . does it still exist?
 
-It won't exist in the DOM, but it will still be stored in memory.  For example, if you stored it in a variable, you could still console.log that variable and see it.
+It won't exist in the DOM, but it will still be stored in memory.  For example, if you stored it in a variable, you could still `console.log` that variable and see it.
