@@ -48,6 +48,32 @@ In other words, `addEventListener` does not overwrite other `addEventListener`s.
 One other difference is compatibility. `onclick` is older and therefore compatible with older browsers. But this is less and less of a problem as time goes by. `addEventListener` is safe to use.
 
 
+### Attaching the Same Event Listener to Multiple Elements
+
+Use `forEach` to loop over all the elements and attach the listener to each applicable one.
+
+```
+const btns = document.querySelectorAll('button');
+btns.forEach(function(btn) {
+  btn.addEventListener('click', doThing);
+});
+```
+
+NOTE: This code can be further reduced using arrow functions, etc.  *The only drawback to using an arrow function is that you will not be able to unbind (remove) it later if you want to.*
+
+```
+const btns = document.querySelectorAll('button');
+btns.forEach( (btn) => {btn.addEventListener('click', doThing)});
+```
+
+Even better, since your function was declared separately, you can simply reference it in the `forEach` loop, and it will know what to do:
+
+```
+const btns = document.querySelectorAll('button');
+btns.forEach(doThing);
+```
+
+
 ## Hovering
 
 ```
@@ -106,4 +132,5 @@ const respondOnlyOnce = () => {
 btn.addEventListener( 'click', respondOnlyOnce );
 ```
 
-NOTE: `removeEventListener` cannot be used on an anonymous function -- it needs to know which function to remove.
+NOTE: `removeEventListener` cannot be used on an anonymous function -- it needs to be a named function so that JavaScript knows which function to remove.
+QUESTION: It was mentioned earlier that if an arrow function was used to attach the event listener, then the event listener could not be unbinded (removed) later.  How does this coincide?
