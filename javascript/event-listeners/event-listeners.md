@@ -91,6 +91,8 @@ const doThing = (e) => { console.log(e); };
 
 This will print the event object to the console.
 
+For additional information on the Event object, see https://github.com/toddcf/code-snippets/blob/master/javascript/objects/event-object.md.
+
 
 ## Window Event Listener
 
