@@ -3,6 +3,18 @@
 Event listeners "listen" for clicks, key presses, mouse movement, and other activity from the user. You can then tell the browser what you want it to do when those events occur.
 
 
+## Syntax
+
+```
+target.addEventListener(type, listener);
+target.addEventListener(type, listener, options);
+target.addEventListener(type, listener, useCapture);
+```
+
+`type` and `listener` are requred. `options` and `useCapture` are optional.
+
+For more detail, see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener. You can listen for events going down (capture) or up (options) the DOM.
+
 
 ## Click
 
