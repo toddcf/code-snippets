@@ -133,6 +133,21 @@ If you want to register a click on one element but NOT its parent container, loo
 https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 
 
+### Preventing Defaults
+
+Use `event.preventDefault();` to prevent normal behavior.  For example:
+
+```
+const wes = document.querySelector('wes'); // Let's say this selects a link to another website.
+
+wes.addEventListener('click', function(event) {
+  event.preventDefault();
+});
+```
+
+Normally, clicking the link would take you to the other website.  But because the event listener calls the `preventDefault()` method on the event, nothing happens.
+
+
 ## Removing Event Listeners
 
 Suppose you want something to be clickable only once. You can attach an event listener to it, but set it to remove itself after it has been clicked:
@@ -148,3 +163,27 @@ btn.addEventListener( 'click', respondOnlyOnce );
 
 NOTE: `removeEventListener` cannot be used on an anonymous function -- it needs to be a named function so that JavaScript knows which function to remove.
 QUESTION: It was mentioned earlier that if an arrow function was used to attach the event listener, then the event listener could not be unbinded (removed) later.  How does this coincide?
+
+
+## Types of Events to Listen For
+
+### "Submit" Event
+
+To listen for the user clicking "Submit" on a form:
+
+```
+const signupForm = document.querySelector('[name="signup"]');
+signupForm.addEventListener('submit', function(event) {
+
+});
+```
+
+
+### List of Others
+
+- `'keyup'`
+- `'keydown'`
+- `'focus'`
+- `'blur'`
+
+. . . and many more.

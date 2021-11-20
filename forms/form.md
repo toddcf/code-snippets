@@ -130,6 +130,8 @@ Each name in a form should be unique.
 
 The user does not see these names.
 
+ALSO: According to Wes Bos, giving your `<form>` tag a name is a better way to identify it than giving it a class.  (I don't know how well this advice meshes with BEM.)
+
 
 ### "For" Attribute
 
@@ -175,6 +177,15 @@ To set the text that is displayed on a button:
 ```
 
 `value` is optional on buttons. If you don't set one, the button will just display the default text.
+
+You can also use `value` to get the value of a given field when clicked, like this:
+
+```
+event.currentTarget.name.value; // Will give you the value that the user filled into the NAME field.
+event.currentTarget.email.value; // Will give you the value that the user filled into the EMAIL field.
+```
+
+(For this particular example to work, the fields would need to have "name" attributes.)
 
 
 ### "Placeholder" Attribute
