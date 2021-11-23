@@ -54,3 +54,25 @@ This will result in "true" being console logged every time the element in questi
 Tells you what percentage of the element is on the page.  (Value is a float between `0` and `1`.)
 
 This is useful for being able to tell when the user has scrolled all the way to the bottom of the element.
+
+For example, you could "observe" the last element within the element you are scrolling through:
+
+```
+io.observe(terms.lastElementChild);
+```
+
+You can also pass an "options" object as your second argument into the Intersection Observer if you want to be more specific about what percentage of this element you want to be onscreen before the observer is triggered.  (See below.)
+
+
+## Options Object
+
+Inside this object, you will first tell it what the root of what you are scrolling for is.  (In this case, the terms and conditions.)
+
+Second, you can give it a threshold, telling it which percentage you want to "observe" for.  This threshold could be a single value, or an array of values that trigger the observer at multiple percentages of visibility.  (`0` is off the page, `1` is 100% visible on the page.  Note that setting it to `1` may mean it never triggers if the element is large enough that the bottom is slightly cut off.)
+
+```
+const io = new IntersectionObserver(ioCallback, {
+  root: terms,
+  threshold: [0, 0.5, 1]
+});
+```
