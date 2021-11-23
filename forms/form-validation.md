@@ -54,3 +54,8 @@ Note that you DO NOT have to write `required="required"` or `required="true"`. Y
 This will check that the FORMAT of the text entered into a field matches certain criteria for the DATA TYPE that was specified inside the `<input>` tag.
 
 For example, if `<input type="email">`, then it will check that the user's input has an `@` symbol and a `.` domain.
+
+
+## Disabling Actions if Conditions Are Not Met
+
+For an example of disabling an "accept" button until the user scrolls to the bottom of the terms and conditions, see [Intersection Observer](https://github.com/toddcf/code-snippets/blob/master/javascript/events/intersection-observer.md).
