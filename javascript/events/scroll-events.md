@@ -22,4 +22,4 @@ Tells you how far the user has scrolled from the top of the page.
 
 The total height of the scrollable content (regardless of whether it is viewable).
 
-Drawbacks: Margins and paddings interfere with the accuracy of this method.  It is better to use `IntersectionObserver`.
+Drawbacks: Margins and paddings interfere with the accuracy of this method.  It is better to use [IntersectionObserver](https://github.com/toddcf/code-snippets/blob/master/javascript/events/intersection-observer.md).

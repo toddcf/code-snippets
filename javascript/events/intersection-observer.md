@@ -7,7 +7,7 @@ Then you call the `observe()` method on the IntersectionObserver and pass it som
 
 ## Example
 
-Same example from the `Scroll Events` document, but using `IntersectionObserver` instead:
+Same example from the [Scroll Events](https://github.com/toddcf/code-snippets/blob/master/javascript/events/scroll-events.md) document, but using `IntersectionObserver` instead:
 
 ```
 // Declare the callback function (the thing you want to have happen when the event is observed):
