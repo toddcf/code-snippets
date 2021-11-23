@@ -76,3 +76,32 @@ const io = new IntersectionObserver(ioCallback, {
   threshold: [0, 0.5, 1]
 });
 ```
+
+
+Furthermore, you can then set both an `if` and `else` condition in your callback function so that the action is done and undone as the user scrolls up and down:
+
+```
+function ioCallback(payload) {
+  if (payload[0].intersectionRatio === 1) {
+    // When the element is 100% on the page:
+    button.disabled = false; // Remove the default "disabled" attribute from the button.
+  } else {
+    button.disabled = true;
+  }
+}
+```
+
+
+## Unobserve
+
+Use `unobserve()` to cancel your Intersection Observer.  Pass the element into it that you want to stop observing.  (Typically used when the end result has been achieved and you don't want to continue burning performance on listening for events you no longer care about.)
+
+```
+function ioCallback(payload) {
+  if (payload[0].intersectionRatio === 1) {
+    // When the element is 100% on the page:
+    button.disabled = false; // Remove the default "disabled' attribute from the button.
+    io.unobserve(terms.lastElementChild); // Then stop observing it.
+  }
+}
+```
