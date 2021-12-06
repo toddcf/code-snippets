@@ -27,7 +27,7 @@ setInterval( function() { console.log('Hi!'); }, 2000 );
 
 ## Stopping a setInterval
 
-See `clearInterval();`
+See [clearInterval](https://github.com/toddcf/code-snippets/blob/master/javascript/timers/clearInterval.md).
 
 
 ## How To Use It With A Specific Function
