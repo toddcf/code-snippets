@@ -19,3 +19,8 @@ The following code will wait 5 seconds, then print "Hi!" to the console:
 ```
 setTimeout( function() { console.log('Hi!'); }, 5000 );
 ```
+
+
+## Clear Timer
+
+See [clearTimeout]().
