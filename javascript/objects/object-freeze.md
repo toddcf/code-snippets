@@ -1,11 +1,6 @@
 # Object Freeze
 
-
-## Object Mutation
-
-If you store an object in a `const` variable, it can never be overwritten, but its values can be updated.
-
-For example . . .
+You can (kind of) prevent [mutation of an object](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/object-mutation.md) by using `Object.freeze()` to create a new object that *cannot* be mutated.
 
 ```
 const person = {
@@ -13,29 +8,6 @@ const person = {
   age: 12,
   job: 'shepherd'
 }
-```
-
-. . . can be modified as follows . . .
-
-```
-person.age = 13;
-```
-
-. . . and the object will now be:
-
-```
-const person = {
-  name: 'Peter',
-  age: 13,
-  job: 'shepherd'
-}
-```
-
-## Object Freeze
-
-However, you can prevent mutation (kind of) by using `Object.freeze()` to create a new object that *cannot* be mutated.
-
-```
 const personFrozen = Object.freeze(person);
 ```
 
