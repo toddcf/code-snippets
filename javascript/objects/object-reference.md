@@ -11,7 +11,7 @@ const name2 = 'wes';
 
 This is because the actual value of the string was stored in the variables.
 
-But if you store two identical objects (same goes for arrays) in variables, the two variables will *not* be equal to each other.  This is because the actual value of the object is *not* stored in the variables -- a *reference* to each object is stored.
+But if you store two identical objects (same goes for arrays and functions -- they are objects, too) in variables, the two variables will *not* be equal to each other.  This is because the actual value of the object is *not* stored in the variables -- a *reference* to each object is stored.
 
 ```
 const person1 = {
@@ -33,6 +33,43 @@ const person3 = person1;
 person3.first = 'Larry';
 person3.first; // 'Larry' -- as expected
 person1.first; // 'Larry' -- NOT as expected
+```
+
+
+Passing an object into a function, and using the function to modify that object, will result in the same phenomenon: the original object will be modified, too, since it is being referenced rather than copied.
+
+```
+const meatInventory = {
+	bacon: 2,
+	sausage: 3,
+}
+const veggieInventory = {
+	lettuce: 5,
+	tomatoes: 3,
+}
+const inventory = { ...meatInventory, ...veggieInventory};
+/*
+// Will result in:
+{
+  bacon: 2,
+  sausage: 3,
+  lettuce: 5,
+  tomatoes: 3
+}
+*/
+function updateInventory(data) {
+  data.tomatoes = 3000;
+}
+updateInventory(inventory);
+/*
+// inventory will now be:
+{
+  bacon: 2,
+  sausage: 3,
+  lettuce: 5,
+  tomatoes: 3000
+}
+*/
 ```
 
 
