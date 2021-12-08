@@ -30,6 +30,29 @@ console.log( bigFamily );
 // You can even add a new element in the middle:
 bigFamily = [ ... familySmith, "Lily", ... familyMiller ];
 console.log( bigFamily );
+// If you have any redundant key names, the most recent one will overwrite the earlier ones.  In this example, "oysters" will overwrite itself:
+const meatInventory = {
+	bacon: 2,
+	sausage: 3,
+	oysters: 10,
+}
+const veggieInventory = {
+	lettuce: 5,
+	tomatoes: 3,
+	oysters: 15
+}
+const inventory = { ...meatInventory, ...veggieInventory};
+/*
+// Will result in:
+{
+	bacon: 2,
+	sausage: 3,
+	oysters: 15,
+	lettuce: 5,
+	tomatoes: 3
+}
+*/
+
 
 
 // To use the spread operator on a nodelist:
