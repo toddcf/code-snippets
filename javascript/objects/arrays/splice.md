@@ -17,3 +17,6 @@ The second argument is the number of elements you want to remove. Since we only 
 Think of it like this:
 
 `arr.splice( startingPoint, quantityFollowingStartingPoint, );`
+
+
+NOTE: Splice is mutable.  (The original array is changed.)
