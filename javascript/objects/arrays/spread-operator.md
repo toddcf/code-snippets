@@ -114,7 +114,7 @@ bigFamily = [ ... familySmith, "Lily", ... familyMiller ];
 
 `bigFamily` will now equal `['John', 'Jane', 'Mark', 'Lily', 'Mary', 'Bob', 'Ann']`.
 
-Alternatively, you can use a (combination of the spread operator and slice)[https://github.com/toddcf/code-snippets/blob/master/javascript/objects/arrays/insert-in-middle-of-array.md].
+Alternatively, you can use a [combination of the spread operator and slice](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/arrays/insert-in-middle-of-array.md).
 
 
 ## Redundant Keys
