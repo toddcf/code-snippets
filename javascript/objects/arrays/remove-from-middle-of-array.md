@@ -1,0 +1,1 @@
+# Remove Items from the Middle of an Array
