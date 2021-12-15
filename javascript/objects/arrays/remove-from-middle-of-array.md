@@ -17,7 +17,7 @@ const reducedBikes = [
 
 The first item in the `reducedBikes` array starts at the beginning of the `bikes` array, slices out the first three items, and adds them to the `reducedBikes` array.
 
-The second item in the `reducedBikes` array starts at position `4` (right after `'panasonic'`) and slices everything else in the array through to the end (because no second argument is passed into the `slice()` method that time).
+The second item in the `reducedBikes` array starts at position `4` (right after `'panasonic'`) and slices everything else in the array through to the end (because no second argument is passed into the `slice()` method that time -- although in this particular example, there was only one item remaining).
 
 
 ## Insert Items in the Middle of an Array
