@@ -65,6 +65,19 @@ Then we used `forEach()` to call that function in each iteration over the array.
 At the end, we printed the sum.
 
 
+## forEach() Does Not RETURN a Value
+
+Unlike some of the other array-looping methods (such as `map`, `filter`, and `reduce`, `forEach()` does not `return` a value.  It will perform the tasks you assign it, but if you are saving it to a variable, that variable will not return a value.
+
+For example, if you wrote:
+
+```
+const varName = arr.forEach( /* Code Here */);
+```
+
+. . . then running `varName;` would return `undefined`.
+
+
 ## Getting the Index Number of an Element Using the ForEach Loop
 
 You can pass a second argument into the function inside the `forEach()` loop as follows, which will represent the index number of each element:
@@ -84,7 +97,8 @@ The arguments are in a specific order:
 
 1. The first argument represents each element in the array (per loop iteration) that `forEach()` was called on.
 2. The second represents the index of said element.
-3. The third represents the array that `forEach()` was called on (which will be the same for every iteration of the loop).
+3. The third represents the array that `forEach()` was called on (which will be the same for every iteration of the loop).  This allows you to reference the items in the original array if you need to.
+
 
 You have a couple options when calling `forEach()` on an array:
 
