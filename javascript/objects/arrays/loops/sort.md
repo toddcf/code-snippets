@@ -3,6 +3,11 @@
 Calling the `.sort()` method on an array sorts its items alphabetically from A to Z.
 
 
+## Sorting Strings
+
+`.sort()` is designed for sorting strings.  For example, `['a', 'z', 'e'].sort()` will return `['a', 'e', 'z']`.
+
+
 ## Sorting Numbers
 
 If your array contains numbers, `.sort()` coerces them into strings and then sorts them alphabetically.  *This means that they will not necessarily be in numerical order.*
