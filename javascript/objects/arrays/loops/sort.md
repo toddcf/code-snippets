@@ -21,9 +21,7 @@ To get around this, you can write a custom function within `.sort()`:
 
 ```
 const numbers = [1, 2, 3, 100, 200];
-const numbersSorted = numbers.sort(function(firstItem, secondItem) {
-  return firstItem - secondItem;
-});
+const numbersSorted = numbers.sort((firstItem, secondItem) => firstItem - secondItem);
 ```
 
 The very truncated explanation of this is that you want it to sort based on whether the comparison results in a positive number, a negative number, or a zero.
