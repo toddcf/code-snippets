@@ -6,6 +6,7 @@ Loops through an array and returns a brand new array (which is something forEach
 
 This is the most widely used array helper.
 
+
 ## Example: Double Each Number in an Array and Push Each One into a New Array
 
 ```
@@ -20,7 +21,7 @@ for (var i = 0; i < numbers.length; i++ ) {
   doubledNumbers.push(numbers[i] * 2);
 }
 
-doubledNumbers;
+doubledNumbers; // [2, 4, 6]
 ```
 
 The BETTER way, using map:
@@ -30,17 +31,18 @@ var doubled = numbers.map(function(number) {
   return number * 2;
 });
 
-doubled;
+doubled; // [2, 4, 6]
 ```
 
 *Note that the `return` keyword is used. If you don't return a value from the inner function, map will think you're returning "undefined."* One of the most common mistakes is forgetting to use a return statement.
+
 
 ## Example: Create New Array with List of Car Prices
 
 First, create an array of objects, each one being a car and its price:
 
 ```
-var cars = [
+const cars = [
   {model: 'Buick', price: 'CHEAP'},
   {model: 'Camaro', price: 'expensive'}
 ];
@@ -49,15 +51,15 @@ var cars = [
 Now, map each price into a new array and print the array:
 
 ```
-var prices = cars.map(function(car) {
+const prices = cars.map(function(car) {
   return car.price;
 });
 
-prices;
+prices; // ['CHEAP', 'expensive']
 ```
 
 
-## Method for deleting items from the list
+## Using Map to Delete Items from a List
 
 ```
 deleteItem: function( type, id ) {
