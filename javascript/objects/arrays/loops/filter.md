@@ -2,19 +2,22 @@
 
 Filter is more complex than the other array helpers. It lets you pull only array items that meet your desired criteria.
 
+If no matches are found, an empty array is returned.
+
+
 ## Example: Filter by Type of Food
 
 Let's say you want to find all the fruits in your array of foods:
 
 ```
-var products = [
+const products = [
   {name: 'cucumber', type: 'vegetable'},
   {name: 'banana', type: 'fruit'},
   {name: 'celery', type: 'vegetable'},
   {name: 'orange', type: 'fruit'}
 ];
 
-var filteredProducts = [];
+let filteredProducts = [];
 ```
 
 The OLD for loop way:
@@ -62,7 +65,6 @@ const vegInStockUnder10 = products.filter(function(product) {
   return product.type === 'vegetable' && product.quantity > 0 && product.price < 10;
 });
 ```
-
 
 
 ## When Would You Use filter?
