@@ -1,6 +1,6 @@
 # Filter
 
-Filter is more complex than the other array helpers. It lets you pull only array items that meet your desired criteria.
+Filter is more complex than the other array helpers. It lets you pull only array items that meet your desired criteria. It returns the result(s) in an array.
 
 If no matches are found, an empty array is returned.
 

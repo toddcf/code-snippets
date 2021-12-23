@@ -4,6 +4,10 @@ Very similar to the filter helper. Searches an array for a particular item. As s
 
 Note that once it finds the first matching result, it stops looking for more -- because you are required to use the keyword `return` inside your iterator function. This can be good or bad depending on what you WANT your results to be.
 
+Unlike `filter()`, it does not return the result in an array.
+
+If no matches are found, it returns `undefined`.
+
 
 ## Example: Find a User with a Certain Name
 
