@@ -4,7 +4,7 @@ Use "reduce" to loop through an array and "reduce" all the values into a single 
 
 Useful when calculating averages, etc.
 
-Note that reduce *will* mutate the original array.
+Reduce *does not* mutate the original array.
 
 
 ## Example: Add all the values of an array
