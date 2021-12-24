@@ -106,11 +106,11 @@ This will return just the strings: `['red', 'yellow', 'blue']`
 A whiteboard challenge might be to write a function that determines whether or not the parentheses in these string are balanced:
 
 ```
-var parens1 = '()()()()'; // Should return true
-var parens2 = '(((())))'; // Should return true
-var parens3 = '())))'; // Should return false
-var parens4 = ')('; // Should return false
-var parens5 = ')()('; // Should return false
+const parens1 = '()()()()'; // Should return true
+const parens2 = '(((())))'; // Should return true
+const parens3 = '())))'; // Should return false
+const parens4 = ')('; // Should return false
+const parens5 = ')()('; // Should return false
 ```
 
 We'll write a function to take in the string as an argument, but we're going to have to convert this string to an array (using `split`) before we can use the reduce helper on it.
@@ -159,8 +159,3 @@ balancedParens(parens5);
 
 ## Example: Inventory
 
-
-
-
-
-Remember that reduce *will* mutate the original array. In this case it's fine, but don't use this in cases where this would cause problems.
