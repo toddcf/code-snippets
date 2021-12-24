@@ -44,14 +44,14 @@ This will also return 60.
 ### Variation with Arrow Function
 
 Put a callback function inside the reduce method:
-We also have access to the previous value. So to add them all up, just add the previous value with the current value.
-"Index" is the position at which we want to start in the array, which in this case is 0.
+- We also have access to the previous value. So to add them all up, just add the previous value with the current value.
+- "Index" is the position at which we want to start in the array, which in this case is 0.
 
 ```
 const sampleArray = [ 3, 5, 6 ];
 
 function calcAvg( arr ) {  
-  const sum = arr.reduce( ( prev, cur, index ) => prev + cur, 0 );
+  return arr.reduce( ( prev, cur, index ) => prev + cur, 0 );
 };
 
 calcAvg( sampleArray );
