@@ -103,11 +103,11 @@ This will return just the strings: `['red', 'yellow', 'blue']`
 
 ## Example: Balance Parens
 
-A whiteboard challenge might be to write a function that determines whether or not the parentheses in this string are balanced:
+A whiteboard challenge might be to write a function that determines whether or not the parentheses in these string are balanced:
 
 ```
 var parens1 = '()()()()'; // Should return true
-var parens2 = '(((()))'; // Should return true
+var parens2 = '(((())))'; // Should return true
 var parens3 = '())))'; // Should return false
 var parens4 = ')('; // Should return false
 var parens5 = ')()('; // Should return false
