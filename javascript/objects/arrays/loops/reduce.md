@@ -51,7 +51,7 @@ Put a callback function inside the reduce method:
 const sampleArray = [ 3, 5, 6 ];
 
 function calcAvg( arr ) {  
-  return arr.reduce( ( prev, cur, index ) => prev + cur, 0 );
+  return arr.reduce( ( prev, cur, index ) => prev + cur, 0 ) / sampleArray.length;
 };
 
 calcAvg( sampleArray );
@@ -70,6 +70,7 @@ calcAvg( sampleArray );
   b. The current value is 6.
   c. So 8 + 6 = 14.
 4. That's the end of the array, so we are done, and the values have been "reduced" into one value, which is 14.
+5. Then, to return the average, we divide the reduce result by the length of the array.
 
 
 ## Example: Primary Colors
