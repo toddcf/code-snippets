@@ -14,6 +14,9 @@ var numbers = [10, 20, 30];
 var sum = 0;
 ```
 
+NOTE: Using `var sum = 0;` is called a "side effect" because it involves updating a variable outside the function, and is not considered a best practice.
+
+
 ### Old for loop Version
 
 ```
@@ -29,8 +32,8 @@ This will return 60.
 
 Note two things:
 
-1. We pass in two arguments.
-2. After this fuction, we pass in an initial value of 0.
+1. We pass in two arguments: the first is called the "accumulator," the second is the "current value."  (The accumulator is the accumulated value from the most recent iteration of the loop.  In this example, it is an anonymous function that will be used to return the accumulated value.)
+2. After this fuction, we pass in an initial "current" value of 0.
 
 ```
 numbers.reduce(function(sum, number) {
@@ -71,6 +74,24 @@ calcAvg( sampleArray );
   c. So 8 + 6 = 14.
 4. That's the end of the array, so we are done, and the values have been "reduced" into one value, which is 14.
 5. Then, to return the average, we divide the reduce result by the length of the array.
+
+
+## Example: Passing a Callback Function into Reduce
+
+Same general idea as passing an anonymous function in as the accumulator, except you abstract it out to a named function, then pass that into the reduce method as its accumulator argument.
+
+```
+// The original array to be used for calculations:
+const orderTotals = [100, 200, 300, 400, 500];
+
+// The function that will be passed into Reduce as a callback:
+function tallyNumbers(tally, currentOrderTotal) {
+  return tally + currentOrderTotal
+}
+
+// Run Reduce:
+const allOrders = orderTotals.reduce(tallyNumbers, 0);
+```
 
 
 ## Example: Primary Colors
@@ -159,3 +180,34 @@ balancedParens(parens5);
 
 ## Example: Inventory
 
+Let's say you have an inventory of various types of clothing:
+
+```
+const inventory = [
+  {type: 'shirt', price: 45},
+  {type: 'pants', price: 55},
+  {type: 'socks', price: 13},
+  {type: 'underwear', price: 30},
+  {type: 'shirt', price: 30},
+  {type: 'pants', price: 70},
+  {type: 'socks', price: 10},
+  {type: 'underwear', price: 15},
+];
+```
+
+And let's say you want to know the total value of all of them combined . . . and you want to count all the instances of each type of clothing.  You could use `reduce` to return objects containing this information.
+
+```
+function inventoryReducer(totals, item) {
+  console.log(`Looping over ${item.type}`);
+  totals[item.type] = totals[item.type] + 1 || 1; // If this didn't already exist, the fallback creates it and sets it to 1.
+  return totals;
+}
+const inventoryCounts = inventory.reduce(inventoryReducer, {});
+console.log(`Inventory Counts: `, inventoryCounts);
+
+const totalValue = inventory.reduce((acc, item) => acc + item.price, 0);
+console.log(`Total Inventory Value: ${totalValue}`);
+```
+
+For verification purposes, each item type should have a count of 2, and the total inventory value should be 268.
