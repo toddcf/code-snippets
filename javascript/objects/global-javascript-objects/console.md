@@ -111,3 +111,21 @@ people.forEach((person, index) => {
   console.groupEnd(`${person.name}`);
 });
 ```
+
+
+### console.time and console.timeEnd
+
+You can log the amount of time from a starting and ending point of your choosing.  This is useful if you want to compare multiple methods to see which is more performant.
+
+Pass the same string identifier into each one so it knows which start and end times relate to each other.
+
+```
+console.time('Function #1');
+const function1 = () => {
+  // Code here.
+}
+function1();
+console.timeEnd('Function #1');
+```
+
+This will print ONE timestamp to the console like this: `Function #1: xxxxxx ms` (with the number of milliseconds where the xxxx are).
