@@ -1,5 +1,6 @@
 # For Loop
 
+
 ## How a For Loop is Structured
 
 DO NOT run this code:
@@ -13,6 +14,7 @@ for (A; B; C) {
 A) Run this code one time before the loop starts.
 B) Keep repeating the code block while this is true.
 C) Run this statement every time the code block runs.
+
 
 ### Example
 
@@ -28,10 +30,13 @@ A) Create a variable called `x` and set its value to `0`.
 B) Keep repeating the loop as long as `x` is less than `20`.
 C) Every time the code runs, increase `x` by `2`.
 
+
 ## Standard For Loop
 
 ```
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < array.length; i++) {
   console.log(i);
 }
 ```
+
+This uses `i` as its "iterator" variable.  Since it is looping over an array one time, the maximum value of `i` is set to the length of the array.  And with each iteration, `i` is increased by one.
