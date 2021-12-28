@@ -20,3 +20,5 @@ while (x < 10) {
 ## When to Use a While Loop
 
 If a For Loop is not practical.  For example, if the condition is going to be based on user behavior rather than on an incrementation counter, etc.
+
+Similar to a Do While loop, except that a While Loop always checks its condition before executing its code block, whereas a Do While loop executes its code block first, *then* checks its condition.
