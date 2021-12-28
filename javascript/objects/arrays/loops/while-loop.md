@@ -1,6 +1,6 @@
 # While Loop
 
-Runs a block of code over and over while a certain condition is true.
+Runs a block of code infinitely until the while loop's condition is `false`.
 
 
 ## Example
@@ -15,3 +15,8 @@ while (x < 10) {
   console.log(x);
 }
 ```
+
+
+## When to Use a While Loop
+
+If a For Loop is not practical.  For example, if the condition is going to be based on user behavior rather than on an incrementation counter, etc.
