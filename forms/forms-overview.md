@@ -109,3 +109,12 @@ Note that you can default a checkbox to "checked" when your page first loads by 
 If you put a `name` in the input tag, it will appear in the query string of your browser's URL when submitted.
 
 So you would NOT do this for a password. You would use a POST request (not a GET request).
+
+
+## Submit Event
+
+Don't add event listeners for "click" or "enter".  It is all-inclusive to listen for the "submit" event:
+
+```
+form.addEventListener('submit', function);
+```
