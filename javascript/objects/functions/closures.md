@@ -1,40 +1,40 @@
 # Closures
 
-A closure is the ability to access the parent level scope from a child scope even after the parent function has finished executing -- aka *closed*.
+A closure is the ability to access the parent level scope from a child scope even after the parent function is finished executing -- aka *closed*.
 
 Let's say you have an inner and an outer function:
 
 ```
-function outer() {
+function outerFunction() {
   const outerVar = 'Outer Variable';
-  function inner() {
+  function innerFunction() {
     const innerVar = 'Inner Variable';
     console.log(innerVar);
     console.log(outerVar);
   }
-  inner();
+  innerFunction();
 }
-outer();
+outerFunction();
 ```
 
-If you run `outer();`, it creates `outerVar`, creates `innerVar()`, and then invokes `innerVar()`.  Once invoked, `innerVar()` creates `innerVar` and console logs `innerVar` and `outerVar`.  (It has the ability to console log `outerVar` because of scope lookup -- functions can access variables and functions above them but not below them.)
+If you run `outerFunction()`, it creates `outerVar`, creates `innerFunction()`, and then invokes `innerFunction()`.  Once invoked, `innerFunction()` creates `innerVar` and console logs both `innerVar` and `outerVar`.  (It has the ability to console log `outerVar` because of *scope lookup* -- functions can access variables and functions above them but not below them.)
 
-Closures come into play when you don't call `inner();` from inside the `outer()` function.  Instead, you call it after `outer()` has finished running.  This will involve *returning* the `inner()` function, then invoking the `outer()` function and storing its result in a variable.  Like this:
+Closures come into play when you *don't* invoke `innerFunction();` from inside `outerFunction()`.  Instead, you call it after `outerFunction()` has finished running.  This will involve *returning* `innerFunction()`, then invoking `outerFunction()` and storing its result in a variable.  Like this:
 
 ```
-function outer() {
+function outerFunction() {
   const outerVar = 'Outer Variable';
-  function inner() {
+  function innerFunction() {
     const innerVar = 'Inner Variable';
     console.log(innerVar);
     console.log(outerVar);
   }
-  return inner;
+  return innerFunction;
 }
-const innerFn = outer();
+const innerAccess = outerFunction();
 ```
 
-Now that that's set up, if you run `innerFn();`, the `outerVar` will still be accessible.  Invoking `innerFn();` will print `Inner Variable` and `Outer Variable` to the console.
+Now that that's set up, if you run `innerAccess();`, the `outerVar` will still be accessible.  Invoking `innerAccess();` will print `Inner Variable` and `Outer Variable` to the console.
 
 
 ## When Would This Be Useful?
@@ -46,7 +46,7 @@ Let's say you want to track the score of a hockey game and a soccer game at the 
 Here's how a closure could help:
 
 ```
-function createGame(gameName) {
+function updateScore(gameName) {
   let score = 0;
   return function goal() {
     score++;
@@ -54,8 +54,8 @@ function createGame(gameName) {
   }
 }
 
-const hockeyGame = createGame('hockey');
-const soccerGame = createGame('soccer');
+const hockeyGame = updateScore('hockey');
+const soccerGame = updateScore('soccer');
 ```
 
 Now each time you invoke `hockeyGame();`, it increments the score and prints `Your hockey score is . . .` to the console.
