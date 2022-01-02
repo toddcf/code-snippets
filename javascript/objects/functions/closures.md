@@ -62,4 +62,4 @@ Now each time you invoke `hockeyGame();`, it increments the score and prints `Yo
 
 Likewise, each time you invoke `soccerGame();`, it increments a *different* score and prints `Your soocer score is . . .` to the console.
 
-The two scores don't collide, even when you alternate which function you invoke.  The `score` variable is available as a separate value to each function -- even after it has finished running each time.
+The two scores don't collide, even when you alternate which function you invoke.  *The `score` variable is available as a separate value to each function -- even after it has finished running each time.*
