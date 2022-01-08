@@ -1,4 +1,4 @@
-# Template Strings
+# Template Literals
 
 ```
 let year = 2019;
@@ -35,6 +35,6 @@ In fact, any valid JavaScript expression could go inside the curly braces:
 ```
 
 
-## Benefits of Using Template Strings
+## Benefits of Using Template Literals
 
 Easier for humans to read and edit.
