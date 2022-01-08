@@ -1,16 +1,18 @@
 <!-- "This" Demo -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>What is this?</title>
 </head>
+
 <body>
     <button id="button">CLICK ME!</button>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
     <script type="text/javascript">
-        var outside = function() {
+        var outside = function () {
             console.log(this); // 1. What will be console logged out? What is *this* in this case?
             // Window
         };
@@ -27,7 +29,7 @@
 
 
 
-        $('#button').on('click', function(){
+        $('#button').on('click', function () {
             console.log(this); //2. what will be console logged out? What is *this* in this case?
             // $(this) calls the jQuery object "this," referring to the button in this case.  An array.
             // (this) refers to the specific JavaScript DOM element.  Everything, without the array.
@@ -44,10 +46,10 @@
         var bob = {
             firstName: "Bob",
             lastName: "Smith",
-            whoIsBob: function() {
+            whoIsBob: function () {
                 console.log(this);
             },
-            fullName: function() {
+            fullName: function () {
                 // 3. Put something inside of here so that this works
                 console.log(this.firstName + " " + this.lastName);
             }
@@ -92,8 +94,5 @@
         theChosenOne();
     </script>
 </body>
+
 </html>
-
-
-
-

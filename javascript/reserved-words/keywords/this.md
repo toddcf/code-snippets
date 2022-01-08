@@ -11,7 +11,7 @@ By default (on a blank file), `this` refers to the `window` object. More on this
 
 When a function is invoked, a variable called `this` is automatically created for that execution context.
 
-`this` points to a different object, depending on where the function is and *how it is invoked* . . . which can cause a lot of confusion.
+But `this` points to a different object, depending on where the function is and *how it is invoked* . . . which can cause a lot of confusion.
 
 
 ## Using `this` in a Method
