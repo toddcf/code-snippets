@@ -21,6 +21,8 @@ If you have a method (a function inside of an object), you could use `this` to r
 (Remember that if the value inside the object is a primitive, it's called a property. If the value is a function, it's called a method.)
 
 
+*NOTE: The following examples use `var` (instead of `const` or `let`) on purpose.*
+
 ### Example 1: Car Object
 
 ```
@@ -56,7 +58,7 @@ car.drive();
 car.driveFaster();
 ```
 
-This will result in a console log of `40`.
+This will result in a console logs of `I'm driving 30 m.p.h.` and `I'm driving 40 m.p.h.`.
 
 
 ### Example 2: Where `this` Points
@@ -156,7 +158,7 @@ function a() {
 a();
 ```
 
-. . . the result will *also* be `window`, because you are simply invoking the function.
+. . . the result will *also* be `window`, because you are simply invoking the function.  Which is attached to the `window`.
 
 What if you create a function expression and store it in a variable?
 
