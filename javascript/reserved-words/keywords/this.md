@@ -20,6 +20,10 @@ If you have a method (a function inside of an object), you could use `this` to r
 
 (Remember that if the value inside the object is a primitive, it's called a property. If the value is a function, it's called a method.)
 
+Another way of phrasing it is that `this` will refer to "the element that is to the left of the dot" when the method is being invoked.  So in `window.functionName();`, `this` would be `window`.  In `objectName.methodName();`, `this` would be `objectName`.
+
+This also means that those functions are "bound" to those objects.  When something is bound to something, that means that the `this` keyword will be equal to whatever it is bound to.
+
 
 *NOTE: The following examples use `var` (instead of `const` or `let`) on purpose.*
 
@@ -141,6 +145,8 @@ This works because when you create a variable, it is an object. Objects are set 
 
 NOTE: The `let` keyword is intended to clear up some of these quirks.
 
+ALSO: If you use an arrow function for the inner function (`setName` in the example above), you do not need to use the `self` trick.
+
 
 ## Using `this` in a Function That is *Not* a Method
 
@@ -189,3 +195,10 @@ console.log(newVariable); // will print 'Hello' to the console because it happen
 ```
 
 So for functions in the global scope, you are NOT attaching `this` to the function, you are attaching it to the global object. "When you are just invoking the function, it points to the global variable."
+
+
+## Scoping
+
+The `this` keyword is always scoped to a function.  And if that function is an arrow function, arrow functions use lexical scoping, so `this` will refer to its current surrounding scope and no further.
+
+`this` also refers to the *instance* of the thing that was made.  (The function, the object, etc.)
