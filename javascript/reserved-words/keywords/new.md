@@ -30,7 +30,7 @@ let bronze = new Date('May 10, 1994');
 
 ## new function
 
-When you use the `new` keyword to create a function, it creates a new object that is an *instance of* that function instead of whatever would have been returned from that function.  For example:
+When you use the `new` keyword to create a function, it creates and returns a new *object* that is an *instance of* that function instead of whatever would have been returned from that function.  For example:
 
 ```
 function Pizza() {
@@ -48,3 +48,17 @@ But if you run the same code with the following `new` keyword added . . . `const
 . . . the console will show an object called `Pizza` that contains a prototype.
 
 And if you run `(pepperoniPizza instanceof Pizza)`, it will return `true`.
+
+The way that you attach properties onto that instance is with the `this` keyword:
+
+```
+function Pizza(toppings = [], customer) {
+  this.toppings = toppings;
+  this.customer = customer;
+}
+
+const pepperoniPizza = new Pizza(['pepperoni'], 'Wes Bos');
+const canadianPizza = new Pizza(['pepperoni', 'mushrooms'], 'Kait Bos');
+```
+
+In this example, each pizza winds up with its own properties.
