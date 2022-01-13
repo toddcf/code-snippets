@@ -43,15 +43,13 @@ const anotherCar = new Car( 'gold' , 240 );
 Now if you console.log `myCar`, you won't see `showCarInfo` (unless you click into the prototype):
 
 ```
-console.log( `myCar:` );
 console.log( myCar );
 ```
 
 However, you can still call `showCarInfo` on `myCar` like this:
 
 ```
-console.log( `showCarInfo:` );
-yourCar.showCarInfo();
+myCar.showCarInfo();
 ```
 
 
