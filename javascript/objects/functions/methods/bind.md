@@ -2,9 +2,9 @@
 
 `bind()` is a method that lives on all functions.  It is used to change the scope of what the [this](https://github.com/toddcf/code-snippets/blob/master/javascript/reserved-words/keywords/this.md) keyword is equal to.  It says, "Set the 'this' keyword equal to the argument passed into me."
 
-`bind()` is similar to [call](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/functions/methods/call.md), but allows you to set the "this" variable explicitly.
+`bind()` is similar to [call](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/functions/methods/call.md), except that using `call()` will automatically invoke the function/method in question, and `bind()` will only set it -- you will still have to manually invoke the function/method after that.  Instead, it generates a copy of that function, which you can store in a variable.
 
-BUT it does not immediately call the function.  Instead, it generates a copy of that function, which you can store in a variable.
+(If you need to bind a function and call it later, use `bind()`.  If you need to bind a function and call it immediately, use `call()`.)
 
 
 ## Example 1

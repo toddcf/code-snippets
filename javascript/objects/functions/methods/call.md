@@ -1,19 +1,5 @@
 # Call
 
-`call()` is a method that allows you to change the scope of what the [this](https://github.com/toddcf/code-snippets/blob/master/javascript/reserved-words/keywords/this.md) keyword is equal to, and use another object instead.
+`call()` is the same as [bind()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/functions/methods/bind.md), except that it will also automatically call the function (whereas `bind()` will need to be called manually after it has been set).
 
-
-## Example
-
-```
-john.presentation;
-```
-
-This will access the "presentation" in the "john" object.
-
-
-```
-john.presentation.call(emily);
-```
-
-This will use john's presentation, but substitute the `emily` object's data into it instead of the `john` object's data.
+(If you need to bind a function and call it later, use `bind()`.  If you need to bind a function and call it immediately, use `call()`.)
