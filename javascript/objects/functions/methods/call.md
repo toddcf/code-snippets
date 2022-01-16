@@ -1,6 +1,6 @@
 # Call
 
-A method that allows you to change the "this" property and use another object instead.
+A method that allows you to change the [this](https://github.com/toddcf/code-snippets/blob/master/javascript/reserved-words/keywords/this.md) property and use another object instead.
 
 ## Example
 

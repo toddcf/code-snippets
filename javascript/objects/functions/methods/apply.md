@@ -1,6 +1,8 @@
 # Apply
 
-Similar to the "call" method, but accepts the arguments as an array.
+NOTE: The [spread operator](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/arrays/spread-operator.md) in ES6 is more concise.
+
+`apply()` is similar to the [call](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/functions/methods/call.md) method, but accepts the arguments as an array.
 
 ## Example
 
