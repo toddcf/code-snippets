@@ -1,6 +1,6 @@
 # Call
 
-A method that allows you to change the [this](https://github.com/toddcf/code-snippets/blob/master/javascript/reserved-words/keywords/this.md) property and use another object instead.
+`call()` is a method that allows you to change the scope of what the [this](https://github.com/toddcf/code-snippets/blob/master/javascript/reserved-words/keywords/this.md) keyword is equal to, and use another object instead.
 
 
 ## Example
