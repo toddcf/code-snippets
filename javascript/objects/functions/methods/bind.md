@@ -4,7 +4,7 @@
 
 `bind()` is similar to [call](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/functions/methods/call.md), but allows you to set the "this" variable explicitly.
 
-BUT it does not immediately call the function.  Instead, it generates a copy of that function so that you can store it somewhere.
+BUT it does not immediately call the function.  Instead, it generates a copy of that function, which you can store in a variable.
 
 
 ## Example 1
@@ -52,3 +52,32 @@ sayHi = person.sayHi.bind(jenna);
 Now `sayHi();` will return `"Hey, Jenna!"` because the `this` keyword has now been explicitly bound to the `jenna` object.
 
 So `sayHi` gets called on the `person` object, but `this` references the `jenna` object.
+
+
+## Adding Arguments to Bind
+
+When you invoke `bind()`, you can pass in additional arguments that line up with the arguments of the function/method.
+
+The first argument will always be the `this` object.  Each additional argument will need to line up with the parameters within the function/method being invoked.
+
+
+### Example
+
+```
+const bill = {
+  total: 1000,
+  calculate(taxRate) {
+    console.log(this.total + (this.total * taxRate));
+  }
+}
+```
+
+`const total = bill.calculate(0.13);` will return `1130`.
+
+But you can use `bind()` and pass in arguments that match the `bill` object.  Here, we can pass in a total of $500 and a tax rate of 6%:
+
+```
+const calc = bill.calculate.bind({total: 500}, 0.06);
+```
+
+`console.log(calc());` will return `530`.
