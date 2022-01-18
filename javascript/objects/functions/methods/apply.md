@@ -4,7 +4,8 @@ NOTE: The [spread operator](https://github.com/toddcf/code-snippets/blob/master/
 
 `apply()` is used to change the scope of what the [this](https://github.com/toddcf/code-snippets/blob/master/javascript/reserved-words/keywords/this.md) keyword is equal to.
 
-`apply()` is similar to the [call](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/functions/methods/call.md) method, but accepts the arguments as an array.
+`apply()` is similar to the [call](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/functions/methods/call.md) method, but accepts the arguments as a single array.
+
 
 ## Example
 
