@@ -6,7 +6,7 @@ In JavaScript, there is no such thing as pausing execution of code.  Therefore, 
 
 A `promise` is a way to prevent a block of code from executing until after the prior block of code has *finished* executing.
 
-Promises are also a flatter way of writing code than nesting multiple setTimeouts within each other.
+Promises are also a flatter way of writing code than nesting multiple setTimeouts within each other and getting stuck in "callback hell."
 
 
 ## Three States of Promises
@@ -28,7 +28,7 @@ let promise = new Promise();
 
 *NOTE: This will not work with `const`; you must use `let`.*
 
-Put a function inside the promise. And inside the arguments, pass in two more functions: resolve, and reject:
+Pass a callback function inside the promise. And inside the arguments, pass in two more functions: resolve, and reject:
 
 ```
 let promise = new Promise((resolve, reject) => {
