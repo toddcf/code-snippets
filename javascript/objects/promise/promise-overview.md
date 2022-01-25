@@ -61,19 +61,10 @@ let promise = new Promise((resolve, reject) => {
 
 ## Then and Catch
 
-Whenever you create a promise and assign it to a variable, that promise object has two properties on it:
+Whenever you create a promise and assign it to a variable, that promise object includes `.then()` and `.catch()` properties.  You need to use both in order to tell the system what to do whether your promise is resolved or rejected.
 
-```
-promise.then();
-```
-
-And:
-
-```
-promise.catch();
-```
-
-See the respective `promise-methods` documents for detail on these.
+1. See the [then](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/then.md) document for detail on how to tell the system what to do if your promise is resolved successfully.
+2. See the [catch](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/catch.md) document for detail on how to tell the system what to do if your promise is rejected.
 
 
 ## See Also

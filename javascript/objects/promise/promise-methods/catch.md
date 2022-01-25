@@ -1,6 +1,8 @@
 # Catch
 
-Just like `.then()`, you have access to the `.catch()` handler as well, and you need to use both.  You are telling the system what to do whether the promise is resolved or rejected.
+`.catch()` is a method for the [Promise](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-overview.md) object that tells the system what to do when the promise is rejected.
+
+It is used in conjunction with the [then](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/then.md) method (which tells the system what to do when the promise is resolved successfully).
 
 ```
 promise
