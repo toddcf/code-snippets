@@ -9,6 +9,55 @@ A `promise` is a way to prevent a block of code from executing until after the p
 Promises are also a flatter way of writing code than nesting multiple setTimeouts within each other and getting stuck in "callback hell."
 
 
+## Syntax Overview
+
+The following example will take in an array containing whatever toppings you want and "bake" a pizza with them.  (The "baking" consists of a setTimeout of 5 seconds so that our Promise has something to wait for.)  See below for walkthrough.
+
+```
+function makePizza(toppings) {
+  const pizzaPromise = new Promise(function (resolve, reject) {
+    // Wait 5 seconds for the pizza to cook:
+    setTimeout(function () {
+      resolve(`pizza made with ${toppings.join(', ')}.`);
+    }, 5000);
+  });
+  return pizzaPromise; // Return the promise immediately after creating it.
+}
+
+const sausageOlives = makePizza(['sausage', 'black olives']);
+console.log(sausageOlives);
+const pepperoni = makePizza(['pepperoni']);
+console.log(pepperoni);
+const quad = makePizza(['peppers', 'tomatoes', 'pesto sauce']);
+console.log(quad);
+
+sausageOlives.then(function (pizza) {
+  console.log(`Here is your ${pizza}`);
+  console.log(sausageOlives);
+});
+
+pepperoni.then(function (pizza) {
+  console.log(`Here is your ${pizza}`);
+  console.log(pepperoni);
+});
+
+quad.then(function (pizza) {
+  console.log(`Here is your ${pizza}`);
+  console.log(quad);
+});
+```
+
+After creating the Promise, we immediately `return` it.
+
+Next, we invoke the `makePizza` function several times, each time passing in different sets of toppings.  We store these in descriptive variables so we can keep them straight.  When we `console.log` those variables, they each return a Promise with a state of "pending" because the Promise has not resolved yet -- the 5 seconds are not up.
+
+After the 5-second setTimeout is complete, the `resolve()` function (inside the setTimeout, which is inside the Promise) is invoked.  The `.then` method is invoked for that particular pizza.  (The variable in which the invoked `makePizza` function was stored, such as `sausageOlives.then`.)
+
+These `.then` methods take in a callback function that takes in whatever the `resolve` function returned -- which in this case is the "pizza made with . . ." (and the dynamic list of toppings) sentence.  It then `console.logs` that sentence inside the "Here is your . . ." sentence, the end result being, "Here is your pizza made with . . ." and a list of toppings.
+
+Just for our information, the `.then` method also `console.logs` the Promise itself again, so that we can see that its state has changed from "pending" to "fulfilled."
+
+
 ## Three States of Promises
 
 1. Unresolved: Waiting for something to finish. (The default state for a promise.)
@@ -18,7 +67,7 @@ Promises are also a flatter way of writing code than nesting multiple setTimeout
 Once the promise comes back either resolved or rejected, it runs the appropriate callback function: `then` if resolved, or `catch` if rejected.
 
 
-## Syntax
+## Syntax Detail
 
 Thanks to the native implementation of promises in ES6, the keyword `Promise()` is available inside of the browser (as long as your browser supports it):
 
