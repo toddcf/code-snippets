@@ -1,5 +1,11 @@
 # Promise (Overview)
 
+*TODO:
+- Show the entire overview in this document, but do include the detailed explanation here.
+- Move the .then() explanation to the .then() document and link to it, and only include the .then() code -- leave out .catch(), etc.
+- Move the .catch() example and explanation to the .catch() document and link to it.
+- Rewatch the video and write up the explanation for allSettled(), plus what the difference is between that and all().*
+
 ES6 brings along a native implementation of promises.  This allows promises to be standardized across browsers, rather than have the quirks of the various libraries that use them, such as jQuery, Axios, etc.
 
 In JavaScript, there is no such thing as pausing execution of code.  Therefore, if you send an AJAX request, the system does not wait for its response before continuing on to execute the next line of code.  This can cause problems if the next line of code depends on the response from that AJAX request.
@@ -13,9 +19,15 @@ Promises are also a flatter way of writing code than nesting multiple setTimeout
 
 The following example will take in an array containing whatever toppings you want and "bake" a pizza with them.  (The "baking" consists of a setTimeout of 5 seconds so that our Promise has something to wait for.)  See below for walkthrough.
 
+. . . Unless the user tries to pass "anchovies" as a topping.  The first thing the Promise does is invoke the `reject` method if that happens.
+
 ```
 function makePizza(toppings) {
   const pizzaPromise = new Promise(function (resolve, reject) {
+    // Reject if user tries to make with anchovies:
+    if (toppings.includes('anchovies')) {
+      reject(`No anchovies allowed.`);
+    }
     // Wait 5 seconds for the pizza to cook:
     setTimeout(function () {
       resolve(`pizza made with ${toppings.join(', ')}.`);
@@ -30,6 +42,8 @@ const pepperoni = makePizza(['pepperoni']);
 console.log(pepperoni);
 const quad = makePizza(['peppers', 'tomatoes', 'pesto sauce']);
 console.log(quad);
+const anchovies = makePizza(['cheese', 'anchovies']);
+console.log(anchovies);
 
 sausageOlives.then(function (pizza) {
   console.log(`Here is your ${pizza}`);
@@ -45,6 +59,13 @@ quad.then(function (pizza) {
   console.log(`Here is your ${pizza}`);
   console.log(quad);
 });
+
+anchovies.then(function (pizza) {
+  console.log(`Here is your ${pizza}`);
+  console.log(anchovies);
+}).catch(function (err) {
+  console.log(`There was a problem making your pizza: ${err}`);
+});
 ```
 
 After creating the Promise, we immediately `return` it.
@@ -57,11 +78,13 @@ These `.then` methods take in a callback function that takes in whatever the `re
 
 Just for our information, the `.then` method also `console.logs` the Promise itself again, so that we can see that its state has changed from "pending" to "fulfilled."
 
+To demonstrate what happens if the Promise is rejected, we attempt to pass "anchovies" as a topping.  The Promise invokes the `reject` method, and `anchovies.catch()` is therefore invoked instead of `anchovies.then()`.  `.catch()` takes in the error that was passed by `reject()`, which is the string `No anchovies allowed.` and inserts it dynamically into the string `There was a problem with your pizza: `.  The end result is: `There was a problem with your pizza: No anchovies allowed.`.
+
 
 ## Three States of Promises
 
 1. Unresolved: Waiting for something to finish. (The default state for a promise.)
-2. Resolved: Something finished, and everything went okay.
+2. Resolved/Fulfilled: Something finished, and everything went okay.
 3. Rejected: Something finished, but something went wrong.
 
 Once the promise comes back either resolved or rejected, it runs the appropriate callback function: `then` if resolved, or `catch` if rejected.
