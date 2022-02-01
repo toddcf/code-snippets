@@ -17,7 +17,7 @@ promise
   });
 ```
 
-Now if you call . . .
+When something happens inside your promise that causes the `reject()` function to be invoked . . .
 
 ```
 let promise = new Promise(resolve, reject) {
@@ -25,4 +25,15 @@ let promise = new Promise(resolve, reject) {
 }
 ```
 
-. . . the console will print `Something went wrong.`.  No error message will be thrown this time, because you've built in your graceful degradation.
+. . . the `catch()` method will be invoked.  Rather than throwing an error in the browser, Whatever you've put in your `.catch()` method (in this case, print `Something went wrong.`) will happen, because you've built in your graceful degradation.
+
+
+## One Catch to Handle Them All
+
+If you have a chain of `.then()` methods, you don't need to write an individual `.catch()` for each one.  You can just chain a single `.catch()` method to the end of the chain, like in the above example.
+
+HOWEVER . . .
+
+If you have several `.then()` methods on your chain, and one in the middle throws an error, it will invoke `.catch()` and will not run the rest of the `.then()` methods.  If this is what you want, then that is a good thing.
+
+But if it's not what you want, do not chain multiple `.then()` methods to each other.  Instead, use [.all()](), [.allSettled()](), or [.race()]().
