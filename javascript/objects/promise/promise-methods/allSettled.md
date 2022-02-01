@@ -19,4 +19,4 @@ This will return an array of the results.  The first item in the array will be t
 
 ## Difference Between .allSettled() and .all()
 
-`.all()` will assume that everything in the array is supposed to resolve successfully, and that if they don't, you want your `.catch()` method to be invoked.  
+[.all()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/all.md) will assume that everything in the array is supposed to resolve successfully, and that if they don't, you want your `.catch()` method to be invoked.  

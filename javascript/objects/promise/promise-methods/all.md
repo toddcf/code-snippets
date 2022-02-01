@@ -39,4 +39,4 @@ function handleError(err) {
 const allPizzas = Promise.all([sausageOlives, pepperoni, quad]).catch(handleError);
 ```
 
-If you want the other `.then()` methods to be able to run even if one or more of the others fail, use [allSettled()]().
+If you want the other `.then()` methods to be able to run even if one or more of the others fail, use [allSettled()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/allSettled.md).

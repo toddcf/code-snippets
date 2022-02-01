@@ -36,4 +36,4 @@ HOWEVER . . .
 
 If you have several `.then()` methods on your chain, and one in the middle throws an error, it will invoke `.catch()` and will not run the rest of the `.then()` methods.  If this is what you want, then that is a good thing.
 
-But if it's not what you want, do not chain multiple `.then()` methods to each other.  Instead, use [.all()](), [.allSettled()](), or [.race()]().
+But if it's not what you want, do not chain multiple `.then()` methods to each other.  Instead, use [.all()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/all.md), [.allSettled()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/allSettled.md), or [.race()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/race.md), depending on your needs.
