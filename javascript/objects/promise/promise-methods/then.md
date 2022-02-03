@@ -35,3 +35,5 @@ The result will be that both `Finally finished!` and `Second THEN in the chain h
 ## Handling Multiple Promises Simultaneously
 
 You can use the [.all()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/all.md), [.allSettled()](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/allSettled.md), or [race](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/promise/promise-methods/race.md) methods to handle multiple promises at the same time.
+
+Also, [Async Await]() is a cleaner syntax than chaining multiple `.then()` methods to each other.
