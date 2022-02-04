@@ -6,7 +6,7 @@ The function that generates the `new Promise` remains the same.  The difference 
 
 You can only use `await` *inside* a function that is marked `async`.  (You can mark any type of function `async` -- function declarations, arrow functions, callback functions, methods, etc.  See the various syntaxes for each toward the end of this document.)
 
-You put the word `await` in front of a Promise-based function, and it will wait for that function to finish before it continues.  (You cannot use `await` anywhere else except inside functions marked `async`.)
+You put the word `await` in front of a Promise-based function, and it will wait for that function to finish before it continues running the rest of that function.  (You cannot use `await` anywhere else except inside functions marked `async`.)  NOTE: It does not pause the rest of the JavaScript in that file, just the `async` function at the point where it hits `await`.
 
 
 ## Example 1 - Single Await
