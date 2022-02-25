@@ -1,10 +1,22 @@
 # JSON
 
+*Merge/link the following documents:*
+- api:
+  - [api.md](https://github.com/toddcf/code-snippets/blob/master/api/api.md)
+- javascript:
+  - objects:
+    - json:
+      - [json.md](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/json/json.md)
+  - web-api:
+    - [web-api.md](https://github.com/toddcf/code-snippets/blob/master/javascript/web-api/web-api.md)
+
 JSON stands for JavaScript Object Notation. JSON is faster than XML because you don't have to send as much data -- you're not sending all the tags.
 
 JSON is inspired by object literal syntax in JavaScript, and looks very similar to it.
 
-BUT . . . it is not the same thing. Trying to treat it the same exact way can result in errors. Unlike a JavaScript object, JSON properties *must* be wrapped in quotes, like this:
+BUT . . . it is not the same thing.  It is a string, not an object.  Trying to treat it as an object can result in errors.
+
+Also, unlike a JavaScript object, JSON properties *must* be wrapped in quotes, like this:
 
 ```
 {

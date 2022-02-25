@@ -1,13 +1,20 @@
 # Web APIs
 
-Web APIs are extra things provided by the browser.
+*Merge/link the following documents:*
+- api:
+  - [api.md](https://github.com/toddcf/code-snippets/blob/master/api/api.md)
+- javascript:
+  - objects:
+    - json:
+      - [json.md](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/json/json.md)
+  - web-api:
+    - [web-api.md](https://github.com/toddcf/code-snippets/blob/master/javascript/web-api/web-api.md)
 
-
-## Examples
+Web APIs are extra things provided by the browser, such as:
 
 - DOM
 - AJAX
-- Timers (setTimeout, etc.)
+- Timers (setTimeout, setInterval, etc.)
 
 
 ## How it Works

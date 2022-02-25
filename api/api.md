@@ -1,6 +1,16 @@
 # API
 
-Application Program(ming) Interface
+*Merge/link the following documents:*
+- api:
+  - [api.md](https://github.com/toddcf/code-snippets/blob/master/api/api.md)
+- javascript:
+  - objects:
+    - json:
+      - [json.md](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/json/json.md)
+  - web-api:
+    - [web-api.md](https://github.com/toddcf/code-snippets/blob/master/javascript/web-api/web-api.md)
+
+Application Programming Interface
 
 https://ifttt.com/
 This website shows you ways to connect multiple APIs.
@@ -10,9 +20,11 @@ This is an API directory.
 
 iTunes has an API!
 
+
 ## API Data Formats
 
 When you query an API, you get back data. And that data needs to be in a predictable format so that you are able to parse and manipulate it. Therefore, it is sent in the form of either XML or JSON:
+
 
 ### XML
 
@@ -26,7 +38,10 @@ Stands for Extended Markup Language. Looks very similar to HTML, but is only dat
 </person>
 ```
 
+
 ### JSON
+
+(Merge this section with [json.md](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/json/json.md).)
 
 Stands for JavaScript Object Notation. Looks like a JavaScript object, except that everything is a string:
 
@@ -42,11 +57,15 @@ Stands for JavaScript Object Notation. Looks like a JavaScript object, except th
 
 JSON has become much more popular than XML because the format is so similar to JavaScript that you don't need to convert it from XML format in order to use it. (And you are most likely using JavaScript to do your API calls.) It's a little clunkier to use XML.
 
+
 ## Viewing JSON
+
+(Merge this section with [json.md](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/json/json.md).)
 
 Chrome extension "JSON View" can be used to extract JSON from one block of text to an easier-to-read format so you can visually parse it.
 
 Or you can go to JSON viewing websites and paste your JSON code into that.
+
 
 ## How to Call an API in Node
 
@@ -90,7 +109,10 @@ Status code 200 means the response was "okay." This is important to check becaus
 
 If things are "okay," then console.log the `body`, which is the response that came back from your request.
 
+
 ## Converting JSON String into an Object
+
+(Merge this section with [json.md](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/json/json.md).)
 
 Remember that when you receive a JSON response, it is actually a string (even though it looks very similar to an object). So in order to use it, you will need to convert it into an actual object. Here's how:
 
@@ -101,6 +123,7 @@ This is built into JavaScript. Use `JSON.parse`, followed by what it is you want
 THEN, save that result into a variable:
 
 `var parsedData = JSON.parse(body);`
+
 
 ## OMDB Colt Steele API
 
