@@ -12,6 +12,9 @@
 
 Application Programming Interface
 
+https://github.com/public-apis/public-apis
+A collection of public APIs.
+
 https://ifttt.com/
 This website shows you ways to connect multiple APIs.
 
