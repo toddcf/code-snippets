@@ -11,7 +11,7 @@ CORS is a policy that lets a website whitelist the domains it will allow to pull
 
 ## Troubleshooting
 
-Sometimes you have to use a proxy to get around CORS blocking.  Rather than send your request straight from the browser/website to the endpoint, you first send it to a proxy, which then sends it to the endpoint.  Like this:
+Sometimes you have to use a proxy to get around CORS blocking.  Rather than send your request straight from the browser/website to the endpoint, you first send it to a proxy, which then sends it to the endpoint.  If nothing sensitive or personal is being transmitted, you can use a CORS proxy.  You just prepend it to your endpoint URL, like this:
 
 ```
 const baseEndpoint = 'http://www.recipepuppy.com/api';
@@ -23,3 +23,7 @@ async function fetchRecipes(query) {
   return data;
 }
 ```
+
+Wes Bos considers the CORS Anywhere Heroku App one to work the best.
+
+Just remember that you are sending your data through a random web server, so make sure it doesn't contain any sensitive information.  (If you do need to send sensitive data, you have to run your own web server.)
