@@ -117,6 +117,19 @@ window.addEventListener( 'mousemove', showMouseLocation );
 ```
 
 
+## Form Event Listener
+
+You can add one event listener to an entire form, and it will bubble up from any of the fields within the form that are interacted with.  Then you can have a separate function that figures out what the target was and performs the appropriate action.
+
+```
+function handleInput(e) {
+  console.log(e.target); // Will be whichever input was interacted with.
+  console.log(e.currentTarget); // Will always be the form (which the event bubbles up to).
+}
+form.addEventListener('input', handleInput);
+```
+
+
 ## Using with Anonymous Functions
 
 ```
