@@ -23,7 +23,7 @@ Import the file you need into the file where you want to use it.  (In this manne
 
 You can't use modules on your local or you will run into CORS issues.  To set up a server for your project:
 
-See [Local Server](https://github.com/toddcf/code-snippets/blob/master/servers/local-server.md)
+See [Local Server](https://github.com/toddcf/code-snippets/blob/master/servers/local-server.md).
 
 
 ### 2. Load One "Entry Point" Script Tag on Your HTML Page
@@ -37,3 +37,28 @@ And give it a `type` attribute with the value `module`:
 </body>
 </html>
 ```
+
+
+### 3. "Export" the Function From Its File
+
+Go to the function you want to be able to use elsewhere and write the word "export" in front of it:
+
+```
+export function returnHi(name) {
+  return `Hi, ${name}.`;
+}
+```
+
+
+### 4. "Import" That Same Function Into the File You Want to Invoke It From
+
+In each JS file, import any other JS files you want to access:
+
+```
+import { returnHi } from './utils.js';
+console.log(returnHi('Todd'));
+```
+
+It's the word `import`, then the name of the function inside curly braces, then the word `from`, and then a string containing the relative filepath to the JS file containing that function.  (In this example, the `./` means the file is in the same directory as this one.)
+
+This example will print `Hi, Todd.` to the console.
