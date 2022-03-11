@@ -23,9 +23,7 @@ Import the file you need into the file where you want to use it.  (In this manne
 
 You can't use modules on your local or you will run into CORS issues.  To set up a server for your project:
 
-#### Server Method 1: VS Code Plugin
-
-
+See [Local Server](https://github.com/toddcf/code-snippets/blob/master/servers/local-server.md)
 
 
 ### 2. Load One "Entry Point" Script Tag on Your HTML Page
