@@ -39,9 +39,9 @@ And give it a `type` attribute with the value `module`:
 ```
 
 
-### 3. "Export" the Function From Its File
+### 3. "Export" the Item From Its Module
 
-Go to the function you want to be able to use elsewhere and write the word "export" in front of it:
+Go to the function, variable, etc. you want to be able to use elsewhere (let's say it's in a file called `utils.js`) and write the word "export" in front of it:
 
 ```
 export function returnHi(name) {
@@ -49,10 +49,12 @@ export function returnHi(name) {
 }
 ```
 
+This allows this function to be used in other modules.
 
-### 4. "Import" That Same Function Into the File You Want to Invoke It From
 
-In each JS file, import any other JS files you want to access:
+### 4. "Import" That Same Item Into the Module You Want to Invoke It From
+
+*At the top* of the module you want to use the exported function in, use the `import` keyword, like this:
 
 ```
 import { returnHi } from './utils.js';
@@ -61,4 +63,36 @@ console.log(returnHi('Todd'));
 
 It's the word `import`, then the name of the function inside curly braces, then the word `from`, and then a string containing the relative filepath to the JS file containing that function.  (In this example, the `./` means the file is in the same directory as this one.)
 
+This tells the system that this is one of the modules you want to use that exported function in.
+
 This example will print `Hi, Todd.` to the console.
+
+
+## Importing Multiple Items From the Same Module
+
+If there are multiple items within the same module that you want to import, you follow pretty much the same procedure:
+
+
+### Export Each of the Items You Want to Share
+
+To continue the previous example, let's say you're already exporting the `returnHi` function and now you want to also export a variable.  Just add the `export` keyword in front of that variable, too:
+
+```
+export const lastName = 'Tester';
+```
+
+
+### List Each Imported Item Inside the Curly Braces for That Module
+
+In the file you want to import *into*, you can list each item you want access to (comma-delimited) inside the curly braces.  In this example, `lastName` is a variable in the same imported module from the previous example:
+
+```
+import { returnHi, lastName } from './utils.js';
+```
+
+You would now have access to both the `returnHi` function and the `lastName` variable.
+
+
+## Importing From Multiple Modules
+
+*You can list multiple modules to import at the top of your file.*
