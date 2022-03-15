@@ -75,22 +75,85 @@ If there are multiple items within the same module that you want to import, you 
 
 ### Export Each of the Items You Want to Share
 
-To continue the previous example, let's say you're already exporting the `returnHi` function and now you want to also export a variable.  Just add the `export` keyword in front of that variable, too:
+To continue the previous example, let's say you're already exporting the `returnHi` function and now you want to also export a variable.  There are two ways: Named, or Default exports.
+
+
+#### Named Exports
+
+*Abstract this to a separate document.*
+
+Just add the `export` keyword in front of that variable, too:
 
 ```
 export const lastName = 'Tester';
+export const middleName = 'Cowboy';
+```
+
+Or, instead of exporting each variable, you can list the named exports at the bottom of the file, like this:
+
+```
+export { last, middle };
+```
+
+Either method is fine; it's personal preference.
+
+You can haveas many named exports as you want.
+
+
+#### Default Exports
+
+*Abstract this to a separate document.*
+
+Unlike named exports, you can only have one default export per module.
+
+```
+const person = {
+  firstName: 'Wes',
+  lastName: 'Bos'
+}
+
+export default person;
 ```
 
 
-### List Each Imported Item Inside the Curly Braces for That Module
+### How to Import Named Exports
 
 In the file you want to import *into*, you can list each item you want access to (comma-delimited) inside the curly braces.  In this example, `lastName` is a variable in the same imported module from the previous example:
 
 ```
-import { returnHi, lastName } from './utils.js';
+import { returnHi, lastName, middleName } from './utils.js';
 ```
 
-You would now have access to both the `returnHi` function and the `lastName` variable.
+You would now have access to the `returnHi` function and both the `lastName` and `middleName` variables.
+
+
+### How to Import Default Exports
+
+Use the `import` keyword, then make up any variable name you want to use to reference it in the document you are importing into.
+
+```
+import instructor from './wes.js';
+```
+
+NOTE: Default imports *do not* go inside curly brackets.  (Only named imports do that.)
+
+
+### When to Use Named vs. Default Imports
+
+If a module does one thing, you can use `default`.
+
+If a module is a library of many different things, you will have to use `named`.
+
+Note that you can do both a default plus one or more named imports in a file.
+
+
+### How to Import a Combination of Default and Named Exports
+
+The default import *does not* have curly brackets; the named imports *do*:
+
+```
+import instructor, { returnHi, lastName, middleName } from './utils.js';
+```
 
 
 ## Importing From Multiple Modules
