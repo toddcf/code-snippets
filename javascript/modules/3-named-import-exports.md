@@ -2,7 +2,7 @@
 
 You can have as many named exports as you want.  (Unlike default exports, which can have only one per module.)
 
-To continue the example in the Modules Overview document, let's say you're already exporting the `returnHi` function and now you want to also export a variable.
+To continue the example in the [Modules Overview](https://github.com/toddcf/code-snippets/blob/master/javascript/modules/1-modules-overview.md) document, let's say you're already exporting the `returnHi` function and now you want to also export a variable.
 
 
 ## Exporting
