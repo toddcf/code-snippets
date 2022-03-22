@@ -17,6 +17,16 @@ export default person;
 ```
 
 
+NOTE: You *cannot* export a default variable declaration.  You have to first declare the variable, then export it.  For example, the following will NOT work:
+
+```
+export default const person = {
+  firstName: 'Wes',
+  lastName: 'Bos'
+}
+```
+
+
 ## How to Import a Default Exports
 
 Use the `import` keyword, then make up any variable name you want to use to reference it in the document you are importing into.
