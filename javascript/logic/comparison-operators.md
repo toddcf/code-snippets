@@ -5,9 +5,9 @@
 
 ### "Strict Equals" (===) Comparison Chart
 
-![Strict Equals](https://github.com/toddcf/code-snippets/blob/master/javascript/decisions/equality-chart-strict.jpg)
+![Strict Equals](https://github.com/toddcf/code-snippets/blob/master/javascript/logic/equality-chart-strict.jpg)
 
 
 ### "Equals" (==) Comparison Chart
 
-![Equals](https://github.com/toddcf/code-snippets/blob/master/javascript/decisions/equality-chart.jpg)
+![Equals](https://github.com/toddcf/code-snippets/blob/master/javascript/logic/equality-chart.jpg)
