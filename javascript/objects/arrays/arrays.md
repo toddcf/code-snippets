@@ -197,6 +197,6 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const slicedValues = numbers.slice(2, 4); // returns [3, 4]
 ```
 
-`slice()` takes in the starting and end points of the array items you want to get.  It "slices" out and returns those two items and everything in between. (More on this in the [Slice](https://github.com/toddcf/code-snippets/blob/master/javascript/arrays/slice.md) document.)
+`slice()` takes in the starting and end points of the array items you want to get.  It "slices" out and returns those two items and everything in between. (More on this in the [Slice](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/arrays/slice.md) document.)
 
 But the point here is that while it returns a new array containing the slices values, the original array it sliced them from remains intact.
