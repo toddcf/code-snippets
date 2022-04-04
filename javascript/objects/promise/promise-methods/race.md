@@ -1,4 +1,4 @@
-# Promise.race()
+# race()
 
 `Promise.race()` is a static method that takes in an array of promises and returns the first one as soon as it is finished.
 

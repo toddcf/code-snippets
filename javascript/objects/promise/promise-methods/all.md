@@ -1,4 +1,4 @@
-# Promise.all()
+# all()
 
 `Promise.all()` is a static method that takes in an array of promises and returns them all once the last one is finished.
 

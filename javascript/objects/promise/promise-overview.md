@@ -1,11 +1,5 @@
 # Promise (Overview)
 
-*TODO:
-- Show the entire overview in this document, but do include the detailed explanation here.
-- Move the .then() explanation to the .then() document and link to it, and only include the .then() code -- leave out .catch(), etc.
-- Move the .catch() example and explanation to the .catch() document and link to it.
-- Rewatch the video and write up the explanation for allSettled(), plus what the difference is between that and all().*
-
 ES6 brings along a native implementation of promises.  This allows promises to be standardized across browsers, rather than have the quirks of the various libraries that use them, such as jQuery, Axios, etc.
 
 In JavaScript, there is no such thing as pausing execution of code.  Therefore, if you send an AJAX request, the system does not wait for its response before continuing on to execute the next line of code.  This can cause problems if the next line of code depends on the response from that AJAX request.

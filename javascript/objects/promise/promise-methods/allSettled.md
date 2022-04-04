@@ -1,6 +1,6 @@
 # allSettled()
 
-The `.allSettled()` method takes in an array of promises and waits to return all the results when the last one is finished running, whether each one was resolved or rejected.
+The `Promise.allSettled()` method takes in an array of promises and waits to return all the results when the last one is finished running, whether each one was resolved or rejected.
 
 ```
 // function makePizza . . . etc. here
