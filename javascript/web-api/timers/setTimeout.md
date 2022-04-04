@@ -23,7 +23,7 @@ setTimeout( function() { console.log('Hi!'); }, 5000 );
 
 ## Stop (Clear) Timer
 
-See [clearTimeout]().
+See [clearTimeout](https://github.com/toddcf/code-snippets/blob/master/javascript/web-api/timers/clearTimeout.md).
 
 
 ## How it Works Behind the Scenes
