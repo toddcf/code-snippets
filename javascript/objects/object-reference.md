@@ -80,7 +80,7 @@ If you do want to make a copy of an object instead of referencing the same objec
 
 ### Spread
 
-Split this out and merge with the existing [Spread](https://github.com/toddcf/code-snippets/blob/master/javascript/arrays/spread-operator.js) document:
+Split this out and merge with the existing [Spread](https://github.com/toddcf/code-snippets/blob/master/javascript/objects/arrays/spread-operator.md) document:
 
 ```
 const person3 = { ...person1 };
