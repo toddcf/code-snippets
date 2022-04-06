@@ -25,3 +25,18 @@ Windows machines don't have the differentiation between the terminal and the she
 To keep things simple, you can just use Command Prompt (cmd) on Windows.  It is a good starting point to learn the terminal; then you can dive into the PowerShell if required.
 
 On Mac, you can just use Z-Shell.
+
+
+## Helpful Commands
+
+- `pwd` = print working directory.  Tells you where you are.
+- `ls` = list items.  Tells you all the items in your current directory.
+- `cd` = change directory.  Type this, followed by the directory you want to navigate to, to go there.
+  - `cd ..` = move up one directory level.
+  - `cd /` = navigate to the root (top level) directory.
+  - `cd ~` = navigate to home directory.  (I believe this means your user directory.)
+- `clear` = clear the terminal.  You still have access to your previous commands if you scroll up.
+
+The `~` symbol next to a directory name indicates you that you are currently in that directory.
+
+`Ctrl` + `q` quits your existing terminal.
