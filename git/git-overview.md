@@ -29,14 +29,41 @@ On Mac, you can just use Z-Shell.
 
 ## Helpful Commands
 
-- `pwd` = print working directory.  Tells you where you are.
+- `pwd` = print working directory.  Tells you where you are.  (Prints the absolute path (not relative path).)
 - `ls` = list items.  Tells you all the items in your current directory.
 - `cd` = change directory.  Type this, followed by the directory you want to navigate to, to go there.
   - `cd ..` = move up one directory level.
   - `cd /` = navigate to the root (top level) directory.
   - `cd ~` = navigate to home directory.  (I believe this means your user directory.)
 - `clear` = clear the terminal.  You still have access to your previous commands if you scroll up.
+- `mkdir` = make directory (create folder).
+- `touch` = create file.  (Refers to "touching" a file and changing the date it was last "touched" -- but if `touch` can't find that filename, it simply creates a new one.  So this is a kind of "misuse" of this feature if you use it to create new files, but that's how it's done.)
+- `rm` = delete a *file*.  (Permanently.  There is no confirmation warning first, and your files do not get moved to the trash -- they are gone.)
+- `rmdir` = delete a *directory*.  (Only works if the directory is empty.  This is a safeguard.)
+- `rmdir -r` or `rmdir -R` = delete a directory *plus its contents*.  (But this is risky and should almost never be used, especially when you're beginning.)  The `r` or `R` flag (more on flags below) stands for "recursive," and it just means it will include the entire contents of the folder in question.
+- `\` = space.  This is used if a file or directory name contains a space.  You must "escape" the space before you type it.
+- `cp` = copy.  Followed by the source path (from), then the target path (to).  (See separate document for further instructions.)
 
 The `~` symbol next to a directory name indicates you that you are currently in that directory.
 
 `Ctrl` + `q` quits your existing terminal.
+
+
+## Relative vs. Absolute Paths
+
+Relative Paths are the path you have to take starting from your current location within the directories.  (These are more commonly used in daily work.  And relative paths continue to work within a folder structure if you move the folder somewhere.  Therefore, it is recommended that you work with relative paths whenever possible.)
+
+Absolute Paths are the full path from the root directory to the location you want to go to.  They start with a `/`.
+
+
+## Flags
+
+Flags allow you to add options to your commands.
+
+For example, you can dictate how you want the contents of a folder to be displayed in the terminal:
+
+- `ls -s` will display the filesize of each file.
+- `ls -l` will display the "long format" of each file.
+- `ls -ls` will do both flags at once.
+
+To see the full list, run `man ls` in the terminal.  This is short for "manual" plus the command you want to see the manual for.  It will display the documentation for that command.
