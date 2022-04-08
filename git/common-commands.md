@@ -62,7 +62,7 @@ After that, if you were just trying to get your master branch up to date with yo
 5. `git checkout gh-pages`.
 6. `git push origin gh-pages`. (Pushes this new branch up to GitHub.)
 7. `git checkout [working branch]` to make sure you don't accidentally continue editing on the live site!
-8. Wait about 15 minutes, then see your live site at https://`username`.github.io/`repository`.
+8. Wait about 15 minutes, then see your live site at https://`username`.github.io/`repository`/.  (It needs that slash on the end.)
 
 
 ### Keeping GH Pages up to Date After Changes Have Been Made on Master Branch
