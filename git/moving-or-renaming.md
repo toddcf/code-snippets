@@ -15,9 +15,14 @@ Let's say you have this file structure:
     - styles.css
   - moved
 
-And let's say you want to move the `index.html` file into the `moved` folder:
+And let's say you want to move the `index.html` file into the `moved` folder.  You would run `mv` for copy (or `move` in the Window cmd terminal), followed by the source path (from), followed by the target path (to).  Like this:
 
 `mv data/index.html moved/`
+
+
+Or:
+
+`move data/index.html moved/`
 
 Just like with copying, you need the `/` appended to the target directory so it knows it already exists.
 
@@ -28,6 +33,11 @@ Now let's say you want to move the entire `more-data` folder into the `moved` fo
 
 `mv data/more-data moved/`
 
+
+Or:
+
+`move data/more-data moved/`
+
 Again, make sure to append that `/` to the target directory.
 
 
@@ -37,3 +47,7 @@ To rename a file or directory, you "move" it from the old name to the new name. 
 
 `mv styles.css style.css`
 
+
+Or:
+
+`move styles.css style.css`
