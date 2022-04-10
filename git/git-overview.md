@@ -8,6 +8,8 @@ A Git repository is a Git-managed project.
 
 Git and GitHub work extremely well together, but they are two different services.
 
+Git *tracks changes* to your project; it does not store the same files again and again.
+
 
 ## Using the Terminal
 
@@ -85,3 +87,26 @@ For example, you can dictate how you want the contents of a folder to be display
 - `ls -ls` will do both flags at once.
 
 To see the full list, run `man ls` in the terminal.  This is short for "manual" plus the command you want to see the manual for.  It will display the documentation for that command.
+
+
+## Terminology
+
+- Working Directory (aka Tree): A folder that is being managed by Git that contains all the files and subfolders for your project.
+- Commit: A snapshot of your project at a given moment.  Each commit does not re-save the entire file; it only saves the *changes* that were made to the file.  (The initial commit will of course store all of the files, but after that, only the changes are stored.)
+- Branch: A set of changes, kept separate from other sets of changes in other branches.  The `main` branch is typically the production (live) branch.  Since you don't want to make changes to that until you are sure they will not break the site, you create separate branches to work on until you know they are ready to merge into `main`.  This even allows multiple developers to work on changes in parellel without blocking each other.
+
+
+## How Git Tracks Changes
+
+When you turn a folder into a Working Directory, Git creates a hidden folder called `.git` that stores all the logic for the changes you make and branch each of those changes belongs to.  This is a *repository*.  The Working Directory is all the actual project files.  The Repository is the version control logic.
+
+The Repository contains two main areas:
+
+1. Staging.  This is basically an `index` file.
+2. Commits.  This is an objects folder containing the different commits (snapshots).
+
+Staging is where changes are stored to tell Git that they should be included in the next commit.  (You might have a hundred files, but only have a couple of them in staging because you didn't make changes to the rest.)
+
+Once all your changes are added to Staging, you commit those changes and they become tracked by Git.
+
+You can jump back to previous commits if you need to.
