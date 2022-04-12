@@ -23,3 +23,20 @@
 Here is how to update Git to the latest version if it is already installed:
 
 1. Check which version you have by running `git --version` in the command line.  Compare this to the latest stable version number on https://git-scm.com/.
+
+
+## Visual Studio Code
+
+A quick note about installing Visual Studio Code: You'll want the "Add to PATH" box checked so that you can use the terminal from inside VS Code.
+
+
+## Add Your Credentials
+
+Your email address and name must be added for account identity so that we know who has made which changes.  (It will become messy if everyone can just anonymously add commits.)
+
+Navigate to your repository and run the following in your terminal:
+
+`git config --global user.email "you@example.com"`
+`git config --global user.name "First Last"`
+
+NOTE: The `--global` flag will set this information for all repositories on your machine.  If you omit this flag, it will only set this information for the project you are currently in.

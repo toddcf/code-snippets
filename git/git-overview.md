@@ -57,6 +57,8 @@ There are three core directories on a Windows machine:
 - `\` = space.  This is used if a file or directory name contains a space.  You must "escape" the space before you type it.
 - `cp` or `copy` (Windows cmd) = copy.  Followed by the source path (from), then the target path (to).  (See separate document for further instructions.)
 - `mv` or `move` (Windows cmd) = move.  (See separate document.)
+- `git status` = tells you information about your repository.  (Whether or not it exists, what branch you are on, whether or not the files it contains are being tracked.)
+- `git log` = shows commit history.  (To exit the log, press `q`, then `Enter`.)
 
 The `~` symbol next to a directory name indicates you that you are currently in that directory.
 
