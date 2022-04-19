@@ -58,7 +58,7 @@ There are three core directories on a Windows machine:
 - [`cp` or `copy` (Windows cmd)](copying.md) = copy.  Followed by the source path (from), then the target path (to).
 - [`mv` or `move` (Windows cmd)](moving-or-renaming.md) = move.
 - `git status` = tells you information about your repository.  (Whether or not it exists, what branch you are on, whether or not the files it contains are being tracked.)
-- [git log](git-log.md) = shows commit history.  (To exit the log, press `q`, then `Enter`.)
+- [`git log`](git-log.md) = shows commit history.  (To exit the log, press `q`, then `Enter`.)
 
 The `~` symbol next to a directory name indicates you that you are currently in that directory.
 
