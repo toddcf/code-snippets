@@ -55,8 +55,8 @@ There are three core directories on a Windows machine:
 - `rmdir` = delete a *directory*.  (Only works if the directory is empty.  This is a safeguard.)
 - `rmdir -r` or `rmdir -R` = delete a directory *plus its contents*.  (But this is risky and should almost never be used, especially when you're beginning.)  The `r` or `R` flag (more on flags below) stands for "recursive," and it just means it will include the entire contents of the folder in question.
 - `\` = space.  This is used if a file or directory name contains a space.  You must "escape" the space before you type it.
-- `cp` or `copy` (Windows cmd) = copy.  Followed by the source path (from), then the target path (to).  (See separate document for further instructions.)
-- `mv` or `move` (Windows cmd) = move.  (See separate document.)
+- [`cp` or `copy` (Windows cmd)](copying.md) = copy.  Followed by the source path (from), then the target path (to).
+- [`mv` or `move` (Windows cmd)](moving-or-renaming.md) = move.
 - `git status` = tells you information about your repository.  (Whether or not it exists, what branch you are on, whether or not the files it contains are being tracked.)
 - [git log](git-log.md) = shows commit history.  (To exit the log, press `q`, then `Enter`.)
 
