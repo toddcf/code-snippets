@@ -1,4 +1,4 @@
-# Git Revert
+# Reverting Changes
 
 ## Reverting to Previous Commit
 

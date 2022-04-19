@@ -7,4 +7,4 @@ Each commit you make gets a "commit id," which is a long string of gibberish uni
 
 # Reverting to Previous Commit
 
-To go back to a previous commit, see [git-revert.md](reverting-changes.md).
+To go back to a previous commit, see [Reverting Changes](reverting-changes.md).
