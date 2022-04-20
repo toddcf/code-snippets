@@ -58,6 +58,7 @@ There are three core directories on a Windows machine:
 - [`cp` or `copy` (Windows cmd)](copying.md) = copy.  Followed by the source path (from), then the target path (to).
 - [`mv` or `move` (Windows cmd)](moving-or-renaming.md) = move.
 - `git status` = tells you information about your repository.  (Whether or not it exists, what branch you are on, whether or not the files it contains are being tracked.)
+- [`git branch`](branches.md) = see list of all branches for your current repository on your local machine.
 - [`git log`](git-log.md) = shows commit history.  (To exit the log, press `q`, then `Enter`.)
 
 The `~` symbol next to a directory name indicates you that you are currently in that directory.
@@ -111,4 +112,4 @@ Staging is where changes are stored to tell Git that they should be included in 
 
 Once all your changes are added to Staging, you commit those changes and they become tracked by Git.
 
-You can jump back to previous commits if you need to.
+You can jump back to previous commits if you need to.  (See [Reverting Changes](reverting-changes.md).)
