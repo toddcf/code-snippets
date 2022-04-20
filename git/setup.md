@@ -1,4 +1,4 @@
-# Installing Git
+# Git Setup
 
 1. Download Git from https://git-scm.com/.
 2. Follow the installation prompts.
@@ -40,3 +40,35 @@ Navigate to your repository and run the following in your terminal:
 `git config --global user.name "First Last"`
 
 NOTE: The `--global` flag will set this information for all repositories on your machine.  If you omit this flag, it will only set this information for the project you are currently in.
+
+
+
+
+
+
+### Username
+
+Check if your username is set correctly:
+
+`git config user.name`
+
+If this does not output your name, set it as follows:
+
+`git config -- global user.name "Todd Croak-Falen"` (with your name in the quotes).
+
+Then run the check again to confirm that it has been set.
+
+
+### Email
+
+Check if your email is set correctly:
+
+`git config user.email`
+
+IMPORTANT: if you are going to use Git with Bitbucket, this must be the same email address you use to sign into Bitbucket.
+
+If this does not output your email, set it as follows:
+
+`git config -- global user.email "test@test.com"` (with your name in the quotes).
+
+Then run the check again to confirm that it has been set.
