@@ -21,4 +21,4 @@ See https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53 for mo
 
 You can type `git log` in the terminal to see a list of the commits you've made (with messages) in descending order.
 
-NOTE: If you see `(HEAD -> master)` in your log, `HEAD` is a special type of reference that is going to point to another reference: whatever branch you are currently on.  In this example, it points to the master branch.
+NOTE: You should see `(HEAD -> master)` next to the most recent commit in your log.  For further explanation, see [HEAD](head.md).
