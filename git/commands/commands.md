@@ -71,7 +71,7 @@ For example, `touch git-essentials.md` was used to create this markdown (.md) fi
 
 Remove, or `rm` is used to delete *files* (not directories).
 
-For example, `rm git-essentials.md` would delete this file.
+For example: `rm <file name>`
 
 Remove Directory, or `rmdir`, is used to delete entire *directories* (as opposed to individual files).
 
@@ -83,6 +83,8 @@ Remove Directory, or `rmdir`, is used to delete entire *directories* (as opposed
 Useful for seeing your options to navigate to or delete, or to confirm that the `mkdir` or `touch` you just ran created the directory or file you wanted.
 
 NOTE: `ls` will not show hidden directories and files.  To also see hidden directories and files, use `ls -a`.
+
+NOTE: `ls-files` will show just the files, not the directories.
 
 
 ## diff
