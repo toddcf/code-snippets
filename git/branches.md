@@ -65,3 +65,14 @@ While in the branch you want to create your new branch off of, run `git branch -
 ## Merging
 
 To merge one branch's changes into another, see [Merging](merging.md).
+
+
+## Deleting a Branch
+
+`git branch -d <branch name>` allows you to delete a branch only if you have merged its changes.
+
+`git branch -D <branch name>` forces the deletion, regardless of whether or not its changes have been merged.
+
+To delete multiple branches, list each one with a space between:
+
+`git branch -D <branch name> <branch name>`
