@@ -1,5 +1,10 @@
 # Commands
 
+## Init
+
+`git init` creates a new repository.  See [initialize-repository](../repositories/initialize-repository.md) for more detail.
+
+
 ## Add
 
 `git add <filename>` adds one or more files to the staging (index).  This means that this file will now be tracked by Git.
@@ -8,7 +13,7 @@ You can also use `git add -A` to automatically add only files that are new or ed
 
 Or you can use `git add .` to begin tracking all of the untracked files.
 
-NOTE: Files must be added before they are committed.
+NOTE: Files must be added (`git add`) before they are committed (`git commit`).
 
 
 ## Commit
@@ -24,7 +29,7 @@ More info: https://git-scm.com/docs/git-commit
 
 ## Log
 
-`git log` will show a list of the commits you've made (with their messages), in descending order.
+`git log` will show a list of the commits you've made (with their messages) in your current branch, in descending order.
 
 
 TROUBLESHOOTING:
@@ -97,6 +102,11 @@ NOTE: You can type `git diff` without the file name, but this will show all the 
 ## clear
 
 `clear` empties out your terminal window if it's gotten too cluttered.
+
+
+## --version
+
+`git --version` will tell you which version of Git you have installed.  See [setup](../setup.md) for instructions on updating.
 
 
 

@@ -48,9 +48,11 @@ While in the branch you want to create your new branch off of, run `git branch `
 Note that you can create a branch off of one branch, and then create another branch off the second branch, etc.
 
 
-## Checkout (Switch To) Branch
+## Checkout / Switch Branch
 
-`git checkout ` + the branch name you want to switch to (a.k.a. "check out").
+`git checkout <branch name>`, with "branch name" being the branch you want to switch to (a.k.a. "check out").
+
+`git switch <branch name>` is a newer, more semantic command that does the same thing.  See [switch](commands/switch.md).
 
 Side Note: If you run `git log` immediately after creating and then checking out a new branch, you will see the same list of commits as the branch you created the new branch off of.  Each commit id and timestamp will be the same as they are in the original branch.
 
@@ -60,6 +62,8 @@ Side Note: If you run `git log` immediately after creating and then checking out
 Same as creating a new branch, except you also use `-b`, like this:
 
 While in the branch you want to create your new branch off of, run `git branch -b ` + branch name.
+
+Or you can use `git switch -c <branch name>`.  See [switch](commands/switch.md).
 
 
 ## Merging
