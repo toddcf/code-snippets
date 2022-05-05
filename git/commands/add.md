@@ -1,4 +1,4 @@
-# Git Add
+# Add
 
 There are a few ways to use the `git add` command.
 
