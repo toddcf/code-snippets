@@ -32,3 +32,8 @@ HOWEVER, the changes remain in your working directory until you delete them and 
 `git reset --hard HEAD~1`
 
 Same as a default reset, except that it will also make the changes in your working directory.  For example, if you created a file, staged and committed it, and then ran `git reset --hard`, the stages and commits are now gone, plus the file itself will be gone from your working directory.
+
+
+## Using in Conjunction with Reflog
+
+See the [Reflog](reflog.md) file for info on how to do this.
