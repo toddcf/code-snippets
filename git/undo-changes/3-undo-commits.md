@@ -34,6 +34,15 @@ HOWEVER, the changes remain in your working directory until you delete them and 
 Same as a default reset, except that it will also make the changes in your working directory.  For example, if you created a file, staged and committed it, and then ran `git reset --hard`, the stages and commits are now gone, plus the file itself will be gone from your working directory.
 
 
+## Resets Only Affect the Branch You Run Them In
+
+Let's say you merged a `feature` branch into the `main` branch.  Then you wanted to undo that merge.
+
+While in the `main` branch, you could run `git reset --hard HEAD~1`, and `main` would roll back one to its state prior to the merge.
+
+However, if you then switch to your `feature` branch, you'll still see your latest changes there -- they will not have been undone.
+
+
 ## Using in Conjunction with Reflog
 
 See the [Reflog](reflog.md) file for info on how to do this.
