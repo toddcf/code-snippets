@@ -18,21 +18,21 @@ NOTE: If you are not ready to add a tag to the main branch with a new version nu
 
 ## Types of Merges
 
-1. Fast-Forward Merge *
+1. Fast-Forward Merge
 2. Non Fast-Forward Merge
-  2a. Recursive Merge *
-  2b. Ours Merge
-  2c. Octopus Merge
-  2d. Subtree Merge
+  - Recursive Merge
+  - Ours Merge
+  - Octopus Merge
+  - Subtree Merge
 
-* The two main types are the Fast-Forward Merge, and the Non Fast-Forward Recursive Merge.
+(The two main types are the Fast-Forward Merge, and the Non Fast-Forward Recursive Merge.)
 
 
 ### Fast-Forward Merge
 
 This is when the `main` branch has not changed (no additional commits) since you created a `feature` branch, made changes to the `feature` branch, and now want to merge it back into the `main` branch.
 
-In this case, the Fast-Forward Merge simply moves the [head](../head/head.md) forward to the latest commit on the `feature` branch.  It *does not* create a new commit.  It just uses the latest commit from `feature`.
+In this case, the Fast-Forward Merge simply moves the [HEAD](../head/head.md) forward to the latest commit on the `feature` branch.  It *does not* create a new commit.  It just uses the latest commit from `feature`.
 
 
 ## Merge Conflicts
