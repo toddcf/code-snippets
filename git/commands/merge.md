@@ -35,6 +35,15 @@ This is when the `main` branch has not changed (no additional commits) since you
 In this case, the Fast-Forward Merge simply moves the [HEAD](../head/head.md) forward to the latest commit on the `feature` branch.  It *does not* create a new commit.  It just uses the latest commit from `feature`.
 
 
+## Squash
+
+Using the `--squash` flag, you can combine multiple commits into one when you merge branches.
+
+Let's say you made five commits in your `feature` branch.  When you merge them into `main`, you have the option of using `git merge --squash feature` (while in the `main` branch), and it will "squash" those five commits into just one and only merge the one into `main`.
+
+Note that after doing this, you then have to do another `git commit -m` and write one message that summarizes the entire squash.
+
+
 ## Merge Conflicts
 
 Normally, Git can automatically merge changes together.  But if Git cannot determine which version is the correct one, a merge conflict will occur, and it will fall to the developer to figure it out.
