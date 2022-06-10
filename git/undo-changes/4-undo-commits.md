@@ -45,4 +45,4 @@ However, if you then switch to your `feature` branch, you'll still see your late
 
 ## Using in Conjunction with Reflog
 
-See the [Reflog](reflog.md) file for info on how to do this.
+See the [Reflog](5-reflog.md) file for info on how to do this.

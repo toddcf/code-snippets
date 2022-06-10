@@ -14,7 +14,7 @@ You can roll back to the previous commit version, like so:
 
 ## Original Option: Checkout
 
-Same as above, except the `checkout` command is less explicit (has a broader use) than the `restore` command:
+Same as above, except the `checkout` command is less specific than the `restore` command:
 
 `git checkout <name of changed file>`
 
