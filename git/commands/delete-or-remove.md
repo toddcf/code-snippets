@@ -22,3 +22,8 @@ Whichever staging option you choose, now if you run `git status` again, the dele
 Next, you commit your change:
 
 `git commit "<commit message>"`
+
+
+## Delete Branches
+
+To delete entire branches, see [Delete Branch](../branches/5-delete-branch.md).
