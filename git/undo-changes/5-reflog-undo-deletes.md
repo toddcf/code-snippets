@@ -18,6 +18,6 @@ Instead, checkout the commit:
 
 `git checkout <hash number>`
 
-You will now be in "detached HEAD" mode.  Now you can create a new branch which contains this commit:
+You will now be in [detached HEAD](../head/detached-head/1-detached-head.md) mode.  Now you can create a new branch which contains this commit:
 
 `git switch -c <new branch name>`
