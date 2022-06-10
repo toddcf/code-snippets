@@ -30,16 +30,27 @@ NOTE: If you are not ready to add a tag to the main branch with a new version nu
 
 ### Fast-Forward Merge
 
-This is when the `main` branch has not changed (no additional commits) since you created a `feature` branch, made changes to the `feature` branch, and now want to merge it back into the `main` branch.
+The Fast-Forward Merge is the default merge type when the `main` branch has not had any additional commits since you created a `feature` branch from it, made changes to the `feature` branch, and now want to merge it back into the `main` branch.
 
 In this case, the Fast-Forward Merge simply moves the [HEAD](../head/head.md) forward to the latest commit on the `feature` branch.  It *does not* create a new commit.  It just uses the latest commit from `feature`.
+
+NOTE: If you *don't* want to run a Fast-Forward Merge, you can use this flag:
+
+`git merge --no-ff feature`
+
+
+### Recursive Merge
+
+The Recursive Merge is the default merge type if there have been commits to both the `main` branch and the `feature` branch after the `feature` branch was created from `main`.
+
+A Recursive Merge will actually add a commit to the `main` branch for the merge (as opposed to just moving the [HEAD](../head/head.md) like the Fast-Forward Merge does).  Therefore, the [HEAD](../head/head.md) will now point to `main`.
 
 
 ## Squash
 
 Using the `--squash` flag, you can combine multiple commits into one when you merge branches.
 
-Let's say you made five commits in your `feature` branch.  When you merge them into `main`, you have the option of using `git merge --squash feature` (while in the `main` branch), and it will "squash" those five commits into just one and only merge the one into `main`.
+Let's say you you're in your `main` branch, and you have five commits in your `feature` branch that you want to merge into `main`.  You have the option of using `git merge --squash feature`, and it will "squash" those five commits into just one and only merge the one into `main`.
 
 Note that after doing this, you then have to do another `git commit -m` and write one message that summarizes the entire squash.
 
