@@ -1,8 +1,10 @@
 # Reflog
 
-`git reflog` can help you retrieve deleted commits or branches.  The Reflog stores all the changes you've made in your current project -- but only going back 30 days.
+The reflog is a log of all the changes you've made in your current project -- including deleted commits and branches -- but only going back 30 days.
 
 Running `git reflog` shows you a list of all the changes you've made in your current branch.
+
+You can also use `git reflog` to retrieve deleted commits or branches.  (This can be helpful if you accidentally reset the [HEAD](../head/head.md) of your project.)
 
 
 ## Retrieve a Deleted Commit
