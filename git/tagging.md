@@ -9,15 +9,19 @@ There are two ways of tagging in Git:
 
 Annotated is preferable, because we know who created the tag.  This is the way we will do it.
 
+
 ## Annotated Tagging
 
-Let's say it's the first version.  You'll add a `v` number and a message (just like when you commit):
+Let's say it's the first version of your codebase.  You'll add a `v` number and a message (just like when you commit):
 
-- `git tag -a v1.0.0 -m "Version 1.0.0 release."`
+`git tag -a v1.0.0 -m "Version 1.0.0 release."`
 
 NOTE: `v1.0.0` is the proper annotation structure, as it allows automated tools to inspect your package and know the release versions.
 
-NOTE: If you are not ready to add a tag to the master branch with a new version number of your app, you should not be merging into the master branch.
+
+## Additional Info
+
+*If you are not ready to add a tag to the `main` branch with a new version number of your app, you should not be merging into the `main` branch.*
 
 This tag will point to the current commit.
 
