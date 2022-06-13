@@ -16,5 +16,6 @@ You can fix the typo in your branch and commit that change.  Then you can use ch
 
 ## How to Cherry-Pick
 
-1. Go to the branch you want to merge the changes into.  (Let's say it's `main`.)
-2. Run `git cherry-pick <commit id>`.
+1. In the branch where you made the change, copy the commit id number.
+2. Go to the branch you want to merge this commit into.  (Let's say it's `main`.)
+3. Run `git cherry-pick <commit id>`.
