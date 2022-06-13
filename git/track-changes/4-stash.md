@@ -2,7 +2,7 @@
 
 Stashing allows you to save unstaged and uncommitted changes.  This is less cumbersome than making a new branch off of your current branch, etc.
 
-You can use a stash to save your changes, go back to your latest commit to work on some other aspect, and then bring those changes back later.
+You can use a stash to save the changes you're working on, go back to your previous commit to fix something else, and then bring the changes you were working on before back later.
 
 
 ## Create a Stash
