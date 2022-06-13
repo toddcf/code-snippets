@@ -14,6 +14,16 @@ First and foremost, `git diff` helps find differences between states of a reposi
 But let's say the merge conflict has already happened.  Here's what to do:
 
 
+## Resolving in VS Code
+
+The VS Code UI will highlight the merge conflicts and give you options to click:
+
+1. Accept Current Change (Retain what is in the current branch)
+2. Accept Incoming Change (Use what is being merged in from the other branch)
+3. Accept Both Changes (Retain what is in the current branch, and add the code from the other branch)
+4. Compare Changes (View side-by-side)
+
+
 ## Resolving with the Command Line
 
 See [GitHub documentation](https://docs.github.com/en/github/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) for a more detailed explanation, but here is the general idea:
@@ -34,6 +44,11 @@ Alternatively, you can run `git mergetool`, which will walk you through the conf
 If you are using GitHub, you can use its conflict editor.  See [GitHub documentation](https://docs.github.com/en/github/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) for full details.
 
 
+## Staging and Committing After Resolving
+
+After resolving the conflict, you will need to stage and commit the resolution.
+
+
 ## Aborting the Merge
 
 Instead of fixing the conflict, you can also run `git merge --abort` to exit the merge process and return the branch to the state before the merge began.
@@ -46,6 +61,8 @@ Instead of fixing the conflict, you can also run `git merge --abort` to exit the
 1. `git reset --soft`
 2. `git reset --mixed`
 3. `git reset --hard`
+
+See [Undo Commits](../../undo-changes/4-undo-commits.md) for more detail.
 
 `git reset <file name>` removes the file from the staging area, but leaves the working directory unchanged.  (This unstages the file without overwriting any changes.)
 
