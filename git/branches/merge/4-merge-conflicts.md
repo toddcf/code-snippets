@@ -71,7 +71,8 @@ More info: https://levelup.gitconnected.com/confused-with-the-difference-between
 
 ## Further Merge Conflict Resources
 
-- [Git Documentation](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts)
+- [Git Basic Merging Documentation](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#_basic_merge_conflicts)
+- [Git Advanced Merging Documentation](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging#_advanced_merging)
 - [GitHub Documentation](https://docs.github.com/en/github/collaborating-with-pull-requests/addressing-merge-conflicts)
 - [Bitbucket Documentation](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts) (including practice exercises)
 - [opensource Article](https://opensource.com/article/20/4/git-merge-conflict)

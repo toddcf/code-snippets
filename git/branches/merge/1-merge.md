@@ -46,3 +46,8 @@ The Recursive Merge is the default merge type if there have been commits to both
 A Recursive Merge will actually add a commit to the `main` branch for the merge (as opposed to just moving the [HEAD](../head/head.md) like the Fast-Forward Merge does).  Therefore, the [HEAD](../head/head.md) will now point to `main`.
 
 An alternative to this is [rebase](../5-rebase.md).
+
+
+## Additional Information
+
+- [Git Documentation: Additional Merge Strategies](https://git-scm.com/docs/merge-strategies)
