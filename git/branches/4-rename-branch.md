@@ -24,7 +24,7 @@ Done.
 
 ### Rename Remote Branch
 
-If the branch was already pushed the `<old_name>` branch to remote, you can also rename that as follows:
+If the `<old_name>` branch was already pushed to remote, you can also rename that as follows:
 
 3. Push the new branch name to remote: `git push origin -u <new_name>`
 4. Delete the old remote branch: `git push origin --delete <old_name>`
