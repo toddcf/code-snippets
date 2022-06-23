@@ -2,29 +2,31 @@
 
 ## To Create on Local First
 
-1. Create a directory on your local machine and give it the name you want your repository to have.  (`mkdir`)
-2. Navigate into that directory.  (`cd`)
-3. Create a file inside the directory.  (`touch`)
-4. In your terminal, run `git init`.
+If you don't already have a project started, create at least the skeleton content:
 
-Your Git repository now exists on your local machine, and this directory will now contain a `.git` folder.
+1. Create a directory on your local machine and give it the name you want your repository to have: `mkdir <directory_name>`
+2. Navigate into that directory: `cd <directory_name>`
+3. Create a file inside the directory: `touch <file_name>`
 
-To push this repository to remote:
+Now turn your directory into a Git repository:
 
-5. Stage the file: `git add .` or `git add -A`.
-6. Commit the file: `git commit -m "Insert commit message here."`.
+4. `git init`
 
-
-
-
-
-After you've created a directory on your local machine, here's how to turn it into a Git repository:
-
-1. In your terminal, make sure you have navigated into the directory you want to turn into a Git repository.
-2. Run `git init`.
-
-This adds a `.git` subdirectory inside the current working directory.  This new `.git` subdirectory will include all the necessary metadata from the new Git repository.
+Your Git repository now exists on your local machine.  When the repository is initialized (created), Git takes a snapshot.  This and other changes will be tracked via a `.git` subdirectory that now exists in your project's directory, which contains all the necessary metadata to do so.
 
 NOTE: The `.git` subdirectory will be hidden, meaning that if you want to confirm its existence via the terminal, you'll need to use `ls -a` instead of just `ls`.
 
-When the repository is initialized (created), Git takes a snapshot.
+Note that Git and GitHub are two separate tools, and they do not actually know about each other until you connect them.
+
+5. Run `git remote add origin <URL>`
+  - `remote add` means connect this local repository to a remote repository.
+  - `origin` is the name of the remote machine.  Once the origin is set to the URL that follows it, `origin` becomes an alias (shorthand) so that you don't have to type out the entire URL each time.  (You can change this alias if you want to.)
+  - `<URL>` is the specific remote repository you want to connect this local repository to.
+
+To push this repository to remote (GitHub in this case, but Bitbucket is an alternative):
+
+6. Stage the file: `git add .` or `git add -A`.
+7. Commit the file: `git commit -m "Insert commit message here."`.
+
+
+## To Create on Remote First
