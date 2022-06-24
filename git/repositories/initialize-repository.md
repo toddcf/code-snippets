@@ -18,15 +18,17 @@ NOTE: The `.git` subdirectory will be hidden, meaning that if you want to confir
 
 Note that Git and GitHub are two separate tools, and they do not actually know about each other until you connect them.
 
-5. Run `git remote add origin <URL>`
+5. Run `git remote add origin <url>`
   - `remote add` means connect this local repository to a remote repository.
   - `origin` is the name of the remote machine.  Once the origin is set to the URL that follows it, `origin` becomes an alias (shorthand) so that you don't have to type out the entire URL each time.  (You can change this alias if you want to.)
-  - `<URL>` is the specific remote repository you want to connect this local repository to.
+  - `<url>` is the specific remote repository you want to connect this local repository to.
 
 To push this repository to remote (GitHub in this case, but Bitbucket is an alternative):
 
-6. Stage the file: `git add .` or `git add -A`.
-7. Commit the file: `git commit -m "Insert commit message here."`.
+6. Stage the file: `git add .` or `git add -A`
+7. Commit the file: `git commit -m "Insert commit message here."`
+8. Push to remote: `git push origin main`
+  - Or `git push -u origin main`, if necessary.  `-u` establishes upstream between local and remote.
 
 
 ## To Create on Remote First
@@ -34,7 +36,12 @@ To push this repository to remote (GitHub in this case, but Bitbucket is an alte
 1. Create a new repository on GitHub. (Initialize with README so there is something in the directory -- empty directories cannot be cloned.)
 2. Copy the SSH link.
 3. In your terminal, navigate to the directory in which you want the new repository to be cloned into.
-4. Type `git clone ` and then paste the SSH link.  (If `CTRL` + `V` doesn't work, right-click the top bar of the GitBash terminal, then select `Edit > Paste`.)
+4. Type `git clone ` and then paste the SSH link.  (If `CTRL` + `v` doesn't work, right-click the top bar of the GitBash terminal, then select `Edit > Paste`.)
   - Alternatively, type `git fetch origin <branch_name>`, and the branch you want, and it will download only that branch.
   - Then `git switch <branch_name>` the new branch.
 5. Confirm that the directory has been cloned to your local machine.  (While in the directory it should be in, type `ls`.)
+
+
+### If You Want to Link Existing Local and Remote Repositories
+
+Use `git remote add origin <url>` as outlined earlier.

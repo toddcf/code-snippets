@@ -8,6 +8,8 @@ This is useful because you can experiment and make mistakes on the new branch wi
 
 `git branch` will list all of your existing branches in your current repository on your local machine.  The branch you are currently on will have an asterisk next to it.
 
+`git branch -a` will show you your local branches plus any remote branches you may have.
+
 
 ## Branch Model
 
