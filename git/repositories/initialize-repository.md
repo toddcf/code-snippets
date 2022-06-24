@@ -30,3 +30,11 @@ To push this repository to remote (GitHub in this case, but Bitbucket is an alte
 
 
 ## To Create on Remote First
+
+1. Create a new repository on GitHub. (Initialize with README so there is something in the directory -- empty directories cannot be cloned.)
+2. Copy the SSH link.
+3. In your terminal, navigate to the directory in which you want the new repository to be cloned into.
+4. Type `git clone ` and then paste the SSH link.  (If `CTRL` + `V` doesn't work, right-click the top bar of the GitBash terminal, then select `Edit > Paste`.)
+  - Alternatively, type `git fetch origin <branch_name>`, and the branch you want, and it will download only that branch.
+  - Then `git switch <branch_name>` the new branch.
+5. Confirm that the directory has been cloned to your local machine.  (While in the directory it should be in, type `ls`.)
