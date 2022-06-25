@@ -30,6 +30,16 @@ To push this repository to remote (GitHub in this case, but Bitbucket is an alte
 8. Push to remote: `git push origin main`
   - Or `git push -u origin main`, if necessary.  `-u` establishes upstream between local and remote.
 
+(The first time you push your branch to remote, you need to specify the name of the branch -- because it doesn't exist on the remote yet, and it's going to need to create it.)
+
+Behind the scenes, Git now creates a "remote tracking branch."  This branch resides *in between* the local branch and the remote branch.  (It is a local, read-only copy of the remote branch.)  That branch might look like `remotes/origin/main`.  This remote tracking branch then copies its changes to the actual remote branch.
+
+So, *there is no direct connection between the local branch and the remote branch*.  All pushes and pulls go through the remote tracking branch.
+
+- `git branch -r` will list your remote tracking branches.
+- `git branch -a` will list your local *and* remote branches.
+- `git ls-remote` will list any remote branches that do not exist on local yet.
+
 
 ## To Create on Remote First
 
@@ -40,6 +50,10 @@ To push this repository to remote (GitHub in this case, but Bitbucket is an alte
   - Alternatively, type `git fetch origin <branch_name>`, and the branch you want, and it will download only that branch.
   - Then `git switch <branch_name>` the new branch.
 5. Confirm that the directory has been cloned to your local machine.  (While in the directory it should be in, type `ls`.)
+
+Or, if there are other branches in the remote that you want to pull, `git fetch origin` (without a branch name specified) will work because it updates the remote tracking branch.  `git pull` will only work if you have a direct connection to a specific branch.
+
+However, if you run `git fetch origin` to look at remote branches and their commits, you cannot edit them.  You would have to create a new branch for them on your local before you could edit them.
 
 
 ### If You Want to Link Existing Local and Remote Repositories
