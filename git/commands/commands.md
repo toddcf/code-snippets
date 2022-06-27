@@ -134,6 +134,8 @@ NOTE: You can type `git diff` without the file name, but this will show all the 
 - `git status` = tells you information about your repository.  (Whether or not it exists, what branch you are on, whether or not the files it contains are being tracked.)
 - [`git branch`](branches.md) = see list of all branches for your current repository on your local machine.
 - [`git log`](git-log.md) = shows commit history.  (To exit the log, press `q`, then `Enter`.)
+- `git remote` shows your remote servers (such as `origin`).
+- `git remote show origin` = shows all branches and how each is configured.
 
 The `~` symbol next to a directory name indicates you that you are currently in that directory.
 

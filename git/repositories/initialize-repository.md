@@ -32,13 +32,11 @@ To push this repository to remote (GitHub in this case, but Bitbucket is an alte
 
 (The first time you push your branch to remote, you need to specify the name of the branch -- because it doesn't exist on the remote yet, and it's going to need to create it.)
 
-Behind the scenes, Git now creates a "remote tracking branch."  This branch resides *in between* the local branch and the remote branch.  (It is a local, read-only copy of the remote branch.)  That branch might look like `remotes/origin/main`.  This remote tracking branch then copies its changes to the actual remote branch.
+Behind the scenes, Git now creates a "remote tracking branch."  This branch resides *in between* the local branch and the remote branch.  (It is a local, read-only cache of the remote branch.)  That branch might look like `remotes/origin/main`.  This remote tracking branch then copies its changes to the actual remote branch.
 
 So, *there is no direct connection between the local branch and the remote branch*.  All pushes and pulls go through the remote tracking branch.
 
-- `git branch -r` will list your remote tracking branches.
-- `git branch -a` will list your local *and* remote branches.
-- `git ls-remote` will list any remote branches that do not exist on local yet.
+See [Branches](../branches/1-branches.md) for a list of commands to show your branches.
 
 
 ## To Create on Remote First

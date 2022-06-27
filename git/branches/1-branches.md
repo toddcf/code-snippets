@@ -6,9 +6,11 @@ You start off with a `main` branch, and can create more branches off of that.  W
 
 This is useful because you can experiment and make mistakes on the new branch without breaking your original branch.  (Non-destructive editing.)  Then, when you are finished, you can merge the changes from the new branch into the original branch.
 
-`git branch` will list all of your existing branches in your current repository on your local machine.  The branch you are currently on will have an asterisk next to it.
-
-`git branch -a` will show you your local branches plus any remote branches you may have.
+- `git branch` will list all of your existing branches in your current repository on your local machine.  The branch you are currently on will have an asterisk next to it.
+- `git branch -r` will show only your remote branches.
+- `git branch -a` will show your local branches, local tracking branches, and remote tracking branches -- but not remote branches.
+- `git branch -vv` will show each local tracking branch and which remote tracking branch it is connected to.  It also shows information such as commits.
+- `git ls-remote` will list any remote branches that do not exist on local yet.
 
 
 ## Branch Model

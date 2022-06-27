@@ -16,3 +16,8 @@ While in the branch you want to create your new branch off of, run `git branch <
 ## Commits Carry Over Into the New Branch
 
 If you run `git log` immediately after creating and then checking out a new branch, you will see the same list of commits as the branch you created the new branch off of.  Each commit id and timestamp will be the same as they are in the original branch.
+
+
+## Create Local Tracking Branch
+
+`git branch --track <branch_name> origin/<branch_name>` will create a local tracking branch and link it to a specified remote tracking branch.  Best practice is to keep these two names the same to avoid confusion.
