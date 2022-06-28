@@ -39,7 +39,7 @@ So, *there is no direct connection between the local branch and the remote branc
 See [Branches](../branches/1-branches.md) for a list of commands to show your branches.
 
 
-## To Create on Remote First
+## To Create on Remote First (Clone)
 
 1. Create a new repository on GitHub. (Initialize with README so there is something in the directory -- empty directories cannot be cloned.)
 2. Copy the SSH link.
