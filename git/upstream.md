@@ -1,4 +1,4 @@
-# Upstream
+# Upstream Branch
 
 In `git push -u origin <branch_name>`, the `-u` stands for "upstream."
 
