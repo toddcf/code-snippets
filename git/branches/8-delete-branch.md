@@ -18,12 +18,19 @@ To delete multiple branches, list each one with a space between:
 
 ## Delete Remote Branch
 
-Two options:
+A few options:
 
-- `git branch -d <remote_name> <branch_name>`
-- `git push <remote_name> --delete <branch_name>`
+- `git branch -d <remote_name> <remote_branch_name>`
 
 In most cases, `<remote_name>` will be `origin`.
+
+A longer way:
+
+1. First delete the local branch (see above).
+2. Then delete the remote tracking branch: `git branch --delete --remote <remote_branch_name>`
+3. Then push the deletion to the remote: `git push <remote_name> --delete <remote_branch_name>`
+
+Note that you can do just step 3 to delete the remote but not the local.  If you do this, the remote tracking branch will also be automatically deleted because it no longer has anything to track.
 
 
 ## Reference
