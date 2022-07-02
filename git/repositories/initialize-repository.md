@@ -44,7 +44,7 @@ See [Branches](../branches/1-branches.md) for a list of commands to show your br
 1. Create a new repository on GitHub. (Initialize with README so there is something in the directory -- empty directories cannot be cloned.)
 2. Copy the SSH link.
 3. In your terminal, navigate to the directory in which you want the new repository to be cloned into.
-4. Type `git clone ` and then paste the SSH link.  (If `CTRL` + `v` doesn't work, right-click the top bar of the GitBash terminal, then select `Edit > Paste`.)
+4. Type `git clone <paste SSH link here>`.  (If `CTRL` + `v` doesn't work, right-click the top bar of the GitBash terminal, then select `Edit > Paste`.)  NOTE: This method will copy the entire repository directory into your current directory.  But if you have already created a directory by the same name and are inside of it, you can add ` .` after the SSH link, and it will copy only the files into the directory.  This avoids creating a duplicate directory nested inside your directory.
   - Alternatively, type `git fetch origin <branch_name>`, and the branch you want, and it will download only that branch.
   - Then `git switch <branch_name>` the new branch.
 5. Confirm that the directory has been cloned to your local machine.  (While in the directory it should be in, type `ls`.)
