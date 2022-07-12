@@ -12,3 +12,5 @@ When titling your document, keep each of these things in mind, as your title may
 For this reason, a document's `<title>` is often different than its first heading, which does not have to stand alone out of context.
 
 Each document can have only one `<title>`.
+
+`<title>Todd Croak-Falen | Author Website</title>`
