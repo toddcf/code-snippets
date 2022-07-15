@@ -5,7 +5,11 @@ HTML has an `<em>` tag and an `<i>` tag.
 
 ## <em>
 
-`<em>` represents *emphasis*, and is used to stress a certain word or phrase.  Although it will italicize the text, it should not be used for visual purposes.
+`<em>` represents *emphasis*, and is used to stress a certain word or phrase.
+
+`<p>I <em>know</em> that he is right!</p>`
+
+Although most browsers will italicize emphasized text, `<em>` should not be used for visual purposes.  (NOTE: To be safe, you can specify the type of styling you want your emphasized text to have using CSS rather than trust each browser to be consistent.)
 
 
 ## <i>
