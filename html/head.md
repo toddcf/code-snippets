@@ -6,7 +6,7 @@ The `<head>` element is the first element inside the `<html> tags, and is a coll
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- For mobile devices: -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
