@@ -9,6 +9,8 @@ There are a couple types of buttons in HTML:
 
 ## Button Tag
 
+This is the more flexible option.
+
 `<button type="submit">Button Text Here</button>`
 
 The `<button>` tag allows for a more flexible UI -- in addition to text, you can put icons, images, etc. inside of buttons.
