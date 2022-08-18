@@ -7,6 +7,11 @@ And if you run `git status`, it will mark the deleted filename in red and warn y
 So, after you remove a file, you must stage and commit this change.
 
 
+## Deleting a Directory
+
+`rmdir <directory_name>`
+
+
 ## Staging the Removal
 
 There are a couple options to choose from:
