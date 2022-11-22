@@ -29,7 +29,7 @@ While in your `main` branch:
 
 1. First delete the local branch (see above).
 2. Then delete the remote tracking branch: `git branch --delete --remote origin/remote_branch_name`
-3. Then push the deletion to the remote: `git push origin --delete <remote_branch_name>` (Unless you have already deleted it via GitHub, in which case this will thorw an error because it no longer exists.)
+3. Then push the deletion to the remote: `git push origin --delete <remote_branch_name>` (Unless you have already deleted it via GitHub, in which case this will throw an error because it no longer exists.)
 
 Note that you can do just step 3 to delete the remote but not the local.  If you do this, the remote tracking branch will also be automatically deleted because it no longer has anything to track.
 
