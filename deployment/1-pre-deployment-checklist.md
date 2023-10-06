@@ -128,8 +128,7 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 
 Minify HTML only after CSS and JavaScript have been minified, as you will need to update the links to those stylesheets and scripts first.
 
-1. Copy and paste HTML from your working `-nonmin.html` files into one of the following:
-  - http://minifycode.com/html-minifier/ [No whitespace problem around anchor tags.]
+1. Copy and paste HTML from your working `-nonmin.html` files into:
   - https://kangax.github.io/html-minifier/ NOTE: IS THERE A SETTING THAT WILL *NOT* TRIM THE WHITESPACE BEFORE A LINK THAT IS IN THE MIDDLE OF TEXT?
 2. Re-validate minified code: https://validator.w3.org/#validate_by_input
 3. Then paste it into each `.html` file for your site.
