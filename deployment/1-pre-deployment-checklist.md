@@ -46,26 +46,36 @@
 1. Delete any unused CSS.
 2. Clean up comments.
 
+### CSS Validation (Round 1)
+
+1. Paste each file's code (one file at a time) into https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
+2. Make any corrections necessary until the results come back clean.
+
+
 ### CSS Autoprefixing
 
 1. Paste each CSS file's code into https://autoprefixer.github.io/, then copy and paste the results back into your original file. (This will add or remove all appropriate prefixes for cross-browser compatibility.) NOTE: I find this method to be more thorough than using the Autoprefix CSS extension in SublimeText.
 2. Save all files and refresh your browser to check that nothing broke.
 
 
-### CSS Validation
+### CSS Validation (Round 2)
 
-1. Paste each file's code (one file at a time) into https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
+1. Paste each file's autoprefixed code (one file at a time) into https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
 2. Make any corrections necessary until the results come back clean.
 
 
-## Minify CSS
+### Minify CSS
 
-1. Copy and paste CSS from your working files into https://cssminifier.com/
+1. Copy and paste your autoprefixed, validated CSS from your working files into https://cssminifier.com/
 2. Save the minified code to a version of each file with `-min` at the end.
 3. Update the links in the HTML files to point to the `-min` files instead.
 4. Keep the non-minified versions of all files for future editing (and GitHub viewing), but don't upload them to the server when you deploy.
-5. Re-validate minified code: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
-6. Test the local file in the browser to make sure everything still works.
+
+
+### CSS Validation (Round 3)
+
+1. Re-validate minified code: https://jigsaw.w3.org/css-validator/#validate_by_input+with_options
+2. Test the local file in the browser to make sure everything still works.
 
 
 ## HTML
