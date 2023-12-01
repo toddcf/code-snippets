@@ -139,6 +139,7 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 Minify HTML only after CSS and JavaScript have been minified, as you will need to update the links to those stylesheets and scripts first.
 
 1. Copy and paste HTML from your working `-nonmin.html` files into: https://kangax.github.io/html-minifier/
+  - IMPORTANT: UNCHECK the "Remove Tag Whitespace" option.
 2. Re-validate minified code: https://validator.w3.org/#validate_by_input
 3. Then paste it into each `.html` file for your site.
 4. Test the local file in the browser to make sure everything still works.
