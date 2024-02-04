@@ -13,4 +13,4 @@ Under the "Standards & Drafts" section, you'll see a list of "Completed Work." T
 
 1. Working Draft (Still in progress.)
 2. Candidate Recommendation (Users can start trying it out, but more changes may come.)
-3. Recommendation (Officially ready to use.)
+3. Recommendation (Officially ready to use -- but note that this does not always mean it's available in the browsers.)
