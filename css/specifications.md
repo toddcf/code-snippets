@@ -13,4 +13,13 @@ Under the "Standards & Drafts" section, you'll see a list of "Completed Work." T
 
 1. Working Draft (Still in progress.)
 2. Candidate Recommendation (Users can start trying it out, but more changes may come.)
-3. Recommendation (Officially ready to use -- but note that this does not always mean it's available in the browsers.)
+3. Recommendation (Officially ready to use -- but note that this does not always mean that implementers have added it to their respective browsers' capabilities yet.)
+
+
+## Official Definition (Section 2 of the CSS Specs)
+
+This section tells you which version is considered widely used and stable.
+
+Note that CSS Level 3 builds on and modifies Level 2.1, but it is intended never to contradict it. It will only build upon it, not remove existing features. This is so that udpates to the CSS language do not break existing websites across the internet.
+
+Therefore, CSS will not have level numbers beyond 3.
