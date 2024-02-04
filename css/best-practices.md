@@ -1,6 +1,6 @@
-# CSS Class
+# Best Practices
 
-## Best Practice
+## Class Naming Conventions
 
 A CSS class should describe the nature of the content, not the style of the content.
 
@@ -22,3 +22,6 @@ Instead, use the class to describe what the content is, and then you can apply a
   font-weight: bold;
 }
 ```
+
+
+This is so that if you want to make stylistic changes to your H1 tags later, you don't need to update your HTML -- just your CSS.
