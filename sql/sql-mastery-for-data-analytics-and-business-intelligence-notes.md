@@ -126,15 +126,17 @@ Example: `FROM customers`
 
 #### SELECT
 
-SELECT is the clause in the query that gets data from within the table.  Tells which columns to get.
+SELECT is the clause in the query that gets data from within the table.  Tells which columns to get, separated by commas.
 
-Example 1:
+Example 1 -- select just the `name` and `country` columns:
 
 ```
 SELECT
   name,
-  LOWER(country)
+  country
 ```
+
+The order matters -- you will get the results in the same order you list the columns you want.
 
 
 Example 2 -- the star selects ALL COLUMNS in the table:
