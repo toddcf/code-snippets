@@ -59,6 +59,9 @@ Example: MongoDB
 
 ### Data Definition Language (DDL)
 
+DDL defines the structure of the database itself.
+
+
 #### CREATE
 
 Creates a brand new table in the database.
@@ -66,7 +69,7 @@ Creates a brand new table in the database.
 
 #### ALTER
 
-Edit a table that already exists.
+Edit the structure of a table that already exists.
 
 
 #### DROP
@@ -76,6 +79,9 @@ Delete an entire table.
 
 ### Data Manipulation Language (DML)
 
+DML manipulates the data without changing the structure of the database itself.
+
+
 #### INSERT
 
 Add new data into a table.
@@ -83,7 +89,7 @@ Add new data into a table.
 
 #### UPDATE
 
-Edit existing data within a table.
+Edit existing data within a table (but keep the table structure the same).
 
 
 #### DELETE
