@@ -99,9 +99,36 @@ Delete data within a table.
 
 ### Data Query Language (DQL)
 
-#### SELECT (the only one within DQL)
+The following are called "clauses."
+
+
+#### DISTINCT
+
+
+#### FROM
+
+
+#### GROUPBY
+
+
+#### HAVING
+
+
+#### JOIN
+
+
+#### ORDERBY
+
+
+#### SELECT
 
 SELECT is the query that gets data from the table.
+
+
+#### TOP
+
+
+#### WHERE
 
 
 ## Setup
