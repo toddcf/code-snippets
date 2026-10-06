@@ -189,3 +189,12 @@ SELECT
 FROM customers
 WHERE country = 'Italy'
 ```
+
+
+## Operators
+
+These compare values.  Typically used inside the `WHERE` clause.
+
+In the example below, `=` is an operator:
+
+`WHERE country = 'Italy'`
