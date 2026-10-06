@@ -128,7 +128,7 @@ Example: `FROM customers`
 
 SELECT is the clause in the query that gets data from within the table.  Tells which columns to get.
 
-Example:
+Example 1:
 
 ```
 SELECT
@@ -137,7 +137,21 @@ SELECT
 ```
 
 
+Example 2 -- the star selects ALL COLUMNS in the table:
+
+```
+SELECT*
+FROM table_name
+```
+
 #### TOP
+
+
+#### USE
+
+Tells SQL which database you want your query to use.  Goes at the top of the file.
+
+`USE MyDatabase`
 
 
 #### WHERE
@@ -198,3 +212,12 @@ These compare values.  Typically used inside the `WHERE` clause.
 In the example below, `=` is an operator:
 
 `WHERE country = 'Italy'`
+
+
+## Values
+
+The actual piece of information in the database.  In the example below, `'Italy'` is a value:
+
+```
+WHERE country = 'Italy'
+```
