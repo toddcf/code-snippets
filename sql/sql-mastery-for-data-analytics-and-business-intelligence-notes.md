@@ -174,10 +174,24 @@ On your computer, search for and run SQL Server Management Studio 22.
 
 ## Comments
 
-Commented out code start with `-- `, like this:
+### Single-Line Comments
+
+Single-line comments start with `-- `, like this:
 
 ```
 -- Comment goes here.
+```
+
+
+### Multi-Line Comments
+
+Multi-line comments are nested between `/*` and `*/`, like this:
+
+```
+/*
+  Comment line 1.
+  Comment line 2.
+*/
 ```
 
 
