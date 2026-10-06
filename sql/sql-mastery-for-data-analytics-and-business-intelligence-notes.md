@@ -237,3 +237,24 @@ The actual piece of information in the database.  In the example below, `'Italy'
 ```
 WHERE country = 'Italy'
 ```
+
+
+## Troubleshooting
+
+DO NOT allow a trailing comma after the line in the clause like you might in JavaScript -- any time SQL sees a comma, it expects another line within that same clause.  If it doesn't get it, or if it gets the next clause after that, it will throw an error.
+
+BAD, because there is a comma after `score`:
+```
+SELECT
+  name,
+  country,
+  score,
+```
+
+GOOD, because there is no comma after `score`:
+```
+SELECT
+  name,
+  country,
+  score
+```
