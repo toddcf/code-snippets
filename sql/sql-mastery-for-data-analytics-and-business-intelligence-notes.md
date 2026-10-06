@@ -176,3 +176,16 @@ SELECT
   name,
   LOWER(country)
 ```
+
+
+## Identifiers
+
+Identifiers are names for properties in your database. In the example below, `name`, `country`, and `customers` are identifiers:
+
+```
+SELECT
+  name,
+  LOWER(country)
+FROM customers
+WHERE country = 'Italy'
+```
