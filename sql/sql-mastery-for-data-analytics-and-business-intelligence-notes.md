@@ -99,13 +99,17 @@ Delete data within a table.
 
 ### Data Query Language (DQL)
 
-The following are called "clauses."
+The following are called "clauses."  Best practice: Always make these UPPERCASE.
 
 
 #### DISTINCT
 
 
 #### FROM
+
+FROM is the clause in the query that tells which table you want to get the data from.
+
+Example: `FROM customers`
 
 
 #### GROUPBY
@@ -122,13 +126,25 @@ The following are called "clauses."
 
 #### SELECT
 
-SELECT is the query that gets data from the table.
+SELECT is the clause in the query that gets data from within the table.  Tells which columns to get.
+
+Example:
+
+```
+SELECT
+  name,
+  LOWER(country)
+```
 
 
 #### TOP
 
 
 #### WHERE
+
+WHERE is the clause in the query that filters the data you "selected" "from" the table.
+
+Example: `WHERE country = 'Italy'`
 
 
 ## Setup
@@ -140,3 +156,23 @@ SELECT is the query that gets data from the table.
 ## Run
 
 On your computer, search for and run SQL Server Management Studio 22.
+
+
+## Comments
+
+Commented out code start with `-- `, like this:
+
+```
+-- Comment goes here.
+```
+
+
+## Functions
+
+Functions take in data, process it, and then return an output.  In the example below, `LOWER` is a function.  It takes in the `country`, converts it to lowercase, then returns it:
+
+```
+SELECT
+  name,
+  LOWER(country)
+```
