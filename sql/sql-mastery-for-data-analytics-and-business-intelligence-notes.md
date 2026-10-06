@@ -140,7 +140,7 @@ SELECT
 Example 2 -- the star selects ALL COLUMNS in the table:
 
 ```
-SELECT*
+SELECT *
 FROM table_name
 ```
 
