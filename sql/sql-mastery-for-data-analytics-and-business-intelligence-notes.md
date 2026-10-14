@@ -112,7 +112,7 @@ FROM is the clause in the query that tells which table you want to get the data 
 Example: `FROM customers`
 
 
-#### GROUPBY
+#### GROUP BY
 
 
 #### HAVING
@@ -121,7 +121,27 @@ Example: `FROM customers`
 #### JOIN
 
 
-#### ORDERBY
+#### ORDER BY
+
+Sorting the results.  In your query, you must list two things, in this order:
+
+1. The name of the column that should be used to sort the results.
+2. `ASC` ("ascending") or `DESC` ("descending").  Technically, you do not *need* to specify this -- SQL will default to `ASC` if you do not -- but it is a best practice to always specify.  It helps the humans reading the code to know exactly what is going on.
+
+##### ASC
+
+Order by "ascending" values.  (Default, if you do not specify `ASC` vs. `DESC`.)
+
+##### DESC
+
+Order by "descending" values.
+
+
+#### Examples
+
+`ORDER BY score ASC` (display in order of lowest scores to highest scores)
+
+`ORDER BY score DESC` (display in order of highest scores to lowest scores)
 
 
 #### SELECT
@@ -145,6 +165,9 @@ Example 2 -- the star selects ALL COLUMNS in the table:
 SELECT *
 FROM table_name
 ```
+
+NOTE: Even if you only select certain columns, you can still run `WHERE` conditions on other columns that you did not select; those columns simply won't be shown in the results. For example, if you SELECT only the First Name and Country columns, you can still use `WHERE` to filter the results based on the Score column.  The results will only display the First Name and Country columns, but they will still filter out any rows that failed to meet your Score condition.
+
 
 #### TOP
 
@@ -265,3 +288,5 @@ SELECT
   country,
   score
 ```
+
+## 
