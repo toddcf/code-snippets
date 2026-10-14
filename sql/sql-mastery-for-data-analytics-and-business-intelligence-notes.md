@@ -162,6 +162,9 @@ WHERE is the clause in the query that filters the data you "selected" "from" the
 
 Example: `WHERE country = 'Italy'`
 
+Example: Score must be higher than 500
+`WHERE score > 500`
+
 
 ## Setup
 
@@ -210,7 +213,7 @@ SELECT
 
 ## Identifiers
 
-Identifiers are names for properties in your database. In the example below, `name`, `country`, and `customers` are identifiers:
+Identifiers are names for properties in your database. In the example below, `name`, `customers`, and `country` are identifiers:
 
 ```
 SELECT
@@ -228,6 +231,10 @@ These compare values.  Typically used inside the `WHERE` clause.
 In the example below, `=` is an operator:
 
 `WHERE country = 'Italy'`
+
+`!` means 'not'. In the example below, the country of Italy would be excluded from the results:
+
+`WHERE country != 'Italy'`
 
 
 ## Values
