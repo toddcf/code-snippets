@@ -114,6 +114,42 @@ Example: `FROM customers`
 
 #### GROUP BY
 
+Aggregates a column by another column.
+
+When you "group by" a category, you see each category only once, followed by the aggregated result for that category.
+
+Note that you must use a function to tell SQL what kind of aggregation you want to do.  You can't just select the whole column and leave it at that.
+
+##### Example
+
+You want to find the total score *by* country.  If you have two "Germany" results, with scores of 350 and 500, the output will be *one* Germany result with a total score of 850.
+
+```
+SELECT
+  country,
+  SUM(score)
+FROM customers
+GROUP BY country
+```
+
+##### Alias
+
+When you aggregate a column, the new output column will be labeled `(No column name)`.  To give it a label using `AS` after the aggregation function:
+
+```
+SELECT
+  country,
+  SUM(score) AS total_score
+FROM customers
+GROUP BY country
+```
+
+NOTE: You *cannot* use a space in the label.  It will require an underscore or some other character instead of a space.
+
+SCOPE: This label will only apply to this query.  Not any other queries.  And it will not modify the database itself.
+
+NOTE: You can use `AS` to rename other columns, too.  This technique is not just limited to aggregates.
+
 
 #### HAVING
 
