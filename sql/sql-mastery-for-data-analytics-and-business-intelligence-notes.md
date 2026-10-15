@@ -150,6 +150,19 @@ SCOPE: This label will only apply to this query.  Not any other queries.  And it
 
 NOTE: You can use `AS` to rename other columns, too.  This technique is not just limited to aggregates.
 
+##### Multiple Group By
+
+All columns in the `SELECT` clause must be either aggregated or included in the `GROUP BY` clause.  In this example, `first_name` has been added to both `SELECT` and `GROUP BY` because it is not aggregated:
+
+```
+SELECT
+  country,
+  first_name,
+  SUM(score) AS total_score
+FROM customers
+GROUP BY country,first_name
+```
+
 
 #### HAVING
 
