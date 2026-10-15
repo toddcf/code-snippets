@@ -130,18 +130,32 @@ Sorting the results.  In your query, you must list two things, in this order:
 
 ##### ASC
 
-Order by "ascending" values.  (Default, if you do not specify `ASC` vs. `DESC`.)
+Order by "ascending" values -- lowest to highest numbers, or in alphabetical order (A to Z).  (This is the default, if you do not specify `ASC` vs. `DESC`.  But you should always specify, as a best practice for clarity.)
 
 ##### DESC
 
-Order by "descending" values.
+Order by "descending" values -- highest to lowest numbers, or in reverse alphabetical order (Z to A).
 
-
-#### Examples
+##### Examples
 
 `ORDER BY score ASC` (display in order of lowest scores to highest scores)
 
 `ORDER BY score DESC` (display in order of highest scores to lowest scores)
+
+
+##### Nested ORDER BY
+
+This is the ability to sort by multiple columns.
+
+The following example will first sort the results by alphabetical order of the country, and then by highest to lowest score within each country.
+
+```
+ORDER BY 
+  country ASC,
+  score DESC
+```
+
+NOTE: The order you list these in in the query is the order in which the logic will be nested.  If you were to list score first, the results will show all of the scores in descending order, and then the countries in alphabetical order *within* each of those scores.  (And if no countries have the exact same score, in this example adding the nested sorting of the countries would not accomplish anything, and it would be best to remove it from the query completely.)
 
 
 #### SELECT
@@ -289,4 +303,10 @@ SELECT
   score
 ```
 
-## 
+## Query Syntax Order
+
+1. SELECT
+2. FROM
+3. WHERE
+4. GROUP BY
+5. ORDER BY
