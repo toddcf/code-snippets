@@ -104,6 +104,28 @@ The following are called "clauses."  Best practice: Always make these UPPERCASE.
 
 #### DISTINCT
 
+Removes duplicates.  Comes directly after the `SELECT` command:
+
+```
+SELECT DISTINCT
+  column
+FROM table
+```
+
+It will take the first match and ignore any subsequent matches -- so make sure that is what you want.
+
+Note that this is an expensive operation, so don't use it if the data is already unique -- you will burn unnecessary processing power.
+
+##### Example
+
+Return unique list of all countries:
+
+```
+SELECT DISTINCT
+  country
+FROM customers
+```
+
 
 #### FROM
 
