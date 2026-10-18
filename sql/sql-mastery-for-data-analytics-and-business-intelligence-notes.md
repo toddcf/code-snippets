@@ -166,6 +166,24 @@ GROUP BY country,first_name
 
 #### HAVING
 
+Filters data *after* aggregation. Can be used only with `GROUP BY`.  (And gets placed *after* `GROUP BY`.)
+
+Uses a condition to filter the results.
+
+##### Example
+
+Countries having a score *higher than 800*:
+
+```
+SELECT
+  country,
+  SUM(score) AS total_score
+FROM customers
+GROUP BY country
+HAVING SUM(score) > 800
+```
+
+DIFFERENCE BETWEEN `WHERE` and `HAVING`: `WHERE` is used to filter the data *before* aggregation.  `HAVING` is used to filter the data *after* aggregation.
 
 #### JOIN
 
@@ -246,10 +264,14 @@ Tells SQL which database you want your query to use.  Goes at the top of the fil
 
 WHERE is the clause in the query that filters the data you "selected" "from" the table.
 
+Typically gets placed between `FROM` and `GROUP BY`.
+
 Example: `WHERE country = 'Italy'`
 
 Example: Score must be higher than 500
 `WHERE score > 500`
+
+DIFFERENCE BETWEEN `WHERE` and `HAVING`: `WHERE` is used to filter the data *before* aggregation.  `HAVING` is used to filter the data *after* aggregation.
 
 
 ## Setup
@@ -329,6 +351,23 @@ The actual piece of information in the database.  In the example below, `'Italy'
 
 ```
 WHERE country = 'Italy'
+```
+
+
+## Examples
+
+## Average Score
+
+Find the average score for each country, considering only customers with a score not equal to 0, and return only those countries with an average score greater than 430:
+
+```
+SELECT
+	country,
+	AVG(score) AS avg_score
+FROM customers
+WHERE score != 0
+GROUP BY country
+HAVING AVG(score) > 430
 ```
 
 
