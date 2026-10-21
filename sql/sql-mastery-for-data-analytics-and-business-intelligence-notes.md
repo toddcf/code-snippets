@@ -471,11 +471,20 @@ SELECT
   score
 ```
 
+## Ways to Filter the Data
+
+1. Filter *columns* using SELECT.
+2. Filter out duplicates using DISTINCT.
+3. Filter *rows* using TOP.
+4. Filter *rows* *prior to* aggregation using WHERE.
+5. Filter *rows* *after* aggregation using HAVING.
+
+
 ## Query Syntax Order
 
-1. SELECT (followed by DISTINCT, followed by TOP)
+1. SELECT (optional: followed by DISTINCT, followed by TOP)
 2. FROM
-3. WHERE (to filter prior to aggregation -- always comes directly after FROM if it is used)
+3. WHERE (always comes directly after FROM if it is used)
 4. GROUP BY (always comes directly after WHERE, if it is used)
 5. HAVING (to filter post-aggregation)
 6. ORDER BY (always last)
