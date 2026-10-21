@@ -274,6 +274,64 @@ NOTE: Even if you only select certain columns, you can still run `WHERE` conditi
 
 #### TOP
 
+Limits your data.  Restricts the number of rows returned in the results.  Just takes the first X number of rows and then stops.
+
+Gets placed immediately after the word `SELECT`:
+
+```
+SELECT TOP 3
+```
+
+##### Example 1
+
+Retrieve only 3 customers:
+
+```
+SELECT TOP 3 *
+FROM customers
+```
+
+Note that it still needs something after it, such as the asterisk in this example, to describe which columns you want.
+
+
+##### Example 2
+
+Retrive the top 3 customers *with the highest scores*:
+
+```
+SELECT TOP 3 *
+FROM customers
+ORDER BY score DESC
+```
+
+This orders the rows by the values in the Score column by descending orders.  Then it keeps only the top 3 rows.
+
+(This one is a little weird to me because if you look at the order of the syntax, you would think it is selecting the first three rows before it orders those rows by descending score.  However, it still works -- the `TOP 3` results will change if you comment the `ORDER BY` clause out.)
+
+
+##### Example 3
+
+Retrieve the lowest two customers based on the score:
+
+```
+SELECT TOP 2 *
+FROM customers
+ORDER BY score ASC
+```
+
+This time we look for `TOP 2` instead of `TOP 3`, and we change the `ORDER BY` from `DESC` to `ASC`.
+
+
+##### Example 4
+
+Get the two most recent orders.  (This one uses the `orders` table instead of the `customers` table.)
+
+```
+SELECT TOP 2 *
+FROM orders
+ORDER BY order_date DESC
+```
+
 
 #### USE
 
@@ -415,8 +473,13 @@ SELECT
 
 ## Query Syntax Order
 
-1. SELECT
+1. SELECT (followed by DISTINCT, followed by TOP)
 2. FROM
-3. WHERE
-4. GROUP BY
-5. ORDER BY
+3. WHERE (to filter prior to aggregation -- always comes directly after FROM if it is used)
+4. GROUP BY (always comes directly after WHERE, if it is used)
+5. HAVING (to filter post-aggregation)
+6. ORDER BY (always last)
+
+
+## Coding Order (of the Query) vs. Execution Order (in the Database)
+
