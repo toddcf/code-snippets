@@ -544,3 +544,8 @@ FROM customers;
 ```
 
 This will output a table containing dynamic columns for `id` and `first_name`, followed by a static column named 'customer_type', with each row of that column containing the value 'New Customer'.
+
+
+## Highlight & Execute
+
+If you only want to execute *part* of your query (without having to delete or comment out the rest), you can highlight it with your cursor before hitting the "Execute" button.  Only the highlighted portion will be executed.
