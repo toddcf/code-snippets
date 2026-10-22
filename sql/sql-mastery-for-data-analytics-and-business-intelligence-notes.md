@@ -566,6 +566,117 @@ Often, you will be working with massive tables of data, so you need to surgicall
 
 These simply compare two values.
 
+The condition syntax consists of: `Expression` `Operator` `Expression`
+
+You can compare:
+
+- One column to another column: `first_name = last_name`
+- A column with a value: `first_name = 'John'`
+- Function = value: `UPPER(first_name) = 'JOHN'`
+- Expression = value: `price * quantity = 1000`
+- An entire subquery = value: `(SELECT AVG(sales) FROM orders) = 1000`
+
+This will allow SQL to go row by row, collecting only those that meet the conditions.
+
+
+#### =
+
+Checks if two values are equal, or identical, to each other.
+
+
+##### Example
+
+Retrieve all customers from Germany:
+
+```
+SELECT *
+FROM customers
+WHERE country = 'Germany';
+```
+
+
+#### <> or !=
+
+`<>` or `!=` check that two values are *not* equal.
+
+
+##### Example
+
+Retrive all customers who are *not* from Germany:
+
+```
+SELECT *
+FROM customers
+WHERE country != 'Germany';
+```
+
+Or:
+
+```
+SELECT *
+FROM customers
+WHERE country <> 'Germany';
+```
+
+
+#### >
+
+Checks if the first expression is greater than the second expression.
+
+
+##### Example:
+
+Retrieve all customers with a score greater than 500:
+
+```
+SELECT *
+FROM customers
+WHERE score > 500;
+```
+
+
+#### >=
+
+Checks if the first expression is greater than *or equal to* the second expression.
+
+
+##### Example:
+
+Retrieve all customers with a score of 500 or more:
+
+```
+SELECT *
+FROM customers
+WHERE score >= 500;
+```
+
+
+#### <
+
+Checks if the first expression is less than the second expression.
+
+
+##### Example
+
+Retrieve all customers with a score of less than 500:
+
+```
+SELECT *
+FROM customers
+WHERE score < 500;
+```
+
+
+#### <=
+
+Checks if the first expression is less than *or equal to* the second expression.
+
+```
+SELECT *
+FROM customers
+WHERE score <= 500;
+```
+
 
 ### Logical Operators
 
