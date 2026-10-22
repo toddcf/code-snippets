@@ -520,3 +520,25 @@ FROM orders;
 ```
 
 This will spit out two results.
+
+## Static (Fixed) Values
+
+You can hardcode a value after `SELECT` rather than specifying columns.
+
+```
+SELECT 123
+```
+
+This will output a table with a single row and column, containing a value of 123.  (In this example, the column will not have a name, but as always, you can add an alias using `AS`.)
+
+You can even combine dynamic and static values, like this:
+
+```
+SELECT
+  id,
+  first_name,
+  'New Customer' AS customer_type
+FROM customers
+```
+
+This will output a table containing dynamic columns for `id` and `first_name`, followed by a static column named 'customer_type', with each row of that column containing the value 'New Customer'.
