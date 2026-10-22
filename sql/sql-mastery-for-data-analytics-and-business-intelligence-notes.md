@@ -763,12 +763,43 @@ WHERE score >= 100 AND score <= 500;
 
 #### IN Operator
 
+Checks if a value exists in a list.
 
+First you make a list of values inside parentheses.  (It's like a JavaScript array, but the syntax uses parentheses rather than brackets.)  Then you check if these values are "in" the selected data.
+
+
+##### Example
+
+Retrieve all customers from either Germany or USA.
+
+```
+SELECT *
+FROM customers
+WHERE country IN ('Germany', 'USA');
+```
+
+This is like a more concise version of:
+
+```
+SELECT *
+FROM customers
+WHERE country = 'Germany' OR country = 'USA';
+```
 
 
 #### NOT IN
 
+The opposite of the `IN` operator: excludes all the matches.
 
+##### Example
+
+Retrieve all customers who are *not* in Germany or USA:
+
+```
+SELECT *
+FROM customers
+WHERE country NOT IN ('Germany', 'USA');
+```
 
 
 ### Search Operator
