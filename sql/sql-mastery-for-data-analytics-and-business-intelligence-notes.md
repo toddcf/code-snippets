@@ -503,3 +503,20 @@ The order that the query is actually executed in is quite different from the ord
 5. SELECT (Only now does SQL select the columns to display.)
 6. ORDER BY (Then SQL sorts the display order of the final results.)
 7. TOP (The last thing SQL does is lop off any rows beyond the maximum specified.)
+
+
+## Multiple Queries
+
+You can run multiple queries from multiple tables at the same time.
+
+NOTE: While it is a best practice to always end your SQL query statement with a semicolon, when you are running multiple queries it becomes *necessary* to end each query with one for many types of databases.  The easiest and most consistent thing you can do as a developer is to always end with a semicolon.
+
+```
+SELECT *
+FROM customers;
+
+SELECT *
+FROM orders;
+```
+
+This will spit out two results.
