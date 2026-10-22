@@ -109,7 +109,7 @@ Removes duplicates.  Comes directly after the `SELECT` command:
 ```
 SELECT DISTINCT
   column
-FROM table
+FROM table;
 ```
 
 It will take the first match and ignore any subsequent matches -- so make sure that is what you want.
@@ -123,7 +123,7 @@ Return unique list of all countries:
 ```
 SELECT DISTINCT
   country
-FROM customers
+FROM customers;
 ```
 
 
@@ -151,7 +151,7 @@ SELECT
   country,
   SUM(score)
 FROM customers
-GROUP BY country
+GROUP BY country;
 ```
 
 ##### Alias
@@ -163,7 +163,7 @@ SELECT
   country,
   SUM(score) AS total_score
 FROM customers
-GROUP BY country
+GROUP BY country;
 ```
 
 NOTE: You *cannot* use a space in the label.  It will require an underscore or some other character instead of a space.
@@ -182,8 +182,10 @@ SELECT
   first_name,
   SUM(score) AS total_score
 FROM customers
-GROUP BY country,first_name
+GROUP BY country,first_name;
 ```
+
+Do not separate the values with a space -- just a comma.
 
 
 #### HAVING
@@ -202,7 +204,7 @@ SELECT
   SUM(score) AS total_score
 FROM customers
 GROUP BY country
-HAVING SUM(score) > 800
+HAVING SUM(score) > 800;
 ```
 
 DIFFERENCE BETWEEN `WHERE` and `HAVING`: `WHERE` is used to filter the data *before* aggregation.  `HAVING` is used to filter the data *after* aggregation.
@@ -241,7 +243,7 @@ The following example will first sort the results by alphabetical order of the c
 ```
 ORDER BY 
   country ASC,
-  score DESC
+  score DESC;
 ```
 
 NOTE: The order you list these in in the query is the order in which the logic will be nested.  If you were to list score first, the results will show all of the scores in descending order, and then the countries in alphabetical order *within* each of those scores.  (And if no countries have the exact same score, in this example adding the nested sorting of the countries would not accomplish anything, and it would be best to remove it from the query completely.)
@@ -256,7 +258,7 @@ Example 1 -- select just the `name` and `country` columns:
 ```
 SELECT
   name,
-  country
+  country;
 ```
 
 The order matters -- you will get the results in the same order you list the columns you want.
@@ -266,7 +268,7 @@ Example 2 -- the star selects ALL COLUMNS in the table:
 
 ```
 SELECT *
-FROM table_name
+FROM table_name;
 ```
 
 NOTE: Even if you only select certain columns, you can still run `WHERE` conditions on other columns that you did not select; those columns simply won't be shown in the results. For example, if you SELECT only the First Name and Country columns, you can still use `WHERE` to filter the results based on the Score column.  The results will only display the First Name and Country columns, but they will still filter out any rows that failed to meet your Score condition.
@@ -288,7 +290,7 @@ Retrieve only 3 customers:
 
 ```
 SELECT TOP 3 *
-FROM customers
+FROM customers;
 ```
 
 Note that it still needs something after it, such as the asterisk in this example, to describe which columns you want.
@@ -301,7 +303,7 @@ Retrive the top 3 customers *with the highest scores*:
 ```
 SELECT TOP 3 *
 FROM customers
-ORDER BY score DESC
+ORDER BY score DESC;
 ```
 
 This orders the rows by the values in the Score column by descending orders.  Then it keeps only the top 3 rows.
@@ -316,7 +318,7 @@ Retrieve the lowest two customers based on the score:
 ```
 SELECT TOP 2 *
 FROM customers
-ORDER BY score ASC
+ORDER BY score ASC;
 ```
 
 This time we look for `TOP 2` instead of `TOP 3`, and we change the `ORDER BY` from `DESC` to `ASC`.
@@ -329,7 +331,7 @@ Get the two most recent orders.  (This one uses the `orders` table instead of th
 ```
 SELECT TOP 2 *
 FROM orders
-ORDER BY order_date DESC
+ORDER BY order_date DESC;
 ```
 
 
@@ -408,7 +410,7 @@ SELECT
   name,
   LOWER(country)
 FROM customers
-WHERE country = 'Italy'
+WHERE country = 'Italy';
 ```
 
 
@@ -447,7 +449,7 @@ SELECT
 FROM customers
 WHERE score != 0
 GROUP BY country
-HAVING AVG(score) > 430
+HAVING AVG(score) > 430;
 ```
 
 
@@ -526,7 +528,7 @@ This will spit out two results.
 You can hardcode a value after `SELECT` rather than specifying columns.
 
 ```
-SELECT 123
+SELECT 123;
 ```
 
 This will output a table with a single row and column, containing a value of 123.  (In this example, the column will not have a name, but as always, you can add an alias using `AS`.)
@@ -538,7 +540,7 @@ SELECT
   id,
   first_name,
   'New Customer' AS customer_type
-FROM customers
+FROM customers;
 ```
 
 This will output a table containing dynamic columns for `id` and `first_name`, followed by a static column named 'customer_type', with each row of that column containing the value 'New Customer'.
