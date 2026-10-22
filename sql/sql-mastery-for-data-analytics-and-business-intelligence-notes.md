@@ -703,6 +703,7 @@ WHERE country = 'USA' AND score > 500;
 
 At least *one* condition must be true.
 
+
 ##### Example
 
 Retrieve all customers who are either from the United States or have a score greater than 500.
@@ -716,7 +717,18 @@ WHERE country = 'USA' OR score > 500;
 
 #### NOT Operator
 
+A reverse operator that *excludes* matching values.
 
+
+##### Example
+
+Retrieve all customers who are *not* in the United States.
+
+```
+SELECT *
+FROM customers
+WHERE NOT country = 'USA';
+```
 
 
 ### Range Operator
