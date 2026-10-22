@@ -549,3 +549,49 @@ This will output a table containing dynamic columns for `id` and `first_name`, f
 ## Highlight & Execute
 
 If you only want to execute *part* of your query (without having to delete or comment out the rest), you can highlight it with your cursor before hitting the "Execute" button.  Only the highlighted portion will be executed.
+
+
+## Filtering (in More Detail)
+
+Often, you will be working with massive tables of data, so you need to surgically select only the portions that you need (subsets), such as:
+
+- Sales last month.
+- Total orders from China.
+- How many active customers?
+
+
+### Comparison Operators
+
+
+
+
+### Logical Operators
+
+#### AND Operator
+
+
+
+
+#### OR Operator
+
+
+
+
+#### NOT Operator
+
+
+
+
+### Predicates, or Special Comparison Constructs
+
+#### BETWEEN Operator
+
+
+
+
+#### IN Operator
+
+
+
+
+#### LIKE Operator
