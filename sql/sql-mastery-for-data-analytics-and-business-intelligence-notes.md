@@ -805,3 +805,117 @@ WHERE country NOT IN ('Germany', 'USA');
 ### Search Operator
 
 #### LIKE Operator
+
+Searches for a pattern in text.  Conceptually similar to regex.
+
+- `%` means "anything."  Could match 0 characters, 1 character, or many characters.
+- `_` means exactly 1 character match.
+
+
+##### Example 1
+
+The first character of the text must be an "M" -- and after that there could be nothing, or there could be any number of characters:
+
+```
+M%
+```
+
+This would match the following:
+
+- "Maria"
+- "Ma"
+- "M"
+
+And it would *not* match:
+
+- "Emma"
+
+Full syntax for retrieving all customers whose first names start with an "M":
+
+```
+SELECT *
+FROM customers
+WHERE first_name LIKE 'M%';
+```
+
+
+##### Example 2
+
+The text could start with anything, but it must end with "in":
+
+```
+%in
+```
+
+This would match the following:
+
+- "Martin"
+- "Vin"
+- "in"
+
+And it would *not* match the following:
+
+- "Jasmine"
+
+Full syntax for retrieving all customers whose first name ends with 'n':
+
+```
+SELECT *
+FROM customers
+WHERE first_name LIKE '%n';
+```
+
+
+##### Example 3
+
+The text could start or end with anything, but it must contain an "r" somewhere:
+
+```
+%r%
+```
+
+This would match the following:
+
+- "Maria"
+- "Peter"
+- "Ryan"
+- "R"
+
+And it would *not* match:
+
+- "Alice"
+
+Full syntax for retrieving all customers whose first name contains an "r":
+
+```
+SELECT *
+FROM customers
+WHERE first_name LIKE '%r%';
+```
+
+
+##### Example 4
+
+The text must have exactly two characters, then a "b," and then zero or any number of characters after that:
+
+```
+__b%
+```
+
+This would match the following:
+
+- "Albert"
+- "Rob"
+
+And it would *not* match:
+
+- "Abel"
+- "An"
+
+Full syntax for retrieving all customers whose first name has an "r" in the third position:
+
+```
+SELECT *
+FROM customers
+WHERE first_name LIKE '__r%';
+```
