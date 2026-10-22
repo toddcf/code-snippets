@@ -685,10 +685,23 @@ Used to combine multiple operators.
 
 #### AND Operator
 
+*All* the conditions must be true.
 
+
+##### Example
+
+Retrieve all customers from the United States with a score greater than 500.
+
+```
+SELECT *
+FROM customers
+WHERE country = 'USA' AND score > 500;
+```
 
 
 #### OR Operator
+
+At least *one* condition must be true.
 
 
 
