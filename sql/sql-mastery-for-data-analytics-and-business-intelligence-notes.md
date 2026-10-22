@@ -735,7 +735,28 @@ WHERE NOT country = 'USA';
 
 #### BETWEEN Operator
 
+Checks if a value is within a range.  You need to provide the lower and upper boundaries of the range.
 
+The boundaries themselves are inclusive, meaning they are the equivalent of `>=` and `<=`.  (If you say "between 500 and 1000," values of 500 or 1000 will be included in the results.)
+
+
+##### Example
+
+Retrieve all customers with scores between 100 and 500:
+
+```
+SELECT *
+FROM customers
+WHERE score BETWEEN 100 AND 500;
+```
+
+NOTE: This is like a more concise version of:
+
+```
+SELECT *
+FROM customers
+WHERE score >= 100 AND score <= 500;
+```
 
 
 ### Membership Operators
