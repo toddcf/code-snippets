@@ -703,7 +703,15 @@ WHERE country = 'USA' AND score > 500;
 
 At least *one* condition must be true.
 
+##### Example
 
+Retrieve all customers who are either from the United States or have a score greater than 500.
+
+```
+SELECT *
+FROM customers
+WHERE country = 'USA' OR score > 500;
+```
 
 
 #### NOT Operator
