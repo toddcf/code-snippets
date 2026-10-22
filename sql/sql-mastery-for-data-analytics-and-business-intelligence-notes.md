@@ -562,10 +562,15 @@ Often, you will be working with massive tables of data, so you need to surgicall
 
 ### Comparison Operators
 
+`=`, `<> =!`, `>`, `>=`, `<`, `<=`.
 
+These simply compare two values.
 
 
 ### Logical Operators
+
+Used to combine multiple operators.
+
 
 #### AND Operator
 
@@ -582,16 +587,25 @@ Often, you will be working with massive tables of data, so you need to surgicall
 
 
 
-### Predicates, or Special Comparison Constructs
+### Range Operator
 
 #### BETWEEN Operator
 
 
 
 
+### Membership Operators
+
 #### IN Operator
 
 
 
+
+#### NOT IN
+
+
+
+
+### Search Operator
 
 #### LIKE Operator
