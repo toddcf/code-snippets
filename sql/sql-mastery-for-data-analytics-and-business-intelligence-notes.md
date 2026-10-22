@@ -482,6 +482,8 @@ SELECT
 
 ## Query Syntax Order
 
+The query syntax is in more of a plain-English order, but it is not
+
 1. SELECT (optional: followed by DISTINCT, followed by TOP)
 2. FROM
 3. WHERE (always comes directly after FROM if it is used)
@@ -490,5 +492,14 @@ SELECT
 6. ORDER BY (always last)
 
 
-## Coding Order (of the Query) vs. Execution Order (in the Database)
+## Query Execution Order
 
+The order that the query is actually executed in is quite different from the order of the coding syntax:
+
+1. FROM (First, SQL goes to the table/database.)
+2. WHERE (Next, SQL filters pre-aggregated data.)
+3. GROUP BY (Next, SQL aggregates the data.)
+4. HAVING (Next, SQL filters the post-aggregated data.)
+5. SELECT (Only now does SQL select the columns to display.)
+6. ORDER BY (Then SQL sorts the display order of the final results.)
+7. TOP (The last thing SQL does is lop off any rows beyond the maximum specified.)
