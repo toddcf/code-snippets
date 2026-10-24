@@ -1241,6 +1241,40 @@ NOTE 2: `TRIM` is being used to eliminate any leading or trailing spaces that mi
 #### Numeric Functions
 
 
+##### ROUND
+
+Rounds up or down based on how many decimal places you ask it to keep.
+
+(It will turn the remaining digits to zeroes rather than dropping them, however.  For example, `3.516` will become `3.520` rather than just `3.52`.  The total number of digits remains the same.)
+
+Syntax: `ROUND(input_value, number_of_decimal_places)`
+
+
+###### Example 1: Rounding Up
+
+```
+SELECT
+  3.516,
+  ROUND(3.516, 2);
+```
+
+Will convert `3.516` to `3.520`.
+
+
+###### Example 2: Rounding Down
+
+```
+SELECT
+  3.514,
+  ROUND(3.514, 2);
+```
+
+Will convert `3.514` to `3.510`.
+
+
+##### ABS
+
+Short of "absolute."
 
 
 #### Date & Time Functions
