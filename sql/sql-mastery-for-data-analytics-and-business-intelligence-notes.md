@@ -1021,7 +1021,32 @@ This will append one more column called `low_name` containing the first name fro
 
 ###### TRIM
 
+Removes leading and trailing spaces from a string.
 
+####### Example 1
+
+```
+TRIM('John')
+TRIM(' John')
+TRIM('John ')
+TRIM(' John ')
+TRIM('  John   ')
+```
+
+Each of these will output `John`.
+
+
+####### Example 2
+
+Find customers whose first name contains leading or trailing spaces.
+
+```
+SELECT first_name
+FROM customers
+WHERE first_name != TRIM(first_name);
+```
+
+SEE ALSO: The examples in the `LEN` section.
 
 
 ###### REPLACE
@@ -1031,7 +1056,62 @@ This will append one more column called `low_name` containing the first name fro
 
 ###### LEN
 
+Returns the number of characters in a value.
 
+####### Example 1
+
+```
+SELECT
+  first_name,
+  LEN(first_name) AS len_name
+FROM customers;
+```
+
+This will append a column called `len_name` containing the number of characters for the first name listed in that row.
+
+
+####### Example 2
+
+Adding on to the previous example, this query will also append a column called `len_trim_name` that contains the length of characters in the first name *after it has been trimmed* for that row.  Meaning that if the name contained any leading or trailing spaces, there will be a difference in the value for this column compared to the previous column.
+
+```
+SELECT
+  first_name,
+  LEN(first_name) AS len_name,
+  LEN(TRIM(first_name)) AS len_trim_name
+FROM customers;
+```
+
+
+####### Example 3
+
+Adding on even more to the previous two examples, this query will also append a column called `` that contains the difference between the number of characters in the untrimmed versus the trimmed first names:
+
+```
+SELECT
+  first_name,
+  LEN(first_name) AS len_name,
+  LEN(TRIM(first_name)) AS len_trim_name,
+  LEN(first_name) - LEN(TRIM(first_name)) AS difference
+FROM customers;
+```
+
+
+####### Example 4
+
+In this variation on the previous example, we add similar logic to the `WHERE` clause so that the results display only the row with the difference:
+
+```
+SELECT
+  first_name,
+  LEN(first_name) AS len_name,
+  LEN(TRIM(first_name)) len_trim_name,
+  LEN(first_name) - LEN(TRIM(first_name)) AS difference
+FROM customers
+WHERE LEN(first_name) != LEN(TRIM(first_name));
+```
+
+In other words, we don't have to visually scan through all the rows with a `0` difference -- we can just see the rows that had a difference.
 
 
 ##### String Extraction
