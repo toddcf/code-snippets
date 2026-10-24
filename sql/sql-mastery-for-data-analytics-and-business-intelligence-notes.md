@@ -1096,7 +1096,7 @@ SELECT
 
 ###### LEN
 
-Returns the number of characters in a value.
+Returns the number of characters in a value (length).
 
 ####### Example 1
 
@@ -1154,7 +1154,17 @@ WHERE LEN(first_name) != LEN(TRIM(first_name));
 In other words, we don't have to visually scan through all the rows with a `0` difference -- we can just see the rows that had a difference.
 
 
+####### Example 5
+
+LEN can count the characters (digits) of a number, too:
+
+`LEN(350)` will return `3`.
+
+
 ##### String Extraction
+
+Similar to "slicing" in JavaScript, where you can extract a specific portion of a string.
+
 
 ###### LEFT
 
