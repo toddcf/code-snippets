@@ -1342,6 +1342,43 @@ SELECT
 This will return `2026`.
 
 
+###### DATEPART
+
+Returns a specific part of a date as an integer.  These can be spelled out in full, or abbreviated (such as MM instead of MONTH) -- although spelling out in full is a best practice because it translates between databases more reliably.  Examples of parts:
+
+- DAY
+- WEEK
+- WEEKDAY
+- MONTH
+- QUARTER
+- YEAR
+
+Syntax: `DATEPART(part, date)`
+
+
+####### Example
+
+```
+SELECT
+	OrderID,
+	OrderDate,
+	ShipDate,
+	CreationTime,
+	DATEPART(YEAR, CreationTime) AS year_dp,
+	YEAR(CreationTime) AS Year,
+	DATEPART(MONTH, CreationTime) AS month_dp,
+	MONTH(CreationTime) AS Month,
+	DATEPART(DAY, CreationTime) AS day_dp,
+	DAY(CreationTime) AS Day,
+	DATEPART(HOUR, CreationTime) AS hour_dp,
+	DATEPART(QUARTER, CreationTime) AS quarter,
+	DATEPART(WEEKDAY, CreationTime) AS weekday
+FROM Sales.Orders;
+```
+
+This will add columns for the different dateparts, plus comparison columns for the year, month, and day so you can confirm that datepart extracted those same parts accurately.
+
+
 ##### Format & Casting
 
 There are three functions you can use for date format and casting:
