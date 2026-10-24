@@ -1289,7 +1289,45 @@ Will return `10`.
 
 #### Date & Time Functions
 
+Date Format: `YYYY-MM-DD`
+Time Format: `HH:MM:SS`
+Datetime (a.k.a. timestamp): `YYYY-MM-DD HH:MM:SS.milliseconds`
 
+##### Part Extraction
+
+There are seven functions you can use to extract just the part of the date that you want:
+
+1. DAY
+2. MONTH
+3. YEAR
+4. DATEPART
+5. DATENAME
+6. DATETRUNC
+7. EOMONTH
+
+
+##### Format & Casting
+
+There are three functions you can use for date format and casting:
+
+1. FORMAT
+2. CONVERT
+3. CAST
+
+
+##### Calculations
+
+There are two functions you can use to do calculations with a date:
+
+1. DATEADD
+2. DATEDIFF
+
+
+##### Validation
+
+This function will confirm whether your data is a valid date:
+
+1. ISDATE
 
 
 #### NULL Functions
