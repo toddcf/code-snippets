@@ -1306,6 +1306,42 @@ There are seven functions you can use to extract just the part of the date that 
 7. EOMONTH
 
 
+###### DAY
+
+Returns the day from a date:
+
+```
+SELECT
+  DAY('2026-10-24')
+```
+
+This will return `24`.
+
+
+###### MONTH
+
+Returns the month from a date:
+
+```
+SELECT
+  MONTH('2026-10-24')
+```
+
+This will return `10`.
+
+
+###### YEAR
+
+Returns the year from a date:
+
+```
+SELECT
+  YEAR('2026-10-24')
+```
+
+This will return `2026`.
+
+
 ##### Format & Casting
 
 There are three functions you can use for date format and casting:
