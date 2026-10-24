@@ -919,3 +919,117 @@ SELECT *
 FROM customers
 WHERE first_name LIKE '__r%';
 ```
+
+
+## Data Tranformation and Cleaning
+
+SQL has built-in functions that can take in data, transform it, and return it.
+
+- Single-Row Functions take in only one value and return only one value. (Example: `LOWER()` will take in a single string, convert it to lowercase, and return it.)
+- Multi-Row Functions take in multiple values and return only one value.  (Example: `SUM()` will take in multiple numbers, add them together, and return the sum.)
+
+Functions can be *nested*, allowing you to use one function inside of another so that you transform the data in multiple ways.  Use parentheses to control the order of operations (execution will move from inner parentheses to outer parentheses), like this (although this example does not actually run):
+
+```
+LEN(LOWER(LEFT('Maria', 2)))
+```
+
+
+### Single-Row Functions
+
+Typically used by engineers more than analysts.
+
+
+#### String Functions
+
+##### Manipulation Functions
+
+###### CONCAT
+
+Short for "concatenation."  Combines multiple string values into one string value.
+
+
+####### Example
+
+Concatenate the first name and country into one column:
+
+```
+SELECT
+  first_name,
+  country,
+  CONCAT(first_name, ' ', country) AS name_country
+FROM customers;
+```
+
+This will output the `first_name` and `country` columns as they appear in the database, followed by a new column called `name_country` containing the concatenated values (with a space between) for each row.
+
+
+###### UPPER
+
+
+
+
+###### LOWER
+
+
+
+
+###### TRIM
+
+
+
+
+###### REPLACE
+
+
+##### Calculation Functions
+
+###### LEN
+
+
+
+
+##### String Extraction
+
+###### LEFT
+
+
+
+
+##### RIGHT
+
+
+
+
+##### SUBSTRING
+
+
+
+
+#### Numeric Functions
+
+
+
+
+#### Date & Time Functions
+
+
+
+
+#### NULL Functions
+
+
+
+
+### Multi-Row Functions
+
+Typically used by analysts more than engineers.
+
+
+#### Aggregate Functions (Basics)
+
+
+
+
+#### Window Functions (Advanced)
+
