@@ -1353,7 +1353,7 @@ Returns a specific part of a date as an integer.  These can be spelled out in fu
 - QUARTER
 - YEAR
 
-Syntax: `DATEPART(part, date)`
+Syntax is basically the same as DATENAME and DATETRUNC: `DATEPART(part, date)`
 
 
 ####### Example
@@ -1387,9 +1387,34 @@ Extracts the *name* of the datepart as a string rather than its numerical equiva
 - `Wednesday` instead of `4`.
 - `2026` (string) instead of `2026` (number).
 
-Syntax is basically the same as DATEPART: `DATENAME(part, date)`
+Syntax is basically the same as DATEPART and DATETRUNC: `DATENAME(part, date)`
 
 This is often more user-friendly for the people reading the data.
+
+
+###### DATETRUNC
+
+Short for "truncate."  Starting *after* the point you specify, will reset the remainder of the date information to zeroes (for the time portion) or ones (for the date portion).
+
+Syntax is basically the same as DATEPART and DATENAME: `DATETRUNC(part, date)`.  The "part" argument is singular.
+
+
+####### Example 1
+
+If you want to truncate `2026-10-24 18:55:45` at the "minutes," it will reset the seconds (and everything after) to zeroes and return this: `2026-10-24 18:55:00.0000000`.  It will not round up or down.
+
+
+####### Example 2
+
+If you want to group orders together by the month they were created in, you don't need or want a detailed timestamp down to the millisecond -- you can wipe that information, then group it by the remaining commonalities:
+
+```
+SELECT
+  DATETRUNC(MONTH, CreationTime) AS creation,
+  COUNT(*)
+FROM Sales.Orders
+GROUP BY DATETRUNC(MONTH, CreationTime);
+```
 
 
 ##### Format & Casting
