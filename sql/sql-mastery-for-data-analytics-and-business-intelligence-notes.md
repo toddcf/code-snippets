@@ -1274,7 +1274,17 @@ Will convert `3.514` to `3.510`.
 
 ##### ABS
 
-Short of "absolute."
+Returns the "absolute" value of a number.  In other words, it converts a negative number to a positive (removes the negative sign).  If you pass a positive value into it, it will simply stay positive.
+
+
+###### Example
+
+```
+SELECT
+  ABS(-10);
+```
+
+Will return `10`.
 
 
 #### Date & Time Functions
