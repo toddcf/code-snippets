@@ -1204,7 +1204,38 @@ SELECT
 
 ##### SUBSTRING
 
+Extracts a specified number of characters from the middle of a string.
 
+Similar to JavaScript "substring" -- except it does not count from "index 0" like JavaScript does.  Instead, it counts the position of the characters.
+
+Syntax: `SUBSTRING(value, starting position, length)`
+
+
+####### Example 1
+
+If you want the "ri" from the middle of "Maria":
+
+```
+SELECT
+  'Maria' AS first_name,
+  SUBSTRING('Maria', 3, 2) AS portion_of_first_name;
+```
+
+
+####### Example 2
+
+If you need to extract everything from a specified midpoint to the end of the string, and the strings could be different lengths, you can enter the "length" parameter dynamically.  (You cannot omit it.)
+
+```
+SELECT
+  first_name,
+  SUBSTRING(TRIM(first_name), 3, LEN(TRIM(first_name))) AS sub_name
+FROM customers;
+```
+
+NOTE 1: In this example, `LEN` is going to return the full length of the first_name, meaning it will count past the end of the name.  And that's okay.  You don't need to calculate the precise end of the name.  If you overshoot, it will not throw an error.  It will just stop automatically.
+
+NOTE 2: `TRIM` is being used to eliminate any leading or trailing spaces that might throw off the character counting.
 
 
 #### Numeric Functions
