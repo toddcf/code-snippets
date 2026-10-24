@@ -1379,6 +1379,19 @@ FROM Sales.Orders;
 This will add columns for the different dateparts, plus comparison columns for the year, month, and day so you can confirm that datepart extracted those same parts accurately.
 
 
+###### DATENAME
+
+Extracts the *name* of the datepart as a string rather than its numerical equivalent.  For example:
+
+- `September` instead of `9`.
+- `Wednesday` instead of `4`.
+- `2026` (string) instead of `2026` (number).
+
+Syntax is basically the same as DATEPART: `DATENAME(part, date)`
+
+This is often more user-friendly for the people reading the data.
+
+
 ##### Format & Casting
 
 There are three functions you can use for date format and casting:
