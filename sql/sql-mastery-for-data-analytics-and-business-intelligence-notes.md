@@ -1168,12 +1168,38 @@ Similar to "slicing" in JavaScript, where you can extract a specific portion of 
 
 ###### LEFT
 
+Extracts a specific number of characters starting from the beginning (left side) of a string and moving forward.
 
+Syntax: `LEFT(value, number_of_characters)`
+
+
+####### Example
+
+```
+SELECT
+  'Maria' AS full_first_name,
+  LEFT('Maria', 2) AS first_two_characters_of_first_name;
+```
+
+`Maria` will return `Ma`.
 
 
 ##### RIGHT
 
+Extracts a specific number of characters starting from the end (right side) of a string and moving backward.
 
+Syntax: `RIGHT(value, number_of_characters)`
+
+
+####### Example
+
+```
+SELECT
+  'Maria' AS full_first_name,
+  RIGHT('Maria', 2) AS last_two_characters_of_first_name;
+```
+
+`Maria` will return `ia`.
 
 
 ##### SUBSTRING
