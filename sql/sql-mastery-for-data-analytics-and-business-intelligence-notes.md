@@ -1051,6 +1051,46 @@ SEE ALSO: The examples in the `LEN` section.
 
 ###### REPLACE
 
+Will replace a specific character with another specific character of your choice.  (Or an empty string if you want to replace it with nothing.)
+
+Syntax: First argument is the input value, second argument is the original value, and the third argument is the new value you want to replace the original value with.
+
+####### Example 1
+
+Replace dashes in a phone number with slashes:
+
+```
+SELECT
+  '123-456-7890' AS phone,
+  REPLACE('123-456-7890', '-', '/') AS slash_phone;
+```
+
+`123-456-7890` will become `123/456/7890`.
+
+
+####### Example 2
+
+*Remove* the dashes from a phone number.  In this example, we are using a hardcoded value for the phone number.
+
+```
+SELECT
+  '123-456-7890' AS phone,
+  REPLACE('123-456-7890', '-', '');
+```
+
+`123-456-7890` will become `1234567890`.
+
+
+####### Example 3
+
+Change file type from `.txt` to `.csv`:
+
+```
+SELECT
+  'report.txt' AS txt,
+  REPLACE('report.txt', 'txt', 'csv') as csv;
+```
+
 
 ##### Calculation Functions
 
