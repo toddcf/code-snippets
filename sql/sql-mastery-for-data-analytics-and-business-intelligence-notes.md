@@ -966,12 +966,57 @@ This will output the `first_name` and `country` columns as they appear in the da
 
 ###### UPPER
 
+Converts all text to UPPERCASE.
 
+
+####### Examples
+
+```
+UPPER('Maria')
+UPPER('maria')
+UPPER('MARIA')
+```
+
+Each of these will output `MARIA`.
+
+
+```
+SELECT
+  first_name,
+  country,
+  CONCAT(first_name, ' ', country) AS name_country,
+  UPPER(first_name) AS upper_name
+FROM customers;
+```
+
+This will append one more column called `upper_name` containing the first name from each row in UPPERCASE format.
 
 
 ###### LOWER
 
+Converts all text to lowercase.
 
+
+####### Examples
+
+```
+LOWER('Maria')
+LOWER('maria')
+LOWER('MARIA')
+```
+
+Each of these will output `maria`.
+
+```
+SELECT
+  first_name,
+  country,
+  CONCAT(first_name, ' ', country) AS name_country,
+  LOWER(first_name) AS low_name
+FROM customers;
+```
+
+This will append one more column called `low_name` containing the first name from each row in lowercase format.
 
 
 ###### TRIM
