@@ -1431,6 +1431,72 @@ Syntax: `EOMONTH(date)`
 - `SELECT EOMONTH('2028-02-01')` will return `2028-02-29` because February has *29* days that year.
 
 
+###### Use Cases for Date Part Extraction
+
+
+####### Data aggregations and reporting.
+
+Building a sales report for sales by year, or by quarter.
+
+
+######## Example 1
+
+How many orders were placed each year?
+
+```
+SELECT
+	YEAR(OrderDate) AS OrderYear,
+	COUNT(*) AS NrOfOrders
+FROM Sales.Orders
+GROUP BY YEAR(OrderDate);
+```
+
+
+######## Example 2
+
+How many orders were placed each month?
+
+If you want the months as integers:
+
+```
+SELECT
+	MONTH(OrderDate) AS OrderMonth,
+	COUNT(*) AS NrOfOrders
+FROM Sales.Orders
+GROUP BY MONTH(OrderDate);
+```
+
+
+If you want the months as string names for readability:
+
+```
+SELECT
+	DATENAME(MONTH, OrderDate) AS OrderMonth,
+	COUNT(*) AS NrOfOrders
+FROM Sales.Orders
+GROUP BY DATENAME(MONTH, OrderDate);
+```
+
+
+####### Data Filtering
+
+Best Practice: If you are filtering data, it is better (faster) to use numbers than strings.  For example, filter for `Month(date) = 2` rather than `Month(date) = 'February'`.
+
+
+######## Example 1
+
+Show all orders that were placed in the month of February:
+
+```
+SELECT
+	*
+FROM Sales.Orders
+WHERE MONTH(OrderDate) = 2;
+```
+
+Rather than aggregating, this query displays the entire row of data for each of these matches (meaning each order placed in February).
+
+
 ##### Format & Casting
 
 There are three functions you can use for date format and casting:
