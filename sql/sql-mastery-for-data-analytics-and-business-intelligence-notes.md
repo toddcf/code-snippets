@@ -1417,6 +1417,20 @@ GROUP BY DATETRUNC(MONTH, CreationTime);
 ```
 
 
+###### EOMONTH
+
+"End of Month" (last day of the month).
+
+Syntax: `EOMONTH(date)`
+
+
+####### Examples
+
+- `SELECT EOMONTH('2026-10-24')` will return `2026-10-31` because October has 31 days.
+- `SELECT EOMONTH('2026-02-01')` will return `2026-02-28` because February has 28 days that year.
+- `SELECT EOMONTH('2028-02-01')` will return `2028-02-29` because February has *29* days that year.
+
+
 ##### Format & Casting
 
 There are three functions you can use for date format and casting:
