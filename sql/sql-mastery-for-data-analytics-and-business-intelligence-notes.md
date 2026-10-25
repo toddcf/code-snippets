@@ -1297,13 +1297,13 @@ Datetime (a.k.a. timestamp): `YYYY-MM-DD HH:MM:SS.milliseconds`
 
 There are seven functions you can use to extract just the part of the date that you want:
 
-1. DAY
-2. MONTH
-3. YEAR
-4. DATEPART
-5. DATENAME
-6. DATETRUNC
-7. EOMONTH
+1. DAY (integer)
+2. MONTH (integer)
+3. YEAR (integer)
+4. DATEPART (integer)
+5. DATENAME (string)
+6. DATETRUNC (datetime)
+7. EOMONTH (date)
 
 
 ###### DAY
