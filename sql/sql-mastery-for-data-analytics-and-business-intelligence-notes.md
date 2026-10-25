@@ -1289,9 +1289,16 @@ Will return `10`.
 
 #### Date & Time Functions
 
-Date Format: `YYYY-MM-DD`
-Time Format: `HH:MM:SS`
-Datetime (a.k.a. timestamp): `YYYY-MM-DD HH:MM:SS.milliseconds`
+Date Format: `YYYY-MM-dd`
+Time Format: `HH:mm:ss`
+Datetime (a.k.a. timestamp): `YYYY-MM-dd HH:mm:ss.milliseconds`
+
+Note that these formats are case-sensitive.  For example, the month is UPPERCASE `MM` to differentiate it from the minutes, which are lowercase `mm`.
+
+International Standard (ISO 8601): `YYYY-MM-dd` (this is what SQL uses)
+USA Standard: `MM-dd-YYYY`
+European Standard: `dd-MM-YYYY`
+
 
 ##### Part Extraction
 
@@ -1504,6 +1511,34 @@ There are three functions you can use for date format and casting:
 1. FORMAT
 2. CONVERT
 3. CAST
+
+
+###### FORMAT
+
+Changes the format from one to another.  For example:
+
+- Changing the date from USA Standard to International Standard format.
+- You can also use preset format numbers:
+  - N for "number" will give you a number with comma separation, such as `1,234,567.89`.
+  - C for "currency" will add a dollar sign in front of the number, like this: `$1,234,567.89`.
+  - P for "percentage" will give you a percent sign at the end: `123,456,789.00%`.
+
+
+###### CONVERT
+
+Using a "style number" from a list, you tell SQL which format you want outputted.  For example:
+
+- Style `6` would output the date format `20 Aug 25`.
+- Style `112` would output `20250820`.
+
+
+###### CAST
+
+Changes data type from one to another.
+
+- `'123'` (string) to `123` (integer).
+- `2025-08-20` (date) to `'2025-08-20'` (string).
+- `'2025-08-20'` (string) to `2025-08020` (date).
 
 
 ##### Calculations
