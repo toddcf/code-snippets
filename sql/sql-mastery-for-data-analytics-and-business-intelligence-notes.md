@@ -1508,9 +1508,9 @@ Rather than aggregating, this query displays the entire row of data for each of 
 
 There are three functions you can use for date format and casting:
 
-1. FORMAT
-2. CONVERT
-3. CAST
+1. FORMAT (Can format any data type (dates, times, and numbers), but output will always be a *string* data type.)
+2. CONVERT (Changes any data type to any other data type.  Can change format, but only for date and time, not numbers.)
+3. CAST (Changes any data type to any other data type.  Will not change format.)
 
 
 ###### FORMAT
@@ -1557,9 +1557,9 @@ NOTE: You also have the option of using the `CONCAT()` function instead of manua
 
 ###### CONVERT
 
-Convert the data type from one to another.  (Although he said that's what `CAST` accomplishes.)
+Convert the data type from one to another.  (Offers some additional formatting options that `CAST` does not.  But `CONVERT` is SQL Server-specific, meaning it will not work across all other database systems.)
 
-Syntax: `CONVERT(data_type, value, style)` (`style` is optional.  If you don't pass in a style value, it uses the default of `0`.)
+Syntax: `CONVERT(data_type, value, style)` (`style` is optional.  If you don't pass in a style value, it uses the default of `0`.  Additional note: `CAST` does not offer the style parameter.)
 
 The optional "style number" will use a number from a list to tell SQL which format you want outputted.  For example:
 
@@ -1577,11 +1577,21 @@ The optional "style number" will use a number from a list to tell SQL which form
 
 ###### CAST
 
-Changes data type from one to another.
+Similarly to `CONVERT`, this changes data type from one to another.  But it is part of the ANSI SQL standard, meaning it works across many database systems.  (`CONVERT` only works with SQL Server.)  Unlike `CONVERT`, it does not take in a style parameter.
 
 - `'123'` (string) to `123` (integer).
 - `2025-08-20` (date) to `'2025-08-20'` (string).
 - `'2025-08-20'` (string) to `2025-08020` (date).
+
+Syntax: `CAST(value, AS data_type)`  (Separated with keyworld `AS` rather than a comma.  You can think of its functionality as if it were a plain-English sentence.  You are "casting" a "value as" a specified "data type.")
+
+
+####### Examples
+
+- `CAST('123' AS INT)` will convert the `'123'` string into a `123` integer.
+- `CAST(123 AS VARCHART)` will convert the `123` integer into a `'123'` string.
+- `CAST('2025-08-20' AS DATE)` will convert the `'2025-08-20'` string into a `2025-08-20` date.
+- `CAST('2025-08-20' AS DATETIME2)` will convert the `'2025-08-20'` string into a `2025-08-20 00:00:00.0000000` datetime.
 
 
 ##### Calculations
