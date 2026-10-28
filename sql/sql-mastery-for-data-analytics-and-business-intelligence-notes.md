@@ -1531,6 +1531,10 @@ Syntax: `FORMAT(value, format, culture)`
 - `format` is the desired output you want.  Example: `'dd/MM/yyyy'`  (There are too many of these to list here -- just look up what you need when you need it.)
 - `culture` is optional, and rarely used.  It means "show me this value in the style of a specific country or region."  Example: `'ja-JP'` (Japan).  Default culture (if you don't specify) is `'en-US'`.
 
+Use Case: Data Aggregation: It is a best practice to format the date *before* doing any aggregations.  (In other words, run the date through the `FORMAT` function in the exact same way in both the `SELECT` and `GROUP BY` clauses.)
+
+Use Case: Data Standardization: The data may be coming from a CSV file, an API, and a database, and you may be consolidating all of these into one central location.
+
 
 ####### Example
 
