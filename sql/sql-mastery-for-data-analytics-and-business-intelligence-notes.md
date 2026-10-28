@@ -1523,6 +1523,33 @@ Changes the format from one to another.  For example:
   - C for "currency" will add a dollar sign in front of the number, like this: `$1,234,567.89`.
   - P for "percentage" will give you a percent sign at the end: `123,456,789.00%`.
 
+`FORMAT()` formats a date or time value.
+
+Syntax: `FORMAT(value, format, culture)`
+
+- `value` can be a date or number.
+- `format` is the desired output you want.  Example: `'dd/MM/yyyy'`  (There are too many of these to list here -- just look up what you need when you need it.)
+- `culture` is optional, and rarely used.  It means "show me this value in the style of a specific country or region."  Example: `'ja-JP'` (Japan).  Default culture (if you don't specify) is `'en-US'`.
+
+
+####### Example
+
+Show CreationTime using the following format: `Day Wed Jan Q1 2025 12:34:56 PM`
+
+This will require a combination of hardcoded values, `FORMAT`, and `DATENAME`, all concatenated into one string:
+
+```
+SELECT
+	OrderID,
+	CreationTime,
+	'Day ' + FORMAT(CreationTime, 'ddd MMM') +
+	' Q' + DATENAME(quarter, CreationTime) + ' ' +
+	FORMAT(CreationTime, 'yyyy hh:mm:ss tt') AS CustomFormat
+FROM Sales.Orders
+```
+
+NOTE: You also have the option of using the `CONCAT()` function instead of manually concatenating with the `+` symbol.
+
 
 ###### CONVERT
 
