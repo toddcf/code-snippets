@@ -166,7 +166,7 @@ FROM customers
 GROUP BY country;
 ```
 
-NOTE: You *cannot* use a space in the label.  It will require an underscore or some other character instead of a space.
+NOTE: You *cannot* use a space in the label.  It will require an underscore or some other character instead of a space.  OR, you can put the value inside brackets, and this will allow you to use spaces.  For example: `[Total Score]`
 
 SCOPE: This label will only apply to this query.  Not any other queries.  And it will not modify the database itself.
 
@@ -1557,10 +1557,22 @@ NOTE: You also have the option of using the `CONCAT()` function instead of manua
 
 ###### CONVERT
 
-Using a "style number" from a list, you tell SQL which format you want outputted.  For example:
+Convert the data type from one to another.  (Although he said that's what `CAST` accomplishes.)
+
+Syntax: `CONVERT(data_type, value, style)` (`style` is optional.  If you don't pass in a style value, it uses the default of `0`.)
+
+The optional "style number" will use a number from a list to tell SQL which format you want outputted.  For example:
 
 - Style `6` would output the date format `20 Aug 25`.
 - Style `112` would output `20250820`.
+
+
+####### Examples
+
+- `CONVERT(INT, '124')` will convert the `'124'` string into a `124` integer.
+- `CONVERT(DATE, '2025-08-20')` will convert the `'2025-08-20'` string to `2025-08-20` as a date.
+- `CONVERT(DATE, CreationTime)` will convert `CreationTime` from a datetime to just a date.
+- `CONVERT(VARCHAR, CreationTime)` will convert a datetime to a variable-length string.
 
 
 ###### CAST
