@@ -1598,8 +1598,31 @@ Syntax: `CAST(value, AS data_type)`  (Separated with keyworld `AS` rather than a
 
 There are two functions you can use to do calculations with a date:
 
-1. DATEADD
+1. DATEADD (Adds or subtracts a specific time interval to or from a date.)
 2. DATEDIFF
+
+
+###### DATEADD
+
+Adds or subtracts a specific time interval to or from a date.
+
+Syntax: `DATEADD(part, interval, date)`
+
+- `part` = Year, month, day, etc.
+- `interval` = Positive or negative number.
+- `date` = Starting date that you want to manipulate.
+
+
+####### Examples
+
+- Add three years to `2025-08-20`: `DATEADD(year, 3, '2025-08-20')` will return `2028-08-20`.
+- Add two months to `2025-08-20`: `DATEADD(month, 2, '2025-08-20')` will return `2025-10-20`.
+- Add five days to `2025-08-20`: `DATEADD(day, 5, '2025-08-20')` will return `2025-08-25`.
+- Add fifteen days to `2025-08-20`: `DATEADD(day, 15, '2025-08-20')` will return `2025-09-04` (month also increments).
+- Subtract three years from `2025-08-20`: `DATEADD(year, -3, '2025-08-20')` will return `2022-08-20`.
+- Subtract two months from `2025-08-20`: `DATEADD(month, -2, '2025-08-20')` will return `2025-08-20`.
+- Subtract five days from `2025-08-20`: `DATEADD(day, -5, '2025-08-20')` will return `2025-08-20`.
+- Subtract twenty-five days from `2025-08-20`: `DATEADD(day, -25, '2025-08-20')` will return `2025-07-26` (month also decrements).
 
 
 ##### Validation
