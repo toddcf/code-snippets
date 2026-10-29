@@ -1599,7 +1599,7 @@ Syntax: `CAST(value, AS data_type)`  (Separated with keyworld `AS` rather than a
 There are two functions you can use to do calculations with a date:
 
 1. DATEADD (Adds or subtracts a specific time interval to or from a date.)
-2. DATEDIFF
+2. DATEDIFF (Finds the difference between two dates.)
 
 
 ###### DATEADD
@@ -1623,6 +1623,38 @@ Syntax: `DATEADD(part, interval, date)`
 - Subtract two months from `2025-08-20`: `DATEADD(month, -2, '2025-08-20')` will return `2025-08-20`.
 - Subtract five days from `2025-08-20`: `DATEADD(day, -5, '2025-08-20')` will return `2025-08-20`.
 - Subtract twenty-five days from `2025-08-20`: `DATEADD(day, -25, '2025-08-20')` will return `2025-07-26` (month also decrements).
+
+
+###### DATEDIFF
+
+Finds the difference between two dates.
+
+Syntax: `DATEDIFF(part, start_date, end_date)`
+
+
+####### Example 1
+
+The order date is `2025-08-20`, and the shipping date is `2026-02-01`.
+
+- How many years have passed between the order date and the shipping date?  `DATEDIFF` will subtract the order date's year from the shipping date's year and return `1` (even though a full year has not passed between the two dates).
+- How many months?  `DATEDIFF` will return `6`.
+- How many days?  `DATEDIFF` will return `165`.
+
+
+####### Example 2
+
+Calculate the age of employees:
+
+```
+SELECT
+	*,
+	DATEDIFF(year, BirthDate, GETDATE()) AS Age
+FROM Sales.Employees
+```
+
+(`GETDATE()` fetches today's date.)
+
+Note that this is only doing a rudimentary subtraction from year to year.  It is not taking into account which exact date somebody was born on within their birth year, or how far into the current year we are today.
 
 
 ##### Validation
