@@ -1788,6 +1788,30 @@ COALESCE(Shipping_Address, Billing_Address, 'unknown')
 ```
 
 
+##### Data Aggregation with NULL Values
+
+Best Practice: Use `ISNULL` or `COALESCE` to handle any `NULL` values prior to doing your data aggregations.  (For example, if you run `AVG`, it will ignore any `NULL` values, which could throw off the supposed average output value.  Instead, you may wish to convert any `NULL` values to `0` prior to running `AVG`.)
+
+NOTE: `COUNT(*)` *will* include `NULL` values in its total.
+
+###### Example
+
+Find the average scores of the customers:
+
+```
+SELECT
+	CustomerID,
+	Score,
+	AVG(COALESCE(Score,0)) OVER () AS [Average Scores]
+FROM Sales.Customers;
+```
+
+Because one of the five scores is `NULL`, here is the difference between using `COALESCE` versus not using it:
+
+- Using `COALESCE`: (350 + 900 + 750 + 500 + 0) / 5 = 500
+- NOT using `COALESCE`: (350 + 900 + 750 + 500) / 4 = 625
+
+
 ##### NULLIF
 
 
