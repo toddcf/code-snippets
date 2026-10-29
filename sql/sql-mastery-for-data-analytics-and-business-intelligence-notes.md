@@ -1659,9 +1659,63 @@ Note that this is only doing a rudimentary subtraction from year to year.  It is
 
 ##### Validation
 
-This function will confirm whether your data is a valid date:
-
 1. ISDATE
+
+
+###### ISDATE
+
+This function will return `1` if your input value is a valid date, and `0` if it is not.
+
+Syntax: `ISDATE(value)`
+
+The input value can be a string or integer.
+
+Some Use Cases:
+
+- The input value can be a date *part*, such as just the year, and that will return `1`.  But it will only validate numbers from `1753` to `9999`.
+- Full dates such as `'2025-08-20'` must be in standard format (YYYY-MM-DD).
+- Trying to pass in just a day or month is too small a number (less than `1753`), so it will return `0`.
+
+In order to prevent errors, you can run a `CASE` where `CAST` is only attempted if `ISDATE` is `1`:
+
+```
+SELECT
+	OrderDate,
+	ISDATE(OrderDate),
+	CASE WHEN ISDATE(OrderDate) = 1 THEN CAST(OrderDate AS DATE)
+	END NewOrderDate
+FROM (
+	SELECT '2025-08-20' AS OrderDate UNION
+	SELECT '2025-08-21' UNION
+	SELECT '2025-08-23' UNION
+	SELECT '2025-08'
+)t
+```
+
+This will only run `CAST` on the strings that are capable of being converted to dates, and the one that is not a full date (`'2025-08'`) will be `NULL` rather than throwing an error.
+
+Then, if you want to find all the bad data so you can fix it, add this clause to the end:
+
+```
+WHERE ISDATE(OrderDate) = 0
+```
+
+One alternative, if you don't want any `NULL` values in your returned data is to use an `ELSE` case up top to set those values to something else.  In this example, it gets set to a dummy value of `'9999-01-01'`.:
+
+```
+SELECT
+	OrderDate,
+	ISDATE(OrderDate),
+	CASE WHEN ISDATE(OrderDate) = 1 THEN CAST(OrderDate AS DATE)
+    ELSE '9999-01-01'
+	END NewOrderDate
+FROM (
+	SELECT '2025-08-20' AS OrderDate UNION
+	SELECT '2025-08-21' UNION
+	SELECT '2025-08-23' UNION
+	SELECT '2025-08'
+)t
+```
 
 
 #### NULL Functions
