@@ -1727,15 +1727,25 @@ A `NULL` value is the equivalent of "nothing" or "unknown."  It is *not* `0`, an
 - `IS NULL` (with a space between) is used to check whether or not a value is `NULL`.  (It does not change the value.)  Returns a Boolean `TRUE` (if `NULL`) or `FALSE` (if *not* `NULL`).
 
 
-##### ISNULL (one word)
+##### ISNULL (one word) | NVL | IFNULL
 
 (Not to be confused with `IS NULL` (two words).)
 
-Replaces a `NULL` with a specific value.  In plain English, this function says: "If this value is `NULL`, replace it with this other specified value.  If it is *not* `NULL`, leave it as-is."
+`ISNULL` replaces a `NULL` with a specific value.  In plain English, this function says: "If this value is `NULL`, replace it with this other specified value.  If it is *not* `NULL`, leave it as-is."
 
 Syntax: `ISNULL(value, replacement_value)`
 
 NOTE: If the replacement value is also `NULL`, then the output will still be `NULL`.
+
+Unlike `COALESCE`, `ISNULL` is limited to two values: The input value, and the replacement value.  However, its performance is faster than `COALESCE`.
+
+`ISNULL` has different keywords for different databases:
+
+- SQL Server: `ISNULL`
+- Oracle: `NVL`
+- MySQL: `IFNULL`
+
+Therefore, if you want to future-proof your ability to migrate to other databases later, it is best to use `COALESCE` instead, unless it is causing too severe of a performance issue.
 
 
 ###### Example 1
@@ -1759,6 +1769,23 @@ To reiterate: In this example, if the Billing_Address is also `NULL`, then the o
 
 
 ##### COALESCE
+
+Returns the first non-`NULL` value from a list.  (Kind of like a JavaScript `find` loop.)
+
+Syntax: `COALESCE(value1, value2, value3, ...)`
+
+Enter your values in the `COALESCE` function in the hierarchy you want them to return a match.
+
+Unlike `ISNULL`, `COALESCE` is not limited to two values -- you can enter an unlimited number of items in the list.  However, its performance is slower than `ISNULL`.
+
+
+###### Example
+
+If you don't have a valid shipping address, fall back to the billing address.  If you have neither, fall back to a static string of `'unknown'`:
+
+```
+COALESCE(Shipping_Address, Billing_Address, 'unknown')
+```
 
 
 ##### NULLIF
