@@ -1788,13 +1788,15 @@ COALESCE(Shipping_Address, Billing_Address, 'unknown')
 ```
 
 
-##### Data Aggregation with NULL Values
+##### Handling NULLs
+
+###### Handling NULLs: Data Aggregation
 
 Best Practice: Use `ISNULL` or `COALESCE` to handle any `NULL` values prior to doing your data aggregations.  (For example, if you run `AVG`, it will ignore any `NULL` values, which could throw off the supposed average output value.  Instead, you may wish to convert any `NULL` values to `0` prior to running `AVG`.)
 
 NOTE: `COUNT(*)` *will* include `NULL` values in its total.
 
-###### Example
+####### Example
 
 Find the average scores of the customers:
 
@@ -1810,6 +1812,34 @@ Because one of the five scores is `NULL`, here is the difference between using `
 
 - Using `COALESCE`: (350 + 900 + 750 + 500 + 0) / 5 = 500
 - NOT using `COALESCE`: (350 + 900 + 750 + 500) / 4 = 625
+
+
+###### Handling NULLs: Mathematical Operations
+
+If you use `NULL` as part of a mathematical operation, the entire output will be `NULL`.
+
+For example: `NULL + 5` = `NULL`
+
+Same with string concatenations: `NULL + 'B'` = `NULL`
+
+
+####### Example
+
+1. Display the full name of customers in a single field by merging their first and last names.
+2. Add 10 bonus points to each customer's score.
+
+```
+SELECT
+	*,
+	COALESCE(FirstName, '') + ' ' + COALESCE(LastName, '') AS [Full Name],
+	COALESCE(Score, 0) + 10 AS [Score with Bonus]
+FROM Sales.Customers;
+```
+
+Note that `COALESCE` is used to handle `NULL` values at each step.
+
+
+###### Handling NULLs: Joining Data
 
 
 ##### NULLIF
