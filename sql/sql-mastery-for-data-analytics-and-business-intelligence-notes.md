@@ -1729,6 +1729,34 @@ A `NULL` value is the equivalent of "nothing" or "unknown."  It is *not* `0`, an
 
 ##### ISNULL (one word)
 
+(Not to be confused with `IS NULL` (two words).)
+
+Replaces a `NULL` with a specific value.  In plain English, this function says: "If this value is `NULL`, replace it with this other specified value.  If it is *not* `NULL`, leave it as-is."
+
+Syntax: `ISNULL(value, replacement_value)`
+
+NOTE: If the replacement value is also `NULL`, then the output will still be `NULL`.
+
+
+###### Example 1
+
+If any shipping addresses are `NULL`, replace them with a static value of `'unknown'`:
+
+```
+ISNULL(Shipping_Address, 'unknown')
+```
+
+
+###### Example 2
+
+If any shipping addresses are `NULL`, replace them with the billing address (dynamic value) instead:
+
+```
+ISNULL(Shipping_Address, Billing_Address)
+```
+
+To reiterate: In this example, if the Billing_Address is also `NULL`, then the output will still be `NULL`, also.
+
 
 ##### COALESCE
 
@@ -1736,7 +1764,9 @@ A `NULL` value is the equivalent of "nothing" or "unknown."  It is *not* `0`, an
 ##### NULLIF
 
 
-##### IS NULL (space between)
+##### IS NULL (two words)
+
+(Not to be confused with `ISNULL` (one word).)
 
 
 ### Multi-Row Functions
