@@ -1841,6 +1841,17 @@ Note that `COALESCE` is used to handle `NULL` values at each step.
 
 ###### Handling NULLs: Joining Data
 
+Best Practice: Handle NULLs inside the keys prior to joining tables or else you may get some unexpected results.  SQL cannot compare the value of NULLs, even if the two values it is comparing are both `NULL`, so it will drop that data.  You can change any instances of `NULL` to an empty string (a good, performant choice) or any other default value, at the time of the `JOIN`.  Two empty strings will match when compared, and then SQL will actually populate that key with `NULL` in the output of the `JOIN`.
+
+```
+SELECT
+  a.year, a.type, a.orders, b.sales
+FROM Table1 a
+JOIN Table2 b
+ON a.year = b.year
+AND ISNULL(a.type, '') = ISNULL(b.type, '');
+```
+
 
 ##### NULLIF
 
