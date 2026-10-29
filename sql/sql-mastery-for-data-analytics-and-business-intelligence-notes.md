@@ -1853,6 +1853,48 @@ AND ISNULL(a.type, '') = ISNULL(b.type, '');
 ```
 
 
+###### Handling NULLs: Sorting Data
+
+If you are sorting data by sales ascending or descending order, SQL will show any instances of `NULL` as if they are the lowest values, when in fact they have *no* value.  So if you have `25`, `NULL`, and `15`, SQL will order them:
+
+Ascending:
+
+1. `NULL`
+2. `15`
+3. `25`
+
+Descending:
+
+1. `25`
+2. `15`
+3. `NULL`
+
+Which is bad, because now all your missing data is ranked as if it has the highest value.  What if you want to sort the customers from lowest to highest scores, but with `NULL` instances appearing *last*?
+
+The lazy way would be to replace any instances of `NULL` with a very big number.  But this still runs the risk of a larger number -- or even the same number -- coming through dynamically.
+
+The more professional way is to use a `CASE` in your `ORDER BY` clause to handle this scenario:
+
+1. If the value is `NULL`, consider its order (sorting) value a `1`; if it has a valid value, consider its order (sorting) value a `0`.
+2. Then append a fallback to the `Score` value.
+
+
+```
+SELECT
+	CustomerID,
+	Score
+FROM Sales.Customers
+ORDER BY CASE WHEN Score IS NULL THEN 1 ELSE 0 END, Score;
+```
+
+This way, the sorting will occur in this order:
+
+1. All of the truthy values will be grouped together first because they have the lowest sort value (`0`).
+2. Then all of those `0` sort values will get sorted in ascending order based on their actual `Score` values.
+3. Then all of the `1` sort values will get placed at the end, because `1` is greater than `0`.
+4. And all of their `Score` values are `NULL`, so there is no more sorting to be done on them.
+
+
 ##### NULLIF
 
 
