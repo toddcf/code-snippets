@@ -1720,7 +1720,23 @@ FROM (
 
 #### NULL Functions
 
+A `NULL` value is the equivalent of "nothing" or "unknown."  It is *not* `0`, an empty string, or a blank space.
 
+- Certain SQL functions can be used to replace `NULL` with actual values, such as `ISNULL` (all one word) and `COALESCE`.
+- And on the inverse side, `NULLIF` can be used to replace an actual value with a `NULL`.
+- `IS NULL` (with a space between) is used to check whether or not a value is `NULL`.  (It does not change the value.)  Returns a Boolean `TRUE` (if `NULL`) or `FALSE` (if *not* `NULL`).
+
+
+##### ISNULL (one word)
+
+
+##### COALESCE
+
+
+##### NULLIF
+
+
+##### IS NULL (space between)
 
 
 ### Multi-Row Functions
