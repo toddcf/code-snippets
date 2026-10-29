@@ -1897,6 +1897,38 @@ This way, the sorting will occur in this order:
 
 ##### NULLIF
 
+Compares two values, and:
+
+- If the two values are equal, returns `NULL`.
+- If the two compared values are *not* equal, returns the first value.
+
+Syntax: `NULLIF(value1, value2)`
+
+In plain English, this syntax means, "Return `NULL` if `value1` matches `value2`."
+
+
+Examples:
+
+- `NULLIF(Shipping_Address, 'unknown')` (If the shipping address is `'unknown'`, will return `NULL`.  If the shipping address has any other value, will return the shipping address.)
+- `NULLIF(Shipping_Address, Billing_Address)` (If they match, returns `NULL`.  If they are different, returns the shipping address.)
+- `NULLIF(Price, -1)`  (If the Price is `-1`, change it to `NULL`, because `-1` is a nonsensical value for the Price.)
+
+
+Use Case: Preventing the error of dividing by `0`:
+
+"Find the sales price for each order by dividing the sales by the quantity."
+
+If you have any quantities of `0`, SQL will throw an error when you try to divide it into its respective price.  So you can use `NULLIF` to change these to `NULL` in any of these use cases:
+
+```
+SELECT
+	*,
+	NULLIF(Sales, 0) / NULLIF(Quantity, 0) AS [Price per Item]
+FROM Sales.Orders;
+```
+
+(And to be safe, I did the same thing on `Sales`.)
+
 
 ##### IS NULL (two words)
 
