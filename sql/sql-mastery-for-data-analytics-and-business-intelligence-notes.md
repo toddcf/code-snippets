@@ -1838,6 +1838,13 @@ COALESCE(Shipping_Address, Billing_Address, 'unknown')
 ```
 
 
+##### NULL vs. Empty String vs. Blank Space
+
+- `NULL` = "Nothing" or "unknown."  Data type = Special Marker.  Uses the least amount of storage of these three.  (Best performance.)
+- `''` (empty string) = String value with zero characters.  Data type = String.  Occupies a little bit of storage space.  (Fast, but not as fast as using `NULL`.)
+- `' '` (blank space(s)) = String consisting of only one or more space characters.  Data type = String.  Occupies a little bit more storage space per blank space.  (Least performant of these three options.)  Trying to run a comparison on this value would require you to match the exact amount of spaces in the string.
+
+
 ##### Handling NULLs
 
 ###### Handling NULLs: Data Aggregation
