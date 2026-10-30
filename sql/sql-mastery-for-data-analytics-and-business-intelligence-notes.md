@@ -1952,6 +1952,15 @@ This way, the sorting will occur in this order:
 4. And all of their `Score` values are `NULL`, so there is no more sorting to be done on them.
 
 
+###### Handling NULLs: Data Policies
+
+A data policy is a set of rules that defines how you want your data to be handled.  Three options to consider -- pick only one:
+
+1. Only use `NULL` or empty strings (`''`).  Avoid using blank spaces (`' '`).  (If you are cleaning up your existing data, you can use `TRIM` to get rid of all leading and trailing blank spaces.)  This is probably a confusing policy, and not as good as options 2 and 3.
+2. Even better, use only `NULL`.  Avoid using empty strings (`''`) or blank spaces (`' '`) altogether.  (If you are cleaning up your existing data, you can use the `TRIM` to get rid of all leading and trailing blank spaces, and `NULLIF` to convert empty strings to `NULL`.  For example: `NULLIF(TRIM(Category), '') AS [Nullified Values]`.)  This policy takes less storage and is more performant than policy 3.
+3. Use the default value `'unknown'`, and avoid using `NULL`, empty strings (`''`), and blank spaces (`' '`) altogether.  (To convert all three to `'unknown'`: First trim, then standardize to `NULL`, then convert everything that is `NULL` to `'unknown'`: `COALESCE(NULLIF(TRIM(Category), ''), 'unknown')`.)  This has the most user-friendly output, but is less performant than policy 2, and uses a lot more memory to store the string `'unknown'` than it would to store `NULL`, especially the larger your database is.
+
+
 ##### NULLIF
 
 Compares two values, and:
