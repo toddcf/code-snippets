@@ -1954,7 +1954,7 @@ This way, the sorting will occur in this order:
 
 ###### Handling NULLs: Data Policies
 
-A data policy is a set of rules that defines how you want your data to be handled.  Three options to consider -- pick only one:
+A data policy is a set of rules that defines how you want your data to be handled.  Three options to consider for handling falsy values -- pick only one:
 
 1. Only use `NULL` or empty strings (`''`).  Avoid using blank spaces (`' '`).  (If you are cleaning up your existing data, you can use `TRIM` to get rid of all leading and trailing blank spaces.)  This is probably a confusing policy, and not as good as options 2 and 3.
 2. Even better, use only `NULL`.  Avoid using empty strings (`''`) or blank spaces (`' '`) altogether.  (If you are cleaning up your existing data, you can use the `TRIM` to get rid of all leading and trailing blank spaces, and `NULLIF` to convert empty strings to `NULL`.  For example: `NULLIF(TRIM(Category), '') AS [Nullified Values]`.)  This policy takes less storage and is more performant than policy 3.
