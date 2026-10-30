@@ -211,6 +211,56 @@ DIFFERENCE BETWEEN `WHERE` and `HAVING`: `WHERE` is used to filter the data *bef
 
 #### JOIN
 
+Combines two tables, and you can think of one as the "left" table, and one as the "right" table.
+
+##### FULL JOIN
+
+Combines *all* rows from the "left" table and "right" table, whether they match or not.
+
+
+##### INNER JOIN
+
+Combines only the rows that match in *both* the "left" and "right" tables.
+
+
+##### LEFT JOIN
+
+Combines *all* the rows from the "left" table plus *only the matching rows* from the "right" table.
+
+
+###### LEFT ANTI JOIN
+
+This concept is *all* rows from the "left" table *without* the matching rows from the "right" table.
+
+There is no keyword for this concept, so you must use `LEFT JOIN` + `IS NULL`.
+
+
+####### Example
+
+List all details for customers who have not placed any orders.
+
+```
+SELECT
+	c.*,
+	o.OrderID
+FROM Sales.Customers AS c
+LEFT JOIN Sales.Orders AS o
+ON c.CustomerID = o.CustomerID
+WHERE o.CustomerID IS NULL;
+```
+
+
+##### RIGHT JOIN
+
+Combines *all* the rows from the "right" table plus *only the matching rows* from the "left" table.
+
+
+###### RIGHT ANTI JOIN
+
+This concept is *all* rows from the "right" table *without* the matching rows from the "left" table.
+
+There is no keyword for this concept, so you must use `RIGHT JOIN` + `IS NULL`.
+
 
 #### ORDER BY
 
