@@ -1934,6 +1934,59 @@ FROM Sales.Orders;
 
 (Not to be confused with `ISNULL` (one word).)
 
+- Returns Boolean `TRUE` if the value is `NULL`.
+- Returns Boolean `FALSE` if the value is anything other than `NULL`.
+
+Syntax: `value IS NULL`
+
+
+###### Example 1
+
+`Shipping_Address IS NULL`
+
+- Will return `TRUE` if the shipping address is `NULL`.
+- Will return `FALSE` if the shipping address is any other value besides `NULL`.
+
+
+###### Example 2
+
+Searching for *missing* information.  "Identify the customers who have no scores."
+
+```
+SELECT
+	*
+FROM Sales.Customers
+WHERE Score IS NULL;
+```
+
+
+##### IS NOT NULL
+
+- Returns Boolean `TRUE` if the value is *not* `NULL`.
+- Returns Boolean `FALSE` if the value is `NULL`.
+
+Syntax: `value IS NOT NULL`
+
+
+###### Example
+
+`Shipping_Address IS NOT NULL`
+
+- Will return `TRUE` if the shipping address is any other value besides `NULL`.
+- Will return `FALSE` if the shipping address is `NULL`.
+
+
+###### Example 2
+
+Searching for *valid* information.  "Identify the customers who have scores."
+
+```
+SELECT
+	*
+FROM Sales.Customers
+WHERE Score IS NOT NULL;
+```
+
 
 ### Multi-Row Functions
 
