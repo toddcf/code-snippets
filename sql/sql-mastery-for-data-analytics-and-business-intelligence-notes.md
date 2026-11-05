@@ -2262,3 +2262,29 @@ Results:
 
 - The "raw" average scores will be `625` because the `NULL` value won't be factored in.
 - The "clean" average scores will be `500` because the `NULL` values will first be converted to `0`, and then included in the calculation to find the average.
+
+
+### Use Case 4: Conditional Aggregation
+
+You may need to apply aggregate functions *only* on subsets of data that fulfill certain conditions.
+
+#### Example
+
+Count how many times each unique customer has made an order with sales greater than 30:
+
+```
+SELECT
+	CustomerID,
+	SUM(CASE
+		WHEN SALES > 30 THEN 1
+		ELSE 0
+	END) AS Over30,
+	COUNT(*) AS TotalOrders
+FROM Sales.Orders
+GROUP BY CustomerID;
+```
+
+- This code sets a flag of `1` any time the sales value is higher than 30.
+- Displays this flag in a new column called `Over30`.
+- As an added bonus, the `COUNT(*) AS Total Orders` line displays the total number of orders for that customer.  This is simply to allow us to compare that customer's number of orders that were over 30 *out of* the total number of orders.
+- We `GROUP BY` the CustomerID so that we can see the results distilled down to each unique customer.
