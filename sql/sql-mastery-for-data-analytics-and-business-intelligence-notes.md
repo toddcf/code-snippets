@@ -2193,3 +2193,36 @@ SELECT
 	END AS CountryCode
 FROM Sales.Customers;
 ```
+
+
+#### Full Form versus Quick Form
+
+Maybe your `WHEN` conditions all start with the same thing, such as `WHEN Country =` in this "full form" example:
+
+```
+CASE
+  WHEN Country = 'Germany' THEN 'DE'
+  WHEN Country = 'India' THEN 'IN'
+  WHEN Country = 'United States' THEN 'US'
+  WHEN Country = 'France' THEN 'FR'
+  WHEN Country = 'Italy' THEN 'IT'
+  ELSE 'N/A'
+END
+```
+
+To reduce repetition in these scenarios, you can streamline your syntax into a "quick form," like this:
+
+```
+CASE Country
+  WHEN 'Germany' THEN 'DE'
+  WHEN 'India' THEN 'IN'
+  WHEN 'United States' THEN 'US'
+  WHEN 'France' THEN 'FR'
+  WHEN 'Italy' THEN 'IT'
+  ELSE 'N/A'
+END
+```
+
+In other words, move your column name (`Country`) up to the `CASE` line.  (NOTE: You can only put one column in the `CASE` line.)
+
+BEST PRACTICE: Always use the "full form" format.  This future-proofs you, in case later you have a new condition that is different than the others, which would force you to rewrite your entire format at that time.
