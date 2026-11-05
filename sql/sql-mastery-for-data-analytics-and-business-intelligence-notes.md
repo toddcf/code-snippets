@@ -2175,3 +2175,21 @@ SELECT
 	END AS GenderFullText
 FROM Sales.Employees;
 ```
+
+
+#### Example 2
+
+Retrieve customer details with abbreviated country code (rather than the full country name, such as `'United States'`).
+
+TIP: You would have to write a `WHEN` condition for each individual country.  Since there will probably be a massive amount of results, you can start by using `SELECT DISTINCT Country` to see just the unique values you'll need to code for.
+
+```
+SELECT
+	Country,
+	CASE
+		WHEN Country = 'Germany' THEN 'DE'
+		WHEN Country = 'USA' THEN 'US'
+		ELSE 'Not Available'
+	END AS CountryCode
+FROM Sales.Customers;
+```
