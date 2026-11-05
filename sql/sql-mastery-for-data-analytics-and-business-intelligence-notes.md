@@ -2149,3 +2149,29 @@ FROM(
 GROUP BY Category
 ORDER BY TotalSales DESC;
 ```
+
+
+### Use Case 2: Mapping Values
+
+`CASE` statements can be used to transform values from one form to another, making it more readable and usable for analytics.
+
+Maybe developers stored the data in the database as codes or flags.  For example, to optimize performance, the data may be stored as `0` and `1`, but you want it to display a more user-friendly value, such as `active` versus `inactive`.
+
+
+#### Example 1
+
+Retrieve employee details with gender displayed as full text (instead of just `M` or `F`).
+
+```
+SELECT
+	EmployeeID,
+	FirstName,
+	LastName,
+	Gender,
+	CASE
+		WHEN Gender = 'F' THEN 'Female'
+		WHEN Gender = 'M' THEN 'Male'
+		ELSE 'Not Available'
+	END AS GenderFullText
+FROM Sales.Employees;
+```
