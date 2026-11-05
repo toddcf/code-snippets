@@ -2226,3 +2226,39 @@ END
 In other words, move your column name (`Country`) up to the `CASE` line.  (NOTE: You can only put one column in the `CASE` line.)
 
 BEST PRACTICE: Always use the "full form" format.  This future-proofs you, in case later you have a new condition that is different than the others, which would force you to rewrite your entire format at that time.
+
+
+### Use Case 3: Handling NULLs in CASE Statements
+
+Maybe you want to replace `NULL` with a more user-friendly value in your results.  Not to mention, `NULL` values can lead to inaccurate calculations, which can lead to incorrect decision-making.
+
+
+#### Example
+
+Find the average scores of customers, and treat `NULL` values as `0` -- and provide details such as CustomerID and LastName.
+
+```
+SELECT
+	CustomerID,
+	LastName,
+	-- Calculations based on the raw data:
+	Score,
+	AVG(Score) Over() AS RawAvgScore,
+	
+	-- Calculations based on the clean data:
+	CASE
+		WHEN Score IS NULL THEN 0
+		ELSE Score
+	END AS CleanScore,
+	AVG(CASE
+			WHEN Score IS NULL THEN 0
+			ELSE Score
+		END) OVER() CleanAvgScore
+FROM Sales.Customers;
+
+```
+
+Results:
+
+- The "raw" average scores will be `625` because the `NULL` value won't be factored in.
+- The "clean" average scores will be `500` because the `NULL` values will first be converted to `0`, and then included in the calculation to find the average.
