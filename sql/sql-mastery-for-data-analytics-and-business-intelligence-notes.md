@@ -2066,3 +2066,26 @@ Typically used by analysts more than engineers.
 
 #### Window Functions (Advanced)
 
+
+
+
+## CASE Statements
+
+Similar to a JavaScript `SWITCH` statement, `CASE` statements evaluate a list of conditions and return a value when the first condition is met.
+
+Syntax:
+
+```
+CASE
+  WHEN condition1 THEN result1
+  WHEN condition2 THEN result2
+  ELSE defaultResult
+END
+```
+
+- SQL recognizes `CASE` as the beginning of the conditional logic block, and `END` as the closure of the conditional logic block.
+- The condition begins with the keyword `WHEN`.
+- The keyword `THEN` describes what to do if the `WHEN` condition is met.
+- You can have multiple `WHEN`/`THEN` blocks, just like you can have multiple cases inside a JavaScript `SWITCH` statement.  SQL will evaluate them from top to bottom until it finds the first match.
+- The `ELSE` comes at the end, and is the default value you want to return if none of the other `WHEN` conditions are met.  It is optional.
+- If no conditions are met, and if there is no default `ELSE` value, the `CASE` statement will return `NULL`.
