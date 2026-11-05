@@ -2089,3 +2089,59 @@ END
 - You can have multiple `WHEN`/`THEN` blocks, just like you can have multiple cases inside a JavaScript `SWITCH` statement.  SQL will evaluate them from top to bottom until it finds the first match.
 - The `ELSE` comes at the end, and is the default value you want to return if none of the other `WHEN` conditions are met.  It is optional.
 - If no conditions are met, and if there is no default `ELSE` value, the `CASE` statement will return `NULL`.
+
+
+### Use Case 1: Data Transformation
+
+The main use case for `CASE` statements is to do data transformations.  Can be used to create new columns based on existing data.
+
+
+#### Use Case 1a: Categorize Data
+
+Group data into different categories based on certain conditions.  (This helps make the data easier to understand and track, and helps aggregate the data based on the categories.)
+
+
+##### Example
+
+Generate a report showing the total sales for each of the following categories:
+
+- "High" if the sales are higher than 50.
+- "Medium" if the sales are between 20 and 50 (including 50).
+- "Low" if the sales are 20 or lower.
+- Sort the results from the highest to lowest.
+
+STEP 1 - Categorization Logic:
+
+```
+SELECT
+	OrderID,
+	Sales,
+	CASE
+		WHEN Sales > 50 THEN 'High'
+		WHEN Sales > 20 THEN 'Medium'
+		ELSE 'Low'
+		END AS Category
+FROM Sales.Orders;
+```
+
+
+STEP 2 - Use a subcategory to aggregate and sort the results:
+
+```
+SELECT
+	Category,
+	SUM(Sales) AS TotalSales
+FROM(
+	SELECT
+		OrderID,
+		Sales,
+		CASE
+			WHEN Sales > 50 THEN 'High'
+			WHEN Sales > 20 THEN 'Medium'
+			ELSE 'Low'
+			END AS Category
+	FROM Sales.Orders
+)t
+GROUP BY Category
+ORDER BY TotalSales DESC;
+```
