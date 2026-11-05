@@ -2090,6 +2090,10 @@ END
 - The `ELSE` comes at the end, and is the default value you want to return if none of the other `WHEN` conditions are met.  It is optional.
 - If no conditions are met, and if there is no default `ELSE` value, the `CASE` statement will return `NULL`.
 
+IMPORTANT NOTE: *The data types of the results must match.*
+
+You can use `CASE` statements in any type of clause: `SELECT`, `JOIN`, `FROM`, `WHERE`, `GROUP BY`, `ORDER BY` -- everywhere.
+
 
 ### Use Case 1: Data Transformation
 
