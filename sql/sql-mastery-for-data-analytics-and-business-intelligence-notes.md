@@ -485,7 +485,43 @@ ON c.id = o.customer_id;
 
 This concept is *all* rows from the "right" table *without* the matching rows from the "left" table.
 
-There is no keyword for this concept, so you must use `RIGHT JOIN` + `IS NULL`.
+There is no keyword for this concept, so you must use `RIGHT JOIN` + `WHERE` + `IS NULL`.
+
+Syntax:
+
+```
+SELECT *
+FROM tableA
+RIGHT JOIN tableB
+ON tableA.key = tableB.key
+WHERE tableA.key IS NULL;
+```
+
+
+####### Example
+
+Get all orders *without matching customers*.
+
+```
+SELECT *
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.id = o.customer_id
+WHERE c.id IS NULL;
+```
+
+
+To do the same thing using `LEFT JOIN`:
+
+```
+SELECT *
+FROM orders AS o
+LEFT JOIN customers AS c
+ON c.id = o.customer_id
+WHERE c.id IS NULL;
+```
+
+Essentially, change `RIGHT JOIN` to `LEFT JOIN`, and then reverse which table is left and which is right.
 
 
 #### ORDER BY
