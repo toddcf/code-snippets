@@ -233,8 +233,8 @@ Use Cases:
 	- `LEFT JOIN`
 3. Filtering.  Rather than pulling in the actual data from a second table, you just check it for the existence of certain data.  For example, Table A could be all customers, and Table B could be orders.  You can use Orders as a lookup table to determine which of your customers placed an order (if they exist in Table B), and return a table containing info just the customers who placed an order.
 	- `INNER JOIN`
-	- `LEFT JOIN` + `WHERE`
-	- `FULL JOIN` + `WHERE`
+	- Left Anti-Join (`LEFT JOIN` + `WHERE` + `IS NULL`)
+	- `FULL JOIN` + `WHERE` 
 
 
 ##### NO JOIN
@@ -412,11 +412,11 @@ ON c.id = o.customer_id;
 *However, the instructor recommends always using `LEFT JOIN` and just controlling the order of the tables in the syntax.*
 
 
-###### LEFT ANTI JOIN
+###### LEFT ANTI-JOIN
 
 This concept is *all* rows from the "left" table *without* the matching rows from the "right" table.
 
-There is no keyword for this concept, so you must use `LEFT JOIN` + `IS NULL`.
+There is no keyword for this concept, so you must use `LEFT JOIN` + `WHERE` + `IS NULL`.
 
 
 ####### Example
@@ -481,7 +481,7 @@ ON c.id = o.customer_id;
 *The instructor recommends always using `LEFT JOIN` and just controlling the order of the tables in the syntax.*
 
 
-###### RIGHT ANTI JOIN
+###### RIGHT ANTI-JOIN
 
 This concept is *all* rows from the "right" table *without* the matching rows from the "left" table.
 
