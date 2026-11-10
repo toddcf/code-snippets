@@ -228,10 +228,13 @@ Use Cases:
 1. Recombine Data.  Add different data together to form a fuller big picture.
 	- `INNER JOIN`
 	- `LEFT JOIN`
+	- `FULL JOIN`
 2. Enhancing Data.  Adding the data from one table to another table gives you extra info that you didn't have in just the first table.
 	- `LEFT JOIN`
 3. Filtering.  Rather than pulling in the actual data from a second table, you just check it for the existence of certain data.  For example, Table A could be all customers, and Table B could be orders.  You can use Orders as a lookup table to determine which of your customers placed an order (if they exist in Table B), and return a table containing info just the customers who placed an order.
 	- `INNER JOIN`
+	- `LEFT JOIN` + `WHERE`
+	- `FULL JOIN` + `WHERE`
 
 
 ##### NO JOIN
@@ -262,6 +265,35 @@ Combines *all* rows from the "left" table and "right" table, whether they match 
 
 (Venn Diagram with both sides (including the middle overlap) filled in.)
 
+Syntax:
+
+```
+SELECT *
+FROM tableA
+FULL JOIN tableB
+ON tableA.key = tableB.key;
+```
+
+Any fields that don't have a match will be populated with `NULL`.
+
+For `FULL JOIN`, the order you list the tables doesn't matter -- either way, you are only retrieving the data that is in both.
+
+
+###### Example
+
+Get all customers and all orders, *even if there's no match*.
+
+```
+SELECT
+	c.id,
+	c.first_name,
+	o.order_id,
+	o.sales
+FROM customers AS c
+FULL JOIN orders AS o
+ON c.id = o.customer_id;
+```
+
 
 ##### INNER JOIN
 
@@ -277,6 +309,8 @@ FROM <Table A>
 INNER JOIN <Table B>
 ON <condition -- how to MATCH rows, such as A.Key = B.Key>
 ```
+
+Any fields that don't have a match will be populated with `NULL`.
 
 For `INNER JOIN`, the order you list the tables doesn't matter -- either way, you are only retrieving the data that is in both.
 
