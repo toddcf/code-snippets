@@ -232,7 +232,24 @@ Use Cases:
 
 ##### NO JOIN
 
+This is used to return data from two tables *without* combining them.
 
+(Venn Diagram of two separate circles, not touching.)
+
+```
+SELECT *
+FROM tableA;
+
+SELECT *
+FROM tableB;
+```
+
+Just write two separate queries and get two separate results.
+
+
+###### Example
+
+Retrieve all data from customers and orders as separate results.
 
 
 ##### FULL JOIN
