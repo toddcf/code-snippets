@@ -341,7 +341,7 @@ Syntax:
 SELECT *
 FROM tableA
 LEFT JOIN tableB
-ON A.key = b.key;
+ON tableA.key = tableB.key;
 ```
 
 The order of the tables in the syntax is very important -- you must mention the LEFT table first (in the `FROM` clause).
@@ -361,6 +361,21 @@ FROM customers AS c
 LEFT JOIN orders AS o
 ON c.id = o.customer_id;
 ```
+
+SIDE NOTE: The same thing can be accomplished by using `RIGHT JOIN` and reversing which tables are left and right:
+
+```
+SELECT
+	c.id,
+	c.first_name,
+	o.order_id,
+	o.sales
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.id = o.customer_id;
+```
+
+*However, the instructor recommends always using `LEFT JOIN` and just controlling the order of the tables in the syntax.*
 
 
 ###### LEFT ANTI JOIN
@@ -390,6 +405,46 @@ WHERE o.CustomerID IS NULL;
 Combines *all* the rows from the "right" table plus *only the matching rows* from the "left" table.
 
 (Venn Diagram with the right side plus the middle overlap filled in.)
+
+Syntax:
+
+```
+SELECT *
+FROM tableA
+RIGHT JOIN tableB
+ON tableA.key = tableB.key
+```
+
+
+###### Example
+
+Get all customers along with their orders, including orders *without matching customers*.
+
+```
+SELECT
+	c.id,
+	c.first_name,
+	o.order_id,
+	o.sales
+FROM customers AS c
+RIGHT JOIN orders AS o
+ON c.id = o.customer_id;
+```
+
+SIDE NOTE: The same thing can be accomplished by using `LEFT JOIN` and reversing which tables are left and right:
+
+```
+SELECT
+	c.id,
+	c.first_name,
+	o.order_id,
+	o.sales
+FROM orders AS o
+LEFT JOIN customers AS c
+ON c.id = o.customer_id;
+```
+
+*The instructor recommends always using `LEFT JOIN` and just controlling the order of the tables in the syntax.*
 
 
 ###### RIGHT ANTI JOIN
