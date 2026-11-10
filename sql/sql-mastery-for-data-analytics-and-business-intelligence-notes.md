@@ -261,9 +261,66 @@ Combines *all* rows from the "left" table and "right" table, whether they match 
 
 ##### INNER JOIN
 
-Combines only the rows that match in *both* the "left" and "right" tables.
+Combines only the rows that match in *both* the "left" and "right" tables.  The default type of join, if you do not specify a JOIN type (but the BEST PRACTICE is to always mention the type).
 
 (Venn Diagram with only the middle overlap filled in.)
+
+Syntax:
+
+```
+SELECT *
+FROM <Table A>
+INNER JOIN <Table B>
+ON <condition -- how to MATCH rows, such as A.Key = B.Key>
+```
+
+For `INNER JOIN`, the order you list the tables doesn't matter -- either way, you are only retrieving the data that is in both.
+
+
+###### Example
+
+Get all customers along with their orders, *but only those who have placed an order*.
+
+```
+SELECT *
+FROM customers
+INNER JOIN orders
+ON customers.id = orders.customer_id;
+```
+
+Additional cleanup: `SELECT` only the columns that make sense for this output.  For example, you don't need to return both the `id` and `customer_id` columns, because they are redundant.
+
+```
+SELECT
+	id,
+	first_name,
+	order_id,
+	sales
+FROM customers
+INNER JOIN orders
+ON customers.id = orders.customer_id;
+```
+
+IF BOTH TABLES HAVE AN IDENTICAL COLUMN NAME, specify which table you mean using dot notation, like this:
+
+```
+SELECT
+	customers.id,
+	orders.id
+```
+
+However, if this results in too many characters because you are writing out each table name in every clause, you can use aliases to reference each table by a shorter name.  In the following example, `FROM customers AS c` establishes that the `customers` table is `c`, and `INNER JOIN orders AS o` establishes that the `orders` table is `o`.  And then everywhere else in the query, you can just write `c` instead of `customers`, even if it comes before the declaration of the alias:
+
+```
+SELECT
+	c.id,
+	c.first_name,
+	o.order_id,
+	o.sales
+FROM customers AS c
+INNER JOIN orders AS o
+ON c.id = o.customer_id;
+```
 
 
 ##### LEFT JOIN
