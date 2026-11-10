@@ -213,19 +213,47 @@ DIFFERENCE BETWEEN `WHERE` and `HAVING`: `WHERE` is used to filter the data *bef
 
 Combines two tables, and you can think of one as the "left" table, and one as the "right" table.
 
+In most companies, data is never contained in a single table -- it is spread across multiple tables.  (Maybe there is one table for products, one for customers, another for orders, etc.)  So you may need to combine data, either with `JOIN` or `UNION`.
+
+If you want to combine *columns* (as in, place two tables side-by-side), you want to `JOIN` tables.  The first table is considered the LEFT table, and the second table is considered RIGHT table.
+
+(If you want to stack *rows*, you want to use set operators like `UNION`, `UNION ALL`, `EXCEPT`, and `INTERSECT`.  Here, both tables will need to have the exact same number of columns, but you don't need any key column.)
+
+To `JOIN` tables, you need to define the "key columns" between the two tables.  This is a common column between the two tables, such as an ID number.  When joining, SQL will match these two key columns with each other.  If a key column doesn't have a matching value, that row will be dropped from the join.
+
+You can even use one large query to combine more than two tables into one result.
+
+Use Cases:
+
+1. Recombine Data.  Add different data together to form a fuller big picture.
+2. Enhancing Data.  Adding the data from one table to another table gives you extra info that you didn't have in just the first table.
+3. Filtering.  Rather than pulling in the actual data from a second table, you just check it for the existence of certain data.  For example, Table A could be all customers, and Table B could be orders.  You can use Orders as a lookup table to determine which of your customers placed an order (if they exist in Table B), and return a table containing info just the customers who placed an order.
+
+
+##### NO JOIN
+
+
+
+
 ##### FULL JOIN
 
 Combines *all* rows from the "left" table and "right" table, whether they match or not.
+
+(Venn Diagram with both sides (including the middle overlap) filled in.)
 
 
 ##### INNER JOIN
 
 Combines only the rows that match in *both* the "left" and "right" tables.
 
+(Venn Diagram with only the middle overlap filled in.)
+
 
 ##### LEFT JOIN
 
 Combines *all* the rows from the "left" table plus *only the matching rows* from the "right" table.
+
+(Venn Diagram with the left side plus the middle overlap filled in.)
 
 
 ###### LEFT ANTI JOIN
@@ -253,6 +281,8 @@ WHERE o.CustomerID IS NULL;
 ##### RIGHT JOIN
 
 Combines *all* the rows from the "right" table plus *only the matching rows* from the "left" table.
+
+(Venn Diagram with the right side plus the middle overlap filled in.)
 
 
 ###### RIGHT ANTI JOIN
