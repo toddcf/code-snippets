@@ -219,15 +219,19 @@ If you want to combine *columns* (as in, place two tables side-by-side), you wan
 
 (If you want to stack *rows*, you want to use set operators like `UNION`, `UNION ALL`, `EXCEPT`, and `INTERSECT`.  Here, both tables will need to have the exact same number of columns, but you don't need any key column.)
 
-To `JOIN` tables, you need to define the "key columns" between the two tables.  This is a common column between the two tables, such as an ID number.  When joining, SQL will match these two key columns with each other.  If a key column doesn't have a matching value, that row will be dropped from the join.
+To `JOIN` tables, you need to define the "key columns" between the two tables.  This is a common column between the two tables, such as an ID number.  When joining, SQL will match these two key columns with each other.  If a key column doesn't have a matching value, that row will be dropped from the join.  (Depending on the type of `JOIN` you're using, it will keep the data it does have and fill in the missing fields with `NULL`, or it will drop both.)
 
 You can even use one large query to combine more than two tables into one result.
 
 Use Cases:
 
 1. Recombine Data.  Add different data together to form a fuller big picture.
+	- `INNER JOIN`
+	- `LEFT JOIN`
 2. Enhancing Data.  Adding the data from one table to another table gives you extra info that you didn't have in just the first table.
+	- `LEFT JOIN`
 3. Filtering.  Rather than pulling in the actual data from a second table, you just check it for the existence of certain data.  For example, Table A could be all customers, and Table B could be orders.  You can use Orders as a lookup table to determine which of your customers placed an order (if they exist in Table B), and return a table containing info just the customers who placed an order.
+	- `INNER JOIN`
 
 
 ##### NO JOIN
@@ -328,6 +332,35 @@ ON c.id = o.customer_id;
 Combines *all* the rows from the "left" table plus *only the matching rows* from the "right" table.
 
 (Venn Diagram with the left side plus the middle overlap filled in.)
+
+The left table is the primary source of data, and the right table is secondary additional data.
+
+Syntax:
+
+```
+SELECT *
+FROM tableA
+LEFT JOIN tableB
+ON A.key = b.key;
+```
+
+The order of the tables in the syntax is very important -- you must mention the LEFT table first (in the `FROM` clause).
+
+
+###### Example
+
+Get all customers along with their orders, *including those without orders*.
+
+```
+SELECT
+	c.id,
+	c.first_name,
+	o.order_id,
+	o.sales
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.id = o.customer_id;
+```
 
 
 ###### LEFT ANTI JOIN
