@@ -239,6 +239,35 @@ Use Cases:
 
 ##### CROSS JOIN
 
+Combines *every row* from the left table with *every row* from the right table -- all possible combinations from both tables.
+
+(Venn Diagram showing two separate circles, but with lots of lines criss-crossing between them.)
+
+A "Cartersian Join."  For example, if Table A has two rows, and Table B has three rows, you will get Row A1 combined with Rows B1, B2, and B3, and then Row A2 combined with Rows B1, B2, and B3.  In other words, multiply the number of rows in Table A by the number of rows in Table B.  *So be careful with this one.*  It will result in a massive number of rows in the output.
+
+Syntax:
+
+```
+SELECT *
+FROM tableA
+CROSS JOIN tableB;
+```
+
+There are no conditions, because you just want to get every possible combination of everything.
+
+It's a rare use case.  But maybe you want to see every combination of products and colors, or something like that.
+
+
+###### Example
+
+Generate all possible combinations of customers and orders.
+
+```
+SELECT *
+FROM customers
+CROSS JOIN orders;
+```
+
 
 ##### FULL JOIN
 
