@@ -808,6 +808,36 @@ FROM Sales.Employees;
 
 ##### EXCEPT
 
+(Sometimes called `MINUS` in other databases.)  `EXCEPT` returns all distinct rows from the *first query* that are *not found in the second query*.
+
+Therefore, this is the only SET operator where the order of the queries affects the final result.
+
+Duplicates will be automatically removed.
+
+The second table is only being used as a lookup; no data from this table gets mapped into the final result.  It is only being checked whether each row from the first table should be included in the results or not.
+
+
+###### Example
+
+Find employees who are *not* also customers.
+
+```
+SELECT
+	EmployeeID,
+	FirstName,
+	LastName
+FROM Sales.Employees
+
+EXCEPT
+
+SELECT
+	CustomerID AS ID,
+	FirstName,
+	LastName
+FROM Sales.Customers;
+```
+
+
 ##### INTERSECT
 
 
