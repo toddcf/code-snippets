@@ -754,6 +754,32 @@ SET Operator Principles:
 
 ##### UNION
 
+Returns *all distinct rows* from both queries.  ("Distinct" means SQL automatically removes all duplicate rows from the result set.)
+
+
+###### Example
+
+Combine the data from employees and customers into one table:
+
+```
+SELECT
+	CustomerID AS ID,
+	FirstName,
+	LastName
+FROM Sales.Customers
+
+UNION
+
+SELECT
+	EmployeeID,
+	FirstName,
+	LastName
+FROM Sales.Employees;
+```
+
+NOTE that the alias `ID` will be used in place of `CustomerID` and `EmployeeID`.  Only the columns that are compatible have been selected, and in the same order.
+
+
 ##### UNIONALL
 
 ##### EXCEPT
