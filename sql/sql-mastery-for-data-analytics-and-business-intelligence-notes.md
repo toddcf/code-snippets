@@ -622,6 +622,36 @@ WHERE c.id IS NULL;
 Essentially, change `RIGHT JOIN` to `LEFT JOIN`, and then reverse which table is left and which is right.
 
 
+##### Joining Multiple Tables
+
+If you need to `JOIN` more and more tables, the general approach is to keep using `LEFT JOIN` to add more and more tables, and then at the end of the query, use the `WHERE` clause for one overall filter (rather than doing complicated joins every step of the way).
+
+```
+SELECT *
+FROM tableA
+LEFT JOIN tableB ON...
+LEFT JOIN tableC ON...
+LEFT JOIN tableD ON...
+WHERE...
+```
+
+Or, if you only want the overlapping matches from all these tables, use `INNER JOIN` each time:
+
+```
+SELECT *
+FROM tableA
+INNER JOIN tableB ON...
+INNER JOIN tableC ON...
+INNER JOIN tableD ON...
+WHERE...
+```
+
+
+###### Example
+
+Retrieve a list of all orders, along with the related customer, product, and employee details.
+
+
 #### ORDER BY
 
 Sorting the results.  In your query, you must list two things, in this order:
