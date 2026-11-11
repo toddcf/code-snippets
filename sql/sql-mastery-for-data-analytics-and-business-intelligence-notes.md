@@ -223,6 +223,7 @@ To `JOIN` tables, you need to define the "key columns" between the two tables.  
 
 You can even use one large query to combine more than two tables into one result.
 
+
 Use Cases:
 
 1. Recombine Data.  Add different data together to form a fuller big picture.
@@ -235,6 +236,19 @@ Use Cases:
 	- `INNER JOIN`
 	- Left Anti-Join (`LEFT JOIN` + `WHERE` + `IS NULL`)
 	- Full Anti-Join (`FULL JOIN` + `WHERE` + `IS NULL`)
+
+
+	Decision Tree -- Choosing the Best JOIN:
+
+- See only the matching data = `INNER JOIN`
+- See ALL the data:
+	- If both tables are equally important, use `FULL JOIN`.
+	- If one table is more important, or is a "main" table, use `LEFT JOIN` (and list that "main" table first, so that it's the left table).
+- See only *unmatching* data:
+	- If both tables are equally important, use Full Anti-Join.
+	- If one table is more important, or is a "main" table, use Left Anti-Join.
+
+NOTE: Although `RIGHT JOIN` exists, it is not part of this decision tree because it is not a best practice.  (It is better to use `LEFT JOIN` and just list the tables in the order they need to be listed in.)
 
 
 ##### CROSS JOIN
