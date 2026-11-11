@@ -723,6 +723,34 @@ Set operators combine tables vertically (whereas `JOIN` operators combine tables
 3. `EXCEPT`
 4. `INTERSECT`
 
+Syntax:
+
+```
+SELECT
+	FirstName,
+	LastName
+FROM Customers
+
+UNION
+
+SELECT
+	FirstName,
+	LastName,
+FROM Employees;
+```
+
+You simply have two separate queries, and you put the SET operator you want to use in between them.  (NOTE that the semicolon only goes at the end of the final query, not at the end of every query.)
+
+SET Operator Principles:
+
+- SET operators can be used in almost all clauses.  (`WHERE`, `JOIN`, `GROUP BY`, `HAVING`, etc.)
+- `ORDER BY` is allowed only once, at the end of the entire query.
+- Each query must have the same number of columns.  (You can control this in the `SELECT` clauses.)
+- The *data types* of the columns in each query must match / be compatible.
+- The *order* of the columns in each query must be the same.
+- Column names in the result set are determined by the column names specified in the *first* query.  (But you can use aliases in that first query to fine-tune these result names.)
+- Even if all rules are met and SQL shows no errors, the result could still be incorrect.  Incorrect column selection leads to inaccurate results -- that onus is on the developer.
+
 
 ##### UNION
 
