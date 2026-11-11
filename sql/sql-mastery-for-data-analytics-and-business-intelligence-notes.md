@@ -719,7 +719,7 @@ NOTE: Even if you only select certain columns, you can still run `WHERE` conditi
 Set operators combine tables vertically (whereas `JOIN` operators combine tables horizontally).  They stack one table on top of another.  There are four types:
 
 1. `UNION`
-2. `UNIONALL`
+2. `UNION ALL`
 3. `EXCEPT`
 4. `INTERSECT`
 
@@ -754,7 +754,7 @@ SET Operator Principles:
 
 ##### UNION
 
-Returns *all distinct rows* from both queries.  ("Distinct" means SQL automatically removes all duplicate rows from the result set.)
+`UNION` returns *all distinct rows* from both queries.  ("Distinct" means SQL automatically removes all duplicate rows from the result set.  However, this deduplication makes `UNION` slower than `UNION ALL`.)
 
 
 ###### Example
@@ -780,7 +780,31 @@ FROM Sales.Employees;
 NOTE that the alias `ID` will be used in place of `CustomerID` and `EmployeeID`.  Only the columns that are compatible have been selected, and in the same order.
 
 
-##### UNIONALL
+##### UNION ALL
+
+`UNION ALL` returns *all rows* from both queries.  (This is the only SET operator that does *not* perform any deduplication.  However, this results in faster performance.  Therefore, if you *know* that your data does not contain any duplicates, or if you *want* to see duplicates, use `UNION ALL`.)
+
+
+###### Example
+
+Combine the data from employees and customers into one table, *including duplicates*.
+
+```
+SELECT
+	CustomerID AS ID,
+	FirstName,
+	LastName
+FROM Sales.Customers
+
+UNION ALL
+
+SELECT
+	EmployeeID,
+	FirstName,
+	LastName
+FROM Sales.Employees;
+```
+
 
 ##### EXCEPT
 
