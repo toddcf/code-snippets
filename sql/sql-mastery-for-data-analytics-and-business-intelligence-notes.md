@@ -234,29 +234,10 @@ Use Cases:
 3. Filtering.  Rather than pulling in the actual data from a second table, you just check it for the existence of certain data.  For example, Table A could be all customers, and Table B could be orders.  You can use Orders as a lookup table to determine which of your customers placed an order (if they exist in Table B), and return a table containing info just the customers who placed an order.
 	- `INNER JOIN`
 	- Left Anti-Join (`LEFT JOIN` + `WHERE` + `IS NULL`)
-	- `FULL JOIN` + `WHERE` 
+	- Full Anti-Join (`FULL JOIN` + `WHERE` + `IS NULL`)
 
 
-##### NO JOIN
-
-This is used to return data from two tables *without* combining them.
-
-(Venn Diagram of two separate circles, not touching.)
-
-```
-SELECT *
-FROM tableA;
-
-SELECT *
-FROM tableB;
-```
-
-Just write two separate queries and get two separate results.
-
-
-###### Example
-
-Retrieve all data from customers and orders as separate results.
+##### CROSS JOIN
 
 
 ##### FULL JOIN
@@ -295,6 +276,38 @@ ON c.id = o.customer_id;
 ```
 
 
+###### FULL ANTI-JOIN
+
+Retrieves only the *unmatching* rows from two tables.
+
+(Venn Diagram where only the two outsides (not the middle overlap) are filled.)
+
+Syntax:
+
+```
+SELECT *
+FROM tableA
+FULL JOIN tableB
+ON tableA.key = tableB.key
+WHERE tableA.key IS NULL OR tableB.key IS NULL;
+```
+
+Since this is still a `FULL JOIN`, it doesn't matter which table you make the LEFT or the RIGHT.
+
+
+####### Example
+
+Find customers *without orders* and orders that are *without customers*.
+
+```
+SELECT *
+FROM customers AS c
+FULL JOIN orders AS o
+ON c.id = o.customer_id
+WHERE c.id IS NULL OR o.customer_id IS NULL;
+```
+
+
 ##### INNER JOIN
 
 Combines only the rows that match in *both* the "left" and "right" tables.  The default type of join, if you do not specify a JOIN type (but the BEST PRACTICE is to always mention the type).
@@ -325,6 +338,18 @@ FROM customers
 INNER JOIN orders
 ON customers.id = orders.customer_id;
 ```
+
+ALTERNATIVELY, you can accomplish the same thing using `LEFT JOIN` by doing this:
+
+```
+SELECT *
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.id = o.customer_id
+WHERE o.order_id IS NOT NULL;
+```
+
+GOING BACK TO THE ORIGINAL EXAMPLE:
 
 Additional cleanup: `SELECT` only the columns that make sense for this output.  For example, you don't need to return both the `id` and `customer_id` columns, because they are redundant.
 
@@ -431,6 +456,36 @@ FROM Sales.Customers AS c
 LEFT JOIN Sales.Orders AS o
 ON c.CustomerID = o.CustomerID
 WHERE o.CustomerID IS NULL;
+```
+
+
+##### NO JOIN
+
+This is used to return data from two tables *without* combining them.
+
+(Venn Diagram of two separate circles, not touching.)
+
+```
+SELECT *
+FROM tableA;
+
+SELECT *
+FROM tableB;
+```
+
+Just write two separate queries and get two separate results.
+
+
+###### Example
+
+Retrieve all data from customers and orders as separate results.
+
+```
+SELECT *
+FROM customers;
+
+SELECT *
+FROM orders;
 ```
 
 
