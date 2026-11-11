@@ -714,6 +714,25 @@ FROM table_name;
 NOTE: Even if you only select certain columns, you can still run `WHERE` conditions on other columns that you did not select; those columns simply won't be shown in the results. For example, if you SELECT only the First Name and Country columns, you can still use `WHERE` to filter the results based on the Score column.  The results will only display the First Name and Country columns, but they will still filter out any rows that failed to meet your Score condition.
 
 
+#### SET Operators
+
+Set operators combine tables vertically (whereas `JOIN` operators combine tables horizontally).  They stack one table on top of another.  There are four types:
+
+1. `UNION`
+2. `UNIONALL`
+3. `EXCEPT`
+4. `INTERSECT`
+
+
+##### UNION
+
+##### UNIONALL
+
+##### EXCEPT
+
+##### INTERSECT
+
+
 #### TOP
 
 Limits your data.  Restricts the number of rows returned in the results.  Just takes the first X number of rows and then stops.
