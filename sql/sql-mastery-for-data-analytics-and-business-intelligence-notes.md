@@ -791,7 +791,6 @@ Combine the data from employees and customers into one table, *including duplica
 
 ```
 SELECT
-	CustomerID AS ID,
 	FirstName,
 	LastName
 FROM Sales.Customers
@@ -799,7 +798,6 @@ FROM Sales.Customers
 UNION ALL
 
 SELECT
-	EmployeeID,
 	FirstName,
 	LastName
 FROM Sales.Employees;
@@ -823,7 +821,6 @@ Find employees who are *not* also customers.
 
 ```
 SELECT
-	EmployeeID,
 	FirstName,
 	LastName
 FROM Sales.Employees
@@ -831,7 +828,6 @@ FROM Sales.Employees
 EXCEPT
 
 SELECT
-	CustomerID AS ID,
 	FirstName,
 	LastName
 FROM Sales.Customers;
@@ -839,6 +835,29 @@ FROM Sales.Customers;
 
 
 ##### INTERSECT
+
+`INTERSECT` returns only the rows that are common in both queries.  (Similar to `INNER JOIN`.)  It also removes duplcates.
+
+The order of the queries do not matter.
+
+
+###### Example
+
+Find employees who are also customers.
+
+```
+SELECT
+	FirstName,
+	LastName
+FROM Sales.Employees
+
+INTERSECT
+
+SELECT
+	FirstName,
+	LastName
+FROM Sales.Customers;
+```
 
 
 #### TOP
