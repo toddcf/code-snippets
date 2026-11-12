@@ -2622,6 +2622,17 @@ Aggregate functions take in multiple rows and typically output one single value.
 Returns the average value of a column.
 
 
+###### Example
+
+Find the average sales of all orders:
+
+```
+SELECT
+	AVG(sales) AS [Average Sale Amount]
+FROM orders;
+```
+
+
 ##### COUNT
 
 Counts the number of rows in the table.
