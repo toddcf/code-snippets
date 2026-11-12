@@ -2610,7 +2610,7 @@ WHERE Score IS NOT NULL;
 Typically used by analysts more than engineers.
 
 
-#### Aggregate Functions (Basics)
+#### Aggregate Functions (GROUP BY, Basics)
 
 Aggregate functions take in multiple rows and typically output one single value.
 
@@ -2710,15 +2710,51 @@ Will output one row containing one column, containing the sum value of all the o
 
 #### Window Functions (Advanced)
 
-##### LAG
+(Also called "analytical functions.")
 
-##### LEAD
+Window functions perform calculations (aggregation) on a specific subset of data *without losing the level of details of the rows*.  For example, maybe you want to *add* aggregated details to the existing data without consolidating everything.
 
-##### NTILE
+Similar to `GROUP BY`.  Whereas `GROUP BY` will consolidate rows according to your programming, Window Functions will keep the rows separate but display the aggregated information in each row.  (You wind up with fewer rows with `GROUP BY`, and you end up with the same number of rows you started with with Window Functions.)
 
-##### RANK
 
-##### ROW_NUMBER
+##### Window Aggregate Functions
+
+Syntax:
+
+Same as the `GROUP BY` aggregate functions, except you follow it with `OVER(PARTITION BY columnName)`.  And it still goes inside the `SELECT` clause.
+
+- `AVG(columnName1) OVER(PARTITION BY columnName2)`
+- `COUNT(columnName) OVER(PARTITION BY columnName2)`
+- `MAX(columnName) OVER(PARTITION BY columnName2)`
+- `MIN(columnName) OVER(PARTITION BY columnName2)`
+- `SUM(columnName) OVER(PARTITION BY columnName2)`
+
+
+##### Window Rank Functions
+
+###### CUME_DIST
+
+###### DENSE_RANK
+
+###### NTILE
+
+###### PERCENT_RANK
+
+###### RANK
+
+###### ROW_NUMBER
+
+
+##### Window Value (Analytics) Functions
+
+###### FIRST_VALUE
+
+###### LAG
+
+###### LEAD
+
+
+
 
 
 
