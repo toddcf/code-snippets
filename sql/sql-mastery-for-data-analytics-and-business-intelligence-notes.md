@@ -2675,6 +2675,19 @@ Will output one row containing one column, containing only the value of the high
 Returns the lowest value in a column.
 
 
+###### Example
+
+Find the lowest sale amount from all the orders:
+
+```
+SELECT
+	MIN(sales) AS [Lowest Sale Amount]
+FROM orders;
+```
+
+Will output one row containing one column, containing only the value of the lowest sale.
+
+
 ##### SUM
 
 Adds up all the values in the specified column.
