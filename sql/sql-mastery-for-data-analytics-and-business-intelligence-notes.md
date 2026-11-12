@@ -2612,10 +2612,58 @@ Typically used by analysts more than engineers.
 
 #### Aggregate Functions (Basics)
 
+Aggregate functions take in multiple rows and typically output one single value.
 
+"Data aggregation" means combining the data.  For example, business questions are rarely about one single thing.  They don't want to know about *one* customer, they want to know about what *customers* are doing in general.  You need to compress thousands of rows into aggregated numbers that people can actually understand.
+
+
+##### AVG
+
+Returns the average value of a column.
+
+
+##### COUNT
+
+Counts the number of rows in the table.
+
+
+###### Example
+
+Find the total number of orders:
+
+```
+SELECT
+	COUNT(*) AS [Total Number of Orders]
+FROM orders;
+```
+
+
+##### SUM
+
+Adds up all the values in the specified column.
+
+
+##### MAX
+
+Returns the highest value in a column.
+
+
+##### MIN
+
+Returns the lowest value in a column.
 
 
 #### Window Functions (Advanced)
+
+##### LAG
+
+##### LEAD
+
+##### NTILE
+
+##### RANK
+
+##### ROW_NUMBER
 
 
 
