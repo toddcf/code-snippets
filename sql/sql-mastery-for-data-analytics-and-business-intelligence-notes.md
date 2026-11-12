@@ -759,11 +759,15 @@ Use Cases:
 - Combine similar tables prior to doing data analysis: `UNION` or `UNION ALL`.
 	- This is better than writing lots of similar queries for each individual table.  (Not only would that be redundant, but you might accidentally have a slight difference between each query.  Plus it would be harder to maintain multiple queries.)
 	- Database developers tend to divide the data into multiple tables to optimize performance and archive old data.  So maybe there is a separate table for each year, and you need to combine them into one table containing all the years before creating a report.
+- Delta detection: `EXCEPT`.
+- Data completeness check: `INTERSECT`.
 
 
 ##### UNION
 
 `UNION` returns *all distinct rows* from both queries.  ("Distinct" means SQL automatically removes all duplicate rows from the result set.  However, this deduplication makes `UNION` slower than `UNION ALL`.)
+
+(Similar to `FULL JOIN`.)
 
 
 ###### Example
@@ -793,6 +797,8 @@ NOTE that the alias `ID` will be used in place of `CustomerID` and `EmployeeID`.
 
 `UNION ALL` returns *all rows* from both queries.  (This is the only SET operator that does *not* perform any deduplication.  However, this results in faster performance.  Therefore, if you *know* that your data does not contain any duplicates, or if you *want* to see duplicates, use `UNION ALL`.)
 
+(Similar to `NO JOIN`.)
+
 
 ###### Example
 
@@ -815,7 +821,7 @@ FROM Sales.Employees;
 
 ##### EXCEPT
 
-(Sometimes called `MINUS` in other databases.)  `EXCEPT` returns all distinct rows from the *first query* that are *not found in the second query*.
+(Sometimes called `MINUS` in other databases.)  `EXCEPT` returns all distinct rows from the *first query* that are *not found in the second query*.  (Similar to Left Anti-Join.)
 
 Therefore, this is the only SET operator where the order of the queries affects the final result.
 
