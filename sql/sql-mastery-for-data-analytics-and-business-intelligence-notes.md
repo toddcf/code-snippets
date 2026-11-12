@@ -749,7 +749,16 @@ SET Operator Principles:
 - The *data types* of the columns in each query must match / be compatible.
 - The *order* of the columns in each query must be the same.
 - Column names in the result set are determined by the column names specified in the *first* query.  (But you can use aliases in that first query to fine-tune these result names.)
+- BEST PRACTICE: Never use `*` to combine tables; list each specific column needed instead.  (Even if the columns are identical now, they could change later.)
+- BEST PRACTICE: In the results, add another column that tells the source of each row.
 - Even if all rules are met and SQL shows no errors, the result could still be incorrect.  Incorrect column selection leads to inaccurate results -- that onus is on the developer.
+
+
+Use Cases:
+
+- Combine similar tables prior to doing data analysis: `UNION` or `UNION ALL`.
+	- This is better than writing lots of similar queries for each individual table.  (Not only would that be redundant, but you might accidentally have a slight difference between each query.  Plus it would be harder to maintain multiple queries.)
+	- Database developers tend to divide the data into multiple tables to optimize performance and archive old data.  So maybe there is a separate table for each year, and you need to combine them into one table containing all the years before creating a report.
 
 
 ##### UNION
