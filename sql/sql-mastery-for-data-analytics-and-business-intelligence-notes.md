@@ -2637,10 +2637,25 @@ SELECT
 FROM orders;
 ```
 
+Will output one row containing one column, containing the total number of rows (which is the equivalent of the total number of orders).
+
 
 ##### SUM
 
 Adds up all the values in the specified column.
+
+
+###### Example
+
+Find the total sales of all ordres:
+
+```
+SELECT
+	SUM(sales) as [Total Sales]
+FROM orders;
+```
+
+Will output one row containing one column, containing the sum value of all the orders.
 
 
 ##### MAX
