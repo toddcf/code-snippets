@@ -2616,6 +2616,8 @@ Aggregate functions take in multiple rows and typically output one single value.
 
 "Data aggregation" means combining the data.  For example, business questions are rarely about one single thing.  They don't want to know about *one* customer, they want to know about what *customers* are doing in general.  You need to compress thousands of rows into aggregated numbers that people can actually understand.
 
+Aggregate functions can be used in combination with `GROUP BY` in order to break these higher numbers down into smaller subsets, such as by country, by date, etc.
+
 
 ##### AVG
 
