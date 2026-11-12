@@ -2619,7 +2619,7 @@ Aggregate functions take in multiple rows and typically output one single value.
 Aggregate functions can be used in combination with `GROUP BY` in order to break these higher numbers down into smaller subsets, such as by country, by date, etc.
 
 
-##### AVG
+##### AVG(expr)
 
 Returns the average value of a column.
 
@@ -2637,7 +2637,7 @@ FROM orders;
 Will output one row containing one column, containing the average value of all the orders.
 
 
-##### COUNT
+##### COUNT(expr)
 
 Counts the number of rows in the table.
 
@@ -2655,7 +2655,7 @@ FROM orders;
 Will output one row containing one column, containing the total number of rows (which is the equivalent of the total number of orders).
 
 
-##### MAX
+##### MAX(expr)
 
 Returns the highest value in a column.
 
@@ -2672,7 +2672,7 @@ FROM orders;
 Will output one row containing one column, containing only the value of the highest sale.
 
 
-##### MIN
+##### MIN(expr)
 
 Returns the lowest value in a column.
 
@@ -2690,7 +2690,7 @@ FROM orders;
 Will output one row containing one column, containing only the value of the lowest sale.
 
 
-##### SUM
+##### SUM(expr)
 
 Adds up all the values in the specified column.
 
@@ -2721,37 +2721,58 @@ Similar to `GROUP BY`.  Whereas `GROUP BY` will consolidate rows according to yo
 
 Syntax:
 
-Same as the `GROUP BY` aggregate functions, except you follow it with `OVER(PARTITION BY columnName)`.  And it still goes inside the `SELECT` clause.
+Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  And it still goes inside the `SELECT` clause.
 
-- `AVG(columnName1) OVER(PARTITION BY columnName2)`
-- `COUNT(columnName) OVER(PARTITION BY columnName2)`
-- `MAX(columnName) OVER(PARTITION BY columnName2)`
-- `MIN(columnName) OVER(PARTITION BY columnName2)`
-- `SUM(columnName) OVER(PARTITION BY columnName2)`
+The `OVER` clause contains three parts:
+
+1. `PARTITION` clause.
+2. `ORDER` clause (optional).
+3. "Frame" clause (optional).
+
+Examples:
+
+- `AVG(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `COUNT(columnName1 -- any data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `MAX(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `MIN(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `SUM(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
 
 
 ##### Window Rank Functions
 
-###### CUME_DIST
+Syntax:
 
-###### DENSE_RANK
+With the exception of `NTILE`, the expression portion (inside the parentheses) of these functions is always empty, like this:
 
-###### NTILE
+```
+RANK()
+```
 
-###### PERCENT_RANK
 
-###### RANK
+###### CUME_DIST()
 
-###### ROW_NUMBER
+###### DENSE_RANK()
+
+###### NTILE(numeric data type)
+
+###### PERCENT_RANK()
+
+###### RANK()
+
+
+
+###### ROW_NUMBER()
 
 
 ##### Window Value (Analytics) Functions
 
-###### FIRST_VALUE
+###### FIRST_VALUE(expr)
 
-###### LAG
+###### LAG(expr, offset, default)
 
-###### LEAD
+###### LAST_VALUE(expr)
+
+###### LEAD(expr, offset, default)
 
 
 
