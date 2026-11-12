@@ -2632,6 +2632,8 @@ SELECT
 FROM orders;
 ```
 
+Will output one row containing one column, containing the average value of all the orders.
+
 
 ##### COUNT
 
@@ -2651,6 +2653,28 @@ FROM orders;
 Will output one row containing one column, containing the total number of rows (which is the equivalent of the total number of orders).
 
 
+##### MAX
+
+Returns the highest value in a column.
+
+###### Example
+
+Find the highest sale amount from all the orders:
+
+```
+SELECT
+	MAX(sales) AS [Highest Sale Amount]
+FROM orders;
+```
+
+Will output one row containing one column, containing only the value of the highest sale.
+
+
+##### MIN
+
+Returns the lowest value in a column.
+
+
 ##### SUM
 
 Adds up all the values in the specified column.
@@ -2667,16 +2691,6 @@ FROM orders;
 ```
 
 Will output one row containing one column, containing the sum value of all the orders.
-
-
-##### MAX
-
-Returns the highest value in a column.
-
-
-##### MIN
-
-Returns the lowest value in a column.
 
 
 #### Window Functions (Advanced)
