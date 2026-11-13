@@ -2820,6 +2820,77 @@ SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FO
 1. Here, SQL will add *all* the rows every time, and put that total in a new column in the current row.  (And the result will be the same for all rows.)
 
 
+###### Window AVG
+
+Returns the average of values in a window.
+
+Syntax:
+
+```
+AVG(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+```
+
+- The expression (`expr`) is required, and it data type must be a number.
+- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+
+
+###### Window COUNT
+
+Returns the number of rows in a window.
+
+Syntax:
+
+```
+COUNT(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+```
+
+- The expression (`expr`) is required.
+- Window `COUNT` is the *only* Window Aggregate Function that will accept *any data type* in the `expr`.  (All the others require it to be a number.)
+- If you want to "count all," use `COUNT(*)`.
+
+
+###### Window MAX
+
+Returns the maximum value in a window.
+
+Syntax:
+
+```
+MAX(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+```
+
+- The expression (`expr`) is required, and it data type must be a number.
+- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+
+
+###### Window MIN
+
+Returns the minimum value in a window.
+
+Syntax:
+
+```
+MIN(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+```
+
+- The expression (`expr`) is required, and it data type must be a number.
+- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+
+
+###### Window SUM
+
+Returns the sum of values in a window.
+
+Syntax:
+
+```
+SUM(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+```
+
+- The expression (`expr`) is required, and it data type must be a number.
+- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+
+
 ##### Window Rank Functions
 
 Syntax:
