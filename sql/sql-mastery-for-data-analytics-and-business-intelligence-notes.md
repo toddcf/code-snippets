@@ -2725,7 +2725,7 @@ Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` 
 
 The `OVER` clause contains three parts:
 
-1. `PARTITION` clause.
+1. `PARTITION BY` clause (optional).  (Tells SQL how you want to divide the result set into partitions (windows).  If you leave this out, the calculation will be done on the *entire* dataset.  When you include it, the calculation is done *individually* on each partition/window.  For example, you could partition by month, and your results would be broken out by each month.)
 2. `ORDER` clause (optional).
 3. "Frame" clause (optional).
 
@@ -2736,6 +2736,12 @@ Examples:
 - `MAX(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
 - `MIN(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
 - `SUM(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+
+You can also `PARTITION BY` multiple columns.  Note the comma-delimited addition of `columnName3`:
+
+```
+SUM(columnName1 -- numeric data type) OVER(PARTITION BY columnName2, columnName3 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)
+```
 
 
 ##### Window Rank Functions
