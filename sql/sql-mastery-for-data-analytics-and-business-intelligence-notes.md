@@ -2727,7 +2727,11 @@ The `OVER` clause contains three parts:
 
 1. `PARTITION BY` clause (optional).  (Tells SQL how you want to divide the result set into partitions (windows).  If you leave this out, the calculation will be done on the *entire* dataset.  When you include it, the calculation is done *individually* on each partition/window.  For example, you could partition by month, and your results would be broken out by each month.)
 2. `ORDER BY` clause.  (Optional for Window Aggregate functions; required for Window Rank or Value functions.  And required if you are going to use a Window Frame clause.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
-3. Window Frame, or the "frame clause."  (Optional.  But if you do use it, you also need the `ORDER BY` clause.)  (Defines a subset of rows within each window that is relevant for the calculation.  There are two frame types: `ROWS`, and groups (range).  Then there are the boundaries of the range -- the lower value and the higher value, which must be listed in this order.  The lower-value choices are: `CURRENT ROW`, N ` PRECEDING`, and `UNBOUNDED PRECEDING`.  The higher-value choices are: `CURRENT ROW`, N ` FOLLOWING` and `UNBOUNDED FOLLOWING`.)
+3. Window Frame, or the "frame clause."  (Optional.  But if you do use it, you also need the `ORDER BY` clause.)  (Defines a subset of rows within each window that is relevant for the calculation.  There are two frame types: `ROWS`, and groups (range).  Then there are the boundaries of the range -- the lower value and the higher value, which must be listed in this order.  The lower-value choices are: `CURRENT ROW`, N ` PRECEDING`, and `UNBOUNDED PRECEDING`.  The higher-value choices are: `CURRENT ROW`, N ` FOLLOWING` and `UNBOUNDED FOLLOWING`.  Note that this always refers to the rows *within that partition/window*, not the entire table.  If you user `ORDER BY` but don't specify a Window Frame, SQL will use the default frame, which is the equivalent of `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.)
+
+Compact Frame:
+
+- When you are using `PRECEDING`, you don't have to mention `CURRENT ROW`.  In other words, `ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING` can be reduced to just `ROWS 2 FOLLOWING`.
 
 Examples:
 
@@ -2763,7 +2767,50 @@ Similar example:
 SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
 ```
 
-Here, the `2 FOLLOWING` has been changed to `UNBOUNDED FOLLOWING`, and it will add all the rows from the current row to the final row.
+1. Here, the `2 FOLLOWING` has been changed to `UNBOUNDED FOLLOWING`, and it will add all the rows from the current row to the final row.
+2. Once again, in each iteration it will slide down one row, add up the sum of the current row thru the final row, and put that value in a column on the current row.
+3. Each time, there are fewer and fewer rows to be added together, until finally there is only the final row.
+
+
+Similar example:
+
+```
+SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
+```
+
+1. Here, the boundaries have been changed to `1 PRECEDING AND CURRENT ROW`.  SQL will add the previous row and the current row, and put that value in a new column on the current row.  (If it starts on the first row, there will be no preceding row, so the "sum" will just be that of the first row.)
+2. Once again, each iteration will slide down one row, add the previous row with the current row, and put that value in a new column on the current row.
+
+
+Similar example:
+
+```
+SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+```
+
+1. Here, the `1 PRECEDING` has been changed to `UNBOUNDED PRECEDING`, so SQL will add *all* the previous rows plus the current row, and put that total in a new column on the current row.  (If it starts on the first row, there will be no preceding row, so the "sum" will just be that of the first row.)
+2. Once again, each iteration will slide down one row, add *all* the previous rows with the current row, and put that value in a new column on the current row.
+
+
+Similar example:
+
+```
+SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING)
+```
+
+1. Here, SQL will add the one row before, the current row, plus one row after, and put that total in a new column in the current row.
+2. If it starts in the first row, there will be no preceding row, so it will only add the current row plus the following row.
+3. Once again, each iteration will slide down one row, add the one preceding row, the current row, and the one following row, and put that total in a new column in the current row.
+4. When it gets to the final row, there will be no following row, so it will only add the previous row and the current row.
+
+
+Similar example:
+
+```
+SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)
+```
+
+1. Here, SQL will add *all* the rows every time, and put that total in a new column in the current row.  (And the result will be the same for all rows.)
 
 
 ##### Window Rank Functions
