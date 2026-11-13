@@ -2721,12 +2721,12 @@ Similar to `GROUP BY`.  Whereas `GROUP BY` will consolidate rows according to yo
 
 Syntax:
 
-Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  And it still goes inside the `SELECT` clause.
+Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER()` is what tells SQL this is a Window Function.)  And it still goes inside the `SELECT` clause.
 
 The `OVER` clause contains three parts:
 
 1. `PARTITION BY` clause (optional).  (Tells SQL how you want to divide the result set into partitions (windows).  If you leave this out, the calculation will be done on the *entire* dataset.  When you include it, the calculation is done *individually* on each partition/window.  For example, you could partition by month, and your results would be broken out by each month.)
-2. `ORDER` clause (optional).
+2. `ORDER BY` clause.  (Optional for Window Aggregate functions; required for Window Rank or Value functions.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
 3. "Frame" clause (optional).
 
 Examples:
@@ -2765,6 +2765,18 @@ RANK()
 
 ###### RANK()
 
+Example:
+
+```
+SELECT
+	OrderID,
+	OrderDate,
+	Sales,
+	RANK() OVER(ORDER BY Sales DESC) AS [Sales Rank]
+FROM Sales.Orders;
+```
+
+This will 
 
 
 ###### ROW_NUMBER()
