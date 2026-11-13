@@ -2726,8 +2726,8 @@ Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` 
 The `OVER` clause contains three parts:
 
 1. `PARTITION BY` clause (optional).  (Tells SQL how you want to divide the result set into partitions (windows).  If you leave this out, the calculation will be done on the *entire* dataset.  When you include it, the calculation is done *individually* on each partition/window.  For example, you could partition by month, and your results would be broken out by each month.)
-2. `ORDER BY` clause.  (Optional for Window Aggregate functions; required for Window Rank or Value functions.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
-3. "Frame" clause (optional).
+2. `ORDER BY` clause.  (Optional for Window Aggregate functions; required for Window Rank or Value functions.  And required if you are going to use a Window Frame clause.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
+3. Window Frame, or the "frame clause."  (Optional.  But if you do use it, you also need the `ORDER BY` clause.)  (Defines a subset of rows within each window that is relevant for the calculation.  There are two frame types: `ROWS`, and groups (range).  Then there are the boundaries of the range -- the lower value and the higher value, which must be listed in this order.  The lower-value choices are: `CURRENT ROW`, N ` PRECEDING`, and `UNBOUNDED PRECEDING`.  The higher-value choices are: `CURRENT ROW`, N ` FOLLOWING` and `UNBOUNDED FOLLOWING`.)
 
 Examples:
 
@@ -2742,6 +2742,28 @@ You can also `PARTITION BY` multiple columns.  Note the comma-delimited addition
 ```
 SUM(columnName1 -- numeric data type) OVER(PARTITION BY columnName2, columnName3 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)
 ```
+
+Another example:
+
+```
+SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING)
+```
+
+This would mean:
+
+1. SQL will sort the rows in order of their months.
+2. Then it will start on the current row, and include the next two following rows (for a total of three rows).  It will output the result of that -- the sum rows 1 thru 3 -- in a new column in row 1.
+3. Then it will *slide down* one row to the second row, and once again include the two rows following *that*.  It will output the result of that -- the sum of rows 2 thru 4 -- in the same new column as before, but in row 2.
+4. SQL will keep sliding down one row at a time and repeating this process.
+5. As SQL gets to the final rows, there will be fewer rows remaining in the specified range, so it will simply add up as many rows as remain.  (And yes, on the final row, there will only be one row to "add" up.)
+
+Similar example:
+
+```
+SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
+```
+
+Here, the `2 FOLLOWING` has been changed to `UNBOUNDED FOLLOWING`, and it will add all the rows from the current row to the final row.
 
 
 ##### Window Rank Functions
