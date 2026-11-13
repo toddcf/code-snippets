@@ -2716,12 +2716,18 @@ Window functions perform calculations (aggregation) on a specific subset of data
 
 Similar to `GROUP BY`.  Whereas `GROUP BY` will consolidate rows according to your programming, Window Functions will keep the rows separate but display the aggregated information in each row.  (You wind up with fewer rows with `GROUP BY`, and you end up with the same number of rows you started with with Window Functions.)
 
+Important rules to remember:
+
+- Window functions can *only* be used in the `SELECT` and `ORDER BY` clauses.
+- Window functions *cannot* be used to filter data.
+- Window functions cannot be nested.  (For example, this will throw an error: `SUM(SUM(Sales) OVER(PARTITION BY OrderStatus)) OVER(PARTITION BY OrderStatus) AS [Total Sales]`)
+- SQL executes the Window functions *after* the `WHERE` clause.  In other words, first the data is filtered, then it is aggregated.
+- Window functions can only be used together with `GROUP BY` in the same query if the same columns are being used for both.  (TIP: First build your `GROUP BY` clause to filter the data.  Then build your window function in the `SELECT` clause.)
+
 
 ##### Window Aggregate Functions
 
-Syntax:
-
-Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER()` is what tells SQL this is a Window Function.)  And it still goes inside the `SELECT` clause.
+- Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER()` is what tells SQL this is a Window Function.)
 
 The `OVER` clause contains three parts:
 
