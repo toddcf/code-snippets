@@ -2722,18 +2722,19 @@ Important rules to remember:
 - Window functions *cannot* be used to filter data.
 - Window functions cannot be nested.  (For example, this will throw an error: `SUM(SUM(Sales) OVER(PARTITION BY OrderStatus)) OVER(PARTITION BY OrderStatus) AS [Total Sales]`)
 - SQL executes the Window functions *after* the `WHERE` clause.  In other words, first the data is filtered, then it is aggregated.
-- Window functions can only be used together with `GROUP BY` in the same query if the same columns are being used for both.  (TIP: First build your `GROUP BY` clause to filter the data.  Then build your window function in the `SELECT` clause.)
+- Window functions can only be used together with `GROUP BY` in the same query if the same columns are being used for both.  (TIP: First build your `GROUP BY` clause to filter the data.  Then build your window function in the `SELECT` or `ORDER BY` clause.)
 
 
 ##### Window Aggregate Functions
 
-- Same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER()` is what tells SQL this is a Window Function.)
+- The window aggregate functions are the same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER()` is what tells SQL this is a Window Function.)
+- The window aggregate functions are more powerful and dynamic than the `GROUP BY` aggregate functions.  Simple questions can be answered using `GROUP BY`; complex, nuanced questions will need to be answered with window aggregate functions.
 
 The `OVER` clause contains three parts:
 
-1. `PARTITION BY` clause (optional).  (Tells SQL how you want to divide the result set into partitions (windows).  If you leave this out, the calculation will be done on the *entire* dataset.  When you include it, the calculation is done *individually* on each partition/window.  For example, you could partition by month, and your results would be broken out by each month.)
-2. `ORDER BY` clause.  (Optional for Window Aggregate functions; required for Window Rank or Value functions.  And required if you are going to use a Window Frame clause.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
-3. Window Frame, or the "frame clause."  (Optional.  But if you do use it, you also need the `ORDER BY` clause.)  (Defines a subset of rows within each window that is relevant for the calculation.  There are two frame types: `ROWS`, and groups (range).  Then there are the boundaries of the range -- the lower value and the higher value, which must be listed in this order.  The lower-value choices are: `CURRENT ROW`, N ` PRECEDING`, and `UNBOUNDED PRECEDING`.  The higher-value choices are: `CURRENT ROW`, N ` FOLLOWING` and `UNBOUNDED FOLLOWING`.  Note that this always refers to the rows *within that partition/window*, not the entire table.  If you user `ORDER BY` but don't specify a Window Frame, SQL will use the default frame, which is the equivalent of `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.)
+1. `PARTITION BY` clause (optional) for splitting the data.  (Tells SQL how you want to divide the result set into partitions (windows).  If you leave this out, the calculation will be done on the *entire* dataset.  When you include it, the calculation is done *individually* on each partition/window.  For example, you could partition by month, and your results would be broken out by each month.)
+2. `ORDER BY` clause for sorting the data.  (Optional for Window Aggregate functions; required for Window Rank or Value functions.  And required if you are going to use a Window Frame clause.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
+3. Window Frame, or the "frame clause" for defining a subset of data.  (Optional.  But if you do use it, you also need the `ORDER BY` clause.)  (Defines a subset of rows within each window that is relevant for the calculation.  There are two frame types: `ROWS`, and groups (range).  Then there are the boundaries of the range -- the lower value and the higher value, which must be listed in this order.  The lower-value choices are: `CURRENT ROW`, N ` PRECEDING`, and `UNBOUNDED PRECEDING`.  The higher-value choices are: `CURRENT ROW`, N ` FOLLOWING` and `UNBOUNDED FOLLOWING`.  Note that this always refers to the rows *within that partition/window*, not the entire table.  If you user `ORDER BY` but don't specify a Window Frame, SQL will use the default frame, which is the equivalent of `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.)
 
 Compact Frame:
 
