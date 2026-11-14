@@ -2951,6 +2951,62 @@ SUM(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
 
 - The expression (`expr`) is required, and it data type must be a number.
 - The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- `SUM` will treat `NULL` values as if they are `0`.  For example: `30` + `70` + `NULL` will equal `100`.
+
+
+####### Example
+
+- Find the total sales across all orders.
+- And the total sales for each product.
+- And provide details such as Order ID and Order Date.
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	OrderDate,
+	Sales,
+	SUM(Sales) OVER() AS [Total Sales],
+	SUM(Sales) OVER(PARTITION BY ProductID) AS [Sales per Product]
+FROM Sales.Orders;
+```
+
+- The line `SUM(Sales) OVER() AS [Total Sales]` shows total sales across all orders because the `OVER()` parentheses are left empty.
+- The line `SUM(Sales) OVER(PARTITION BY ProductID) AS [Sales per Product]` shows total sales *per product* because this time, the `OVER()` function contains `PARTITION BY ProductID`.
+
+
+####### Comparison Use Case
+
+Compare the *current value* with the *aggregated value* of window functions.  This is called a "part-to-whole" analysis.
+
+For example, you might be looking at one calendar quarter of sales, and want to know what percentage of total quarterly sales each month was:
+
+- JAN: $20
+- FEB: $10
+- MAR: $30
+
+To do this, you first need to know that the `SUM()` of the quarter is $60.  Then you can divide each current row by that sum.
+
+
+######## Example
+
+Find the percentage contribution of each product's sales to the total sales.
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	Sales,
+	SUM(Sales) OVER(PARTITION BY ProductID) AS [Sales per Product],
+	SUM(Sales) OVER() AS [Total Sales],
+	ROUND(CAST(SUM(Sales) OVER(PARTITION BY ProductID) AS Float) / SUM(Sales) OVER() * 100, 2) AS [Percentage of Total Sales]
+FROM Sales.Orders;
+```
+
+Percentages will not work properly if you're trying to divide a value that has a data type of "integer" (which is the case with `Sales` here).  Therefore, we must:
+
+1. Use `CAST` to change the integer to a float, like this: `CAST(SUM(Sales) OVER(PARTITION BY ProductID) AS Float)`.
+2. Then, because this will result in a long decimal-place output, we use `ROUND` and `, 2` to cap the decimal places at two.
 
 
 ##### Window Rank Functions
