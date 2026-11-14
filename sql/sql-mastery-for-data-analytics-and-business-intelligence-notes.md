@@ -2720,14 +2720,14 @@ Important rules to remember:
 
 - Window functions can *only* be used in the `SELECT` and `ORDER BY` clauses.
 - Window functions *cannot* be used to filter data.
-- Window functions cannot be nested.  (For example, this will throw an error: `SUM(SUM(Sales) OVER(PARTITION BY OrderStatus)) OVER(PARTITION BY OrderStatus) AS [Total Sales]`)
+- Window functions cannot be nested.  (For example, this will throw an error: `SUM(SUM(Sales) OVER (PARTITION BY OrderStatus)) OVER (PARTITION BY OrderStatus) AS [Total Sales]`)
 - SQL executes the Window functions *after* the `WHERE` clause.  In other words, first the data is filtered, then it is aggregated.
 - Window functions can only be used together with `GROUP BY` in the same query if the same columns are being used for both.  (TIP: First build your `GROUP BY` clause to filter the data.  Then build your window function in the `SELECT` or `ORDER BY` clause.)
 
 
 ##### Window Aggregate Functions
 
-- The window aggregate functions are the same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER()` is what tells SQL this is a Window Function.)
+- The window aggregate functions are the same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER ()` is what tells SQL this is a Window Function.)
 - The window aggregate functions are more powerful and dynamic than the `GROUP BY` aggregate functions.  Simple questions can be answered using `GROUP BY`; complex, nuanced questions will need to be answered with window aggregate functions.
 
 The `OVER` clause contains three parts:
@@ -2742,22 +2742,22 @@ Compact Frame:
 
 Examples:
 
-- `AVG(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
-- `COUNT(columnName1 -- any data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
-- `MAX(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
-- `MIN(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
-- `SUM(columnName1 -- numeric data type) OVER(PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `AVG(columnName1 -- numeric data type) OVER (PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `COUNT(columnName1 -- any data type) OVER (PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `MAX(columnName1 -- numeric data type) OVER (PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `MIN(columnName1 -- numeric data type) OVER (PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
+- `SUM(columnName1 -- numeric data type) OVER (PARTITION BY columnName2 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)`
 
 You can also `PARTITION BY` multiple columns.  Note the comma-delimited addition of `columnName3`:
 
 ```
-SUM(columnName1 -- numeric data type) OVER(PARTITION BY columnName2, columnName3 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)
+SUM(columnName1 -- numeric data type) OVER (PARTITION BY columnName2, columnName3 ORDER BY OrderDate ROWS UNBOUNDED PRECEDING)
 ```
 
 Another example:
 
 ```
-SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING)
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING)
 ```
 
 This would mean:
@@ -2771,7 +2771,7 @@ This would mean:
 Similar example:
 
 ```
-SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
 ```
 
 1. Here, the `2 FOLLOWING` has been changed to `UNBOUNDED FOLLOWING`, and it will add all the rows from the current row to the final row.
@@ -2782,7 +2782,7 @@ SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
 Similar example:
 
 ```
-SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
 ```
 
 1. Here, the boundaries have been changed to `1 PRECEDING AND CURRENT ROW`.  SQL will add the previous row and the current row, and put that value in a new column on the current row.  (If it starts on the first row, there will be no preceding row, so the "sum" will just be that of the first row.)
@@ -2792,7 +2792,7 @@ SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN 1 PRECEDING AND CURRENT ROW)
 Similar example:
 
 ```
-SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
 ```
 
 1. Here, the `1 PRECEDING` has been changed to `UNBOUNDED PRECEDING`, so SQL will add *all* the previous rows plus the current row, and put that total in a new column on the current row.  (If it starts on the first row, there will be no preceding row, so the "sum" will just be that of the first row.)
@@ -2802,7 +2802,7 @@ SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
 Similar example:
 
 ```
-SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING)
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING)
 ```
 
 1. Here, SQL will add the one row before, the current row, plus one row after, and put that total in a new column in the current row.
@@ -2814,7 +2814,7 @@ SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING)
 Similar example:
 
 ```
-SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)
 ```
 
 1. Here, SQL will add *all* the rows every time, and put that total in a new column in the current row.  (And the result will be the same for all rows.)
@@ -2827,11 +2827,66 @@ Returns the average of values within each window.
 Syntax:
 
 ```
-AVG(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+AVG(expr) OVER (PARTITION BY ProductID ORDER BY Sales)
 ```
 
 - The expression (`expr`) is required, and it data type must be a number.
-- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- The entire window definition (the portion inside the `OVER ()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- `AVG` will ignore `NULL` values in its calculation.  For example, `30`, `70`, and `NULL` will be `50`.  They are divided by `2`, not `3`.
+	- THIS MAY OR MAY NOT BE WHAT YOU WANT.  If the database stored all instances of `0` as `NULL`, you actually *do* want to include those in your calculation: `(30 + 70 + 0) / 3` = `33`.
+	- You can use `COALESCE` to make this adjustment, like this: `AVG(COALESCE(Sales, 0))`
+
+
+####### Example 1
+
+- Find the average sales across all orders.
+- And the average sales for each product.
+- And include details such as Order ID and Order Date.
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	OrderDate,
+	Sales,
+	AVG(Sales) OVER (PARTITION BY ProductID) AS [Average Sales per Product],
+	AVG(Sales) OVER () AS [Average Sales]
+FROM Sales.Orders;
+```
+
+
+####### Example 2
+
+- Find the average scores of customers.
+- Also provide details such as Customer ID and Last Name.
+
+```
+SELECT
+	CustomerID,
+	LastName,
+	Score,
+	AVG(COALESCE(Score, 0)) OVER() AS [Average Customer Score]
+FROM Sales.Customers;
+```
+
+Note that `COALESCE` is used.
+
+
+####### Example 3
+
+Find all orders where sales are *higher than the average sales* across all orders.
+
+```
+SELECT *
+FROM(
+	SELECT
+		*,
+		AVG(Sales) OVER () AS [Average Sales Amount]
+	FROM Sales.Orders
+)t WHERE Sales > [Average Sales Amount];
+```
+
+Since window functions cannot be used in the `WHERE` clause, we must use a subquery instead.  (The inner query finds all the average sales.  The outer query is then able to use the `WHERE` clause to filter for just the sales that are higher than the average.)
 
 
 ###### Window COUNT
@@ -2841,7 +2896,7 @@ Returns the number of rows within each window.
 Syntax:
 
 ```
-COUNT(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+COUNT(expr) OVER (PARTITION BY ProductID ORDER BY Sales)
 ```
 
 - The expression (`expr`) is required.
@@ -2870,7 +2925,7 @@ SELECT
 	LastName,
 	Country,
 	Score,
-	COUNT(*) OVER() AS [Customer Count]
+	COUNT(*) OVER () AS [Customer Count]
 FROM Sales.Customers;
 ```
 
@@ -2886,7 +2941,7 @@ SELECT
 	LastName,
 	Country,
 	Score,
-	COUNT(Score) OVER() AS [Number of Customer Scores]
+	COUNT(Score) OVER () AS [Number of Customer Scores]
 FROM Sales.Customers;
 ```
 
@@ -2903,7 +2958,7 @@ SELECT
 FROM (
 	SELECT
 		OrderID,
-		COUNT(*) OVER(PARTITION BY OrderID) AS CheckPK
+		COUNT(*) OVER (PARTITION BY OrderID) AS CheckPK
 	FROM Sales.OrdersArchive
 )t WHERE CheckPK > 1;
 ```
@@ -2918,11 +2973,11 @@ Returns the maximum value within each window.
 Syntax:
 
 ```
-MAX(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+MAX(expr) OVER (PARTITION BY ProductID ORDER BY Sales)
 ```
 
 - The expression (`expr`) is required, and it data type must be a number.
-- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- The entire window definition (the portion inside the `OVER ()` parentheses) is optional -- you can leave the parentheses empty if you want.
 
 
 ###### Window MIN
@@ -2932,11 +2987,11 @@ Returns the minimum value within each window.
 Syntax:
 
 ```
-MIN(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+MIN(expr) OVER (PARTITION BY ProductID ORDER BY Sales)
 ```
 
 - The expression (`expr`) is required, and it data type must be a number.
-- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- The entire window definition (the portion inside the `OVER ()` parentheses) is optional -- you can leave the parentheses empty if you want.
 
 
 ###### Window SUM
@@ -2946,12 +3001,12 @@ Returns the sum of values within each window.
 Syntax:
 
 ```
-SUM(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
+SUM(expr) OVER (PARTITION BY ProductID ORDER BY Sales)
 ```
 
 - The expression (`expr`) is required, and it data type must be a number.
-- The entire window definition (the portion inside the `OVER()` parentheses) is optional -- you can leave the parentheses empty if you want.
-- `SUM` will treat `NULL` values as if they are `0`.  For example: `30` + `70` + `NULL` will equal `100`.
+- The entire window definition (the portion inside the `OVER ()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- `SUM` will ignore `NULL` values.  For example: `30` + `70` + `NULL` will equal `100`.  But it will still output the result to the row containing the `NULL`.
 
 
 ####### Example
@@ -2966,13 +3021,13 @@ SELECT
 	OrderID,
 	OrderDate,
 	Sales,
-	SUM(Sales) OVER() AS [Total Sales],
-	SUM(Sales) OVER(PARTITION BY ProductID) AS [Sales per Product]
+	SUM(Sales) OVER () AS [Total Sales],
+	SUM(Sales) OVER (PARTITION BY ProductID) AS [Sales per Product]
 FROM Sales.Orders;
 ```
 
-- The line `SUM(Sales) OVER() AS [Total Sales]` shows total sales across all orders because the `OVER()` parentheses are left empty.
-- The line `SUM(Sales) OVER(PARTITION BY ProductID) AS [Sales per Product]` shows total sales *per product* because this time, the `OVER()` function contains `PARTITION BY ProductID`.
+- The line `SUM(Sales) OVER () AS [Total Sales]` shows total sales across all orders because the `OVER ()` parentheses are left empty.
+- The line `SUM(Sales) OVER (PARTITION BY ProductID) AS [Sales per Product]` shows total sales *per product* because this time, the `OVER ()` function contains `PARTITION BY ProductID`.
 
 
 ####### Comparison Use Case
@@ -2997,15 +3052,15 @@ SELECT
 	ProductID,
 	OrderID,
 	Sales,
-	SUM(Sales) OVER(PARTITION BY ProductID) AS [Sales per Product],
-	SUM(Sales) OVER() AS [Total Sales],
-	ROUND(CAST(SUM(Sales) OVER(PARTITION BY ProductID) AS Float) / SUM(Sales) OVER() * 100, 2) AS [Percentage of Total Sales]
+	SUM(Sales) OVER (PARTITION BY ProductID) AS [Sales per Product],
+	SUM(Sales) OVER () AS [Total Sales],
+	ROUND(CAST(SUM(Sales) OVER (PARTITION BY ProductID) AS Float) / SUM(Sales) OVER () * 100, 2) AS [Percentage of Total Sales]
 FROM Sales.Orders;
 ```
 
 Percentages will not work properly if you're trying to divide a value that has a data type of "integer" (which is the case with `Sales` here).  Therefore, we must:
 
-1. Use `CAST` to change the integer to a float, like this: `CAST(SUM(Sales) OVER(PARTITION BY ProductID) AS Float)`.
+1. Use `CAST` to change the integer to a float, like this: `CAST(SUM(Sales) OVER (PARTITION BY ProductID) AS Float)`.
 2. Then, because this will result in a long decimal-place output, we use `ROUND` and `, 2` to cap the decimal places at two.
 
 
@@ -3037,7 +3092,7 @@ SELECT
 	OrderID,
 	OrderDate,
 	Sales,
-	RANK() OVER(ORDER BY Sales DESC) AS [Sales Rank]
+	RANK() OVER (ORDER BY Sales DESC) AS [Sales Rank]
 FROM Sales.Orders;
 ```
 
@@ -3237,7 +3292,7 @@ SELECT
 	LastName,
 	-- Calculations based on the raw data:
 	Score,
-	AVG(Score) Over() AS RawAvgScore,
+	AVG(Score) OVER () AS RawAvgScore,
 	
 	-- Calculations based on the clean data:
 	CASE
@@ -3247,7 +3302,7 @@ SELECT
 	AVG(CASE
 			WHEN Score IS NULL THEN 0
 			ELSE Score
-		END) OVER() CleanAvgScore
+		END) OVER () CleanAvgScore
 FROM Sales.Customers;
 
 ```
