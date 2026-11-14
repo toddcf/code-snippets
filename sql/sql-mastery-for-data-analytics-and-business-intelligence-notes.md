@@ -2822,7 +2822,7 @@ SUM(Sales) OVER(ORDER BY Month ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FO
 
 ###### Window AVG
 
-Returns the average of values in a window.
+Returns the average of values within each window.
 
 Syntax:
 
@@ -2836,7 +2836,7 @@ AVG(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
 
 ###### Window COUNT
 
-Returns the number of rows in a window.
+Returns the number of rows within each window.
 
 Syntax:
 
@@ -2846,12 +2846,74 @@ COUNT(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
 
 - The expression (`expr`) is required.
 - Window `COUNT` is the *only* Window Aggregate Function that will accept *any data type* in the `expr`.  (All the others require it to be a number.)
-- If you want to "count all," use `COUNT(*)`.
+- If you want to "count all," use `COUNT(*)` or `COUNT(1)`.  (They give the same result, and there is no noticeable difference in performance.)
+	- However, if you are using `COUNT(*)` or `COUNT(1)`, you have to handle any `NULL` values, or else SQL will count those rows, too, and you may not want it to.  (A couple options: You can change the `NULL` values to `0`.  Or you could use `COUNT(columnName)`, for example, and it will only count the rows with non-`NULL` values in that column.)
+- No deduplication is performed -- `COUNT` simply counts the number of rows, regardless of uniqueness.
+
+
+####### Use Cases
+
+- Overall analysis
+- Category analysis
+- Quality checks: identify NULLs
+- Quality checks: identify duplicates
+
+
+####### Example 1
+
+Find the total number of customers, and provide all customer details:
+
+```
+SELECT
+	CustomerID,
+	FirstName,
+	LastName,
+	Country,
+	Score,
+	COUNT(*) OVER() AS [Customer Count]
+FROM Sales.Customers;
+```
+
+
+####### Example 2
+
+Find the total number of scores for the customers:
+
+```
+SELECT
+	CustomerID,
+	FirstName,
+	LastName,
+	Country,
+	Score,
+	COUNT(Score) OVER() AS [Number of Customer Scores]
+FROM Sales.Customers;
+```
+
+(In this example, one of the scores was `NULL`, so we make sure to use `COUNT(Score)` instead of `COUNT(*)`.  This returns a total of `4` scores instead of `5`.)
+
+
+####### Example 3
+
+Identify duplicate rows:
+
+```
+SELECT
+	*
+FROM (
+	SELECT
+		OrderID,
+		COUNT(*) OVER(PARTITION BY OrderID) AS CheckPK
+	FROM Sales.OrdersArchive
+)t WHERE CheckPK > 1;
+```
+
+The `WHERE` clause means we filter for just the Primary Keys that have more than one -- meaning duplicates.
 
 
 ###### Window MAX
 
-Returns the maximum value in a window.
+Returns the maximum value within each window.
 
 Syntax:
 
@@ -2865,7 +2927,7 @@ MAX(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
 
 ###### Window MIN
 
-Returns the minimum value in a window.
+Returns the minimum value within each window.
 
 Syntax:
 
@@ -2879,7 +2941,7 @@ MIN(expr) OVER(PARTITION BY ProductID ORDER BY Sales)
 
 ###### Window SUM
 
-Returns the sum of values in a window.
+Returns the sum of values within each window.
 
 Syntax:
 
