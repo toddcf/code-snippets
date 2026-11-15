@@ -2978,6 +2978,64 @@ MAX(expr) OVER (PARTITION BY ProductID ORDER BY Sales)
 
 - The expression (`expr`) is required, and it data type must be a number.
 - The entire window definition (the portion inside the `OVER ()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- `MAX` will ignore `NULL` values, so you'll need to `COALESCE` them into `0` values if you want them included in the calculations.
+
+
+####### Example 1
+
+This example will include both `MIN` and `MAX`.
+
+- Find the highest and lowest sales across all orders.
+- And the highest and lowest sales for each product.
+- Also provide details such as Order ID and Order Date.
+
+```
+SELECT
+	OrderID,
+	ProductID,
+	OrderDate,
+	Sales,
+	MIN(Sales) OVER () AS [Min Sale Amount (All Sales)],
+	MAX(Sales) OVER () AS [Max Sale Amount (All Sales)],
+	MIN(Sales) OVER (PARTITION BY ProductID) AS [Min Sale Amount (by Product)],
+	MAX(Sales) OVER (PARTITION BY ProductID) AS [Max Sale Amount (by Product)]
+FROM Sales.Orders;
+```
+
+
+####### Example 2
+
+Show the employee with the highest salary:
+
+```
+SELECT *
+FROM(
+	SELECT
+		FirstName,
+		LastName,
+		Department,
+		Salary,
+		MAX(Salary) OVER () AS [Highest Salary]
+	FROM Sales.Employees
+)t WHERE Salary = [Highest Salary];
+```
+
+
+####### Example 3
+
+This example will include both `MIN` and `MAX`.
+
+Calculate the deviation of each sale from both the minimum and maximum sales amounts:
+
+```
+SELECT
+	Sales AS [This Sale],
+	MIN(Sales) OVER() AS [Lowest Sale],
+	Sales - MIN(Sales) OVER() AS [Deviation from Lowest Sale],
+	MAX(Sales) OVER() AS [Highest Sale],
+	Sales - MAX(Sales) OVER() AS [Deviation from Highest Sale]
+FROM Sales.Orders;
+```
 
 
 ###### Window MIN
@@ -2992,6 +3050,12 @@ MIN(expr) OVER (PARTITION BY ProductID ORDER BY Sales)
 
 - The expression (`expr`) is required, and it data type must be a number.
 - The entire window definition (the portion inside the `OVER ()` parentheses) is optional -- you can leave the parentheses empty if you want.
+- `MIN` will ignore `NULL` values, so you'll need to `COALESCE` them into `0` values if you want them included in the calculations.
+
+
+####### Example
+
+(See the `MAX` examples.)
 
 
 ###### Window SUM
