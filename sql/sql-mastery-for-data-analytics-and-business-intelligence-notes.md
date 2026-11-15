@@ -3401,3 +3401,36 @@ GROUP BY CustomerID;
 - Displays this flag in a new column called `Over30`.
 - As an added bonus, the `COUNT(*) AS Total Orders` line displays the total number of orders for that customer.  This is simply to allow us to compare that customer's number of orders that were over 30 *out of* the total number of orders.
 - We `GROUP BY` the CustomerID so that we can see the results distilled down to each unique customer.
+
+
+## Use Case: Running & Rolling Totals
+
+Used for:
+
+- Tracking current sales with target sales.
+- Providing insights into historical patterns.
+
+These aggregate a sequence of members, and the aggregation is updated each time a new member is added.
+
+- Running totals aggregate all values from the beginning up to the current point without dropping off older data.
+- Rolling totals aggregate all values within a fixed window of time (such as 30 days).  As new data is added, the oldest data point is dropped.
+
+
+### Example 1 - Running Total
+
+```
+SUM(Sales) OVER (ORDER BY Month)
+```
+
+Default frame clause: `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
+
+This takes all the data from the very beginning thru to the current row.  As the current row iterates, the frame keeps expanding.  No old rows ever drop off.
+
+
+### Example 2 - Rolling Total
+
+```
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)
+```
+
+This results in a fixed window where the oldest row drops off as the current row increments.
