@@ -3434,3 +3434,38 @@ SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)
 ```
 
 This results in a fixed window where the oldest row drops off as the current row increments.
+
+
+## Use Case: Moving Average
+
+Similar to a running total, except that instead of adding up the total as you increment from row to row, you recalculate the new average.
+
+
+### Example 1
+
+Calculate the "moving average" of sales for each product over time:
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	OrderDate,
+	Sales,
+	AVG(Sales) OVER (PARTITION BY ProductID ORDER BY OrderDate) AS [Moving Average]
+FROM Sales.Orders;
+```
+
+
+### Example 2
+
+Calculate the "moving average" of sales for each product over time, *including only the next order*.  (Meaning a fixed frame of just the current order plus the one after it.)
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	OrderDate,
+	Sales,
+	AVG(Sales) OVER (PARTITION BY ProductID ORDER BY OrderDate ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING) AS [Moving Average]
+FROM Sales.Orders;
+```
