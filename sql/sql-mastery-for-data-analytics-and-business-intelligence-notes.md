@@ -3469,3 +3469,10 @@ SELECT
 	AVG(Sales) OVER (PARTITION BY ProductID ORDER BY OrderDate ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING) AS [Moving Average]
 FROM Sales.Orders;
 ```
+
+## Overview of Totals
+
+- `SUM(expr) OVER ()`: Leaving `OVER` empty results in an "overall analyzer" -- no partitions of the data.  Overview of entire data.
+- `SUM(expr) OVER (PARTITION BY Product)`: Adding a `PARTITION BY` results in a "total per groups."  (In this snippet, you would get a "total per product.")  Compares categories.
+- `SUM(expr) OVER (ORDER BY Month)`: Adding `ORDER BY` results in a "running total" -- shows progress over time.
+- `SUM(expr) OVER (ORDER BY Month ROWS 2 PRECEDING)`: Adding `ROWS` results in a "rolling total" -- shows progress over time within a specific fixed window.
