@@ -2729,6 +2729,19 @@ Important rules to remember:
 
 - The window aggregate functions are the same as the `GROUP BY` aggregate functions, except you follow it with an `OVER` clause.  (`OVER ()` is what tells SQL this is a Window Function.)
 - The window aggregate functions are more powerful and dynamic than the `GROUP BY` aggregate functions.  Simple questions can be answered using `GROUP BY`; complex, nuanced questions will need to be answered with window aggregate functions.
+- Use cases include:
+	- Overall analysis
+	- Total-per-groups analysis
+	- Part-to-whole analysis
+	- Comparison analysis:
+		- Average
+		- Extreme: Highest/Lowest
+	- Identify duplicates
+	- Outlier detection
+	- Running total
+	- Rolling total
+	- Moving average
+
 
 The `OVER` clause contains three parts:
 
@@ -3128,6 +3141,81 @@ Percentages will not work properly if you're trying to divide a value that has a
 2. Then, because this will result in a long decimal-place output, we use `ROUND` and `, 2` to cap the decimal places at two.
 
 
+##### Use Case: Running & Rolling Totals
+
+Used for:
+
+- Tracking current sales with target sales.
+- Providing insights into historical patterns.
+
+These aggregate a sequence of members, and the aggregation is updated each time a new member is added.
+
+- Running totals aggregate all values from the beginning up to the current point without dropping off older data.
+- Rolling totals aggregate all values within a fixed window of time (such as 30 days).  As new data is added, the oldest data point is dropped.
+
+
+###### Example 1 - Running Total
+
+```
+SUM(Sales) OVER (ORDER BY Month)
+```
+
+Default frame clause: `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
+
+This takes all the data from the very beginning thru to the current row.  As the current row iterates, the frame keeps expanding.  No old rows ever drop off.
+
+
+###### Example 2 - Rolling Total
+
+```
+SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)
+```
+
+This results in a fixed window where the oldest row drops off as the current row increments.
+
+
+##### Use Case: Moving Average
+
+Similar to a running total, except that instead of adding up the total as you increment from row to row, you recalculate the new average.
+
+
+###### Example 1
+
+Calculate the "moving average" of sales for each product over time:
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	OrderDate,
+	Sales,
+	AVG(Sales) OVER (PARTITION BY ProductID ORDER BY OrderDate) AS [Moving Average]
+FROM Sales.Orders;
+```
+
+
+###### Example 2
+
+Calculate the "moving average" of sales for each product over time, *including only the next order*.  (Meaning a fixed frame of just the current order plus the one after it.)
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	OrderDate,
+	Sales,
+	AVG(Sales) OVER (PARTITION BY ProductID ORDER BY OrderDate ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING) AS [Moving Average]
+FROM Sales.Orders;
+```
+
+##### Overview of Totals
+
+- `SUM(expr) OVER ()`: Leaving `OVER` empty results in an "overall analyzer" -- no partitions of the data.  Overview of entire data.
+- `SUM(expr) OVER (PARTITION BY Product)`: Adding a `PARTITION BY` results in a "total per groups."  (In this snippet, you would get a "total per product.")  Compares categories.
+- `SUM(expr) OVER (ORDER BY Month)`: Adding `ORDER BY` results in a "running total" -- shows progress over time.
+- `SUM(expr) OVER (ORDER BY Month ROWS 2 PRECEDING)`: Adding `ROWS` results in a "rolling total" -- shows progress over time within a specific fixed window.
+
+
 ##### Window Rank Functions
 
 Syntax:
@@ -3401,78 +3489,3 @@ GROUP BY CustomerID;
 - Displays this flag in a new column called `Over30`.
 - As an added bonus, the `COUNT(*) AS Total Orders` line displays the total number of orders for that customer.  This is simply to allow us to compare that customer's number of orders that were over 30 *out of* the total number of orders.
 - We `GROUP BY` the CustomerID so that we can see the results distilled down to each unique customer.
-
-
-## Use Case: Running & Rolling Totals
-
-Used for:
-
-- Tracking current sales with target sales.
-- Providing insights into historical patterns.
-
-These aggregate a sequence of members, and the aggregation is updated each time a new member is added.
-
-- Running totals aggregate all values from the beginning up to the current point without dropping off older data.
-- Rolling totals aggregate all values within a fixed window of time (such as 30 days).  As new data is added, the oldest data point is dropped.
-
-
-### Example 1 - Running Total
-
-```
-SUM(Sales) OVER (ORDER BY Month)
-```
-
-Default frame clause: `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
-
-This takes all the data from the very beginning thru to the current row.  As the current row iterates, the frame keeps expanding.  No old rows ever drop off.
-
-
-### Example 2 - Rolling Total
-
-```
-SUM(Sales) OVER (ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)
-```
-
-This results in a fixed window where the oldest row drops off as the current row increments.
-
-
-## Use Case: Moving Average
-
-Similar to a running total, except that instead of adding up the total as you increment from row to row, you recalculate the new average.
-
-
-### Example 1
-
-Calculate the "moving average" of sales for each product over time:
-
-```
-SELECT
-	ProductID,
-	OrderID,
-	OrderDate,
-	Sales,
-	AVG(Sales) OVER (PARTITION BY ProductID ORDER BY OrderDate) AS [Moving Average]
-FROM Sales.Orders;
-```
-
-
-### Example 2
-
-Calculate the "moving average" of sales for each product over time, *including only the next order*.  (Meaning a fixed frame of just the current order plus the one after it.)
-
-```
-SELECT
-	ProductID,
-	OrderID,
-	OrderDate,
-	Sales,
-	AVG(Sales) OVER (PARTITION BY ProductID ORDER BY OrderDate ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING) AS [Moving Average]
-FROM Sales.Orders;
-```
-
-## Overview of Totals
-
-- `SUM(expr) OVER ()`: Leaving `OVER` empty results in an "overall analyzer" -- no partitions of the data.  Overview of entire data.
-- `SUM(expr) OVER (PARTITION BY Product)`: Adding a `PARTITION BY` results in a "total per groups."  (In this snippet, you would get a "total per product.")  Compares categories.
-- `SUM(expr) OVER (ORDER BY Month)`: Adding `ORDER BY` results in a "running total" -- shows progress over time.
-- `SUM(expr) OVER (ORDER BY Month ROWS 2 PRECEDING)`: Adding `ROWS` results in a "rolling total" -- shows progress over time within a specific fixed window.
