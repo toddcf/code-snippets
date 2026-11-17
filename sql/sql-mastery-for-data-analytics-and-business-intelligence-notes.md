@@ -3329,6 +3329,9 @@ This will
 
 ###### ROW_NUMBER()
 
+- Assigns a unique number to each row as a rank.
+- It does handle "ties."  (If two rows share the same value, they will *not* share the same rank.)
+
 Used for top/bottom N analysis.
 
 Syntax:
@@ -3341,6 +3344,20 @@ ROW_NUMBER() OVER (ORDER BY Sales)
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *not allowed*.
+
+
+####### Example
+
+Rank the orders based on their sales from highest to lowest:
+
+```
+SELECT
+	OrderID,
+	ProductID,
+	Sales,
+	ROW_NUMBER() OVER (ORDER BY Sales DESC) AS [Sales Rank]
+FROM Sales.Orders;
+```
 
 
 ##### Window Value (Analytics) Functions
