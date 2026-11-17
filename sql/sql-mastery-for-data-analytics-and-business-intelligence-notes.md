@@ -2746,7 +2746,7 @@ Important rules to remember:
 The `OVER` clause contains three parts:
 
 1. `PARTITION BY` clause (optional) for splitting the data.  (Tells SQL how you want to divide the result set into partitions (windows).  If you leave this out, the calculation will be done on the *entire* dataset.  When you include it, the calculation is done *individually* on each partition/window.  For example, you could partition by month, and your results would be broken out by each month.)
-2. `ORDER BY` clause for sorting the data.  (Optional for Window Aggregate functions; required for Window Rank or Value functions.  And required if you are going to use a Window Frame clause.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
+2. `ORDER BY` clause for sorting the data.  (Optional for Window Aggregate functions; required for Window Ranking or Value functions.  And required if you are going to use a Window Frame clause.)  (Used to sort results in ascending (`ASC` -- default) or descending (`DESC`) order.)
 3. Window Frame, or the "frame clause" for defining a subset of data.  (Optional.  But if you do use it, you also need the `ORDER BY` clause.)  (Defines a subset of rows within each window that is relevant for the calculation.  There are two frame types: `ROWS`, and groups (range).  Then there are the boundaries of the range -- the lower value and the higher value, which must be listed in this order.  The lower-value choices are: `CURRENT ROW`, N ` PRECEDING`, and `UNBOUNDED PRECEDING`.  The higher-value choices are: `CURRENT ROW`, N ` FOLLOWING` and `UNBOUNDED FOLLOWING`.  Note that this always refers to the rows *within that partition/window*, not the entire table.  If you user `ORDER BY` but don't specify a Window Frame, SQL will use the default frame, which is the equivalent of `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.)
 
 Compact Frame:
@@ -3216,7 +3216,7 @@ FROM Sales.Orders;
 - `SUM(expr) OVER (ORDER BY Month ROWS 2 PRECEDING)`: Adding `ROWS` results in a "rolling total" -- shows progress over time within a specific fixed window.
 
 
-##### Window Rank Functions
+##### Window Ranking Functions
 
 Syntax:
 
@@ -3226,16 +3226,92 @@ With the exception of `NTILE`, the expression portion (inside the parentheses) o
 RANK()
 ```
 
+SQL's order of operations:
+
+1. Sort data from highest to lowest value.
+2. Rank the sorted data.  There are two methods for ranking:
+	- Integer-based ranking.  (First row gets assigned a rank of `1`, second row gets assigned a rank of `2`, and so on.  These are considered "discrete values.")  Good for "top/bottom N analysis" use cases such as, "Find the top three products."
+	- Percentage-based ranking.  (Calculates a percentage for each row compared to the others.  Scale is from `0` to `1`.  (For example: `0.25`, `0.5`, etc.)  These are considered "continuous values.")  Good for "distribution analysis" use cases such as, "Find the top 20% of products based on sales."
+
 
 ###### CUME_DIST()
 
+Used for distribution analysis.
+
+Syntax:
+
+```
+CUME_DIST() OVER (ORDER BY Sales)
+```
+
+- The `CUME_DIST()` parentheses must be empty.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
+
+
 ###### DENSE_RANK()
+
+Used for top/bottom N analysis.
+
+Syntax:
+
+```
+DENSE_RANK() OVER (ORDER BY Sales)
+```
+
+- The `DENSE_RANK()` parentheses must be empty.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
 
 ###### NTILE(numeric data type)
 
+Used for top/bottom N analysis.
+
+Syntax:
+
+```
+NTILE(2) OVER (ORDER BY Sales)
+```
+
+- The `NTILE(n)` parentheses *must contain a number*.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
+
+
 ###### PERCENT_RANK()
 
+Used for distribution analysis.
+
+Syntax:
+
+```
+PERCENT_RANK() OVER (ORDER BY Sales)
+```
+
+- The `PERCENT_RANK()` parentheses must be empty.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
+
+
 ###### RANK()
+
+Used for top/bottom N analysis.
+
+Syntax:
+
+```
+RANK() OVER (ORDER BY Sales)
+```
+
+- The `RANK()` parentheses must be empty.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
+
 
 Example:
 
@@ -3252,6 +3328,19 @@ This will
 
 
 ###### ROW_NUMBER()
+
+Used for top/bottom N analysis.
+
+Syntax:
+
+```
+ROW_NUMBER() OVER (ORDER BY Sales)
+```
+
+- The `ROW_NUMBER()` parentheses must be empty.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
 
 
 ##### Window Value (Analytics) Functions
