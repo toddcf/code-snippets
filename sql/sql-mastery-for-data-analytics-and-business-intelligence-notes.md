@@ -3428,6 +3428,28 @@ Strategy:
 	- The outer query filters for only the lowest two customers.  (Because the inner query ranked them in ascending order, the first two are the lowest.)  (`ROW_NUMBER() OVER (ORDER BY SUM(Sales) ASC) AS [Customer Rank]`)
 
 
+####### Example 4: Assign Unique IDs
+
+Assign unique IDs to the rows of the "Orders Archive" table.
+
+Use Cases:
+
+- Maybe your table has no primary key, and you need to create your own unique identifier for each row to help paginating.  (Pagination is the process of breaking down a large data set into smaller, more manageable chunks.)
+- This type of thing becomes very important when you are:
+	- Importing/exporing data.
+	- Joining tables.
+	- Optimizing the performance of a query using the unique IDs.
+
+```
+SELECT
+	ROW_NUMBER() OVER (ORDER BY OrderID, OrderDate) AS UniqueID,
+	*
+FROM Sales.OrdersArchive;
+```
+
+This will result in the row number being used for the Unique ID.
+
+
 ##### Window Value (Analytics) Functions
 
 ###### FIRST_VALUE(expr)
