@@ -3252,18 +3252,36 @@ CUME_DIST() OVER (ORDER BY Sales)
 
 ###### DENSE_RANK()
 
+- Assigns a rank to each row.
+- Similar to `RANK`, and unlike `ROW_NUMBER()`, it *will* handle "ties."  (If two rows share the same value, they *will* also share the same ranking.  But unlike `RANK`, this will *not* leave gaps in the rankings.  (So the rankings such as `1`, `2`, `2`, `3` are possible.))
+
 Used for top/bottom N analysis.
 
 Syntax:
 
 ```
-DENSE_RANK() OVER (ORDER BY Sales)
+DENSE_RANK() OVER (ORDER BY Sales DESC)
 ```
 
 - The `DENSE_RANK()` parentheses must be empty.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *not allowed*.
+
+
+####### Example
+
+Rank the orders based on their sales from highest to lowest:
+
+```
+SELECT
+	OrderID,
+	ProductID,
+	Sales,
+	DENSE_RANK() OVER (ORDER BY Sales DESC) AS [Sales Rank]
+FROM Sales.Orders;
+```
+
 
 ###### NTILE(numeric data type)
 
@@ -3300,7 +3318,7 @@ PERCENT_RANK() OVER (ORDER BY Sales)
 ###### RANK()
 
 - Assigns a rank to each row.
-- Unlike `ROW_NUMBER()`, it *will* handle "ties."  (If two rows share the same value, they *will* also share the same ranking.  But this will result in gaps in the rankings, similar to how the Olympics handles ties.)
+- Unlike `ROW_NUMBER()`, it *will* handle "ties."  (If two rows share the same value, they *will* also share the same ranking.  But unlike `DENSE_RANK`, this will result in gaps in the rankings, similar to how the Olympics handles ties.)
 
 Used for top/bottom N analysis.
 
