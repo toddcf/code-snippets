@@ -3299,6 +3299,9 @@ PERCENT_RANK() OVER (ORDER BY Sales)
 
 ###### RANK()
 
+- Assigns a rank to each row.
+- Unlike `ROW_NUMBER()`, it *will* handle "ties."  (If two rows share the same value, they *will* also share the same ranking.  But this will result in gaps in the rankings, similar to how the Olympics handles ties.)
+
 Used for top/bottom N analysis.
 
 Syntax:
@@ -3313,24 +3316,24 @@ RANK() OVER (ORDER BY Sales)
 - The Frame clause is *not allowed*.
 
 
-Example:
+####### Example
+
+Rank the orders based on their sales from highest to lowest:
 
 ```
 SELECT
 	OrderID,
-	OrderDate,
+	ProductID,
 	Sales,
 	RANK() OVER (ORDER BY Sales DESC) AS [Sales Rank]
 FROM Sales.Orders;
 ```
 
-This will 
-
 
 ###### ROW_NUMBER()
 
 - Assigns a unique number to each row as a rank.
-- It does handle "ties."  (If two rows share the same value, they will *not* share the same rank.)
+- Unlike `RANK`, it does handle "ties."  (If two rows share the same value, they will *not* share the same rank.)
 
 Used for top/bottom N analysis.
 
