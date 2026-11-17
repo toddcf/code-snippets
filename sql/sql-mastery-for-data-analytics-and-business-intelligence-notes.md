@@ -3351,7 +3351,7 @@ FROM Sales.Orders;
 ###### ROW_NUMBER()
 
 - Assigns a unique number to each row as a rank.
-- Unlike `RANK`, it does handle "ties."  (If two rows share the same value, they will *not* share the same rank.)
+- Unlike `RANK` or `DENSE_RANK`, it does *not* handle "ties."  (If two rows share the same value, they will *not* share the same rank.)
 
 Used for top/bottom N analysis.
 
