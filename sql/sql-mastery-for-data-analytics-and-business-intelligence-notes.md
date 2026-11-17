@@ -3367,7 +3367,7 @@ ROW_NUMBER() OVER (ORDER BY Sales)
 - The Frame clause is *not allowed*.
 
 
-####### Example
+####### Example 1
 
 Rank the orders based on their sales from highest to lowest:
 
@@ -3379,6 +3379,53 @@ SELECT
 	ROW_NUMBER() OVER (ORDER BY Sales DESC) AS [Sales Rank]
 FROM Sales.Orders;
 ```
+
+
+####### Example 2: Top-N Analysis
+
+Find the top sale for each product:
+
+```
+SELECT *
+FROM (
+	SELECT
+		ProductID,
+		OrderID,
+		Sales,
+		ROW_NUMBER() OVER (PARTITION BY ProductID ORDER BY Sales DESC) AS [Top Sales by ProductID]
+	FROM Sales.Orders
+)t WHERE [Top Sales by ProductID] = 1;
+```
+
+- This time we use `PARTITION BY`.
+- And we use a subquery:
+	- The inner query ranks *everything*.
+	- The outer query filters for just the top result.
+
+
+####### Example 3: Bottom-N Analysis
+
+Find the lowest two customers based on their total sales:
+
+```
+SELECT *
+FROM (
+	SELECT
+		CustomerID,
+		SUM(Sales) AS [Total Sales],
+		ROW_NUMBER() OVER (ORDER BY SUM(Sales) ASC) AS [Customer Rank]
+	FROM Sales.Orders
+	GROUP BY CustomerID
+)t WHERE [Customer Rank] <= 2;
+```
+
+Strategy:
+
+1. First aggregate the customers by total sales (`SUM(Sales)` and `GROUP BY CustomerID`).
+2. Add a Window Function to the query to rank them.  (Remember that columns used in `GROUP BY` and the Window Function must be identical.)
+3. Then wrap all of this as a subquery:
+	- The inner query aggregates all the customers by total sales and then ranks them in ascending order.
+	- The outer query filters for only the lowest two customers.  (Because the inner query ranked them in ascending order, the first two are the lowest.)  (`ROW_NUMBER() OVER (ORDER BY SUM(Sales) ASC) AS [Customer Rank]`)
 
 
 ##### Window Value (Analytics) Functions
