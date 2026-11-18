@@ -3596,15 +3596,17 @@ FIRST_VALUE(expr)
 
 ###### LAG
 
-Returns the value from a subsequent row.
+Returns the value from a previous row.
 
 Syntax:
 
 ```
-LAG(expr, offset, default)
+LAG(expr, offset, default) OVER (PARTITION BY ProductID ORDER BY OrderDate)
 ```
 
 - The expression can be any data type.
+- The offset is how many rows back from the current row you want to go.  Default is `1`.
+- "Default" is the value you want to return if the previous row is not available.  The default "default" is `NULL`.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *not allowed*.
@@ -3628,18 +3630,27 @@ LAST_VALUE(expr)
 
 ###### LEAD
 
-Returns the value from a previous row.
+Returns the value from a subsequent row.
 
 Syntax:
 
 ```
-LEAD(expr, offset, default)
+LEAD(expr, offset, default) OVER (PARTITION BY ProductID ORDER BY OrderDate)
 ```
 
 - The expression can be any data type.
+- The offset is how many rows forward from the current row you want to go.  Default is `1`.
+- "Default" is the value you want to return if the subsequent row is not available.  The default "default" is `NULL`.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *not allowed*.
+
+
+####### Example
+
+```
+LEAD(Sales, 2, 10) OVER (PARTITION BY ProductID ORDER BY OrderDate)
+```
 
 
 ## CASE Statements
