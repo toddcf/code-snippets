@@ -3450,6 +3450,30 @@ FROM Sales.OrdersArchive;
 This will result in the row number being used for the Unique ID.
 
 
+####### Example 5: Identify Duplicates
+
+You can use the row number to identify and/or filter out duplicate rows.
+
+Identify duplicate rows in the table "Orders Archive" and return a clean result without any duplicates.  (In this example, you can use the timestamp of the row to use the latest version.)
+
+```
+SELECT *
+FROM(
+	SELECT
+		ROW_NUMBER() OVER (PARTITION BY OrderID ORDER BY CreationTime DESC) AS [Row Number],
+		*
+	FROM Sales.OrdersArchive
+)t WHERE [Row Number] = 1;
+```
+
+The logic is:
+
+- `ROW_NUMBER() OVER (PARTITION BY OrderID ORDER BY CreationTime DESC) AS [Row Number]` should always return `1`.  If it is returning `2` or higher, you have at least one duplicate.
+- When you have a duplicate, you want to keep the most recent one.  Since they were sorted in descending order, that is the first result in each partition.
+- Wrap all of that inside a subquery.  The outer query will return only the first row of each partition (`WHERE [Row Number] = 1`).
+	- You could also change this to `WHERE [Row Number] > 1` if you wanted to return only the duplicates instead of filtering them out.
+
+
 ##### Window Value (Analytics) Functions
 
 ###### FIRST_VALUE(expr)
