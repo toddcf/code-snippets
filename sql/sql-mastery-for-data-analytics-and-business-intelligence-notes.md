@@ -3236,18 +3236,29 @@ SQL's order of operations:
 
 ###### CUME_DIST()
 
-Used for distribution analysis.
+Calculates the distribution of data points within a window.  Stands for "cumulative distribution."
+
+Used for distribution analysis (a percentage-based ranking).
 
 Syntax:
 
 ```
-CUME_DIST() OVER (ORDER BY Sales)
+CUME_DIST() OVER (ORDER BY Sales DESC)
 ```
 
 - The `CUME_DIST()` parentheses must be empty.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *not allowed*.
+
+Formula: `Position Number / Number of Rows`
+
+So if you have five rows:
+
+1. When SQL checks the first row, it runs `Row 1 / 5 Total Rows` = `0.2`.
+2. When SQL checks the second row, it runs `Row 2 / 5 Total Rows` = `0.4`.
+3. IF ROWS 3 AND 4 ARE A TIE -- meaning both rows contain the same value -- SQL will use the position of *the last occurance* of the same value.  So SQL will run `Row 4 / 5 Total Rows` = `0.8`, and populate `0.8` *in both rows 3 and 4*.
+4. When SQL checks the fifth and final row, it runs `Row 5 / 5 Total Rows` = `1`.
 
 
 ###### DENSE_RANK()
@@ -3301,7 +3312,9 @@ NTILE(2) OVER (ORDER BY Sales)
 
 ###### PERCENT_RANK()
 
-Used for distribution analysis.
+Used for distribution analysis (a percentage-based ranking).
+
+Formula: (Position Number - 1) / (Number of Rows - 1)
 
 Syntax:
 
