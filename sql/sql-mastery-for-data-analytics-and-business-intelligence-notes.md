@@ -3257,8 +3257,29 @@ So if you have five rows:
 
 1. When SQL checks the first row, it runs `Row 1 / 5 Total Rows` = `0.2`.
 2. When SQL checks the second row, it runs `Row 2 / 5 Total Rows` = `0.4`.
-3. IF ROWS 3 AND 4 ARE A TIE -- meaning both rows contain the same value -- SQL will use the position of *the last occurance* of the same value.  So SQL will run `Row 4 / 5 Total Rows` = `0.8`, and populate `0.8` *in both rows 3 and 4*.
+3. IF ROWS 3 AND 4 ARE A TIE -- meaning both rows contain the same value -- SQL will use the position of *the last occurance* of the same value.  (This is the opposite of `PERCENT_RANK`, which will use the first occurance.)  So SQL will run `Row 4 / 5 Total Rows` = `0.8`, and populate `0.8` *in both rows 3 and 4*.
 4. When SQL checks the fifth and final row, it runs `Row 5 / 5 Total Rows` = `1`.
+
+
+####### Example
+
+Find the products that fall withing the highest 40% of prices:
+
+```
+SELECT
+	*,
+	CONCAT([Price Rank] * 100, '%') AS [Percentage of Price]
+FROM(
+	SELECT
+		*,
+		CUME_DIST() OVER (ORDER BY Price DESC) AS [Price Rank]
+	FROM Sales.Products
+)t WHERE [Price Rank] <= 0.4;
+```
+
+- `CUME_DIST() OVER (ORDER BY Price DESC) AS [Percent of Prices]` sorts the orders by price from highest to lowest, then calculates their cumulative distribution values.
+- That gets wrapped in a subquery.  The outer query filters for just the rows in the top 40% -- meaning `0.4` or lower: `WHERE [Percent of Prices] <= 0.4`.
+- Then, to generate a more user-friendly output, we use `CONCAT([Price Rank] * 100, '%') AS [Percentage of Price]` so that we see values such as `40%` instead of `0.4`.
 
 
 ###### DENSE_RANK()
@@ -3312,20 +3333,29 @@ NTILE(2) OVER (ORDER BY Sales)
 
 ###### PERCENT_RANK()
 
-Used for distribution analysis (a percentage-based ranking).
+Calculates the relative position of each row.
 
-Formula: (Position Number - 1) / (Number of Rows - 1)
+Used for distribution analysis (a percentage-based ranking).
 
 Syntax:
 
 ```
-PERCENT_RANK() OVER (ORDER BY Sales)
+PERCENT_RANK() OVER (ORDER BY Sales DESC)
 ```
 
 - The `PERCENT_RANK()` parentheses must be empty.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *not allowed*.
+
+Formula: `(Position Number - 1) / (Number of Rows - 1)`
+
+So if you have five rows:
+
+1. When SQL checks the first row, it runs `(Row 1 - 1 = 0) / (5 Total Rows - 1 = 4)` = `0`.
+2. When SQL checks the second row, it runs `(Row 2 - 1 = 1) / (5 Total Rows - 1 = 4)` = `0.25`.
+3. IF ROWS 3 AND 4 ARE A TIE -- meaning both rows contain the same value -- SQL will use the position of *the first occurance* of the same value.  (This is different than `CUME_DIST`, which will use the last occurance.)  So SQL will run `(Row 3 - 1 = 2) / (5 Total Rows - 1 = 4)` = `0.5`, and populate `0.5` *in both rows 3 and 4*.
+4. When SQL checks the fifth and final row, it runs `(Row 5 - 1 = 4) / (5 Total Rows - 1 = 4)` = `1`.
 
 
 ###### RANK()
