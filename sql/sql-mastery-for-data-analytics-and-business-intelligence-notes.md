@@ -3317,18 +3317,74 @@ FROM Sales.Orders;
 
 ###### NTILE(numeric data type)
 
+Divides the rows into a specified number of approximately equal groups (buckets).
+
 Used for top/bottom N analysis.
 
 Syntax:
 
 ```
-NTILE(2) OVER (ORDER BY Sales)
+NTILE(2) OVER (ORDER BY Sales DESC)
 ```
 
-- The `NTILE(n)` parentheses *must contain a number*.
+- The `NTILE(n)` parentheses *must contain a number*.  This is the number of buckets you want the data divided into.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *not allowed*.
+
+The process:
+
+1. SQL calculates the "Number of Rows per Bucket" Formula = `Total Number of Rows / Number of Buckets`.  "Number of Buckets" is the "n" number you passed into `NTILE`.
+	- If you have `4` rows, and you passed `2` into `NTILE`, then `4 / 2` = `2` rows per bucket.
+	- If you have `5` rows, then `5 / 2` = `2.5`, and SQL will "ceiling" that up to `3` rows per bucket.  (Meaning it is using the logic of `CEILING`, not `ROUND`.)
+	- If you used `NTILE(1)`, you only have *one* bucket.  *Every* row will go into bucket `1`.
+2. SQL now calculates which bucket each row belongs in.
+	- If it knows it needs `2` rows in each bucket, so the first *two* rows are bucket `1`.  The second two rows (rows 3 and 4) are bucket `2`.
+	- If it knows it needs `3` rows in each bucket, then the first *three* rows are bucket `1`.  If the last bucket will not have a full `3` rows, then the larger groups come first, and the smaller groups come last.  But it will still try to keep them as close to the desired number of rows as possible.  For example: `10 Rows / 3 Buckets` = `3.33` Rows per Bucket, which "ceilings" up to `4`.  Now Bucket 1 = Rows 1 thru 4.  But Bucket 2 = Rows 5 thru 7, and Bucket 3 = Rows 8 thru 10.  Meaning that Bucket 1 contains `4` rows, and Buckets 2 and 3 each contain `3` rows.  It's `4 Rows`, `3 Rows`, `3 Rows`.  Not `4 Rows`, `4 Rows`, `2 Rows`.
+	- If you have `10 Rows / 4 Buckets` = `2.5`, "ceilinged" up to `3`, the divisions will be: `3 Rows`, `3 Rows`, `2 Rows`, `2 Rows`.  (Not `3`, `3`, `3`, `1`.)
+
+
+####### Use Case / Example: Data Segmentation
+
+Used by data analysts.
+
+Segment all orders into three categories: high, medium, and low sales:
+
+```
+SELECT
+	*,
+	CASE WHEN [Bucket Number] = 1 THEN 'High'
+			 WHEN [Bucket Number] = 2 THEN 'Medium'
+			 WHEN [Bucket Number] = 3 THEN 'Low'
+	END AS [Sales Tier]
+FROM(
+	SELECT
+		OrderID,
+		Sales,
+		NTILE(3) OVER (ORDER BY Sales DESC) AS [Bucket Number]
+	FROM Sales.Orders
+)t;
+```
+
+- "Three categories" means we use `NTILE(3)`.
+- "Sales" means we use `ORDER BY Sales`.
+- So that we can display a more user-friendly tier name, we wrap all of that inside a subquery, then use a `CASE WHEN` outside of that to determine what each bucket name should be.
+
+
+####### Use Case / Example: Equalizing Load Processing
+
+Used by data engineers.
+
+Maybe you want to do a "full load" -- move all the rows from a table in Database A into Database B.  Depending on the size, this could take hours or even days.  You may even get errors because you stress the network between the two databases.  As a solution, you can use `NTILE` to split the large table into smaller tables, then start moving those one at a time, and then use `UNION` to merge them back together in Database B.
+
+Example: In order to export the data, divide the orders into two groups:
+
+```
+SELECT
+	*,
+	NTILE(2) OVER (ORDER BY OrderID) AS Bucket
+FROM Sales.Orders;
+```
 
 
 ###### PERCENT_RANK()
