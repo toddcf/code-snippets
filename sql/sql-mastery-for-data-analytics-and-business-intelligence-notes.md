@@ -3575,18 +3575,71 @@ The logic is:
 
 ##### Window Value (Analytics) Functions
 
-###### FIRST_VALUE(expr)
-
-###### LAG(expr, offset, default)
-
-###### LAST_VALUE(expr)
-
-###### LEAD(expr, offset, default)
+Value functions can access a value from *another row*.  This allows you to compare things, such as current month versus previous month.
 
 
+###### FIRST_VALUE
+
+Returns the first value in a window.
+
+Syntax:
+
+```
+FIRST_VALUE(expr)
+```
+
+- The expression can be any data type.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *optional*.
 
 
+###### LAG
 
+Returns the value from a subsequent row.
+
+Syntax:
+
+```
+LAG(expr, offset, default)
+```
+
+- The expression can be any data type.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
+
+
+###### LAST_VALUE
+
+Returns the last value in the window.
+
+Syntax:
+
+```
+LAST_VALUE(expr)
+```
+
+- The expression can be any data type.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause *should be used*.
+
+
+###### LEAD
+
+Returns the value from a previous row.
+
+Syntax:
+
+```
+LEAD(expr, offset, default)
+```
+
+- The expression can be any data type.
+- The `PARTITION BY` clause is *optional*.
+- The `ORDER BY` clause is *required*.
+- The Frame clause is *not allowed*.
 
 
 ## CASE Statements
