@@ -3612,6 +3612,36 @@ LAG(expr, offset, default) OVER (PARTITION BY ProductID ORDER BY OrderDate)
 - The Frame clause is *not allowed*.
 
 
+####### Example
+
+Find the month-over-month (MoM) performance by finding the percentage change in sales between the current and previous month:
+
+```
+SELECT
+*,
+[Current Month Sales] - [Previous Month Sales] AS [MoM Change],
+ROUND(CAST(([Current Month Sales] - [Previous Month Sales]) AS FLOAT) / [Previous Month Sales] * 100, 1) AS [MoM Percent Change]
+FROM(
+	SELECT
+		MONTH(OrderDate) AS [Order Month],
+		SUM(Sales) AS [Current Month Sales],
+		LAG(SUM(Sales), 1) OVER (ORDER BY MONTH(OrderDate)) AS [Previous Month Sales]
+	FROM Sales.Orders
+	GROUP BY MONTH(OrderDate)
+)t;
+```
+
+1. Isolate just the month from each Order Date: `MONTH(OrderDate) AS [Order Month]`
+2. Get the total sales of each month: `SUM(Sales) AS [Current Month Sales]`
+3. Use `LAG` to get the previous month's sales: `LAG(SUM(Sales), 1) OVER (ORDER BY MONTH(OrderDate)) AS [Previous Month Sales]`
+4. Wrap all of this in a subquery.
+5. In the outer query, calculate the month-over-month change in sales amount: `[Current Month Sales] - [Previous Month Sales] AS [MoM Change]`
+6. Calculate the MoM percentage change:
+	- `([Current Month Sales] - [Previous Month Sales]) / [Previous Month Sales] * 100` -- but this will result in values of `0` because they are integers.
+	- So use `CAST` to convert it to a `FLOAT`: `CAST(([Current Month Sales] - [Previous Month Sales]) AS FLOAT) / [Previous Month Sales] * 100` -- but this will result in long decimal places.
+	- So use `ROUND` to reduce the decimal places to just 1: `ROUND(CAST(([Current Month Sales] - [Previous Month Sales]) AS FLOAT) / [Previous Month Sales] * 100, 1) AS [MoM Percent Change]` -- the output will finally be values such as `85.7` and `-59`.
+
+
 ###### LAST_VALUE
 
 Returns the last value in the window.
@@ -3649,7 +3679,7 @@ LEAD(expr, offset, default) OVER (PARTITION BY ProductID ORDER BY OrderDate)
 ####### Example
 
 ```
-LEAD(Sales, 2, 10) OVER (PARTITION BY ProductID ORDER BY OrderDate)
+LEAD(Sales, 2, 10) OVER (PARTITION BY Sales ORDER BY OrderDate)
 ```
 
 
