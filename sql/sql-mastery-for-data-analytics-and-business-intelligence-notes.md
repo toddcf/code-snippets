@@ -3287,7 +3287,7 @@ FROM(
 - Assigns a rank to each row.
 - Similar to `RANK`, and unlike `ROW_NUMBER()`, it *will* handle "ties."  (If two rows share the same value, they *will* also share the same ranking.  But unlike `RANK`, this will *not* leave gaps in the rankings.  (So the rankings such as `1`, `2`, `2`, `3` are possible.))
 
-Used for top/bottom N analysis.
+Used for top/bottom N analysis (an integer-based ranking).
 
 Syntax:
 
@@ -3319,7 +3319,7 @@ FROM Sales.Orders;
 
 Divides the rows into a specified number of approximately equal groups (buckets).
 
-Used for top/bottom N analysis.
+Used for top/bottom N analysis (an integer-based ranking).
 
 Syntax:
 
@@ -3419,7 +3419,7 @@ So if you have five rows:
 - Assigns a rank to each row.
 - Unlike `ROW_NUMBER()`, it *will* handle "ties."  (If two rows share the same value, they *will* also share the same ranking.  But unlike `DENSE_RANK`, this will result in gaps in the rankings, similar to how the Olympics handles ties.)
 
-Used for top/bottom N analysis.
+Used for top/bottom N analysis (an integer-based ranking).
 
 Syntax:
 
@@ -3452,7 +3452,7 @@ FROM Sales.Orders;
 - Assigns a unique number to each row as a rank.
 - Unlike `RANK` or `DENSE_RANK`, it does *not* handle "ties."  (If two rows share the same value, they will *not* share the same rank.)
 
-Used for top/bottom N analysis.
+Used for top/bottom N analysis (an integer-based ranking).
 
 Syntax:
 
