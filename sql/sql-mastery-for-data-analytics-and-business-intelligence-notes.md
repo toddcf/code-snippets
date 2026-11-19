@@ -3642,6 +3642,19 @@ FROM(
 	- So use `ROUND` to reduce the decimal places to just 1: `ROUND(CAST(([Current Month Sales] - [Previous Month Sales]) AS FLOAT) / [Previous Month Sales] * 100, 1) AS [MoM Percent Change]` -- the output will finally be values such as `85.7` and `-59`.
 
 
+####### Example: Timegap Analysis (LAG)
+
+Find the number of days between each order and the previous order:
+
+```
+SELECT
+	LAG(OrderDate, 1) OVER (ORDER BY OrderDate) AS [Date of Previous Order],
+	OrderDate AS [Date of Current Order],
+	DATEDIFF(day, LAG(OrderDate, 1) OVER (ORDER BY OrderDate), OrderDate) AS [Days Since Previous Order]
+FROM Sales.Orders;
+```
+
+
 ###### LAST_VALUE
 
 Returns the last value in the window.
@@ -3706,7 +3719,7 @@ GROUP BY CustomerID;
 7. Group the entire output by Customer ID.
 
 
-####### Example: Timegap Analysis
+####### Example: Timegap Analysis (DATEDIFF)
 
 Find the average shipping duration in days for each month:
 
