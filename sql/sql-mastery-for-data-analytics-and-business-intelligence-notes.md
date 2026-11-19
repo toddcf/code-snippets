@@ -3585,13 +3585,14 @@ Returns the first value in a window.
 Syntax:
 
 ```
-FIRST_VALUE(expr)
+FIRST_VALUE(expr) OVER (ORDER BY xxx)
 ```
 
 - The expression can be any data type.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause is *optional*.
+- Default Range: `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
 
 
 ###### LAG
@@ -3662,13 +3663,80 @@ Returns the last value in the window.
 Syntax:
 
 ```
-LAST_VALUE(expr)
+LAST_VALUE(expr) OVER (ORDER BY xxx)
 ```
 
 - The expression can be any data type.
 - The `PARTITION BY` clause is *optional*.
 - The `ORDER BY` clause is *required*.
 - The Frame clause *should be used*.
+	- Default Range: `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`.   However, this is useless for `LAST_VALUE` in particular, because it will result in the same data you already have in the existing column you're checking against.  You have to make edits to the default or else it's not worth using.
+	- For example, you might use `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING`.  This will set the end of the range to the last row in the window.
+
+
+####### Example 1
+
+Find the lowest and highest sales for each product.
+
+Solution 1:
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	Sales,
+	FIRST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales ASC) AS [Lowest Sale],
+	LAST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales ASC ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) AS [Highest Sale]
+FROM Sales.Orders;
+```
+
+Note that for `LAST_VALUE`, you must use `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` because the default will not be accurate.
+
+Solution 2:
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	Sales,
+	FIRST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales ASC) AS [Lowest Sale],
+	FIRST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales DESC) AS [Highest Sale]
+FROM Sales.Orders;
+```
+
+Here, we also use `FIRST_VALUE` for the highest sales, and just switch the `ORDER BY` from `ASC` to `DESC`.  In this manner, you no longer have to use `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING`.
+
+Solution 3 -- alternative to `FIRST_VALUE` and `LAST_VALUE`:
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	Sales,
+	MIN(Sales) OVER (PARTITION BY ProductID) AS [Lowest Sale],
+	MAX(Sales) OVER (PARTITION BY ProductID) AS [Highest Sale]
+FROM Sales.Orders;
+```
+
+Here, we use `MIN` and `MAX` instead of `FIRST_VALUE` and `LAST_VALUE`.
+
+
+####### Example 2
+
+Find the lowest and highest sales for each product, *and* find the difference between the current sale and the lowest sale:
+
+```
+SELECT
+	ProductID,
+	OrderID,
+	Sales,
+	FIRST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales ASC) AS [Lowest Sale],
+	Sales - FIRST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales ASC) AS [Difference from Lowest Sale],
+	LAST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales ASC ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) AS [Highest Sale]
+FROM Sales.Orders;
+```
+
+This line calculates the difference: `Sales - FIRST_VALUE(Sales) OVER (PARTITION BY ProductID ORDER BY Sales ASC) AS [Difference from Lowest Sale]`
 
 
 ###### LEAD
