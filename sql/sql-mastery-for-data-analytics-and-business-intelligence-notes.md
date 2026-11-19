@@ -3706,6 +3706,23 @@ GROUP BY CustomerID;
 7. Group the entire output by Customer ID.
 
 
+####### Example: Timegap Analysis
+
+Find the average shipping duration in days for each month:
+
+```
+SELECT
+	MONTH(OrderDate) AS [Order Month],
+	AVG(DATEDIFF(day, OrderDate, ShipDate)) AS [Average Days in Transit]
+FROM Sales.Orders
+GROUP BY MONTH(OrderDate);
+```
+
+1. `SELECT` *and* `GROUP BY` the order month: `MONTH(OrderDate)`
+2. Use `DATEDIFF` to find the number of days in transit: `DATEDIFF(day, OrderDate, ShipDate)`
+3. Then wrap that in `AVG` to find the *average* number of days in transit: `AVG(DATEDIFF(day, OrderDate, ShipDate)) AS [Average Days in Transit]`
+
+
 ## CASE Statements
 
 Similar to a JavaScript `SWITCH` statement, `CASE` statements evaluate a list of conditions and return a value when the first condition is met.
