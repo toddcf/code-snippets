@@ -3642,36 +3642,6 @@ FROM(
 	- So use `ROUND` to reduce the decimal places to just 1: `ROUND(CAST(([Current Month Sales] - [Previous Month Sales]) AS FLOAT) / [Previous Month Sales] * 100, 1) AS [MoM Percent Change]` -- the output will finally be values such as `85.7` and `-59`.
 
 
-####### Example: Customer Retention Analysis
-
-Analyze customer loyalty by ranking customers based on the average number of days between orders:
-
-```
-SELECT
-	CustomerID,
-	AVG([Days Between Orders]) AS [Average Days Between Orders],
-	RANK() OVER (ORDER BY COALESCE(AVG([Days Between Orders]), 99999999)) AS [Average Days Between Orders Rank]
-FROM (
-	SELECT
-		OrderID,
-		CustomerID,
-		OrderDate AS [Current Order Date],
-		LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate) AS [Next Order Date],
-		DATEDIFF(day, OrderDate, LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate)) AS [Days Between Orders]
-	FROM Sales.Orders
-)t
-GROUP BY CustomerID;
-```
-
-1. Use `LEAD` since you want to compare each row to the *next* date that that customer placed an order (so you can figure out how many days have passed between orders).  Partition it by Customer ID since you ultimately want to compare customers, and sort them by the Order Date: `LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate) AS [Next Order Date]`
-2. Use `DATEDIFF` to calculate the number of days between the current order and the next order: `DATEDIFF(day, OrderDate, LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate)) AS [Days Between Orders]`
-3. Wrap all of this in a subquery.
-4. In the outer query, use `AVG` to calculate the average of all the "days between orders" values: `AVG([Days Between Orders]) AS [Average Days Between Orders]`
-5. Then rank these average days between orders: `RANK() OVER (ORDER BY AVG([Days Between Orders]))` -- however, this will not properly handle `NULL` values.
-6. So insert `COALESCE` into that line of code to change `NULL` to a ridiculously high number.  This is a little hacky, but the outcome is that it will be ranked last.  `RANK() OVER (ORDER BY COALESCE(AVG([Days Between Orders]), 99999999)) AS [Average Days Between Orders Rank]`
-7. Group the entire output by Customer ID.
-
-
 ###### LAST_VALUE
 
 Returns the last value in the window.
@@ -3706,11 +3676,34 @@ LEAD(expr, offset, default) OVER (PARTITION BY ProductID ORDER BY OrderDate)
 - The Frame clause is *not allowed*.
 
 
-####### Example
+####### Example: Customer Retention Analysis
+
+Analyze customer loyalty by ranking customers based on the average number of days between orders:
 
 ```
-LEAD(Sales, 2, 10) OVER (PARTITION BY Sales ORDER BY OrderDate)
+SELECT
+	CustomerID,
+	AVG([Days Between Orders]) AS [Average Days Between Orders],
+	RANK() OVER (ORDER BY COALESCE(AVG([Days Between Orders]), 99999999)) AS [Average Days Between Orders Rank]
+FROM (
+	SELECT
+		OrderID,
+		CustomerID,
+		OrderDate AS [Current Order Date],
+		LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate) AS [Next Order Date],
+		DATEDIFF(day, OrderDate, LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate)) AS [Days Between Orders]
+	FROM Sales.Orders
+)t
+GROUP BY CustomerID;
 ```
+
+1. Use `LEAD` since you want to compare each row to the *next* date that that customer placed an order (so you can figure out how many days have passed between orders).  Partition it by Customer ID since you ultimately want to compare customers, and sort them by the Order Date: `LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate) AS [Next Order Date]`
+2. Use `DATEDIFF` to calculate the number of days between the current order and the next order: `DATEDIFF(day, OrderDate, LEAD(OrderDate) OVER (PARTITION BY CustomerID ORDER BY OrderDate)) AS [Days Between Orders]`
+3. Wrap all of this in a subquery.
+4. In the outer query, use `AVG` to calculate the average of all the "days between orders" values: `AVG([Days Between Orders]) AS [Average Days Between Orders]`
+5. Then rank these average days between orders: `RANK() OVER (ORDER BY AVG([Days Between Orders]))` -- however, this will not properly handle `NULL` values.
+6. So insert `COALESCE` into that line of code to change `NULL` to a ridiculously high number.  This is a little hacky, but the outcome is that it will be ranked last.  (You want the customers with the fewest average days between orders to be ranked higher.)  `RANK() OVER (ORDER BY COALESCE(AVG([Days Between Orders]), 99999999)) AS [Average Days Between Orders Rank]`
+7. Group the entire output by Customer ID.
 
 
 ## CASE Statements
